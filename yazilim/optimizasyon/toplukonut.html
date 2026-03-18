@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="TOKİ İstanbul Sütlüce Projesi D Blok salonlarında gün ışığı performansının Grasshopper ve Ladybug ile parametrik optimizasyonu">
+  <meta name="author" content="Enes Yıldız">
+  <meta name="keywords" content="toplu konut, gün ışığı, parametrik optimizasyon, Grasshopper, Ladybug, Galapagos, TOKİ, Sütlüce, BIM, Revit, Rhino">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mimarenes.com/yazilim/optimizasyon/toplukonut.html">
+  <meta property="og:title" content="Toplu Konutta Gün Işığı Optimizasyonu | Enes Yıldız">
+  <meta property="og:description" content="TOKİ İstanbul Sütlüce Projesi D Blok salonlarında gün ışığı performansının Grasshopper ve Ladybug ile parametrik optimizasyonu">
+  <meta property="og:image" content="https://mimarenes.com/anasayfa/optimized/toplukonut-1280w.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Toplu Konutta Gün Işığı Optimizasyonu | Enes Yıldız">
+  <meta name="twitter:description" content="TOKİ İstanbul Sütlüce Projesi D Blok salonlarında gün ışığı performansının Grasshopper ve Ladybug ile parametrik optimizasyonu">
+  <meta name="twitter:image" content="https://mimarenes.com/anasayfa/optimized/toplukonut-1280w.jpg">
+
+  <title>Toplu Konutta Gün Işığı Optimizasyonu | Enes Yıldız</title>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="canonical" href="https://mimarenes.com/yazilim/optimizasyon/toplukonut.html">
+  <link rel="stylesheet" href="../../fonts/inter.css">
+  <link rel="stylesheet" href="../../css/subpage.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Toplu Konutta Gün Işığı Optimizasyonu",
+    "description": "TOKİ İstanbul Sütlüce Projesi D Blok salonlarında gün ışığı performansının Grasshopper ve Ladybug ile parametrik optimizasyonu",
+    "url": "https://mimarenes.com/yazilim/optimizasyon/toplukonut.html",
+    "image": "https://mimarenes.com/anasayfa/optimized/toplukonut-1280w.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Enes Yıldız",
+      "url": "https://mimarenes.com"
+    }
+  }
+  </script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK3V82N7CD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YK3V82N7CD');
+  </script>
+</head>
+<body class="js-loading">
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="../../index.html" class="nav-logo">Enes Yıldız</a>
+      <div class="nav-menu">
+        <a href="../../index.html" class="nav-link back">Tüm Projeler</a>
+        <a href="../../index.html#about" class="nav-link">Hakkımda</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Karanlık moda geç" title="Karanlık moda geç" aria-pressed="false">
+          <span class="theme-toggle-thumb" aria-hidden="true">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <main class="page-content">
+
+      <!-- HEADER -->
+      <header class="project-header">
+        <div class="blog-meta">
+          <span class="blog-tag">Parametrik Tasarım</span>
+          <span class="blog-date">2025</span>
+        </div>
+        <p class="project-eyebrow">Grasshopper / Ladybug / Galapagos</p>
+        <h1 class="project-title">Toplu Konutta <span class="title-break title-keep">Gün Işığı Optimizasyonu</span></h1>
+        <p class="project-location">TOKİ İstanbul Sütlüce Projesi &mdash; D Blok</p>
+      </header>
+
+
+      <!-- GİRİŞ METNİ -->
+      <div class="text-block reveal">
+        <p>Bu çalışmada, TOKİ İstanbul Sütlüce Projesi D Blok salonlarındaki gün ışığı performansı parametrik yöntemlerle analiz edilmiş ve iyileştirilmiştir. Burcu Yıldız tarafından Haliç Üniversitesi İç Mimarlık Yüksek Lisans Tezi kapsamında yürütülen araştırmanın hesaplamalı tasarım ve parametrik optimizasyon süreçleri tarafımca geliştirilmiştir.</p>
+        <p>Revit'te oluşturulan BIM modeli Rhino.Inside.Revit aracılığıyla Grasshopper ortamına aktarılmış, Ladybug ile Gün Işığı Otonomisi (DA&#x2081;&#x2085;&#x2080;) analizleri gerçekleştirilmiş ve Galapagos evrimsel algoritması ile bina yönelimi ve konumu optimize edilmiştir.</p>
+      </div>
+
+
+      <!-- SÜREÇ DİYAGRAMI -->
+      <div class="process-timeline reveal">
+        <div class="timeline-inner">
+          <div class="timeline-line-wrap">
+            <div class="timeline-line"></div>
+            <div class="timeline-steps">
+              <div class="tl-step">
+                <div class="tl-dot">1</div>
+                <div class="tl-body">
+                  <h4>BIM Aktar&inodot;m&inodot;</h4>
+                  <ul>
+                    <li>Revit &rarr; Rhino.Inside</li>
+                    <li>Salon hacimleri</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step">
+                <div class="tl-dot">2</div>
+                <div class="tl-body">
+                  <h4>&Ccedil;evresel Model</h4>
+                  <ul>
+                    <li>G&ouml;lge elemanlar&inodot;</li>
+                    <li>&Ccedil;evre binalar</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step active">
+                <div class="tl-dot">3</div>
+                <div class="tl-body">
+                  <h4>DA&#x2081;&#x2085;&#x2080; Analizi</h4>
+                  <ul>
+                    <li>Ladybug sim&uuml;lasyonu</li>
+                    <li>&Idot;stanbul EPW verisi</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step active">
+                <div class="tl-dot">4</div>
+                <div class="tl-body">
+                  <h4>Galapagos</h4>
+                  <ul>
+                    <li>D&ouml;nd&uuml;rme + Ta&scedil;&inodot;ma</li>
+                    <li>Evrimsel optimizasyon</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step">
+                <div class="tl-dot">5</div>
+                <div class="tl-body">
+                  <h4>Sonu&ccedil;lar</h4>
+                  <ul>
+                    <li>%11,4 iyile&scedil;me</li>
+                    <li>Optimize y&ouml;nelim</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- HERO: D Blok Fotoğrafı -->
+      <div class="img-full software-lead-visual reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-1-800w.avif 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-1-800w.webp 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/toplukonut/optimized/toplukonut-1-800w.jpg"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-1-800w.jpg 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="TOKİ Sütlüce Konutları D Blok dış görünüm" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">TOKİ İstanbul Sütlüce Konutları &mdash; D Blok, Haliç manzarası</p>
+
+
+      <!-- PROBLEM TANIMI -->
+      <div class="text-block reveal">
+        <h2>Problem</h2>
+        <p>Toplu konut projelerinde standartlaşmış plan tipleri ve blok yerleşimleri, farklı çevresel koşullar ve yönelimler göz önüne alınmadan kurgulandığından iç mekanlarda yetersiz gün ışığı performansına yol açabilmektedir. Çevre binaların gölgeleme etkisi, balkon saçakları ve binanın kendi mimari elemanları bu durumu daha da kritik hale getirmektedir.</p>
+        <p>Mevcut durumda D Blok salonlarının ortalama Gün Işığı Otonomisi (DA&#x2081;&#x2085;&#x2080;) değeri %59,7 olarak tespit edilmiştir. Bu değer, salonların günlük 10 saatlik kullanım süresinin yaklaşık 4 saatinde yapay aydınlatmaya ihtiyaç duyulduğuna işaret etmektedir.</p>
+      </div>
+
+
+      <!-- VAZİYET PLANI -->
+      <div class="text-img-row img-right-sm align-top reveal">
+        <div class="row-text">
+          <h2>Proje Alanı</h2>
+          <p>İstanbul Sütlüce'de Haliç kıyısında konumlanan TOKİ projesi, yoğun kentsel doku içinde yer almaktadır. Çalışma alanı olarak seçilen D Blok, D1 ve D2 alt bloklarından oluşmakta ve zemin kattan beşinci kata kadar toplam 37 daire barındırmaktadır.</p>
+          <p>Analiz kapsamında altı kattaki tüm salon hacimleri değerlendirmeye alınmış; çevre binaların gölgeleme etkisinin en kritik düzeyde hissedildiği bu mekanlar üzerinden mevcut durum simülasyonları yürütülmüştür.</p>
+        </div>
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-2-800w.avif 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-2-800w.webp 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/toplukonut/optimized/toplukonut-2-800w.jpg"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-2-800w.jpg 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="TOKİ Sütlüce vaziyet planı ve uydu görüntüsü" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">Uydu görüntüsü ve vaziyet planı</p>
+        </div>
+      </div>
+
+
+      <!-- METODOLOJİ AKIŞI -->
+      <div class="text-img-row img-left align-top reveal">
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-3-800w.avif 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-3-800w.webp 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/toplukonut/optimized/toplukonut-3-800w.jpg"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-3-800w.jpg 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Metodoloji akış şeması" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">BIM tabanlı iş akışı ve optimizasyon süreci</p>
+        </div>
+        <div class="row-text">
+          <h2>Yöntem</h2>
+          <p>Çalışmada BIM tabanlı yenilikçi bir iş akışı geliştirilmiştir. Autodesk Revit'te oluşturulan 3D geometrik model, Rhino.Inside.Revit ile Grasshopper ortamına aktarılmış ve Ladybug Tools kullanılarak İstanbul EPW iklim verisiyle dinamik gün ışığı simülasyonları gerçekleştirilmiştir.</p>
+          <p>Mevcut durum analizi tamamlandıktan sonra Galapagos evrimsel algoritması ile üç farklı optimizasyon senaryosu kurgulanmıştır: Döndürme (Rotate), Taşıma (Move) ve Döndürme+Taşıma (Rotate+Move). Her senaryoda mevcut mimari form ve pencere düzeni korunarak yalnızca yerleşim ve yönelim parametreleri optimize edilmiştir.</p>
+        </div>
+      </div>
+
+
+      <!-- VURGU -->
+      <div class="highlight-block reveal">
+        <p>Mevcut mimari form ve pencere düzeni korunarak, yalnızca <span class="hl-accent">yerleşim ve yönelim optimizasyonu</span> ile gün ışığı performansında %11,4 iyileşme sağlanmıştır.</p>
+      </div>
+
+
+      <!-- GRASSHOPPER TANIMI -->
+      <div class="img-full software-lead-visual reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-4-800w.avif 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-4-800w.webp 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/toplukonut/optimized/toplukonut-4-800w.jpg"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-4-800w.jpg 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Grasshopper parametrik tanım" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">Grasshopper'da geliştirilen parametrik analiz ve optimizasyon tanımı</p>
+
+
+      <div class="text-block reveal">
+        <h2>Hesaplamalı Tasarım Süreci</h2>
+        <p>Grasshopper ortamında geliştirilen tanım; Revit'ten aktarılan salon hacimlerini, gölgeleme elemanlarını (balkon çatıları, korkuluklar, çubuklar), sabit çevre binaları ve pencere geometrilerini katmanlı bir yapıda işlemektedir. Binayla birlikte hareket eden elemanlar ile sabit çevre binaları ayrı gruplar halinde organize edilmiştir.</p>
+        <p>Ladybug komponentleri ile her kat için ayrı ayrı DA&#x2081;&#x2085;&#x2080; analizi çalıştırılmış, Galapagos optimizasyon aracı ise Rotate, Move ve Rotate+Move senaryolarını evrimsel algoritmalarla çözümlemiştir.</p>
+      </div>
+
+
+      <!-- GÜN IŞIĞI ANALİZİ PLANI -->
+      <div class="img-small center reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-5-800w.avif 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-5-800w.webp 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/toplukonut/optimized/toplukonut-5-800w.jpg"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-5-800w.jpg 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Kat planı üzerinde gün ışığı analizi" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">1. kat planı &mdash; salonların mevcut durum gün ışığı performansı (DA&#x2081;&#x2085;&#x2080; %)</p>
+
+
+      <!-- OPTİMİZASYON SENARYOLARI -->
+      <div class="text-img-row img-right align-top reveal">
+        <div class="row-text">
+          <h2>Optimizasyon Senaryoları</h2>
+          <p>Üç farklı senaryo ile D Blok'un parsel üzerindeki konumu ve yönelimi parametrik olarak optimize edilmiştir. Döndürme senaryosunda yapı mevcut konumuna göre 54 derece döndürülerek DA&#x2081;&#x2085;&#x2080; değeri %62,6'ya yükseltilmiştir.</p>
+          <p>Taşıma senaryosunda yalnızca konum değişikliği denenmiş ve pratikte ihmal edilebilir bir iyileşme (%0,17) elde edilmiştir. Her iki parametrenin birlikte optimize edildiği Döndürme+Taşıma senaryosunda ise en yüksek performansa ulaşılmıştır.</p>
+        </div>
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-6-800w.avif 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-6-800w.webp 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/toplukonut/optimized/toplukonut-6-800w.jpg"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-6-800w.jpg 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Optimizasyon senaryoları vaziyet karşılaştırması" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">Mevcut durum ve üç optimizasyon senaryosu</p>
+        </div>
+      </div>
+
+
+      <!-- KARŞILAŞTIRMA KARTLARI -->
+      <div class="comparison reveal">
+        <div class="comparison-card">
+          <p class="comparison-label">Mevcut Durum</p>
+          <h3>DA&#x2081;&#x2085;&#x2080; &mdash; %59,7</h3>
+          <ul>
+            <li>Standart TOKİ blok yerleşimi</li>
+            <li>Çevre binaların yoğun gölgeleme etkisi</li>
+            <li>Günlük ~4 saat yapay aydınlatma ihtiyacı</li>
+            <li>Alt katlarda %37'ye düşen performans</li>
+          </ul>
+        </div>
+        <div class="comparison-card accent">
+          <p class="comparison-label">Döndürme + Taşıma</p>
+          <h3>DA&#x2081;&#x2085;&#x2080; &mdash; %66,5</h3>
+          <ul>
+            <li>%11,4 oranında performans artışı</li>
+            <li>Günlük ~41 dakika ek gün ışığı kazanımı</li>
+            <li>Yıllık ~250 saat daha az yapay aydınlatma</li>
+            <li>Mimari form ve pencereler korunarak</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- GALAPAGOS -->
+      <div class="text-img-row img-left-sm reveal">
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-7-800w.avif 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-7-800w.webp 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/toplukonut/optimized/toplukonut-7-800w.jpg"
+    data-srcset="../../img/toplukonut/optimized/toplukonut-7-800w.jpg 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Galapagos evrimsel algoritma optimizasyon sonucu" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">Galapagos optimizasyon süreci</p>
+        </div>
+        <div class="row-text">
+          <h2>Evrimsel Algoritma ile Optimizasyon</h2>
+          <p>Galapagos genetik algoritma çözücüsü, her iterasyonda bina yönelimi ve konumunu değiştirerek Ladybug ile gün ışığı simülasyonu çalıştırmış ve ortalama DA&#x2081;&#x2085;&#x2080; değerini maksimize eden parametre kombinasyonunu belirlemiştir.</p>
+          <p>Elde edilen bulgular, bina yöneliminin konum değişikliğinden 29 kat daha etkili olduğunu ortaya koymuştur. Bu sonuç, tasarımın erken aşamalarında yönelim kararlarının gün ışığı performansı açısından ne denli belirleyici olduğunu göstermektedir.</p>
+        </div>
+      </div>
+
+
+      <!-- VERİ TABLOSU -->
+      <div class="data-table-wrap reveal">
+        <h2>Katlara Göre Optimizasyon Karşılaştırması</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Kat</th>
+              <th>Mevcut DA&#x2081;&#x2085;&#x2080;</th>
+              <th>Döndürme</th>
+              <th>Taşıma</th>
+              <th>Döndürme + Taşıma</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Zemin</td>
+              <td class="val-bad">%60,5</td>
+              <td>%58,5</td>
+              <td>%59</td>
+              <td class="val-good">%68,2</td>
+            </tr>
+            <tr>
+              <td>1. Kat</td>
+              <td class="val-bad">%53,2</td>
+              <td>%54,7</td>
+              <td>%52,1</td>
+              <td class="val-good">%60,4</td>
+            </tr>
+            <tr>
+              <td>2. Kat</td>
+              <td class="val-bad">%57,7</td>
+              <td>%62,2</td>
+              <td>%58</td>
+              <td class="val-good">%64,7</td>
+            </tr>
+            <tr>
+              <td>3. Kat</td>
+              <td class="val-bad">%64,2</td>
+              <td>%66,1</td>
+              <td>%64,7</td>
+              <td class="val-good">%69,2</td>
+            </tr>
+            <tr>
+              <td>4. Kat</td>
+              <td class="val-bad">%63,7</td>
+              <td>%65,8</td>
+              <td>%63,8</td>
+              <td class="val-good">%67,8</td>
+            </tr>
+            <tr>
+              <td>5. Kat</td>
+              <td class="val-bad">%76,8</td>
+              <td>%75,4</td>
+              <td>%77</td>
+              <td class="val-good">%78,5</td>
+            </tr>
+            <tr>
+              <td><strong>Ortalama</strong></td>
+              <td class="val-bad"><strong>%59,7</strong></td>
+              <td><strong>%62,6</strong></td>
+              <td><strong>%59,8</strong></td>
+              <td class="val-good"><strong>%66,5</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <!-- SONUÇ METNİ -->
+      <div class="text-block right reveal">
+        <h2>Sonuç</h2>
+        <p>Çalışma, mevcut yapılarda bile mimari müdahale gerektirmeden yalnızca yerleşim ve yönelim optimizasyonu ile anlamlı iyileştirmeler sağlanabileceğini ortaya koymuştur. Pencere boyutları ve mimari form korunarak elde edilen %11,4'lük performans artışı, parametrik tasarım araçlarının toplu konut planlamasındaki potansiyelini somut verilerle göstermektedir.</p>
+        <p>Bu sonuçlar, özellikle tasarımın erken aşamalarında bina yönelimi kararlarının sistematik olarak ele alınmasının gün ışığı performansı, enerji verimliliği ve kullanıcı konforu açısından belirleyici bir etki taşıdığını doğrulamaktadır.</p>
+      </div>
+
+
+      <!-- PROJE VERİLERİ -->
+      <section class="project-data reveal">
+        <div class="data-grid">
+          <div class="data-item">
+            <span class="data-label">Tür</span>
+            <span class="data-value">Yüksek Lisans Tezi</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Araçlar</span>
+            <span class="data-value">Grasshopper, Ladybug, Galapagos, Revit, Rhino.Inside.Revit</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Yöntem</span>
+            <span class="data-value">DA&#x2081;&#x2085;&#x2080; tabanlı gün ışığı optimizasyonu</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Çıktı</span>
+            <span class="data-value">Daha yüksek gün ışığı</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="project-footer-section">
+        <div class="related-header">
+          <h3>İlgili Projeler</h3>
+        </div>
+        <div class="related-projects reveal">
+          <a href="../ai/geovisionai.html" class="related-card">
+            <div class="related-visual">
+              <picture class="render light-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/geovisionai-800w.avif 800w,
+                  ../../anasayfa/optimized/geovisionai-1280w.avif 1280w,
+                  ../../anasayfa/optimized/geovisionai-1920w.avif 1920w,
+                  ../../anasayfa/optimized/geovisionai-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/geovisionai-800w.webp 800w,
+                  ../../anasayfa/optimized/geovisionai-1280w.webp 1280w,
+                  ../../anasayfa/optimized/geovisionai-1920w.webp 1920w,
+                  ../../anasayfa/optimized/geovisionai-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="GeoVisionAI"
+                  data-srcset="../../anasayfa/optimized/geovisionai-800w.jpg 800w,
+                  ../../anasayfa/optimized/geovisionai-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/geovisionai-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/geovisionai-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/geovisionai-1280w.jpg">
+              </picture>
+              <picture class="sketch light-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/geovisionai-eskiz-800w.avif 800w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-1280w.avif 1280w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-1920w.avif 1920w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/geovisionai-eskiz-800w.webp 800w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-1280w.webp 1280w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-1920w.webp 1920w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="GeoVisionAI Eskiz"
+                  data-srcset="../../anasayfa/optimized/geovisionai-eskiz-800w.jpg 800w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/geovisionai-eskiz-1280w.jpg">
+              </picture>
+              <picture class="render dark-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/geovisionai-gece-800w.avif 800w,
+                  ../../anasayfa/optimized/geovisionai-gece-1280w.avif 1280w,
+                  ../../anasayfa/optimized/geovisionai-gece-1920w.avif 1920w,
+                  ../../anasayfa/optimized/geovisionai-gece-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/geovisionai-gece-800w.webp 800w,
+                  ../../anasayfa/optimized/geovisionai-gece-1280w.webp 1280w,
+                  ../../anasayfa/optimized/geovisionai-gece-1920w.webp 1920w,
+                  ../../anasayfa/optimized/geovisionai-gece-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="GeoVisionAI"
+                  data-srcset="../../anasayfa/optimized/geovisionai-gece-800w.jpg 800w,
+                  ../../anasayfa/optimized/geovisionai-gece-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/geovisionai-gece-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/geovisionai-gece-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/geovisionai-gece-1280w.jpg">
+              </picture>
+              <picture class="sketch dark-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/geovisionai-gece-eskiz-800w.avif 800w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-1280w.avif 1280w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-1920w.avif 1920w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/geovisionai-gece-eskiz-800w.webp 800w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-1280w.webp 1280w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-1920w.webp 1920w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="GeoVisionAI Eskiz"
+                  data-srcset="../../anasayfa/optimized/geovisionai-gece-eskiz-800w.jpg 800w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/geovisionai-gece-eskiz-1280w.jpg">
+              </picture>
+            </div>
+            <div class="related-info">
+              <p class="related-meta">Yapay Zekâ</p>
+              <h4 class="related-title">GeoVisionAI</h4>
+            </div>
+          </a>
+          <a href="../fabrikasyon/victory-park.html" class="related-card">
+            <div class="related-visual">
+              <picture class="render light-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/victory-park-800w.avif 800w,
+                  ../../anasayfa/optimized/victory-park-1280w.avif 1280w,
+                  ../../anasayfa/optimized/victory-park-1920w.avif 1920w,
+                  ../../anasayfa/optimized/victory-park-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/victory-park-800w.webp 800w,
+                  ../../anasayfa/optimized/victory-park-1280w.webp 1280w,
+                  ../../anasayfa/optimized/victory-park-1920w.webp 1920w,
+                  ../../anasayfa/optimized/victory-park-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Victory Park"
+                  data-srcset="../../anasayfa/optimized/victory-park-800w.jpg 800w,
+                  ../../anasayfa/optimized/victory-park-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/victory-park-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/victory-park-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/victory-park-1280w.jpg">
+              </picture>
+              <picture class="sketch light-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/victory-park-eskiz-800w.avif 800w,
+                  ../../anasayfa/optimized/victory-park-eskiz-1280w.avif 1280w,
+                  ../../anasayfa/optimized/victory-park-eskiz-1920w.avif 1920w,
+                  ../../anasayfa/optimized/victory-park-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/victory-park-eskiz-800w.webp 800w,
+                  ../../anasayfa/optimized/victory-park-eskiz-1280w.webp 1280w,
+                  ../../anasayfa/optimized/victory-park-eskiz-1920w.webp 1920w,
+                  ../../anasayfa/optimized/victory-park-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Victory Park Eskiz"
+                  data-srcset="../../anasayfa/optimized/victory-park-eskiz-800w.jpg 800w,
+                  ../../anasayfa/optimized/victory-park-eskiz-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/victory-park-eskiz-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/victory-park-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/victory-park-eskiz-1280w.jpg">
+              </picture>
+              <picture class="render dark-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/victory-park-gece-800w.avif 800w,
+                  ../../anasayfa/optimized/victory-park-gece-1280w.avif 1280w,
+                  ../../anasayfa/optimized/victory-park-gece-1920w.avif 1920w,
+                  ../../anasayfa/optimized/victory-park-gece-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/victory-park-gece-800w.webp 800w,
+                  ../../anasayfa/optimized/victory-park-gece-1280w.webp 1280w,
+                  ../../anasayfa/optimized/victory-park-gece-1920w.webp 1920w,
+                  ../../anasayfa/optimized/victory-park-gece-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Victory Park"
+                  data-srcset="../../anasayfa/optimized/victory-park-gece-800w.jpg 800w,
+                  ../../anasayfa/optimized/victory-park-gece-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/victory-park-gece-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/victory-park-gece-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/victory-park-gece-1280w.jpg">
+              </picture>
+              <picture class="sketch dark-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/victory-park-gece-eskiz-800w.avif 800w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-1280w.avif 1280w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-1920w.avif 1920w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/victory-park-gece-eskiz-800w.webp 800w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-1280w.webp 1280w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-1920w.webp 1920w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Victory Park Eskiz"
+                  data-srcset="../../anasayfa/optimized/victory-park-gece-eskiz-800w.jpg 800w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/victory-park-gece-eskiz-1280w.jpg">
+              </picture>
+            </div>
+            <div class="related-info">
+              <p class="related-meta">Fabrikasyon</p>
+              <h4 class="related-title">Victory Park Konut Kompleksi</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner footer-with-directory">
+      <div class="footer-directory" aria-label="Portfolyo kategorileri">
+        <div class="footer-directory-group">
+          <a href="../../index.html#tasarim-all" class="footer-directory-anchor">Tasarım</a>
+          <a href="../../index.html#mimari" class="footer-directory-link">Mimari</a>
+          <a href="../../index.html#web" class="footer-directory-link">Web</a>
+          <a href="../../index.html#mobilya" class="footer-directory-link">Mobilya</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="../../index.html#arastirma-all" class="footer-directory-anchor">Araştırma</a>
+          <a href="../../index.html#fikir" class="footer-directory-link">Fikir</a>
+          <a href="../../index.html#yayin" class="footer-directory-link">Yayın</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="../../index.html#yazilim-all" class="footer-directory-anchor">Yazılım</a>
+          <a href="../../index.html#ai" class="footer-directory-link">AI</a>
+          <a href="../../index.html#fabrikasyon" class="footer-directory-link">Fabrikasyon</a>
+          <a href="../../index.html#optimizasyon" class="footer-directory-link">Optimizasyon</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:mimarenesyildiz@gmail.com" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          E-posta
+        </a>
+        <a href="https://github.com/mimarenesyildiz" target="_blank" rel="noopener noreferrer" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/mimarenes/" target="_blank" rel="noopener noreferrer" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/theme.js"></script>
+  <script src="../../js/image-loader.js"></script>
+</body>
+</html>

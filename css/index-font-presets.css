@@ -1,0 +1,259 @@
+html[data-font-preset] {
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Inter', sans-serif;
+  --font-mono-alt: 'SF Mono', 'Fira Code', monospace;
+  --body-spacing: -0.01em;
+  --display-spacing: -0.03em;
+  --ui-spacing: 0.01em;
+}
+
+html[data-font-preset] body,
+html[data-font-preset] button,
+html[data-font-preset] input,
+html[data-font-preset] textarea,
+html[data-font-preset] select {
+  font-family: var(--font-body);
+  letter-spacing: var(--body-spacing);
+}
+
+html[data-font-preset] h1,
+html[data-font-preset] h2,
+html[data-font-preset] h3,
+html[data-font-preset] .nav-logo,
+html[data-font-preset] .work-title,
+html[data-font-preset] .project-title,
+html[data-font-preset] .section-label,
+html[data-font-preset] .highlight-block p,
+html[data-font-preset] .timeline-content h3,
+html[data-font-preset] .comparison-card h3,
+html[data-font-preset] .section-title h2,
+html[data-font-preset] .section-title h3 {
+  font-family: var(--font-display);
+  letter-spacing: var(--display-spacing);
+}
+
+html[data-font-preset] .nav-link,
+html[data-font-preset] .about-footer-link,
+html[data-font-preset] .work-desc,
+html[data-font-preset] .timeline-content p,
+html[data-font-preset] .text-block p,
+html[data-font-preset] .row-text p,
+html[data-font-preset] .component-desc,
+html[data-font-preset] .comparison-card p,
+html[data-font-preset] .comparison-card li,
+html[data-font-preset] .project-location,
+html[data-font-preset] .blog-date {
+  font-family: var(--font-body);
+}
+
+html[data-font-preset] code,
+html[data-font-preset] .project-eyebrow,
+html[data-font-preset] .blog-tag,
+html[data-font-preset] .work-number,
+html[data-font-preset] .work-category,
+html[data-font-preset] .timeline-date,
+html[data-font-preset] .component-name,
+html[data-font-preset] .data-label,
+html[data-font-preset] .comparison-label,
+html[data-font-preset] .img-caption,
+html[data-font-preset] .img-cap {
+  font-family: var(--font-mono-alt);
+  letter-spacing: var(--ui-spacing);
+}
+
+html[data-font-preset='editorial'] {
+  --font-body: 'Source Sans 3', sans-serif;
+  --font-display: 'Playfair Display', serif;
+  --font-mono-alt: 'IBM Plex Mono', monospace;
+  --body-spacing: -0.006em;
+  --display-spacing: -0.04em;
+  --ui-spacing: 0.03em;
+}
+
+html[data-font-preset='computational'] {
+  --font-body: 'IBM Plex Sans', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-mono-alt: 'JetBrains Mono', monospace;
+  --body-spacing: -0.012em;
+  --display-spacing: -0.035em;
+  --ui-spacing: 0.02em;
+}
+
+html[data-font-preset='research'] {
+  --font-body: 'Manrope', sans-serif;
+  --font-display: 'Spectral', serif;
+  --font-mono-alt: 'IBM Plex Mono', monospace;
+  --body-spacing: -0.008em;
+  --display-spacing: -0.028em;
+  --ui-spacing: 0.025em;
+}
+
+html[data-font-preset='gallery'] {
+  --font-body: 'Work Sans', sans-serif;
+  --font-display: 'Syne', sans-serif;
+  --font-mono-alt: 'Roboto Mono', monospace;
+  --body-spacing: -0.01em;
+  --display-spacing: -0.045em;
+  --ui-spacing: 0.03em;
+}
+
+html[data-font-preset='crafted'] {
+  --font-body: 'DM Sans', sans-serif;
+  --font-display: 'Fraunces', serif;
+  --font-mono-alt: 'Fira Mono', monospace;
+  --body-spacing: -0.01em;
+  --display-spacing: -0.03em;
+  --ui-spacing: 0.028em;
+}
+
+html[data-font-preset='inter-tight'] {
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Inter Tight', sans-serif;
+  --font-mono-alt: 'IBM Plex Mono', monospace;
+  --body-spacing: -0.012em;
+  --display-spacing: -0.042em;
+  --ui-spacing: 0.02em;
+}
+
+html[data-font-preset='jakarta'] {
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+  --font-display: 'Plus Jakarta Sans', sans-serif;
+  --font-mono-alt: 'JetBrains Mono', monospace;
+  --body-spacing: -0.014em;
+  --display-spacing: -0.036em;
+  --ui-spacing: 0.02em;
+}
+
+html[data-font-preset='public'] {
+  --font-body: 'Public Sans', sans-serif;
+  --font-display: 'Inter Tight', sans-serif;
+  --font-mono-alt: 'IBM Plex Mono', monospace;
+  --body-spacing: -0.01em;
+  --display-spacing: -0.034em;
+  --ui-spacing: 0.022em;
+}
+
+html[data-font-preset='urbanist'] {
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Urbanist', sans-serif;
+  --font-mono-alt: 'DM Mono', monospace;
+  --body-spacing: -0.01em;
+  --display-spacing: -0.04em;
+  --ui-spacing: 0.022em;
+}
+
+html[data-font-preset='sora'] {
+  --font-body: 'Manrope', sans-serif;
+  --font-display: 'Sora', sans-serif;
+  --font-mono-alt: 'Roboto Mono', monospace;
+  --body-spacing: -0.01em;
+  --display-spacing: -0.032em;
+  --ui-spacing: 0.022em;
+}
+
+html[data-font-preset='outfit'] {
+  --font-body: 'Manrope', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+  --font-mono-alt: 'Roboto Mono', monospace;
+  --body-spacing: -0.01em;
+  --display-spacing: -0.034em;
+  --ui-spacing: 0.022em;
+}
+
+html[data-font-preset='hanken'] {
+  --font-body: 'Manrope', sans-serif;
+  --font-display: 'Hanken Grotesk', sans-serif;
+  --font-mono-alt: 'IBM Plex Mono', monospace;
+  --body-spacing: -0.01em;
+  --display-spacing: -0.034em;
+  --ui-spacing: 0.022em;
+}
+
+html[data-font-preset='red-hat'] {
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Red Hat Display', sans-serif;
+  --font-mono-alt: 'IBM Plex Mono', monospace;
+  --body-spacing: -0.01em;
+  --display-spacing: -0.03em;
+  --ui-spacing: 0.022em;
+}
+
+html[data-font-preset='lexend'] {
+  --font-body: 'Inter', sans-serif;
+  --font-display: 'Lexend', sans-serif;
+  --font-mono-alt: 'JetBrains Mono', monospace;
+  --body-spacing: -0.01em;
+  --display-spacing: -0.03em;
+  --ui-spacing: 0.022em;
+}
+
+html[data-font-preset='archivo'] {
+  --font-body: 'Manrope', sans-serif;
+  --font-display: 'Archivo', sans-serif;
+  --font-mono-alt: 'Roboto Mono', monospace;
+  --body-spacing: -0.01em;
+  --display-spacing: -0.032em;
+  --ui-spacing: 0.022em;
+}
+
+html[data-font-preset='editorial'] .theme-toggle,
+html[data-font-preset='crafted'] .theme-toggle {
+  border-radius: 18px;
+}
+
+html[data-font-preset='computational'] .work-title,
+html[data-font-preset='gallery'] .work-title,
+html[data-font-preset='inter-tight'] .work-title {
+  text-transform: uppercase;
+}
+
+html[data-font-preset='research'] .highlight-block p,
+html[data-font-preset='crafted'] .highlight-block p {
+  max-width: 28ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+html[data-font-preset='jakarta'] .nav-logo,
+html[data-font-preset='public'] .nav-logo,
+html[data-font-preset='urbanist'] .nav-logo,
+html[data-font-preset='sora'] .nav-logo,
+html[data-font-preset='outfit'] .nav-logo,
+html[data-font-preset='hanken'] .nav-logo,
+html[data-font-preset='red-hat'] .nav-logo,
+html[data-font-preset='lexend'] .nav-logo,
+html[data-font-preset='archivo'] .nav-logo {
+  font-weight: 600;
+}
+
+html[data-font-preset='jakarta'] .work-title,
+html[data-font-preset='urbanist'] .work-title {
+  letter-spacing: -0.05em;
+}
+
+html[data-font-preset] body[data-font-preview]::after {
+  content: attr(data-font-preview);
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 5000;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #111111;
+  border: 1px solid rgba(17, 17, 17, 0.08);
+  box-shadow: 0 12px 28px rgba(17, 17, 17, 0.12);
+  font-family: var(--font-mono-alt);
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  pointer-events: none;
+}
+
+html[data-theme='dark'][data-font-preset] body[data-font-preview]::after {
+  background: rgba(20, 20, 20, 0.9);
+  color: #f3f3f3;
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+}

@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Parametrik mukarnasların günışığı ve akustik performansına etkisinin ölçülmesi ve genetik algoritma tabanlı optimizasyonu">
+  <meta name="author" content="Enes Yıldız">
+  <meta name="keywords" content="parametrik mukarnas, kubbe geçiş elemanı, günışığı analizi, akustik analizi, optimizasyon, Grasshopper, Octopus, Galapagos, iç mekan performansı">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mimarenes.com/yazilim/optimizasyon/mukarnas.html">
+  <meta property="og:title" content="Günışığı ve Akustik Performansına Mukarnasın Etkisi | Enes Yıldız">
+  <meta property="og:description" content="Parametrik mukarnasların günışığı ve akustik performansına etkisinin ölçülmesi ve genetik algoritma tabanlı optimizasyonu">
+  <meta property="og:image" content="https://mimarenes.com/anasayfa/optimized/mukarnas-1280w.jpg">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Günışığı ve Akustik Performansına Mukarnasın Etkisi | Enes Yıldız">
+  <meta name="twitter:description" content="Parametrik mukarnasların günışığı ve akustik performansına etkisinin ölçülmesi ve genetik algoritma tabanlı optimizasyonu">
+  <meta name="twitter:image" content="https://mimarenes.com/anasayfa/optimized/mukarnas-1280w.jpg">
+
+  <title>Günışığı ve Akustik Performansına Mukarnasın Etkisi | Enes Yıldız</title>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="canonical" href="https://mimarenes.com/yazilim/optimizasyon/mukarnas.html">
+  <link rel="stylesheet" href="../../fonts/inter.css">
+  <link rel="stylesheet" href="../../css/subpage.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CreativeWork",
+    "name": "Günışığı ve Akustik Performansına Mukarnasın Etkisi",
+    "description": "Parametrik mukarnasların günışığı ve akustik performansına etkisinin ölçülmesi ve genetik algoritma tabanlı optimizasyonu",
+    "url": "https://mimarenes.com/yazilim/optimizasyon/mukarnas.html",
+    "image": "https://mimarenes.com/anasayfa/optimized/mukarnas-1280w.jpg",
+    "author": {
+      "@type": "Person",
+      "name": "Enes Yıldız",
+      "url": "https://mimarenes.com"
+    }
+  }
+  </script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK3V82N7CD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YK3V82N7CD');
+  </script>
+</head>
+<body class="js-loading">
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav">
+    <div class="nav-inner">
+      <a href="../../index.html" class="nav-logo">Enes Yıldız</a>
+      <div class="nav-menu">
+        <a href="../../index.html" class="nav-link back">Tüm Projeler</a>
+        <a href="../../index.html#about" class="nav-link">Hakkımda</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Karanlık moda geç" title="Karanlık moda geç" aria-pressed="false">
+          <span class="theme-toggle-thumb" aria-hidden="true">
+            <svg class="sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="5"/>
+              <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+            </svg>
+            <svg class="moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+            </svg>
+          </span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="main-content">
+    <main class="page-content">
+
+      <!-- HEADER -->
+      <header class="project-header">
+        <div class="blog-meta">
+          <span class="blog-tag">Optimizasyon</span>
+          <span class="blog-date">2021</span>
+        </div>
+        <p class="project-eyebrow">Yazılım / Optimizasyon</p>
+        <h1 class="project-title">Günışığı ve Akustik Performansına Mukarnasın Etkisi</h1>
+        <p class="project-location">Tavuk Pazarı Hamamı, Bursa</p>
+      </header>
+
+
+      <!-- GİRİŞ -->
+      <div class="text-block reveal">
+        <p>Mukarnaslar yalnızca dekoratif birer eleman mıdır, yoksa iç mekanın fiziksel performansını doğrudan etkiler mi? Bu çalışmada Bursa Tavuk Pazarı Hamamı'nın kadınlar ılıklık bölümü üzerinden mukarnasların günışığı ve akustik performansına etkisi ölçüldü; ardından parametrik mukarnas geometrisi genetik algoritma tabanlı yöntemlerle optimize edildi.</p>
+      </div>
+
+
+      <!-- SÜREÇ DİYAGRAMI -->
+      <div class="process-timeline reveal">
+        <div class="timeline-inner">
+          <div class="timeline-line-wrap">
+            <div class="timeline-line"></div>
+            <div class="timeline-steps">
+              <div class="tl-step">
+                <div class="tl-dot">1</div>
+                <div class="tl-body">
+                  <h4>Fotogrametri</h4>
+                  <ul>
+                    <li>Hamam tarama</li>
+                    <li>Nokta bulutu</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step">
+                <div class="tl-dot">2</div>
+                <div class="tl-body">
+                  <h4>Parametrik Model</h4>
+                  <ul>
+                    <li>6 geometrik b&ouml;l&uuml;m</li>
+                    <li>4 de&gbreve;i&scedil;ken</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step active">
+                <div class="tl-dot">3</div>
+                <div class="tl-body">
+                  <h4>Sim&uuml;lasyon</h4>
+                  <ul>
+                    <li>Honeybee / Ladybug</li>
+                    <li>Pachyderm akustik</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step active">
+                <div class="tl-dot">4</div>
+                <div class="tl-body">
+                  <h4>Optimizasyon</h4>
+                  <ul>
+                    <li>Octopus (SPEA-2)</li>
+                    <li>Galapagos (GA)</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step">
+                <div class="tl-dot">5</div>
+                <div class="tl-body">
+                  <h4>Sonu&ccedil; &amp; Yay&inodot;n</h4>
+                  <ul>
+                    <li>DA %21&rarr;%35</li>
+                    <li>2 uluslararas&inodot; makale</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- PARAMETRİK MODEL -->
+      <div class="text-img-row img-left-sm reveal">
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="../../img/mukarnas/optimized/mukarnas-1-800w.avif 800w,
+                  ../../img/mukarnas/optimized/mukarnas-1-1280w.avif 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/mukarnas/optimized/mukarnas-1-800w.webp 800w,
+                  ../../img/mukarnas/optimized/mukarnas-1-1280w.webp 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/mukarnas/optimized/mukarnas-1-1280w.jpg"
+    data-srcset="../../img/mukarnas/optimized/mukarnas-1-800w.jpg 800w,
+                  ../../img/mukarnas/optimized/mukarnas-1-1280w.jpg 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Parametrik hamam modeli geometrik bölümleri" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">Hamam modelinin geometrik bölümleri: kubbe, kubbe altı mukarnaslar, geçiş ızgarası, geçiş mukarnasları ve sekizgen mukarnaslar.</p>
+        </div>
+        <div class="row-text">
+          <h2>Parametrik Model</h2>
+          <p>Hamam fotogrametri ile modellendi ve Grasshopper'da altı geometrik bölüme ayrılarak parametrik olarak kodlandı. Mukarnas hücreleri noktasal veriden otomatik üretildi; böylece optimizasyon sürecinde binlerce varyasyon oluşturulabildi.</p>
+        </div>
+      </div>
+
+
+      <!-- DEĞİŞKENLER -->
+      <div class="text-img-row img-right-sm reveal">
+        <div class="row-text">
+          <h2>Parametrik Değişkenler</h2>
+          <p>Optimizasyonda dört temel değişken tanımlandı: Hücre Yüksekliği (HY), Hücre Sayısı (HS), Hücre Çıkıntısı (HC) ve Hücre Detayı (HD). Bu değişkenlerin farklı kombinasyonları, mukarnas geometrisinde belirgin form farklılıkları ortaya koydu.</p>
+        </div>
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="../../img/mukarnas/optimized/mukarnas-2-800w.avif 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/mukarnas/optimized/mukarnas-2-800w.webp 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/mukarnas/optimized/mukarnas-2-800w.jpg"
+    data-srcset="../../img/mukarnas/optimized/mukarnas-2-800w.jpg 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Mukarnas parametrik değişkenler" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">Mukarnasların parametrize edilmesinde kullanılan dört değişken.</p>
+        </div>
+      </div>
+
+
+      <!-- DEĞİŞKEN TABLOSU -->
+      <div class="data-table-wrap reveal">
+        <h2>Değişken Aralıkları</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Değişken</th>
+              <th>Min</th>
+              <th>Max</th>
+              <th>Orijinal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Hücre Yüksekliği (HY)</td>
+              <td>10 cm</td>
+              <td>50 cm</td>
+              <td class="val-good">25 cm</td>
+            </tr>
+            <tr>
+              <td>Hücre Sayısı (HS)</td>
+              <td>7</td>
+              <td>9</td>
+              <td class="val-good">8</td>
+            </tr>
+            <tr>
+              <td>Hücre Çıkıntısı (HC)</td>
+              <td>5 cm</td>
+              <td>8 cm</td>
+              <td class="val-good">7 cm</td>
+            </tr>
+            <tr>
+              <td>Hücre Detayı (HD)</td>
+              <td>1 cm</td>
+              <td>3 cm</td>
+              <td class="val-good">2 cm</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <!-- MUKARNAS VARYASYONLARI -->
+      <div class="img-medium center reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="../../img/mukarnas/optimized/mukarnas-3-800w.avif 800w,
+                  ../../img/mukarnas/optimized/mukarnas-3-1280w.avif 1280w,
+                  ../../img/mukarnas/optimized/mukarnas-3-1920w.avif 1920w,
+                  ../../img/mukarnas/optimized/mukarnas-3-2560w.avif 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/mukarnas/optimized/mukarnas-3-800w.webp 800w,
+                  ../../img/mukarnas/optimized/mukarnas-3-1280w.webp 1280w,
+                  ../../img/mukarnas/optimized/mukarnas-3-1920w.webp 1920w,
+                  ../../img/mukarnas/optimized/mukarnas-3-2560w.webp 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/mukarnas/optimized/mukarnas-3-1280w.jpg"
+    data-srcset="../../img/mukarnas/optimized/mukarnas-3-800w.jpg 800w,
+                  ../../img/mukarnas/optimized/mukarnas-3-1280w.jpg 1280w,
+                  ../../img/mukarnas/optimized/mukarnas-3-1920w.jpg 1920w,
+                  ../../img/mukarnas/optimized/mukarnas-3-2560w.jpg 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Mukarnas varyasyonları" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">Değişkenlere farklı değerler verilerek üretilen mukarnas varyasyonları.</p>
+
+
+      <!-- VURGU -->
+      <div class="highlight-block reveal">
+        <p>Mukarnaslar genellikle yalnızca dekoratif birer eleman olarak ele alınır. Bu çalışma, mukarnasın <span class="hl-accent">iç mekan performansına doğrudan etkisini</span> ölçüyor ve optimize ediyor.</p>
+      </div>
+
+
+      <!-- PERFORMANS ANALİZİ -->
+      <div class="text-block reveal">
+        <h2>Performans Analizi</h2>
+        <p>Günışığı simülasyonları (Honeybee/Ladybug) mukarnasların iç mekana giren ışığı azalttığını, akustik simülasyonları (Pachyderm) ise yansışım süresini düşürüp konuşma anlaşılabilirliğini (C50) artırdığını gösterdi. Mukarnasların girintili-çıkıntılı formu, sesin daha homojen dağılmasına katkıda bulunuyor.</p>
+      </div>
+
+
+      <!-- OPTİMİZASYON -->
+      <div class="text-block reveal">
+        <h2>Genetik Algoritma ile Optimizasyon</h2>
+        <p>Parametrik model, çok hedefli Octopus ve tek hedefli Galapagos araçlarıyla optimize edildi. Günışığı arttırma hedefli optimizasyonda DA değeri %21.81'den %35.04'e çıkarılırken, akustik optimizasyonda C50 değeri 1.337 dB'den 1.499 dB'ye yükseltildi. En etkili parametrenin hücre yüksekliği olduğu gözlemlendi.</p>
+      </div>
+
+      <div class="img-medium center reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="../../img/mukarnas/optimized/mukarnas-4-800w.avif 800w,
+                  ../../img/mukarnas/optimized/mukarnas-4-1280w.avif 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/mukarnas/optimized/mukarnas-4-800w.webp 800w,
+                  ../../img/mukarnas/optimized/mukarnas-4-1280w.webp 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/mukarnas/optimized/mukarnas-4-1280w.jpg"
+    data-srcset="../../img/mukarnas/optimized/mukarnas-4-800w.jpg 800w,
+                  ../../img/mukarnas/optimized/mukarnas-4-1280w.jpg 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Çok hedefli optimizasyon sonuçları" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">Octopus ile elde edilen çok hedefli optimizasyon sonuçları.</p>
+
+
+      <!-- SONUÇ VURGU -->
+      <div class="highlight-block reveal">
+        <p>Mukarnaslar günışığı dağılımını kontrol ederken <span class="hl-accent">konuşma anlaşılabilirliğini olumlu yönde</span> etkiliyor.</p>
+      </div>
+
+
+      <!-- TEZ & YAYINLAR -->
+      <div class="text-block reveal">
+        <h2>Tez & Yayınlar</h2>
+        <p>Bu proje, yüksek lisans tezi olarak hazırlanmış ve tezden iki adet uluslararası hakemli dergi makalesi yayınlanmıştır.</p>
+        <p style="margin-top: 24px; padding: 20px; background: var(--accent-light); border: 1px solid var(--accent); border-radius: 8px; font-size: 15px; line-height: 1.7;">
+          <strong style="color: var(--gray-900);">Yüksek Lisans Tezi</strong><br>
+          İç Mekan Günışığı ve Akustik Performansına Kubbe Geçiş Elemanındaki Mukarnasın Etkisi<br>
+          <span style="font-size: 13px; color: var(--gray-500);">Enes Yıldız &middot; Danışman: Doç. Dr. Aslı Ağırbaş &middot; FSM Vakıf Üniversitesi, 2021</span><br>
+          <a href="https://tez.yok.gov.tr/UlusalTezMerkezi/TezGoster?key=9MiDp3x86xrwjpi5-14w-WQY_c_C8ZJDk_8gme1pyL0UUKT-xf6TGGl6ja3xaU-g" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-size: 13px; font-weight: 500;">YÖK Tez Merkezi &rarr;</a>
+        </p>
+        <p style="margin-top: 16px; padding: 20px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 8px; font-size: 15px; line-height: 1.7;">
+          <strong style="color: var(--gray-900);">1.</strong> Agirbas, A., Yildiz, E. (2024). Investigating the Impact of Muqarnas on the Daylighting Performance of Historical Turkish Baths. <em>METU Journal of the Faculty of Architecture</em>, 41(2), 91&ndash;106.<br>
+          <span style="font-size: 13px; color: var(--gray-400);">DOI: 10.4305/METU.JFA.2024.2.4 &middot; Index: AHCI</span><br>
+          <a href="https://jfa.arch.metu.edu.tr/uploads/docs/sayilar/sayi-41-2/metujfa2024204.pdf" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-size: 13px; font-weight: 500;">Makaleyi Oku &rarr;</a>
+        </p>
+        <p style="margin-top: 16px; padding: 20px; background: var(--white); border: 1px solid var(--gray-200); border-radius: 8px; font-size: 15px; line-height: 1.7;">
+          <strong style="color: var(--gray-900);">2.</strong> Agirbas, A., Yildiz, E. (2023). The Effect of Muqarnas on Acoustic Quality of Traditional Turkish Bath Interior Space. <em>ACM Journal on Computing and Cultural Heritage</em>, 16(3), 1&ndash;20.<br>
+          <span style="font-size: 13px; color: var(--gray-400);">DOI: 10.1145/3589248 &middot; Index: SCI-Expanded</span><br>
+          <a href="https://dl.acm.org/doi/10.1145/3589248" target="_blank" rel="noopener noreferrer" style="color: var(--accent); font-size: 13px; font-weight: 500;">Makaleyi Oku &rarr;</a>
+        </p>
+      </div>
+
+
+      <!-- PROJE VERİLERİ -->
+      <section class="project-data reveal">
+        <div class="data-grid">
+          <div class="data-item">
+            <span class="data-label">Tür</span>
+            <span class="data-value">Yüksek Lisans Tezi</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Araçlar</span>
+            <span class="data-value">Rhinoceros 3D / Grasshopper, Honeybee, Ladybug, Pachyderm</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Yöntem</span>
+            <span class="data-value">Fotogrametri ve çok hedefli optimizasyon</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Çıktı</span>
+            <span class="data-value">Günışığı ve akustik performans analizi</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- İLGİLİ PROJELER -->
+      <div class="project-footer-section">
+        <div class="related-header">
+          <h3>İlgili Projeler</h3>
+        </div>
+        <div class="related-projects reveal">
+          <a href="../ai/geovisionai.html" class="related-card">
+            <div class="related-visual">
+              <picture class="render light-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/geovisionai-800w.avif 800w,
+                  ../../anasayfa/optimized/geovisionai-1280w.avif 1280w,
+                  ../../anasayfa/optimized/geovisionai-1920w.avif 1920w,
+                  ../../anasayfa/optimized/geovisionai-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/geovisionai-800w.webp 800w,
+                  ../../anasayfa/optimized/geovisionai-1280w.webp 1280w,
+                  ../../anasayfa/optimized/geovisionai-1920w.webp 1920w,
+                  ../../anasayfa/optimized/geovisionai-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="GeoVisionAI"
+                  data-srcset="../../anasayfa/optimized/geovisionai-800w.jpg 800w,
+                  ../../anasayfa/optimized/geovisionai-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/geovisionai-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/geovisionai-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/geovisionai-1280w.jpg">
+              </picture>
+              <picture class="sketch light-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/geovisionai-eskiz-800w.avif 800w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-1280w.avif 1280w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-1920w.avif 1920w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/geovisionai-eskiz-800w.webp 800w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-1280w.webp 1280w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-1920w.webp 1920w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="GeoVisionAI Eskiz"
+                  data-srcset="../../anasayfa/optimized/geovisionai-eskiz-800w.jpg 800w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/geovisionai-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/geovisionai-eskiz-1280w.jpg">
+              </picture>
+              <picture class="render dark-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/geovisionai-gece-800w.avif 800w,
+                  ../../anasayfa/optimized/geovisionai-gece-1280w.avif 1280w,
+                  ../../anasayfa/optimized/geovisionai-gece-1920w.avif 1920w,
+                  ../../anasayfa/optimized/geovisionai-gece-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/geovisionai-gece-800w.webp 800w,
+                  ../../anasayfa/optimized/geovisionai-gece-1280w.webp 1280w,
+                  ../../anasayfa/optimized/geovisionai-gece-1920w.webp 1920w,
+                  ../../anasayfa/optimized/geovisionai-gece-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="GeoVisionAI"
+                  data-srcset="../../anasayfa/optimized/geovisionai-gece-800w.jpg 800w,
+                  ../../anasayfa/optimized/geovisionai-gece-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/geovisionai-gece-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/geovisionai-gece-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/geovisionai-gece-1280w.jpg">
+              </picture>
+              <picture class="sketch dark-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/geovisionai-gece-eskiz-800w.avif 800w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-1280w.avif 1280w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-1920w.avif 1920w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/geovisionai-gece-eskiz-800w.webp 800w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-1280w.webp 1280w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-1920w.webp 1920w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="GeoVisionAI Eskiz"
+                  data-srcset="../../anasayfa/optimized/geovisionai-gece-eskiz-800w.jpg 800w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/geovisionai-gece-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/geovisionai-gece-eskiz-1280w.jpg">
+              </picture>
+            </div>
+            <div class="related-info">
+              <p class="related-meta">Yapay Zeka</p>
+              <h4 class="related-title">GeoVisionAI</h4>
+            </div>
+          </a>
+          <a href="toplukonut.html" class="related-card">
+            <div class="related-visual">
+              <picture class="render light-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/toplukonut-800w.avif 800w,
+                  ../../anasayfa/optimized/toplukonut-1280w.avif 1280w,
+                  ../../anasayfa/optimized/toplukonut-1920w.avif 1920w,
+                  ../../anasayfa/optimized/toplukonut-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/toplukonut-800w.webp 800w,
+                  ../../anasayfa/optimized/toplukonut-1280w.webp 1280w,
+                  ../../anasayfa/optimized/toplukonut-1920w.webp 1920w,
+                  ../../anasayfa/optimized/toplukonut-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Toplu Konutta Gün Işığı Optimizasyonu"
+                  data-srcset="../../anasayfa/optimized/toplukonut-800w.jpg 800w,
+                  ../../anasayfa/optimized/toplukonut-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/toplukonut-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/toplukonut-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/toplukonut-1280w.jpg">
+              </picture>
+              <picture class="sketch light-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/toplukonut-eskiz-800w.avif 800w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1280w.avif 1280w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1920w.avif 1920w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/toplukonut-eskiz-800w.webp 800w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1280w.webp 1280w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1920w.webp 1920w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Toplu Konutta Gün Işığı Optimizasyonu Eskiz"
+                  data-srcset="../../anasayfa/optimized/toplukonut-eskiz-800w.jpg 800w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/toplukonut-eskiz-1280w.jpg">
+              </picture>
+              <picture class="render dark-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-800w.avif 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-1280w.avif 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-1920w.avif 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-800w.webp 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-1280w.webp 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-1920w.webp 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Toplu Konutta Gün Işığı Optimizasyonu"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-800w.jpg 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/toplukonut-gece-1280w.jpg">
+              </picture>
+              <picture class="sketch dark-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-eskiz-800w.avif 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1280w.avif 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1920w.avif 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-eskiz-800w.webp 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1280w.webp 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1920w.webp 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Toplu Konutta Gün Işığı Optimizasyonu Eskiz"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-eskiz-800w.jpg 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/toplukonut-gece-eskiz-1280w.jpg">
+              </picture>
+            </div>
+            <div class="related-info">
+              <p class="related-meta">Optimizasyon</p>
+              <h4 class="related-title">Toplu Konutta Gün Işığı Optimizasyonu</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner footer-with-directory">
+      <div class="footer-directory" aria-label="Portfolyo kategorileri">
+        <div class="footer-directory-group">
+          <a href="../../index.html#tasarim-all" class="footer-directory-anchor">Tasarım</a>
+          <a href="../../index.html#mimari" class="footer-directory-link">Mimari</a>
+          <a href="../../index.html#web" class="footer-directory-link">Web</a>
+          <a href="../../index.html#mobilya" class="footer-directory-link">Mobilya</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="../../index.html#arastirma-all" class="footer-directory-anchor">Araştırma</a>
+          <a href="../../index.html#fikir" class="footer-directory-link">Fikir</a>
+          <a href="../../index.html#yayin" class="footer-directory-link">Yayın</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="../../index.html#yazilim-all" class="footer-directory-anchor">Yazılım</a>
+          <a href="../../index.html#ai" class="footer-directory-link">AI</a>
+          <a href="../../index.html#fabrikasyon" class="footer-directory-link">Fabrikasyon</a>
+          <a href="../../index.html#optimizasyon" class="footer-directory-link">Optimizasyon</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:mimarenesyildiz@gmail.com" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          E-posta
+        </a>
+        <a href="https://github.com/mimarenesyildiz" target="_blank" rel="noopener noreferrer" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/mimarenes/" target="_blank" rel="noopener noreferrer" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/theme.js"></script>
+  <script src="../../js/image-loader.js"></script>
+</body>
+</html>

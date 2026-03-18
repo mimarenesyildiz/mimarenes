@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /scripts/
+Disallow: /__pycache__/
+Disallow: /img/*/original/
+
+Sitemap: https://mimarenes.com/sitemap.xml

@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(for f:*)",
+      "Bash(do)",
+      "Bash(sed -i 's|</head>|  <!-- Google Analytics -->\\\\n  <script async src=\"\"https://www.googletagmanager.com/gtag/js?id=G-YK3V82N7CD\"\"></script>\\\\n  <script>\\\\n    window.dataLayer = window.dataLayer || [];\\\\n    function gtag\\(\\){dataLayer.push\\(arguments\\);}\\\\n    gtag\\(''''js'''', new Date\\(\\)\\);\\\\n    gtag\\(''''config'''', ''''G-YK3V82N7CD''''\\);\\\\n  </script>\\\\n</head>|' \"$f\")",
+      "Bash(echo \"Updated: $f\")",
+      "Bash(done)",
+      "Bash(where python:*)",
+      "Bash(where python3:*)",
+      "Bash(ls /c/Python*/python.exe)",
+      "Read(//c/Users/PC/AppData/Local/Programs/**)",
+      "Bash(node -e \":*)",
+      "Bash(where node:*)",
+      "Bash(where perl:*)",
+      "Bash(sort -t',' -k2 -rn)",
+      "Bash(git -v)",
+      "Bash(gh auth:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)"
+    ]
+  }
+}

@@ -1,0 +1,2930 @@
+<!DOCTYPE html>
+<html lang="tr-TR" data-font-preset="outfit">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Enes YILDIZ - Mimar, Araştırmacı, Geliştirici. Geleneksel zanaat ile hesaplamalı tasarımı birleştiriyorum.">
+  <meta name="keywords" content="mimar, hesaplamalı tasarım, parametrik mimarlık, Grasshopper, Rhino, İstanbul">
+  <meta name="author" content="Enes Yıldız">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#f8f8f8" id="themeColorMeta">
+  
+  <!-- Open Graph / Social Media -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mimarenes.com/">
+  <meta property="og:title" content="Enes YILDIZ | Mimar · Araştırmacı · Geliştirici">
+  <meta property="og:description" content="Geleneksel zanaat ile hesaplamalı tasarımı birleştiriyorum. Mimarların algoritmalarla düşünmesine yardımcı araçlar geliştiriyorum.">
+  <meta property="og:image" content="https://mimarenes.com/anasayfa/optimized/mimarenes-site-1280w.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Enes YILDIZ | Mimar · Araştırmacı · Geliştirici">
+  <meta name="twitter:description" content="Geleneksel zanaat ile hesaplamalı tasarımı birleştiriyorum.">
+  <meta name="twitter:image" content="https://mimarenes.com/anasayfa/optimized/mimarenes-site-1280w.jpg">
+  
+  <title>Enes YILDIZ | Mimar · Araştırmacı · Geliştirici</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="canonical" href="https://mimarenes.com/">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="css/index-font-presets.css">
+  <!-- Preload hero image -->
+  <link rel="preload" as="image" 
+        href="anasayfa/optimized/1284-800w.avif" 
+        type="image/avif"
+        imagesrcset="anasayfa/optimized/1284-800w.avif 800w,
+              anasayfa/optimized/1284-1280w.avif 1280w,
+              anasayfa/optimized/1284-1920w.avif 1920w,
+              anasayfa/optimized/1284-2560w.avif 2560w"
+        imagesizes="(max-width: 768px) 100vw, 660px">
+  
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Enes Yıldız",
+    "jobTitle": "Mimar, Araştırmacı, Geliştirici",
+    "url": "https://mimarenes.com",
+    "sameAs": [
+      "https://github.com/mimarenesyildiz",
+      "https://linkedin.com/in/mimarenes/"
+    ],
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Rumman İnşaat"
+    },
+    "alumniOf": [
+      {
+        "@type": "CollegeOrUniversity",
+        "name": "Özyeğin University"
+      },
+      {
+        "@type": "CollegeOrUniversity", 
+        "name": "Mimar Sinan Fine Arts University"
+      }
+    ],
+    "knowsAbout": ["Mimarlık", "Hesaplamalı Tasarım", "Parametrik Mimarlık", "Grasshopper", "Makine Öğrenmesi"]
+  }
+  </script>
+
+  <!-- Google Analytics 4 -->
+  <!-- TODO: G-XXXXXXXXXX kısmını kendi GA4 Measurement ID'nizle değiştirin -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <link rel="stylesheet" href="css/index.css">
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK3V82N7CD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YK3V82N7CD');
+  </script>
+</head>
+<body class="js-loading">
+  <!-- Skip to Content - Accessibility -->
+  <a href="#main-content" class="skip-link">Ana içeriğe geç</a>
+
+  <!-- Navigation -->
+  <nav class="nav" id="mainNav" role="navigation" aria-label="Ana navigasyon">
+    <div class="nav-inner">
+      <a class="nav-logo" id="logoLink" aria-label="Ana Sayfa - Enes Yıldız">Enes Yıldız</a>
+      <div class="nav-menu">
+        <button class="nav-link" id="aboutLink">Hakkımda</button>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Karanlık moda geç" title="Karanlık moda geç" aria-pressed="false">
+          <svg class="theme-icon theme-icon-sun" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          <span class="theme-toggle-core" aria-hidden="true"></span>
+          <svg class="theme-icon theme-icon-moon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <p class="hero-eyebrow">Mimar · Araştırmacı · Geliştirici</p>
+    <h1 class="hero-title">
+      <span class="line">Tasarımı <span class="hero-keyword-wrap"><span class="hero-keyword" id="rotatingWord">ölçülebilir</span></span> kılacak</span>
+      <span class="line">araçlar geliştiriyorum</span>
+    </h1>
+
+    <p class="hero-tags-intro">
+      <button class="inline-tag sub" data-filter="mimari">Mimari</button>,
+      <button class="inline-tag sub" data-filter="mobilya">mobilya</button> ve
+      <button class="inline-tag sub" data-filter="web">web</button> tasarımı alanlarında
+      <button class="inline-tag" data-filter="tasarim-all">tasarım</button> pratiği;
+      <button class="inline-tag sub" data-filter="yayin">yayın</button> ve
+      <button class="inline-tag sub" data-filter="fikir">fikir</button> üretimiyle
+      <button class="inline-tag" data-filter="arastirma-all">araştırma</button>;
+      Grasshopper tabanında
+      <button class="inline-tag sub" data-filter="ai">AI</button>,
+      <button class="inline-tag sub" data-filter="optimizasyon">optimizasyon</button> ve
+      <button class="inline-tag sub" data-filter="fabrikasyon">fabrikasyon</button> odaklı
+      <button class="inline-tag" data-filter="yazilim-all">yazılımlar</button> geliştiriyorum.
+    </p>
+  </section>
+
+  <!-- Sub Navigation anchor (stays in place when sub-nav moves into navbar) -->
+  <div id="subNavAnchor"></div>
+  <!-- Sub Navigation -->
+  <div class="sub-nav" id="subNav" role="navigation" aria-label="Filtre navigasyonu">
+    <div class="sub-nav-container">
+      <button class="sub-nav-link active" data-filter="featured" data-category="selected"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></button>
+      <button class="sub-nav-link" data-filter="tasarim-all" data-category="tasarim" data-expandable="true">Tasarım</button>
+      <button class="sub-nav-link" data-filter="arastirma-all" data-category="arastirma" data-expandable="true">Araştırma</button>
+      <button class="sub-nav-link" data-filter="yazilim-all" data-category="yazilim" data-expandable="true">Yazılım</button>
+    </div>
+  </div>
+
+  <!-- Works -->
+  <main id="main-content">
+  <section class="works" id="worksSection">
+    <div class="works-grid">
+      <a href="arastirma/fikir/1284.html" class="work-item type-blog" data-tags="featured,arastirma-all,fikir" data-category="fikir">
+        <div class="work-visual">
+          <picture class="render light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/1284-800w.avif 800w,
+              anasayfa/optimized/1284-1280w.avif 1280w,
+              anasayfa/optimized/1284-1920w.avif 1920w,
+              anasayfa/optimized/1284-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 660px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/1284-800w.webp 800w,
+              anasayfa/optimized/1284-1280w.webp 1280w,
+              anasayfa/optimized/1284-1920w.webp 1920w,
+              anasayfa/optimized/1284-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 660px">
+            <img class="render" decoding="async" width="600" height="337" loading="eager" fetchpriority="high" alt="12/84 Modüler Koordinasyon"
+              srcset="anasayfa/optimized/1284-800w.jpg 800w,
+              anasayfa/optimized/1284-1280w.jpg 1280w,
+              anasayfa/optimized/1284-1920w.jpg 1920w,
+              anasayfa/optimized/1284-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 660px"
+              src="anasayfa/optimized/1284-1280w.jpg">
+          </picture>
+          <picture class="sketch light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/1284-eskiz-800w.avif 800w,
+              anasayfa/optimized/1284-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/1284-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/1284-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 660px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/1284-eskiz-800w.webp 800w,
+              anasayfa/optimized/1284-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/1284-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/1284-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 660px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="eager" fetchpriority="high" alt="12/84 Modüler Koordinasyon eskiz"
+              srcset="anasayfa/optimized/1284-eskiz-800w.jpg 800w,
+              anasayfa/optimized/1284-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/1284-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/1284-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 660px"
+              src="anasayfa/optimized/1284-eskiz-1280w.jpg">
+          </picture>
+          <picture class="render dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/1284-gece-800w.avif 800w,
+              anasayfa/optimized/1284-gece-1280w.avif 1280w,
+              anasayfa/optimized/1284-gece-1920w.avif 1920w,
+              anasayfa/optimized/1284-gece-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 660px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/1284-gece-800w.webp 800w,
+              anasayfa/optimized/1284-gece-1280w.webp 1280w,
+              anasayfa/optimized/1284-gece-1920w.webp 1920w,
+              anasayfa/optimized/1284-gece-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 660px">
+            <img class="render" decoding="async" width="600" height="337" loading="eager" fetchpriority="high" alt="12/84 Modüler Koordinasyon gece"
+              srcset="anasayfa/optimized/1284-gece-800w.jpg 800w,
+              anasayfa/optimized/1284-gece-1280w.jpg 1280w,
+              anasayfa/optimized/1284-gece-1920w.jpg 1920w,
+              anasayfa/optimized/1284-gece-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 660px"
+              src="anasayfa/optimized/1284-gece-1280w.jpg">
+          </picture>
+          <picture class="sketch dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/1284-gece-eskiz-800w.avif 800w,
+              anasayfa/optimized/1284-gece-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/1284-gece-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/1284-gece-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 660px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/1284-gece-eskiz-800w.webp 800w,
+              anasayfa/optimized/1284-gece-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/1284-gece-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/1284-gece-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 660px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="eager" fetchpriority="high" alt="12/84 Modüler Koordinasyon gece eskiz"
+              srcset="anasayfa/optimized/1284-gece-eskiz-800w.jpg 800w,
+              anasayfa/optimized/1284-gece-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/1284-gece-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/1284-gece-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 660px"
+              src="anasayfa/optimized/1284-gece-eskiz-1280w.jpg">
+          </picture>
+        </div>
+        <div class="work-info">
+          <span class="work-number">Fikir</span>
+          <h2 class="work-title">Belirsiz Gelecek İçin <span class="title-break title-keep">Dirençli Modül Tasarımı</span></h2>
+          <p class="work-category">Fikir</p>
+          <p class="work-desc">Bir ofis binası 75 yıl ayakta kalır, ama içi her 5 yılda değişir. 12/84 sistemi, bu belirsizliği sorun değil tasarım girdisi olarak kabul eder: tek modüler mantık, sınırsız konfigürasyon.</p>
+          <span class="work-arrow">Devamını Oku <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+
+      <a href="yazilim/ai/geovisionai.html" class="work-item type-plugin" data-tags="featured,yazilim-all,ai" data-category="ai">
+        <div class="work-visual">
+          <picture class="render light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/geovisionai-800w.avif 800w,
+              anasayfa/optimized/geovisionai-1280w.avif 1280w,
+              anasayfa/optimized/geovisionai-1920w.avif 1920w,
+              anasayfa/optimized/geovisionai-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/geovisionai-800w.webp 800w,
+              anasayfa/optimized/geovisionai-1280w.webp 1280w,
+              anasayfa/optimized/geovisionai-1920w.webp 1920w,
+              anasayfa/optimized/geovisionai-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="GeoVisionAI"
+              srcset="anasayfa/optimized/geovisionai-800w.jpg 800w,
+              anasayfa/optimized/geovisionai-1280w.jpg 1280w,
+              anasayfa/optimized/geovisionai-1920w.jpg 1920w,
+              anasayfa/optimized/geovisionai-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/geovisionai-1280w.jpg">
+          </picture>
+          <picture class="sketch light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/geovisionai-eskiz-800w.avif 800w,
+              anasayfa/optimized/geovisionai-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/geovisionai-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/geovisionai-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/geovisionai-eskiz-800w.webp 800w,
+              anasayfa/optimized/geovisionai-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/geovisionai-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/geovisionai-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="GeoVisionAI eskiz"
+              srcset="anasayfa/optimized/geovisionai-eskiz-800w.jpg 800w,
+              anasayfa/optimized/geovisionai-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/geovisionai-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/geovisionai-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/geovisionai-eskiz-1280w.jpg">
+          </picture>
+          <picture class="render dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/geovisionai-gece-800w.avif 800w,
+              anasayfa/optimized/geovisionai-gece-1280w.avif 1280w,
+              anasayfa/optimized/geovisionai-gece-1920w.avif 1920w,
+              anasayfa/optimized/geovisionai-gece-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/geovisionai-gece-800w.webp 800w,
+              anasayfa/optimized/geovisionai-gece-1280w.webp 1280w,
+              anasayfa/optimized/geovisionai-gece-1920w.webp 1920w,
+              anasayfa/optimized/geovisionai-gece-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="GeoVisionAI gece"
+              srcset="anasayfa/optimized/geovisionai-gece-800w.jpg 800w,
+              anasayfa/optimized/geovisionai-gece-1280w.jpg 1280w,
+              anasayfa/optimized/geovisionai-gece-1920w.jpg 1920w,
+              anasayfa/optimized/geovisionai-gece-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/geovisionai-gece-1280w.jpg">
+          </picture>
+          <picture class="sketch dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/geovisionai-gece-eskiz-800w.avif 800w,
+              anasayfa/optimized/geovisionai-gece-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/geovisionai-gece-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/geovisionai-gece-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/geovisionai-gece-eskiz-800w.webp 800w,
+              anasayfa/optimized/geovisionai-gece-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/geovisionai-gece-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/geovisionai-gece-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="GeoVisionAI gece eskiz"
+              srcset="anasayfa/optimized/geovisionai-gece-eskiz-800w.jpg 800w,
+              anasayfa/optimized/geovisionai-gece-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/geovisionai-gece-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/geovisionai-gece-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/geovisionai-gece-eskiz-1280w.jpg">
+          </picture>
+        </div>
+        <div class="work-info">
+          <span class="work-number">Yapay Zekâ</span>
+          <h2 class="work-title">GeoVisionAI</h2>
+          <p class="work-category">Yapay Zekâ</p>
+          <p class="work-desc">İç mekân taramasından yapı elemanlarını elle modellemek saatler alır. GeoVisionAI, bunu derin öğrenme ile otomatikleştiriyor. Özyeğin Üniversitesi, TÜBİTAK 3501 araştırma projesi.</p>
+          <div class="plugin-tags">
+            <span class="plugin-tag">Mask R-CNN</span>
+            <span class="plugin-tag">Grasshopper</span>
+            <span class="plugin-tag">Gemini API</span>
+          </div>
+          <span class="work-arrow">Araştırmayı İncele <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+
+      <a href="tasarim/mimari/seyir-kulesi.html" class="work-item type-mimari" data-tags="tasarim-all,mimari" data-category="mimari">
+        <div class="work-visual">
+          <picture class="render light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/seyir-kulesi-800w.avif 800w,
+              anasayfa/optimized/seyir-kulesi-1280w.avif 1280w,
+              anasayfa/optimized/seyir-kulesi-1920w.avif 1920w,
+              anasayfa/optimized/seyir-kulesi-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/seyir-kulesi-800w.webp 800w,
+              anasayfa/optimized/seyir-kulesi-1280w.webp 1280w,
+              anasayfa/optimized/seyir-kulesi-1920w.webp 1920w,
+              anasayfa/optimized/seyir-kulesi-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Seyir Kulesi"
+              srcset="anasayfa/optimized/seyir-kulesi-800w.jpg 800w,
+              anasayfa/optimized/seyir-kulesi-1280w.jpg 1280w,
+              anasayfa/optimized/seyir-kulesi-1920w.jpg 1920w,
+              anasayfa/optimized/seyir-kulesi-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/seyir-kulesi-1280w.jpg">
+          </picture>
+          <picture class="sketch light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/seyir-kulesi-eskiz-800w.avif 800w,
+              anasayfa/optimized/seyir-kulesi-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/seyir-kulesi-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/seyir-kulesi-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/seyir-kulesi-eskiz-800w.webp 800w,
+              anasayfa/optimized/seyir-kulesi-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/seyir-kulesi-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/seyir-kulesi-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Seyir Kulesi eskiz"
+              srcset="anasayfa/optimized/seyir-kulesi-eskiz-800w.jpg 800w,
+              anasayfa/optimized/seyir-kulesi-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/seyir-kulesi-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/seyir-kulesi-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/seyir-kulesi-eskiz-1280w.jpg">
+          </picture>
+          <picture class="render dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/seyir-kulesi-gece-800w.avif 800w,
+              anasayfa/optimized/seyir-kulesi-gece-1280w.avif 1280w,
+              anasayfa/optimized/seyir-kulesi-gece-1920w.avif 1920w,
+              anasayfa/optimized/seyir-kulesi-gece-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/seyir-kulesi-gece-800w.webp 800w,
+              anasayfa/optimized/seyir-kulesi-gece-1280w.webp 1280w,
+              anasayfa/optimized/seyir-kulesi-gece-1920w.webp 1920w,
+              anasayfa/optimized/seyir-kulesi-gece-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Seyir Kulesi gece"
+              srcset="anasayfa/optimized/seyir-kulesi-gece-800w.jpg 800w,
+              anasayfa/optimized/seyir-kulesi-gece-1280w.jpg 1280w,
+              anasayfa/optimized/seyir-kulesi-gece-1920w.jpg 1920w,
+              anasayfa/optimized/seyir-kulesi-gece-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/seyir-kulesi-gece-1280w.jpg">
+          </picture>
+          <picture class="sketch dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/seyir-kulesi-gece-eskiz-800w.avif 800w,
+              anasayfa/optimized/seyir-kulesi-gece-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/seyir-kulesi-gece-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/seyir-kulesi-gece-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/seyir-kulesi-gece-eskiz-800w.webp 800w,
+              anasayfa/optimized/seyir-kulesi-gece-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/seyir-kulesi-gece-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/seyir-kulesi-gece-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Seyir Kulesi gece eskiz"
+              srcset="anasayfa/optimized/seyir-kulesi-gece-eskiz-800w.jpg 800w,
+              anasayfa/optimized/seyir-kulesi-gece-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/seyir-kulesi-gece-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/seyir-kulesi-gece-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/seyir-kulesi-gece-eskiz-1280w.jpg">
+          </picture>
+        </div>
+        <div class="work-info">
+          <span class="work-number">Mimari</span>
+          <h2 class="work-title">Seyir Kulesi</h2>
+          <p class="work-category">Mimari</p>
+          <p class="work-desc">Her seviye İstanbul panoramasına farklı bir perspektif açarken, tabandaki kamusal meydan kenti yapıyla buluşturuyor.</p>
+          <span class="work-arrow">Projeyi İncele <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+      <a href="tasarim/mimari/herat-camii.html" class="work-item type-mimari" data-tags="tasarim-all,mimari" data-category="mimari">
+        <div class="work-visual">
+          <picture class="render light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/herat-camii-800w.avif 800w,
+              anasayfa/optimized/herat-camii-1280w.avif 1280w,
+              anasayfa/optimized/herat-camii-1920w.avif 1920w,
+              anasayfa/optimized/herat-camii-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/herat-camii-800w.webp 800w,
+              anasayfa/optimized/herat-camii-1280w.webp 1280w,
+              anasayfa/optimized/herat-camii-1920w.webp 1920w,
+              anasayfa/optimized/herat-camii-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Herat Camii"
+              srcset="anasayfa/optimized/herat-camii-800w.jpg 800w,
+              anasayfa/optimized/herat-camii-1280w.jpg 1280w,
+              anasayfa/optimized/herat-camii-1920w.jpg 1920w,
+              anasayfa/optimized/herat-camii-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/herat-camii-1280w.jpg">
+          </picture>
+          <picture class="sketch light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/herat-camii-eskiz-800w.avif 800w,
+              anasayfa/optimized/herat-camii-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/herat-camii-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/herat-camii-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/herat-camii-eskiz-800w.webp 800w,
+              anasayfa/optimized/herat-camii-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/herat-camii-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/herat-camii-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Herat Camii eskiz"
+              srcset="anasayfa/optimized/herat-camii-eskiz-800w.jpg 800w,
+              anasayfa/optimized/herat-camii-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/herat-camii-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/herat-camii-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/herat-camii-eskiz-1280w.jpg">
+          </picture>
+          <picture class="render dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/herat-camii-gece-800w.avif 800w,
+              anasayfa/optimized/herat-camii-gece-1280w.avif 1280w,
+              anasayfa/optimized/herat-camii-gece-1920w.avif 1920w,
+              anasayfa/optimized/herat-camii-gece-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/herat-camii-gece-800w.webp 800w,
+              anasayfa/optimized/herat-camii-gece-1280w.webp 1280w,
+              anasayfa/optimized/herat-camii-gece-1920w.webp 1920w,
+              anasayfa/optimized/herat-camii-gece-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Herat Camii gece"
+              srcset="anasayfa/optimized/herat-camii-gece-800w.jpg 800w,
+              anasayfa/optimized/herat-camii-gece-1280w.jpg 1280w,
+              anasayfa/optimized/herat-camii-gece-1920w.jpg 1920w,
+              anasayfa/optimized/herat-camii-gece-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/herat-camii-gece-1280w.jpg">
+          </picture>
+          <picture class="sketch dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/herat-camii-gece-eskiz-800w.avif 800w,
+              anasayfa/optimized/herat-camii-gece-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/herat-camii-gece-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/herat-camii-gece-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/herat-camii-gece-eskiz-800w.webp 800w,
+              anasayfa/optimized/herat-camii-gece-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/herat-camii-gece-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/herat-camii-gece-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Herat Camii gece eskiz"
+              srcset="anasayfa/optimized/herat-camii-gece-eskiz-800w.jpg 800w,
+              anasayfa/optimized/herat-camii-gece-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/herat-camii-gece-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/herat-camii-gece-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/herat-camii-gece-eskiz-1280w.jpg">
+          </picture>
+        </div>
+        <div class="work-info">
+          <span class="work-number">Mimari</span>
+          <h2 class="work-title">Herat Camii</h2>
+          <p class="work-category">Mimari</p>
+          <p class="work-desc">Afganistan'da geleneksel cami ruhunu çağdaş bir kütle diliyle yeniden kuran mahalle mescidi.</p>
+          <span class="work-arrow">Projeyi İncele <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+      <a href="yazilim/optimizasyon/toplukonut.html" class="work-item type-plugin" data-tags="yazilim-all,optimizasyon" data-category="optimizasyon">
+        <div class="work-visual">
+          <picture class="render light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/toplukonut-800w.avif 800w,
+              anasayfa/optimized/toplukonut-1280w.avif 1280w,
+              anasayfa/optimized/toplukonut-1920w.avif 1920w,
+              anasayfa/optimized/toplukonut-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/toplukonut-800w.webp 800w,
+              anasayfa/optimized/toplukonut-1280w.webp 1280w,
+              anasayfa/optimized/toplukonut-1920w.webp 1920w,
+              anasayfa/optimized/toplukonut-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Toplu Konutta Gün Işığı Optimizasyonu"
+              srcset="anasayfa/optimized/toplukonut-800w.jpg 800w,
+              anasayfa/optimized/toplukonut-1280w.jpg 1280w,
+              anasayfa/optimized/toplukonut-1920w.jpg 1920w,
+              anasayfa/optimized/toplukonut-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/toplukonut-1280w.jpg">
+          </picture>
+          <picture class="sketch light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/toplukonut-eskiz-800w.avif 800w,
+              anasayfa/optimized/toplukonut-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/toplukonut-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/toplukonut-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/toplukonut-eskiz-800w.webp 800w,
+              anasayfa/optimized/toplukonut-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/toplukonut-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/toplukonut-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Toplu Konut eskiz"
+              srcset="anasayfa/optimized/toplukonut-eskiz-800w.jpg 800w,
+              anasayfa/optimized/toplukonut-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/toplukonut-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/toplukonut-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/toplukonut-eskiz-1280w.jpg">
+          </picture>
+          <picture class="render dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/toplukonut-gece-800w.avif 800w,
+              anasayfa/optimized/toplukonut-gece-1280w.avif 1280w,
+              anasayfa/optimized/toplukonut-gece-1920w.avif 1920w,
+              anasayfa/optimized/toplukonut-gece-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/toplukonut-gece-800w.webp 800w,
+              anasayfa/optimized/toplukonut-gece-1280w.webp 1280w,
+              anasayfa/optimized/toplukonut-gece-1920w.webp 1920w,
+              anasayfa/optimized/toplukonut-gece-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Toplu Konut gece"
+              srcset="anasayfa/optimized/toplukonut-gece-800w.jpg 800w,
+              anasayfa/optimized/toplukonut-gece-1280w.jpg 1280w,
+              anasayfa/optimized/toplukonut-gece-1920w.jpg 1920w,
+              anasayfa/optimized/toplukonut-gece-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/toplukonut-gece-1280w.jpg">
+          </picture>
+          <picture class="sketch dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/toplukonut-gece-eskiz-800w.avif 800w,
+              anasayfa/optimized/toplukonut-gece-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/toplukonut-gece-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/toplukonut-gece-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/toplukonut-gece-eskiz-800w.webp 800w,
+              anasayfa/optimized/toplukonut-gece-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/toplukonut-gece-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/toplukonut-gece-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Toplu Konut gece eskiz"
+              srcset="anasayfa/optimized/toplukonut-gece-eskiz-800w.jpg 800w,
+              anasayfa/optimized/toplukonut-gece-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/toplukonut-gece-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/toplukonut-gece-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/toplukonut-gece-eskiz-1280w.jpg">
+          </picture>
+        </div>
+        <div class="work-info">
+          <span class="work-number">Optimizasyon</span>
+          <h2 class="work-title">Toplu Konutta <span class="title-break title-keep">Gün Işığı Optimizasyonu</span></h2>
+          <p class="work-category">Optimizasyon</p>
+          <p class="work-desc">Aynı pencereler, aynı plan; yalnızca farklı yönelim. Galapagos evrimsel algoritması ile yıllık 250 saat yapay aydınlatma tasarrufu elde edildi.</p>
+          <div class="plugin-tags">
+            <span class="plugin-tag">Grasshopper</span>
+            <span class="plugin-tag">Ladybug</span>
+            <span class="plugin-tag">Galapagos</span>
+          </div>
+          <span class="work-arrow">Analizi İncele <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+      <a href="yazilim/ai/maskrcnn.html" class="work-item type-plugin" data-tags="yazilim-all,ai" data-category="ai">
+        <div class="work-visual">
+          <picture class="render light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/maskrcnn-800w.avif 800w,
+              anasayfa/optimized/maskrcnn-1280w.avif 1280w,
+              anasayfa/optimized/maskrcnn-1920w.avif 1920w,
+              anasayfa/optimized/maskrcnn-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/maskrcnn-800w.webp 800w,
+              anasayfa/optimized/maskrcnn-1280w.webp 1280w,
+              anasayfa/optimized/maskrcnn-1920w.webp 1920w,
+              anasayfa/optimized/maskrcnn-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="MaskRCNN in Grasshopper"
+              srcset="anasayfa/optimized/maskrcnn-800w.jpg 800w,
+              anasayfa/optimized/maskrcnn-1280w.jpg 1280w,
+              anasayfa/optimized/maskrcnn-1920w.jpg 1920w,
+              anasayfa/optimized/maskrcnn-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/maskrcnn-1280w.jpg">
+          </picture>
+          <picture class="sketch light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/maskrcnn-eskiz-800w.avif 800w,
+              anasayfa/optimized/maskrcnn-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/maskrcnn-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/maskrcnn-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/maskrcnn-eskiz-800w.webp 800w,
+              anasayfa/optimized/maskrcnn-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/maskrcnn-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/maskrcnn-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="MaskRCNN in Grasshopper eskiz"
+              srcset="anasayfa/optimized/maskrcnn-eskiz-800w.jpg 800w,
+              anasayfa/optimized/maskrcnn-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/maskrcnn-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/maskrcnn-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/maskrcnn-eskiz-1280w.jpg">
+          </picture>
+          <picture class="render dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/maskrcnn-gece-800w.avif 800w,
+              anasayfa/optimized/maskrcnn-gece-1280w.avif 1280w,
+              anasayfa/optimized/maskrcnn-gece-1920w.avif 1920w,
+              anasayfa/optimized/maskrcnn-gece-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/maskrcnn-gece-800w.webp 800w,
+              anasayfa/optimized/maskrcnn-gece-1280w.webp 1280w,
+              anasayfa/optimized/maskrcnn-gece-1920w.webp 1920w,
+              anasayfa/optimized/maskrcnn-gece-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="MaskRCNN in Grasshopper gece"
+              srcset="anasayfa/optimized/maskrcnn-gece-800w.jpg 800w,
+              anasayfa/optimized/maskrcnn-gece-1280w.jpg 1280w,
+              anasayfa/optimized/maskrcnn-gece-1920w.jpg 1920w,
+              anasayfa/optimized/maskrcnn-gece-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/maskrcnn-gece-1280w.jpg">
+          </picture>
+          <picture class="sketch dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/maskrcnn-gece-eskiz-800w.avif 800w,
+              anasayfa/optimized/maskrcnn-gece-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/maskrcnn-gece-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/maskrcnn-gece-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/maskrcnn-gece-eskiz-800w.webp 800w,
+              anasayfa/optimized/maskrcnn-gece-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/maskrcnn-gece-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/maskrcnn-gece-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="MaskRCNN in Grasshopper gece eskiz"
+              srcset="anasayfa/optimized/maskrcnn-gece-eskiz-800w.jpg 800w,
+              anasayfa/optimized/maskrcnn-gece-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/maskrcnn-gece-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/maskrcnn-gece-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/maskrcnn-gece-eskiz-1280w.jpg">
+          </picture>
+        </div>
+        <div class="work-info">
+          <span class="work-number">Yapay Zekâ</span>
+          <h2 class="work-title">Grasshopper'da MaskRCNN</h2>
+          <p class="work-category">Yapay Zekâ</p>
+          <p class="work-desc">Veri seti hazırlığından model eğitimine, tespitden yayın kalitesinde karşılaştırmaya kadar tüm Mask R-CNN iş akışını Grasshopper ortamına taşıyan  eklenti.</p>
+          <div class="plugin-tags">
+            <span class="plugin-tag">Mask R-CNN</span>
+            <span class="plugin-tag">Grasshopper</span>
+            <span class="plugin-tag">C#</span>
+          </div>
+          <span class="work-arrow">Eklentiyi İncele <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+      <a href="yazilim/optimizasyon/uskudar-meydani.html" class="work-item type-plugin" data-tags="yazilim-all,optimizasyon" data-category="optimizasyon">
+        <div class="work-visual">
+          <picture class="render light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/uskudar-meydani-800w.avif 800w,
+              anasayfa/optimized/uskudar-meydani-1280w.avif 1280w,
+              anasayfa/optimized/uskudar-meydani-1920w.avif 1920w,
+              anasayfa/optimized/uskudar-meydani-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/uskudar-meydani-800w.webp 800w,
+              anasayfa/optimized/uskudar-meydani-1280w.webp 1280w,
+              anasayfa/optimized/uskudar-meydani-1920w.webp 1920w,
+              anasayfa/optimized/uskudar-meydani-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Üsküdar Meydanı Termal Konfor Optimizasyonu"
+              srcset="anasayfa/optimized/uskudar-meydani-800w.jpg 800w,
+              anasayfa/optimized/uskudar-meydani-1280w.jpg 1280w,
+              anasayfa/optimized/uskudar-meydani-1920w.jpg 1920w,
+              anasayfa/optimized/uskudar-meydani-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/uskudar-meydani-1280w.jpg">
+          </picture>
+          <picture class="sketch light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/uskudar-meydani-eskiz-800w.avif 800w,
+              anasayfa/optimized/uskudar-meydani-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/uskudar-meydani-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/uskudar-meydani-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/uskudar-meydani-eskiz-800w.webp 800w,
+              anasayfa/optimized/uskudar-meydani-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/uskudar-meydani-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/uskudar-meydani-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Üsküdar Meydanı eskiz"
+              srcset="anasayfa/optimized/uskudar-meydani-eskiz-800w.jpg 800w,
+              anasayfa/optimized/uskudar-meydani-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/uskudar-meydani-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/uskudar-meydani-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/uskudar-meydani-eskiz-1280w.jpg">
+          </picture>
+          <picture class="render dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/uskudar-meydani-gece-800w.avif 800w,
+              anasayfa/optimized/uskudar-meydani-gece-1280w.avif 1280w,
+              anasayfa/optimized/uskudar-meydani-gece-1920w.avif 1920w,
+              anasayfa/optimized/uskudar-meydani-gece-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/uskudar-meydani-gece-800w.webp 800w,
+              anasayfa/optimized/uskudar-meydani-gece-1280w.webp 1280w,
+              anasayfa/optimized/uskudar-meydani-gece-1920w.webp 1920w,
+              anasayfa/optimized/uskudar-meydani-gece-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Üsküdar Meydanı gece"
+              srcset="anasayfa/optimized/uskudar-meydani-gece-800w.jpg 800w,
+              anasayfa/optimized/uskudar-meydani-gece-1280w.jpg 1280w,
+              anasayfa/optimized/uskudar-meydani-gece-1920w.jpg 1920w,
+              anasayfa/optimized/uskudar-meydani-gece-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/uskudar-meydani-gece-1280w.jpg">
+          </picture>
+          <picture class="sketch dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/uskudar-meydani-gece-eskiz-800w.avif 800w,
+              anasayfa/optimized/uskudar-meydani-gece-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/uskudar-meydani-gece-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/uskudar-meydani-gece-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/uskudar-meydani-gece-eskiz-800w.webp 800w,
+              anasayfa/optimized/uskudar-meydani-gece-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/uskudar-meydani-gece-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/uskudar-meydani-gece-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Üsküdar Meydanı gece eskiz"
+              srcset="anasayfa/optimized/uskudar-meydani-gece-eskiz-800w.jpg 800w,
+              anasayfa/optimized/uskudar-meydani-gece-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/uskudar-meydani-gece-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/uskudar-meydani-gece-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/uskudar-meydani-gece-eskiz-1280w.jpg">
+          </picture>
+        </div>
+        <div class="work-info">
+          <span class="work-number">Optimizasyon</span>
+          <h2 class="work-title">Üsküdar Meydanı: <span class="title-keep">Dış Mekânda Konfor</span></h2>
+          <p class="work-category">Optimizasyon</p>
+          <p class="work-desc">İstanbul'un en yoğun yaya kesişim noktalarından birinde rüzgâr, güneş ve görüş analizleriyle yönlendirilen parametrik bir termal konfor optimizasyonu çalışması.</p>
+          <div class="plugin-tags">
+            <span class="plugin-tag">Grasshopper</span>
+            <span class="plugin-tag">Ladybug</span>
+            <span class="plugin-tag">UTCI</span>
+          </div>
+          <span class="work-arrow">Analizi İncele <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+
+      <a href="yazilim/fabrikasyon/victory-park.html" class="work-item type-plugin" data-tags="featured,yazilim-all,fabrikasyon" data-category="fabrikasyon">
+        <div class="work-visual">
+          <picture class="render light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/victory-park-800w.avif 800w,
+              anasayfa/optimized/victory-park-1280w.avif 1280w,
+              anasayfa/optimized/victory-park-1920w.avif 1920w,
+              anasayfa/optimized/victory-park-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/victory-park-800w.webp 800w,
+              anasayfa/optimized/victory-park-1280w.webp 1280w,
+              anasayfa/optimized/victory-park-1920w.webp 1920w,
+              anasayfa/optimized/victory-park-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Victory Park Taş Cephe"
+              srcset="anasayfa/optimized/victory-park-800w.jpg 800w,
+              anasayfa/optimized/victory-park-1280w.jpg 1280w,
+              anasayfa/optimized/victory-park-1920w.jpg 1920w,
+              anasayfa/optimized/victory-park-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/victory-park-1280w.jpg">
+          </picture>
+          <picture class="sketch light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/victory-park-eskiz-800w.avif 800w,
+              anasayfa/optimized/victory-park-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/victory-park-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/victory-park-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/victory-park-eskiz-800w.webp 800w,
+              anasayfa/optimized/victory-park-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/victory-park-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/victory-park-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Victory Park eskiz"
+              srcset="anasayfa/optimized/victory-park-eskiz-800w.jpg 800w,
+              anasayfa/optimized/victory-park-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/victory-park-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/victory-park-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/victory-park-eskiz-1280w.jpg">
+          </picture>
+          <picture class="render dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/victory-park-gece-800w.avif 800w,
+              anasayfa/optimized/victory-park-gece-1280w.avif 1280w,
+              anasayfa/optimized/victory-park-gece-1920w.avif 1920w,
+              anasayfa/optimized/victory-park-gece-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/victory-park-gece-800w.webp 800w,
+              anasayfa/optimized/victory-park-gece-1280w.webp 1280w,
+              anasayfa/optimized/victory-park-gece-1920w.webp 1920w,
+              anasayfa/optimized/victory-park-gece-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Victory Park gece"
+              srcset="anasayfa/optimized/victory-park-gece-800w.jpg 800w,
+              anasayfa/optimized/victory-park-gece-1280w.jpg 1280w,
+              anasayfa/optimized/victory-park-gece-1920w.jpg 1920w,
+              anasayfa/optimized/victory-park-gece-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/victory-park-gece-1280w.jpg">
+          </picture>
+          <picture class="sketch dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/victory-park-gece-eskiz-800w.avif 800w,
+              anasayfa/optimized/victory-park-gece-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/victory-park-gece-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/victory-park-gece-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/victory-park-gece-eskiz-800w.webp 800w,
+              anasayfa/optimized/victory-park-gece-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/victory-park-gece-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/victory-park-gece-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Victory Park gece eskiz"
+              srcset="anasayfa/optimized/victory-park-gece-eskiz-800w.jpg 800w,
+              anasayfa/optimized/victory-park-gece-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/victory-park-gece-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/victory-park-gece-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/victory-park-gece-eskiz-1280w.jpg">
+          </picture>
+        </div>
+        <div class="work-info">
+          <span class="work-number">Fabrikasyon</span>
+          <h2 class="work-title">Victory Park Konut Kompleksi</h2>
+          <p class="work-category">Fabrikasyon</p>
+          <p class="work-desc">Geleneksel yöntemle aylar sürecek 7.436 adet taş cephe imalat çizimi, Grasshopper parametrik algoritmasıyla üretildi.</p>
+          <div class="plugin-tags">
+            <span class="plugin-tag">Rhino</span>
+            <span class="plugin-tag">Grasshopper</span>
+            <span class="plugin-tag">AutoCAD</span>
+          </div>
+          <span class="work-arrow">Süreci Keşfet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+      <a href="yazilim/optimizasyon/mukarnas.html" class="work-item type-plugin" data-tags="yazilim-all,optimizasyon" data-category="optimizasyon">
+        <div class="work-visual">
+          <picture class="render light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/mukarnas-800w.avif 800w,
+              anasayfa/optimized/mukarnas-1280w.avif 1280w,
+              anasayfa/optimized/mukarnas-1920w.avif 1920w,
+              anasayfa/optimized/mukarnas-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/mukarnas-800w.webp 800w,
+              anasayfa/optimized/mukarnas-1280w.webp 1280w,
+              anasayfa/optimized/mukarnas-1920w.webp 1920w,
+              anasayfa/optimized/mukarnas-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Parametrik Mukarnas Optimizasyonu"
+              srcset="anasayfa/optimized/mukarnas-800w.jpg 800w,
+              anasayfa/optimized/mukarnas-1280w.jpg 1280w,
+              anasayfa/optimized/mukarnas-1920w.jpg 1920w,
+              anasayfa/optimized/mukarnas-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/mukarnas-1280w.jpg">
+          </picture>
+          <picture class="sketch light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/mukarnas-eskiz-800w.avif 800w,
+              anasayfa/optimized/mukarnas-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/mukarnas-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/mukarnas-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/mukarnas-eskiz-800w.webp 800w,
+              anasayfa/optimized/mukarnas-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/mukarnas-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/mukarnas-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Mukarnas Optimizasyonu eskiz"
+              srcset="anasayfa/optimized/mukarnas-eskiz-800w.jpg 800w,
+              anasayfa/optimized/mukarnas-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/mukarnas-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/mukarnas-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/mukarnas-eskiz-1280w.jpg">
+          </picture>
+          <picture class="render dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/mukarnas-gece-800w.avif 800w,
+              anasayfa/optimized/mukarnas-gece-1280w.avif 1280w,
+              anasayfa/optimized/mukarnas-gece-1920w.avif 1920w,
+              anasayfa/optimized/mukarnas-gece-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/mukarnas-gece-800w.webp 800w,
+              anasayfa/optimized/mukarnas-gece-1280w.webp 1280w,
+              anasayfa/optimized/mukarnas-gece-1920w.webp 1920w,
+              anasayfa/optimized/mukarnas-gece-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Mukarnas Optimizasyonu gece"
+              srcset="anasayfa/optimized/mukarnas-gece-800w.jpg 800w,
+              anasayfa/optimized/mukarnas-gece-1280w.jpg 1280w,
+              anasayfa/optimized/mukarnas-gece-1920w.jpg 1920w,
+              anasayfa/optimized/mukarnas-gece-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/mukarnas-gece-1280w.jpg">
+          </picture>
+          <picture class="sketch dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/mukarnas-gece-eskiz-800w.avif 800w,
+              anasayfa/optimized/mukarnas-gece-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/mukarnas-gece-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/mukarnas-gece-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/mukarnas-gece-eskiz-800w.webp 800w,
+              anasayfa/optimized/mukarnas-gece-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/mukarnas-gece-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/mukarnas-gece-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 628px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Mukarnas Optimizasyonu gece eskiz"
+              srcset="anasayfa/optimized/mukarnas-gece-eskiz-800w.jpg 800w,
+              anasayfa/optimized/mukarnas-gece-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/mukarnas-gece-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/mukarnas-gece-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 628px"
+              src="anasayfa/optimized/mukarnas-gece-eskiz-1280w.jpg">
+          </picture>
+        </div>
+        <div class="work-info">
+          <span class="work-number">Optimizasyon</span>
+          <h2 class="work-title">Mukarnasın Performansı: <span class="title-break title-keep">Günışığı ve Akustik</span></h2>
+          <p class="work-category">Optimizasyon</p>
+          <p class="work-desc">Geleneksel mukarnas geometrisinin bağlamsal performansı simüle edildi ve genetik algoritmalarla optimize edildi . 2 uluslararası makale yayınlandı.</p>
+          <div class="plugin-tags">
+            <span class="plugin-tag">Grasshopper</span>
+            <span class="plugin-tag">Octopus</span>
+            <span class="plugin-tag">Galapagos</span>
+          </div>
+          <span class="work-arrow">Süreci Keşfet <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+
+      <a href="https://mimarenes.com" target="_blank" rel="noopener noreferrer" class="work-item type-web" data-tags="tasarim-all,web" data-category="web">
+        <div class="work-visual">
+          <picture class="render light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/mimarenes-site-800w.avif 800w,
+              anasayfa/optimized/mimarenes-site-1280w.avif 1280w,
+              anasayfa/optimized/mimarenes-site-1920w.avif 1920w,
+              anasayfa/optimized/mimarenes-site-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/mimarenes-site-800w.webp 800w,
+              anasayfa/optimized/mimarenes-site-1280w.webp 1280w,
+              anasayfa/optimized/mimarenes-site-1920w.webp 1920w,
+              anasayfa/optimized/mimarenes-site-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="mimarenes.com web sitesi"
+              srcset="anasayfa/optimized/mimarenes-site-800w.jpg 800w,
+              anasayfa/optimized/mimarenes-site-1280w.jpg 1280w,
+              anasayfa/optimized/mimarenes-site-1920w.jpg 1920w,
+              anasayfa/optimized/mimarenes-site-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/mimarenes-site-1280w.jpg">
+          </picture>
+          <picture class="sketch light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/mimarenes-site-800w.avif 800w,
+              anasayfa/optimized/mimarenes-site-1280w.avif 1280w,
+              anasayfa/optimized/mimarenes-site-1920w.avif 1920w,
+              anasayfa/optimized/mimarenes-site-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/mimarenes-site-800w.webp 800w,
+              anasayfa/optimized/mimarenes-site-1280w.webp 1280w,
+              anasayfa/optimized/mimarenes-site-1920w.webp 1920w,
+              anasayfa/optimized/mimarenes-site-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="mimarenes.com web sitesi"
+              srcset="anasayfa/optimized/mimarenes-site-800w.jpg 800w,
+              anasayfa/optimized/mimarenes-site-1280w.jpg 1280w,
+              anasayfa/optimized/mimarenes-site-1920w.jpg 1920w,
+              anasayfa/optimized/mimarenes-site-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/mimarenes-site-1280w.jpg">
+          </picture>
+          <picture class="render dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/mimarenes-site-gece-800w.avif 800w,
+              anasayfa/optimized/mimarenes-site-gece-1280w.avif 1280w,
+              anasayfa/optimized/mimarenes-site-gece-1920w.avif 1920w,
+              anasayfa/optimized/mimarenes-site-gece-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/mimarenes-site-gece-800w.webp 800w,
+              anasayfa/optimized/mimarenes-site-gece-1280w.webp 1280w,
+              anasayfa/optimized/mimarenes-site-gece-1920w.webp 1920w,
+              anasayfa/optimized/mimarenes-site-gece-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="mimarenes.com web sitesi"
+              srcset="anasayfa/optimized/mimarenes-site-gece-800w.jpg 800w,
+              anasayfa/optimized/mimarenes-site-gece-1280w.jpg 1280w,
+              anasayfa/optimized/mimarenes-site-gece-1920w.jpg 1920w,
+              anasayfa/optimized/mimarenes-site-gece-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/mimarenes-site-gece-1280w.jpg">
+          </picture>
+          <picture class="sketch dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/mimarenes-site-gece-800w.avif 800w,
+              anasayfa/optimized/mimarenes-site-gece-1280w.avif 1280w,
+              anasayfa/optimized/mimarenes-site-gece-1920w.avif 1920w,
+              anasayfa/optimized/mimarenes-site-gece-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/mimarenes-site-gece-800w.webp 800w,
+              anasayfa/optimized/mimarenes-site-gece-1280w.webp 1280w,
+              anasayfa/optimized/mimarenes-site-gece-1920w.webp 1920w,
+              anasayfa/optimized/mimarenes-site-gece-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="mimarenes.com web sitesi"
+              srcset="anasayfa/optimized/mimarenes-site-gece-800w.jpg 800w,
+              anasayfa/optimized/mimarenes-site-gece-1280w.jpg 1280w,
+              anasayfa/optimized/mimarenes-site-gece-1920w.jpg 1920w,
+              anasayfa/optimized/mimarenes-site-gece-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/mimarenes-site-gece-1280w.jpg">
+          </picture>
+        </div>
+        <div class="work-info">
+          <span class="work-number">Web</span>
+          <h2 class="work-title">mimarenes.com</h2>
+          <p class="work-category">Kişisel Portfolyo Sitesi</p>
+          <p class="work-desc">Tasarım, araştırma ve yazılım projelerini bir araya getiren kişisel portfolyo. Statik HTML/CSS/JS ile inşa edildi.</p>
+          <span class="work-arrow">Web Sitesini Ziyaret Et <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+        </div>
+      </a>
+
+
+      <a href="tasarim/mimari/studyo-balat.html" class="work-item type-mimari" data-tags="featured,tasarim-all,mimari" data-category="mimari">
+        <div class="work-visual">
+          <picture class="render light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/studyo-balat-800w.avif 800w,
+              anasayfa/optimized/studyo-balat-1280w.avif 1280w,
+              anasayfa/optimized/studyo-balat-1920w.avif 1920w,
+              anasayfa/optimized/studyo-balat-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/studyo-balat-800w.webp 800w,
+              anasayfa/optimized/studyo-balat-1280w.webp 1280w,
+              anasayfa/optimized/studyo-balat-1920w.webp 1920w,
+              anasayfa/optimized/studyo-balat-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Stüdyo Balat"
+              srcset="anasayfa/optimized/studyo-balat-800w.jpg 800w,
+              anasayfa/optimized/studyo-balat-1280w.jpg 1280w,
+              anasayfa/optimized/studyo-balat-1920w.jpg 1920w,
+              anasayfa/optimized/studyo-balat-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/studyo-balat-1280w.jpg">
+          </picture>
+          <picture class="sketch light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/studyo-balat-eskiz-800w.avif 800w,
+              anasayfa/optimized/studyo-balat-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/studyo-balat-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/studyo-balat-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/studyo-balat-eskiz-800w.webp 800w,
+              anasayfa/optimized/studyo-balat-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/studyo-balat-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/studyo-balat-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Stüdyo Balat eskiz"
+              srcset="anasayfa/optimized/studyo-balat-eskiz-800w.jpg 800w,
+              anasayfa/optimized/studyo-balat-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/studyo-balat-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/studyo-balat-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/studyo-balat-eskiz-1280w.jpg">
+          </picture>
+          <picture class="render dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/studyo-balat-gece-800w.avif 800w,
+              anasayfa/optimized/studyo-balat-gece-1280w.avif 1280w,
+              anasayfa/optimized/studyo-balat-gece-1920w.avif 1920w,
+              anasayfa/optimized/studyo-balat-gece-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/studyo-balat-gece-800w.webp 800w,
+              anasayfa/optimized/studyo-balat-gece-1280w.webp 1280w,
+              anasayfa/optimized/studyo-balat-gece-1920w.webp 1920w,
+              anasayfa/optimized/studyo-balat-gece-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Stüdyo Balat gece"
+              srcset="anasayfa/optimized/studyo-balat-gece-800w.jpg 800w,
+              anasayfa/optimized/studyo-balat-gece-1280w.jpg 1280w,
+              anasayfa/optimized/studyo-balat-gece-1920w.jpg 1920w,
+              anasayfa/optimized/studyo-balat-gece-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/studyo-balat-gece-1280w.jpg">
+          </picture>
+          <picture class="sketch dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/studyo-balat-gece-eskiz-800w.avif 800w,
+              anasayfa/optimized/studyo-balat-gece-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/studyo-balat-gece-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/studyo-balat-gece-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/studyo-balat-gece-eskiz-800w.webp 800w,
+              anasayfa/optimized/studyo-balat-gece-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/studyo-balat-gece-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/studyo-balat-gece-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Stüdyo Balat gece eskiz"
+              srcset="anasayfa/optimized/studyo-balat-gece-eskiz-800w.jpg 800w,
+              anasayfa/optimized/studyo-balat-gece-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/studyo-balat-gece-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/studyo-balat-gece-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/studyo-balat-gece-eskiz-1280w.jpg">
+          </picture>
+        </div>
+        <div class="work-info">
+          <span class="work-number">Mimari</span>
+          <h2 class="work-title">Stüdyo Balat</h2>
+          <p class="work-category">Mimari</p>
+          <p class="work-desc">Siyah çelik, doğal meşe ve cam. Üç malzemenin farklı ölçeklerde tekrarıyla şekillenen endüstriyel dönüşüm. Balat'taki hangar yapısı, prodüksiyon şirketinin yaratıcı enerjisini taşıyan bir merkez ofise evrildi.</p>
+          <span class="work-arrow">Projeyi İncele <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+
+      <div class="work-item type-mimari" data-tags="tasarim-all,mobilya" data-category="mobilya" role="button" tabindex="0"
+           data-lightbox="frame-shelf"
+           data-lightbox-images='[
+             {"avif":"anasayfa/optimized/Frame_Shelf-800w.avif 800w, anasayfa/optimized/Frame_Shelf-1280w.avif 1280w, anasayfa/optimized/Frame_Shelf-1920w.avif 1920w, anasayfa/optimized/Frame_Shelf-2560w.avif 2560w","webp":"anasayfa/optimized/Frame_Shelf-800w.webp 800w, anasayfa/optimized/Frame_Shelf-1280w.webp 1280w, anasayfa/optimized/Frame_Shelf-1920w.webp 1920w, anasayfa/optimized/Frame_Shelf-2560w.webp 2560w","jpg":"anasayfa/optimized/Frame_Shelf-800w.jpg 800w, anasayfa/optimized/Frame_Shelf-1280w.jpg 1280w, anasayfa/optimized/Frame_Shelf-1920w.jpg 1920w, anasayfa/optimized/Frame_Shelf-2560w.jpg 2560w","fallback":"anasayfa/optimized/Frame_Shelf-1280w.jpg","alt":"Frame Shelf"},
+             {"avif":"anasayfa/optimized/Frame_Shelf-2-800w.avif 800w, anasayfa/optimized/Frame_Shelf-2-1280w.avif 1280w, anasayfa/optimized/Frame_Shelf-2-1920w.avif 1920w, anasayfa/optimized/Frame_Shelf-2-2560w.avif 2560w","webp":"anasayfa/optimized/Frame_Shelf-2-800w.webp 800w, anasayfa/optimized/Frame_Shelf-2-1280w.webp 1280w, anasayfa/optimized/Frame_Shelf-2-1920w.webp 1920w, anasayfa/optimized/Frame_Shelf-2-2560w.webp 2560w","jpg":"anasayfa/optimized/Frame_Shelf-2-800w.jpg 800w, anasayfa/optimized/Frame_Shelf-2-1280w.jpg 1280w, anasayfa/optimized/Frame_Shelf-2-1920w.jpg 1920w, anasayfa/optimized/Frame_Shelf-2-2560w.jpg 2560w","fallback":"anasayfa/optimized/Frame_Shelf-2-1280w.jpg","alt":"Frame Shelf - Detay 2"},
+             {"avif":"anasayfa/optimized/Frame_Shelf-3-800w.avif 800w, anasayfa/optimized/Frame_Shelf-3-1280w.avif 1280w, anasayfa/optimized/Frame_Shelf-3-1920w.avif 1920w","webp":"anasayfa/optimized/Frame_Shelf-3-800w.webp 800w, anasayfa/optimized/Frame_Shelf-3-1280w.webp 1280w, anasayfa/optimized/Frame_Shelf-3-1920w.webp 1920w","jpg":"anasayfa/optimized/Frame_Shelf-3-800w.jpg 800w, anasayfa/optimized/Frame_Shelf-3-1280w.jpg 1280w, anasayfa/optimized/Frame_Shelf-3-1920w.jpg 1920w","fallback":"anasayfa/optimized/Frame_Shelf-3-1280w.jpg","alt":"Frame Shelf - Detay 3"}
+           ]'>
+        <div class="work-visual">
+          <picture class="render light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/Frame_Shelf-800w.avif 800w,
+              anasayfa/optimized/Frame_Shelf-1280w.avif 1280w,
+              anasayfa/optimized/Frame_Shelf-1920w.avif 1920w,
+              anasayfa/optimized/Frame_Shelf-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/Frame_Shelf-800w.webp 800w,
+              anasayfa/optimized/Frame_Shelf-1280w.webp 1280w,
+              anasayfa/optimized/Frame_Shelf-1920w.webp 1920w,
+              anasayfa/optimized/Frame_Shelf-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Frame Shelf"
+              srcset="anasayfa/optimized/Frame_Shelf-800w.jpg 800w,
+              anasayfa/optimized/Frame_Shelf-1280w.jpg 1280w,
+              anasayfa/optimized/Frame_Shelf-1920w.jpg 1920w,
+              anasayfa/optimized/Frame_Shelf-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/Frame_Shelf-1280w.jpg">
+          </picture>
+          <picture class="sketch light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/Frame_Shelf-eskiz-800w.avif 800w,
+              anasayfa/optimized/Frame_Shelf-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/Frame_Shelf-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/Frame_Shelf-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/Frame_Shelf-eskiz-800w.webp 800w,
+              anasayfa/optimized/Frame_Shelf-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/Frame_Shelf-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/Frame_Shelf-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Frame Shelf eskiz"
+              srcset="anasayfa/optimized/Frame_Shelf-eskiz-800w.jpg 800w,
+              anasayfa/optimized/Frame_Shelf-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/Frame_Shelf-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/Frame_Shelf-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/Frame_Shelf-eskiz-1280w.jpg">
+          </picture>
+          <picture class="render dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/Frame_Shelf-gece-800w.avif 800w,
+              anasayfa/optimized/Frame_Shelf-gece-1280w.avif 1280w,
+              anasayfa/optimized/Frame_Shelf-gece-1920w.avif 1920w,
+              anasayfa/optimized/Frame_Shelf-gece-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/Frame_Shelf-gece-800w.webp 800w,
+              anasayfa/optimized/Frame_Shelf-gece-1280w.webp 1280w,
+              anasayfa/optimized/Frame_Shelf-gece-1920w.webp 1920w,
+              anasayfa/optimized/Frame_Shelf-gece-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Frame Shelf gece"
+              srcset="anasayfa/optimized/Frame_Shelf-gece-800w.jpg 800w,
+              anasayfa/optimized/Frame_Shelf-gece-1280w.jpg 1280w,
+              anasayfa/optimized/Frame_Shelf-gece-1920w.jpg 1920w,
+              anasayfa/optimized/Frame_Shelf-gece-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/Frame_Shelf-gece-1280w.jpg">
+          </picture>
+          <picture class="sketch dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/Frame_Shelf-gece-eskiz-800w.avif 800w,
+              anasayfa/optimized/Frame_Shelf-gece-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/Frame_Shelf-gece-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/Frame_Shelf-gece-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/Frame_Shelf-gece-eskiz-800w.webp 800w,
+              anasayfa/optimized/Frame_Shelf-gece-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/Frame_Shelf-gece-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/Frame_Shelf-gece-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Frame Shelf gece eskiz"
+              srcset="anasayfa/optimized/Frame_Shelf-gece-eskiz-800w.jpg 800w,
+              anasayfa/optimized/Frame_Shelf-gece-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/Frame_Shelf-gece-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/Frame_Shelf-gece-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/Frame_Shelf-gece-eskiz-1280w.jpg">
+          </picture>
+        </div>
+        <div class="work-info">
+          <span class="work-number">Mobilya</span>
+          <h2 class="work-title">Frame Shelf</h2>
+          <p class="work-category">Mobilya</p>
+          <p class="work-desc">Metal grid ve ahşap kutuların rastgele görünen kurallı dizilimi.</p>
+          <span class="work-arrow">Görselleri Gör <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </div>
+
+
+      <a href="arastirma/fikir/minimalev.html" class="work-item type-blog" data-tags="featured,arastirma-all,fikir" data-category="fikir">
+        <div class="work-visual">
+          <picture class="render light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/minimalev-800w.avif 800w,
+              anasayfa/optimized/minimalev-1280w.avif 1280w,
+              anasayfa/optimized/minimalev-1920w.avif 1920w,
+              anasayfa/optimized/minimalev-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 660px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/minimalev-800w.webp 800w,
+              anasayfa/optimized/minimalev-1280w.webp 1280w,
+              anasayfa/optimized/minimalev-1920w.webp 1920w,
+              anasayfa/optimized/minimalev-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 660px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Minimalev Online İç Mimarlık Platformu"
+              srcset="anasayfa/optimized/minimalev-800w.jpg 800w,
+              anasayfa/optimized/minimalev-1280w.jpg 1280w,
+              anasayfa/optimized/minimalev-1920w.jpg 1920w,
+              anasayfa/optimized/minimalev-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 660px"
+              src="anasayfa/optimized/minimalev-1280w.jpg">
+          </picture>
+          <picture class="sketch light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/minimalev-eskiz-800w.avif 800w,
+              anasayfa/optimized/minimalev-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/minimalev-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/minimalev-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 660px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/minimalev-eskiz-800w.webp 800w,
+              anasayfa/optimized/minimalev-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/minimalev-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/minimalev-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 660px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Minimalev süreç görseli"
+              srcset="anasayfa/optimized/minimalev-eskiz-800w.jpg 800w,
+              anasayfa/optimized/minimalev-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/minimalev-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/minimalev-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 660px"
+              src="anasayfa/optimized/minimalev-eskiz-1280w.jpg">
+          </picture>
+          <picture class="render dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/minimalev-gece-800w.avif 800w,
+              anasayfa/optimized/minimalev-gece-1280w.avif 1280w,
+              anasayfa/optimized/minimalev-gece-1920w.avif 1920w,
+              anasayfa/optimized/minimalev-gece-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 660px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/minimalev-gece-800w.webp 800w,
+              anasayfa/optimized/minimalev-gece-1280w.webp 1280w,
+              anasayfa/optimized/minimalev-gece-1920w.webp 1920w,
+              anasayfa/optimized/minimalev-gece-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 660px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Minimalev Online İç Mimarlık Platformu"
+              srcset="anasayfa/optimized/minimalev-gece-800w.jpg 800w,
+              anasayfa/optimized/minimalev-gece-1280w.jpg 1280w,
+              anasayfa/optimized/minimalev-gece-1920w.jpg 1920w,
+              anasayfa/optimized/minimalev-gece-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 660px"
+              src="anasayfa/optimized/minimalev-gece-1280w.jpg">
+          </picture>
+          <picture class="sketch dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/minimalev-gece-eskiz-800w.avif 800w,
+              anasayfa/optimized/minimalev-gece-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/minimalev-gece-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/minimalev-gece-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 660px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/minimalev-gece-eskiz-800w.webp 800w,
+              anasayfa/optimized/minimalev-gece-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/minimalev-gece-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/minimalev-gece-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 660px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Minimalev süreç görseli"
+              srcset="anasayfa/optimized/minimalev-gece-eskiz-800w.jpg 800w,
+              anasayfa/optimized/minimalev-gece-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/minimalev-gece-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/minimalev-gece-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 660px"
+              src="anasayfa/optimized/minimalev-gece-eskiz-1280w.jpg">
+          </picture>
+        </div>
+        <div class="work-info">
+          <span class="work-number">Fikir</span>
+          <h2 class="work-title">Minimalev: <span class="title-keep">İç Mimarlığı Dijitalleştirmek</span></h2>
+          <p class="work-category">Fikir</p>
+          <p class="work-desc">Yüz yüze görüşme, uzun süreç ve yüksek maliyete dayalı iç mimarlık hizmetini tamamen online bir platforma taşıyan girişim. BIM tabanlı 3D tasarım, e-ticaret altyapısı ve kişiselleştirilmiş sunum sayfalarıyla uçtan uca kurgulandı.</p>
+          <span class="work-arrow">Detayları İncele <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+
+      <a href="https://doi.org/10.4305/METU.JFA.2024.2.4" target="_blank" rel="noopener noreferrer" class="work-item type-blog" data-tags="arastirma-all,yayin" data-category="makale">
+        <div class="work-visual"></div>
+        <div class="work-info">
+          <span class="work-number">Makale</span>
+          <h2 class="work-title">Investigating the Impact of Muqarnas on the Daylighting Performance of Historical Turkish Baths</h2>
+          <p class="work-category">METU JFA · 2024</p>
+          <p class="work-desc">Asli Agirbas, Enes Yildiz, 2024. METU JFA, 41(2), 91-106.<br>DOI: 10.4305/METU.JFA.2024.2.4 · Index: AHCI</p>
+          <span class="work-arrow">Makaleyi Oku <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://dl.acm.org/doi/10.1145/3589248" target="_blank" rel="noopener noreferrer" class="work-item type-blog" data-tags="arastirma-all,yayin" data-category="makale">
+        <div class="work-visual"></div>
+        <div class="work-info">
+          <span class="work-number">Makale</span>
+          <h2 class="work-title">The Effect of Muqarnas on Acoustic Quality of Traditional Turkish Bath Interior Space</h2>
+          <p class="work-category">ACM Journal on Computing and Cultural Heritage · 2023</p>
+          <p class="work-desc">Asli Agirbas, Enes Yildiz, 2023. ACM Journal on Computing and Cultural Heritage, 16(3), 1-20.<br>DOI: 10.1145/3589248 · Index: SCI-Expanded</p>
+          <span class="work-arrow">Makaleyi Oku <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://www.asliagirbas.com/uploads/1/6/0/4/16044360/bildiri.pdf" target="_blank" rel="noopener noreferrer" class="work-item type-blog" data-tags="arastirma-all,yayin" data-category="bildiri">
+        <div class="work-visual"></div>
+        <div class="work-info">
+          <span class="work-number">Bildiri</span>
+          <h2 class="work-title">Detecting Building Components with Artificial Intelligence for Integration into Building Physics Simulations</h2>
+          <p class="work-category">XIVth International Sinan Symposium · 2025</p>
+          <p class="work-desc">Enes Yildiz, Asli Agirbas, 2025. XIVth International Sinan Symposium, Trakya University, Edirne, Turkey, 17-18 April, pp. 413-420.</p>
+          <span class="work-arrow">Bildiriyi Oku <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+        </div>
+      </a>
+
+      <a href="https://www.asliagirbas.com/uploads/1/6/0/4/16044360/enes_bildiri.pdf" target="_blank" rel="noopener noreferrer" class="work-item type-blog" data-tags="arastirma-all,yayin" data-category="bildiri">
+        <div class="work-visual"></div>
+        <div class="work-info">
+          <span class="work-number">Bildiri</span>
+          <h2 class="work-title">A Framework for Creating a Deep Learning Training Dataset Based on Building Components</h2>
+          <p class="work-category">From Tradition to Future Conference'24 · 2024</p>
+          <p class="work-desc">Enes Yildiz, Asli Agirbas, 2024. From Tradition to Future Conference'24, Fatih Sultan Mehmet Vakif University, Istanbul, Turkey, 13-14 November, pp. 166-170.</p>
+          <span class="work-arrow">Bildiriyi Oku <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+        </div>
+      </a>
+
+
+      <div class="work-item type-mimari" data-tags="tasarim-all,mobilya" data-category="mobilya" role="button" tabindex="0"
+           data-lightbox="arc-chair"
+           data-lightbox-images='[
+             {"avif":"anasayfa/optimized/Arc_Chair-800w.avif 800w, anasayfa/optimized/Arc_Chair-1280w.avif 1280w, anasayfa/optimized/Arc_Chair-1920w.avif 1920w, anasayfa/optimized/Arc_Chair-2560w.avif 2560w","webp":"anasayfa/optimized/Arc_Chair-800w.webp 800w, anasayfa/optimized/Arc_Chair-1280w.webp 1280w, anasayfa/optimized/Arc_Chair-1920w.webp 1920w, anasayfa/optimized/Arc_Chair-2560w.webp 2560w","jpg":"anasayfa/optimized/Arc_Chair-800w.jpg 800w, anasayfa/optimized/Arc_Chair-1280w.jpg 1280w, anasayfa/optimized/Arc_Chair-1920w.jpg 1920w, anasayfa/optimized/Arc_Chair-2560w.jpg 2560w","fallback":"anasayfa/optimized/Arc_Chair-1280w.jpg","alt":"Arc Chair"}
+           ]'>
+        <div class="work-visual">
+          <picture class="render light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/Arc_Chair-800w.avif 800w,
+              anasayfa/optimized/Arc_Chair-1280w.avif 1280w,
+              anasayfa/optimized/Arc_Chair-1920w.avif 1920w,
+              anasayfa/optimized/Arc_Chair-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/Arc_Chair-800w.webp 800w,
+              anasayfa/optimized/Arc_Chair-1280w.webp 1280w,
+              anasayfa/optimized/Arc_Chair-1920w.webp 1920w,
+              anasayfa/optimized/Arc_Chair-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Arc Chair"
+              srcset="anasayfa/optimized/Arc_Chair-800w.jpg 800w,
+              anasayfa/optimized/Arc_Chair-1280w.jpg 1280w,
+              anasayfa/optimized/Arc_Chair-1920w.jpg 1920w,
+              anasayfa/optimized/Arc_Chair-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/Arc_Chair-1280w.jpg">
+          </picture>
+          <picture class="sketch light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/Arc_Chair-eskiz-800w.avif 800w,
+              anasayfa/optimized/Arc_Chair-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/Arc_Chair-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/Arc_Chair-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/Arc_Chair-eskiz-800w.webp 800w,
+              anasayfa/optimized/Arc_Chair-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/Arc_Chair-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/Arc_Chair-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Arc Chair eskiz"
+              srcset="anasayfa/optimized/Arc_Chair-eskiz-800w.jpg 800w,
+              anasayfa/optimized/Arc_Chair-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/Arc_Chair-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/Arc_Chair-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/Arc_Chair-eskiz-1280w.jpg">
+          </picture>
+          <picture class="render dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/Arc_Chair-gece-800w.avif 800w,
+              anasayfa/optimized/Arc_Chair-gece-1280w.avif 1280w,
+              anasayfa/optimized/Arc_Chair-gece-1920w.avif 1920w,
+              anasayfa/optimized/Arc_Chair-gece-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/Arc_Chair-gece-800w.webp 800w,
+              anasayfa/optimized/Arc_Chair-gece-1280w.webp 1280w,
+              anasayfa/optimized/Arc_Chair-gece-1920w.webp 1920w,
+              anasayfa/optimized/Arc_Chair-gece-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Arc Chair gece"
+              srcset="anasayfa/optimized/Arc_Chair-gece-800w.jpg 800w,
+              anasayfa/optimized/Arc_Chair-gece-1280w.jpg 1280w,
+              anasayfa/optimized/Arc_Chair-gece-1920w.jpg 1920w,
+              anasayfa/optimized/Arc_Chair-gece-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/Arc_Chair-gece-1280w.jpg">
+          </picture>
+          <picture class="sketch dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/Arc_Chair-gece-eskiz-800w.avif 800w,
+              anasayfa/optimized/Arc_Chair-gece-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/Arc_Chair-gece-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/Arc_Chair-gece-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/Arc_Chair-gece-eskiz-800w.webp 800w,
+              anasayfa/optimized/Arc_Chair-gece-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/Arc_Chair-gece-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/Arc_Chair-gece-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Arc Chair gece eskiz"
+              srcset="anasayfa/optimized/Arc_Chair-gece-eskiz-800w.jpg 800w,
+              anasayfa/optimized/Arc_Chair-gece-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/Arc_Chair-gece-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/Arc_Chair-gece-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/Arc_Chair-gece-eskiz-1280w.jpg">
+          </picture>
+        </div>
+        <div class="work-info">
+          <span class="work-number">Mobilya</span>
+          <h2 class="work-title">Arc Chair</h2>
+          <p class="work-category">Mobilya</p>
+          <p class="work-desc">Minimal çizgiler ve organik eğrilerle şekillenen sandalye tasarımı.</p>
+          <span class="work-arrow">Görselleri Gör <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </div>
+
+
+      <div class="work-item type-mimari" data-tags="tasarim-all,mobilya" data-category="mobilya" role="button" tabindex="0"
+           data-lightbox="plane-collection"
+           data-lightbox-images='[
+             {"avif":"anasayfa/optimized/Plane_Collection-800w.avif 800w, anasayfa/optimized/Plane_Collection-1280w.avif 1280w, anasayfa/optimized/Plane_Collection-1920w.avif 1920w, anasayfa/optimized/Plane_Collection-2560w.avif 2560w","webp":"anasayfa/optimized/Plane_Collection-800w.webp 800w, anasayfa/optimized/Plane_Collection-1280w.webp 1280w, anasayfa/optimized/Plane_Collection-1920w.webp 1920w, anasayfa/optimized/Plane_Collection-2560w.webp 2560w","jpg":"anasayfa/optimized/Plane_Collection-800w.jpg 800w, anasayfa/optimized/Plane_Collection-1280w.jpg 1280w, anasayfa/optimized/Plane_Collection-1920w.jpg 1920w, anasayfa/optimized/Plane_Collection-2560w.jpg 2560w","fallback":"anasayfa/optimized/Plane_Collection-1280w.jpg","alt":"Plane Collection"},
+             {"avif":"anasayfa/optimized/Plane_Collection-2-800w.avif 800w, anasayfa/optimized/Plane_Collection-2-1280w.avif 1280w, anasayfa/optimized/Plane_Collection-2-1920w.avif 1920w, anasayfa/optimized/Plane_Collection-2-2560w.avif 2560w","webp":"anasayfa/optimized/Plane_Collection-2-800w.webp 800w, anasayfa/optimized/Plane_Collection-2-1280w.webp 1280w, anasayfa/optimized/Plane_Collection-2-1920w.webp 1920w, anasayfa/optimized/Plane_Collection-2-2560w.webp 2560w","jpg":"anasayfa/optimized/Plane_Collection-2-800w.jpg 800w, anasayfa/optimized/Plane_Collection-2-1280w.jpg 1280w, anasayfa/optimized/Plane_Collection-2-1920w.jpg 1920w, anasayfa/optimized/Plane_Collection-2-2560w.jpg 2560w","fallback":"anasayfa/optimized/Plane_Collection-2-1280w.jpg","alt":"Plane Collection - 2"},
+             {"avif":"anasayfa/optimized/Plane_Collection-3-800w.avif 800w, anasayfa/optimized/Plane_Collection-3-1280w.avif 1280w, anasayfa/optimized/Plane_Collection-3-1920w.avif 1920w, anasayfa/optimized/Plane_Collection-3-2560w.avif 2560w","webp":"anasayfa/optimized/Plane_Collection-3-800w.webp 800w, anasayfa/optimized/Plane_Collection-3-1280w.webp 1280w, anasayfa/optimized/Plane_Collection-3-1920w.webp 1920w, anasayfa/optimized/Plane_Collection-3-2560w.webp 2560w","jpg":"anasayfa/optimized/Plane_Collection-3-800w.jpg 800w, anasayfa/optimized/Plane_Collection-3-1280w.jpg 1280w, anasayfa/optimized/Plane_Collection-3-1920w.jpg 1920w, anasayfa/optimized/Plane_Collection-3-2560w.jpg 2560w","fallback":"anasayfa/optimized/Plane_Collection-3-1280w.jpg","alt":"Plane Collection - 3"},
+             {"avif":"anasayfa/optimized/Plane_Collection-4-800w.avif 800w, anasayfa/optimized/Plane_Collection-4-1280w.avif 1280w, anasayfa/optimized/Plane_Collection-4-1920w.avif 1920w, anasayfa/optimized/Plane_Collection-4-2560w.avif 2560w","webp":"anasayfa/optimized/Plane_Collection-4-800w.webp 800w, anasayfa/optimized/Plane_Collection-4-1280w.webp 1280w, anasayfa/optimized/Plane_Collection-4-1920w.webp 1920w, anasayfa/optimized/Plane_Collection-4-2560w.webp 2560w","jpg":"anasayfa/optimized/Plane_Collection-4-800w.jpg 800w, anasayfa/optimized/Plane_Collection-4-1280w.jpg 1280w, anasayfa/optimized/Plane_Collection-4-1920w.jpg 1920w, anasayfa/optimized/Plane_Collection-4-2560w.jpg 2560w","fallback":"anasayfa/optimized/Plane_Collection-4-1280w.jpg","alt":"Plane Collection - 4"},
+             {"avif":"anasayfa/optimized/Plane_Collection-5-800w.avif 800w, anasayfa/optimized/Plane_Collection-5-1280w.avif 1280w, anasayfa/optimized/Plane_Collection-5-1920w.avif 1920w, anasayfa/optimized/Plane_Collection-5-2560w.avif 2560w","webp":"anasayfa/optimized/Plane_Collection-5-800w.webp 800w, anasayfa/optimized/Plane_Collection-5-1280w.webp 1280w, anasayfa/optimized/Plane_Collection-5-1920w.webp 1920w, anasayfa/optimized/Plane_Collection-5-2560w.webp 2560w","jpg":"anasayfa/optimized/Plane_Collection-5-800w.jpg 800w, anasayfa/optimized/Plane_Collection-5-1280w.jpg 1280w, anasayfa/optimized/Plane_Collection-5-1920w.jpg 1920w, anasayfa/optimized/Plane_Collection-5-2560w.jpg 2560w","fallback":"anasayfa/optimized/Plane_Collection-5-1280w.jpg","alt":"Plane Collection - 5"}
+           ]'>
+        <div class="work-visual">
+          <picture class="render light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/Plane_Collection-800w.avif 800w,
+              anasayfa/optimized/Plane_Collection-1280w.avif 1280w,
+              anasayfa/optimized/Plane_Collection-1920w.avif 1920w,
+              anasayfa/optimized/Plane_Collection-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/Plane_Collection-800w.webp 800w,
+              anasayfa/optimized/Plane_Collection-1280w.webp 1280w,
+              anasayfa/optimized/Plane_Collection-1920w.webp 1920w,
+              anasayfa/optimized/Plane_Collection-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Plane Collection"
+              srcset="anasayfa/optimized/Plane_Collection-800w.jpg 800w,
+              anasayfa/optimized/Plane_Collection-1280w.jpg 1280w,
+              anasayfa/optimized/Plane_Collection-1920w.jpg 1920w,
+              anasayfa/optimized/Plane_Collection-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/Plane_Collection-1280w.jpg">
+          </picture>
+          <picture class="sketch light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/Plane_Collection-eskiz-800w.avif 800w,
+              anasayfa/optimized/Plane_Collection-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/Plane_Collection-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/Plane_Collection-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/Plane_Collection-eskiz-800w.webp 800w,
+              anasayfa/optimized/Plane_Collection-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/Plane_Collection-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/Plane_Collection-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Plane Collection eskiz"
+              srcset="anasayfa/optimized/Plane_Collection-eskiz-800w.jpg 800w,
+              anasayfa/optimized/Plane_Collection-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/Plane_Collection-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/Plane_Collection-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/Plane_Collection-eskiz-1280w.jpg">
+          </picture>
+          <picture class="render dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/Plane_Collection-gece-800w.avif 800w,
+              anasayfa/optimized/Plane_Collection-gece-1280w.avif 1280w,
+              anasayfa/optimized/Plane_Collection-gece-1920w.avif 1920w,
+              anasayfa/optimized/Plane_Collection-gece-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/Plane_Collection-gece-800w.webp 800w,
+              anasayfa/optimized/Plane_Collection-gece-1280w.webp 1280w,
+              anasayfa/optimized/Plane_Collection-gece-1920w.webp 1920w,
+              anasayfa/optimized/Plane_Collection-gece-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Plane Collection gece"
+              srcset="anasayfa/optimized/Plane_Collection-gece-800w.jpg 800w,
+              anasayfa/optimized/Plane_Collection-gece-1280w.jpg 1280w,
+              anasayfa/optimized/Plane_Collection-gece-1920w.jpg 1920w,
+              anasayfa/optimized/Plane_Collection-gece-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/Plane_Collection-gece-1280w.jpg">
+          </picture>
+          <picture class="sketch dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/Plane_Collection-gece-eskiz-800w.avif 800w,
+              anasayfa/optimized/Plane_Collection-gece-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/Plane_Collection-gece-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/Plane_Collection-gece-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/Plane_Collection-gece-eskiz-800w.webp 800w,
+              anasayfa/optimized/Plane_Collection-gece-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/Plane_Collection-gece-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/Plane_Collection-gece-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Plane Collection gece eskiz"
+              srcset="anasayfa/optimized/Plane_Collection-gece-eskiz-800w.jpg 800w,
+              anasayfa/optimized/Plane_Collection-gece-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/Plane_Collection-gece-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/Plane_Collection-gece-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/Plane_Collection-gece-eskiz-1280w.jpg">
+          </picture>
+        </div>
+        <div class="work-info">
+          <span class="work-number">Mobilya</span>
+          <h2 class="work-title">Plane Collection</h2>
+          <p class="work-category">Mobilya</p>
+          <p class="work-desc">Birbirine geçen düzlemlerle kurgulanan heykelsi bir mobilya koleksiyonu.</p>
+          <span class="work-arrow">Görselleri Gör <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </div>
+
+
+      <a href="tasarim/mimari/tasarim-fakultesi.html" class="work-item type-mimari" data-tags="featured,tasarim-all,mimari" data-category="mimari">
+        <div class="work-visual">
+          <picture class="render light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/tasarim-fakultesi-800w.avif 800w,
+              anasayfa/optimized/tasarim-fakultesi-1280w.avif 1280w,
+              anasayfa/optimized/tasarim-fakultesi-1920w.avif 1920w,
+              anasayfa/optimized/tasarim-fakultesi-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/tasarim-fakultesi-800w.webp 800w,
+              anasayfa/optimized/tasarim-fakultesi-1280w.webp 1280w,
+              anasayfa/optimized/tasarim-fakultesi-1920w.webp 1920w,
+              anasayfa/optimized/tasarim-fakultesi-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Tasarım Fakültesi"
+              srcset="anasayfa/optimized/tasarim-fakultesi-800w.jpg 800w,
+              anasayfa/optimized/tasarim-fakultesi-1280w.jpg 1280w,
+              anasayfa/optimized/tasarim-fakultesi-1920w.jpg 1920w,
+              anasayfa/optimized/tasarim-fakultesi-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/tasarim-fakultesi-1280w.jpg">
+          </picture>
+          <picture class="sketch light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/tasarim-fakultesi-eskiz-800w.avif 800w,
+              anasayfa/optimized/tasarim-fakultesi-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/tasarim-fakultesi-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/tasarim-fakultesi-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/tasarim-fakultesi-eskiz-800w.webp 800w,
+              anasayfa/optimized/tasarim-fakultesi-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/tasarim-fakultesi-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/tasarim-fakultesi-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Tasarım Fakültesi eskiz"
+              srcset="anasayfa/optimized/tasarim-fakultesi-eskiz-800w.jpg 800w,
+              anasayfa/optimized/tasarim-fakultesi-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/tasarim-fakultesi-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/tasarim-fakultesi-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/tasarim-fakultesi-eskiz-1280w.jpg">
+          </picture>
+          <picture class="render dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/tasarim-fakultesi-gece-800w.avif 800w,
+              anasayfa/optimized/tasarim-fakultesi-gece-1280w.avif 1280w,
+              anasayfa/optimized/tasarim-fakultesi-gece-1920w.avif 1920w,
+              anasayfa/optimized/tasarim-fakultesi-gece-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/tasarim-fakultesi-gece-800w.webp 800w,
+              anasayfa/optimized/tasarim-fakultesi-gece-1280w.webp 1280w,
+              anasayfa/optimized/tasarim-fakultesi-gece-1920w.webp 1920w,
+              anasayfa/optimized/tasarim-fakultesi-gece-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="Tasarım Fakültesi gece"
+              srcset="anasayfa/optimized/tasarim-fakultesi-gece-800w.jpg 800w,
+              anasayfa/optimized/tasarim-fakultesi-gece-1280w.jpg 1280w,
+              anasayfa/optimized/tasarim-fakultesi-gece-1920w.jpg 1920w,
+              anasayfa/optimized/tasarim-fakultesi-gece-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/tasarim-fakultesi-gece-1280w.jpg">
+          </picture>
+          <picture class="sketch dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/tasarim-fakultesi-gece-eskiz-800w.avif 800w,
+              anasayfa/optimized/tasarim-fakultesi-gece-eskiz-1280w.avif 1280w,
+              anasayfa/optimized/tasarim-fakultesi-gece-eskiz-1920w.avif 1920w,
+              anasayfa/optimized/tasarim-fakultesi-gece-eskiz-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/tasarim-fakultesi-gece-eskiz-800w.webp 800w,
+              anasayfa/optimized/tasarim-fakultesi-gece-eskiz-1280w.webp 1280w,
+              anasayfa/optimized/tasarim-fakultesi-gece-eskiz-1920w.webp 1920w,
+              anasayfa/optimized/tasarim-fakultesi-gece-eskiz-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="Tasarım Fakültesi gece eskiz"
+              srcset="anasayfa/optimized/tasarim-fakultesi-gece-eskiz-800w.jpg 800w,
+              anasayfa/optimized/tasarim-fakultesi-gece-eskiz-1280w.jpg 1280w,
+              anasayfa/optimized/tasarim-fakultesi-gece-eskiz-1920w.jpg 1920w,
+              anasayfa/optimized/tasarim-fakultesi-gece-eskiz-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/tasarim-fakultesi-gece-eskiz-1280w.jpg">
+          </picture>
+        </div>
+        <div class="work-info">
+          <span class="work-number">Mimari</span>
+          <h2 class="work-title">Tasarım Fakültesi</h2>
+          <p class="work-category">Mimari</p>
+          <p class="work-desc">Kentten ödünç alınan tek bir ölçü, bir mekansal deneyim üretti. 8 metrelik modüller, merkezi avlu etrafında farklı açılarla konumlanarak mekansal çeşitlilik sunuyor.</p>
+          <span class="work-arrow">Projeyi İncele <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+
+
+      <a href="https://minimalev.com" target="_blank" rel="noopener noreferrer" class="work-item type-web" data-tags="tasarim-all,web" data-category="web">
+        <div class="work-visual">
+          <picture class="render light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/minimalev-site-800w.avif 800w,
+              anasayfa/optimized/minimalev-site-1280w.avif 1280w,
+              anasayfa/optimized/minimalev-site-1920w.avif 1920w,
+              anasayfa/optimized/minimalev-site-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/minimalev-site-800w.webp 800w,
+              anasayfa/optimized/minimalev-site-1280w.webp 1280w,
+              anasayfa/optimized/minimalev-site-1920w.webp 1920w,
+              anasayfa/optimized/minimalev-site-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="minimalev.com web sitesi"
+              srcset="anasayfa/optimized/minimalev-site-800w.jpg 800w,
+              anasayfa/optimized/minimalev-site-1280w.jpg 1280w,
+              anasayfa/optimized/minimalev-site-1920w.jpg 1920w,
+              anasayfa/optimized/minimalev-site-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/minimalev-site-1280w.jpg">
+          </picture>
+          <picture class="sketch light-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/minimalev-site-800w.avif 800w,
+              anasayfa/optimized/minimalev-site-1280w.avif 1280w,
+              anasayfa/optimized/minimalev-site-1920w.avif 1920w,
+              anasayfa/optimized/minimalev-site-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/minimalev-site-800w.webp 800w,
+              anasayfa/optimized/minimalev-site-1280w.webp 1280w,
+              anasayfa/optimized/minimalev-site-1920w.webp 1920w,
+              anasayfa/optimized/minimalev-site-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="minimalev.com web sitesi"
+              srcset="anasayfa/optimized/minimalev-site-800w.jpg 800w,
+              anasayfa/optimized/minimalev-site-1280w.jpg 1280w,
+              anasayfa/optimized/minimalev-site-1920w.jpg 1920w,
+              anasayfa/optimized/minimalev-site-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/minimalev-site-1280w.jpg">
+          </picture>
+          <picture class="render dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/minimalev-site-800w.avif 800w,
+              anasayfa/optimized/minimalev-site-1280w.avif 1280w,
+              anasayfa/optimized/minimalev-site-1920w.avif 1920w,
+              anasayfa/optimized/minimalev-site-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/minimalev-site-800w.webp 800w,
+              anasayfa/optimized/minimalev-site-1280w.webp 1280w,
+              anasayfa/optimized/minimalev-site-1920w.webp 1920w,
+              anasayfa/optimized/minimalev-site-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="render" decoding="async" width="600" height="337" loading="lazy" alt="minimalev.com web sitesi"
+              srcset="anasayfa/optimized/minimalev-site-800w.jpg 800w,
+              anasayfa/optimized/minimalev-site-1280w.jpg 1280w,
+              anasayfa/optimized/minimalev-site-1920w.jpg 1920w,
+              anasayfa/optimized/minimalev-site-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/minimalev-site-1280w.jpg">
+          </picture>
+          <picture class="sketch dark-only">
+            <source type="image/avif"
+              srcset="anasayfa/optimized/minimalev-site-800w.avif 800w,
+              anasayfa/optimized/minimalev-site-1280w.avif 1280w,
+              anasayfa/optimized/minimalev-site-1920w.avif 1920w,
+              anasayfa/optimized/minimalev-site-2560w.avif 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <source type="image/webp"
+              srcset="anasayfa/optimized/minimalev-site-800w.webp 800w,
+              anasayfa/optimized/minimalev-site-1280w.webp 1280w,
+              anasayfa/optimized/minimalev-site-1920w.webp 1920w,
+              anasayfa/optimized/minimalev-site-2560w.webp 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px">
+            <img class="sketch" decoding="async" width="600" height="337" loading="lazy" alt="minimalev.com web sitesi"
+              srcset="anasayfa/optimized/minimalev-site-800w.jpg 800w,
+              anasayfa/optimized/minimalev-site-1280w.jpg 1280w,
+              anasayfa/optimized/minimalev-site-1920w.jpg 1920w,
+              anasayfa/optimized/minimalev-site-2560w.jpg 2560w"
+              sizes="(max-width: 768px) 100vw, 1256px"
+              src="anasayfa/optimized/minimalev-site-1280w.jpg">
+          </picture>
+        </div>
+        <div class="work-info">
+          <span class="work-number">Web</span>
+          <h2 class="work-title">minimalev.com</h2>
+          <p class="work-category">Online İç Mimarlık Platformu</p>
+          <p class="work-desc">İç mimarlık hizmetini dijital bir platforma taşıyan girişim. WordPress + WooCommerce altyapısıyla sipariş, randevu ve 3D tasarım teslimi tek çatı altında.</p>
+          <span class="work-arrow">Web Sitesini Ziyaret Et <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg></span>
+        </div>
+      </a>
+
+      <div class="no-results" id="noResults">Sonuç bulunamadı</div>
+    </div>
+  </section>
+  </main>
+
+  <!-- About -->
+  <section id="about" class="about">
+    <div class="about-inner">
+      <div class="about-card">
+        <!-- Profile Header -->
+        <div class="profile-header">
+          <div class="profile-avatar">
+            <picture>
+              <source srcset="anasayfa/enesyildiz-200w.avif" type="image/avif">
+              <source srcset="anasayfa/enesyildiz-200w.webp" type="image/webp">
+              <img src="anasayfa/enesyildiz-200w.jpg" 
+                   width="78" height="78"
+                   decoding="async" loading="lazy"
+                   alt="Enes Yıldız profil fotoğrafı">
+            </picture>
+          </div>
+          <div class="profile-identity">
+            <h2>Enes Yıldız</h2>
+            <p>Mimar · Araştırmacı · Geliştirici</p>
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="profile-bio">
+          <p>Mimarlık pratiğimi <strong>veri, simülasyon ve algoritmalar</strong> üzerine kuruyor; tasarım problemlerini <strong>ölçerek ve optimize ederek</strong> çözüyorum.</p>
+          <p>Parametrik cephe üretiminden performans simülasyonlarına, algoritmik araç geliştirmeden mimari projeye kadar farklı katmanlarda çalışıyorum. <strong>Estetik ve performansı</strong> karşıt değil, <strong>birbirini tamamlayan iki tasarım girdisi</strong> olarak değerlendiriyorum.</p>
+        </div>
+
+        <!-- Divider -->
+        <div class="about-divider"></div>
+
+        <!-- Two Column Content -->
+        <div class="about-content">
+          <!-- Left: Toolkit -->
+          <div class="about-toolkit">
+            <div class="section-label">Araç Seti</div>
+
+            <div class="toolkit-category">
+              <div class="toolkit-category-label">Tasarım & Modelleme</div>
+              <div class="toolkit-pills">
+                <span class="toolkit-pill priority">
+                  <!-- Grasshopper: Parametric node graph -->
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="7" r="2.5"/><circle cx="5" cy="17" r="2.5"/><circle cx="19" cy="12" r="2.5"/><path d="M7.5 8l9 3.5"/><path d="M7.5 16l9-3.5"/></svg>
+                  Grasshopper
+                </span>
+                <span class="toolkit-pill">
+                  <!-- Rhino: 3D NURBS surface -->
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l10 6.5v7L12 22 2 15.5v-7L12 2z"/><path d="M12 22v-6.5"/><path d="M2 8.5L12 15.5l10-7"/></svg>
+                  Rhino
+                </span>
+                <span class="toolkit-pill">
+                  <!-- Revit: BIM building layers -->
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 12l10 5 10-5"/><path d="M2 17l10 5 10-5"/></svg>
+                  Revit
+                </span>
+              </div>
+            </div>
+
+            <div class="toolkit-category">
+              <div class="toolkit-category-label">Geliştirme</div>
+              <div class="toolkit-pills">
+                <span class="toolkit-pill priority">
+                  <!-- Python: Intertwined snakes -->
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2.05C8.5 1.6 6 3.5 6 6v3h6v1H5.5C3.5 10 2 12 2 14.5S3.5 19 5.5 19H8v-3.5c0-2 1.5-3.5 3.5-3.5H16c1.7 0 3-1.3 3-3V6c0-1.7-1.3-3.5-4-3.8"/><path d="M11 22c4.5.4 7-1.5 7-4v-3h-6v-1h6.5c2 0 3.5-2 3.5-4.5S20.5 5 18.5 5H16v3.5c0 2-1.5 3.5-3.5 3.5H8c-1.7 0-3 1.3-3 3v3c0 1.7 1.3 3.5 4 3.8"/><circle cx="9.5" cy="5.5" r="1" fill="currentColor" stroke="none"/><circle cx="14.5" cy="18.5" r="1" fill="currentColor" stroke="none"/></svg>
+                  Python
+                </span>
+                <span class="toolkit-pill priority">
+                  <!-- C#: Sharp/hash symbol -->
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M4 8h16"/><path d="M4 16h16"/><path d="M10 3l-2 18"/><path d="M16 3l-2 18"/></svg>
+                  C#
+                </span>
+                <span class="toolkit-pill">
+                  <!-- AutoLISP: LISP parentheses -->
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M9 4C5 8 5 16 9 20"/><path d="M15 4c4 4 4 12 0 16"/></svg>
+                  AutoLISP
+                </span>
+              </div>
+            </div>
+
+            <div class="toolkit-category">
+              <div class="toolkit-category-label">Analiz & YZ</div>
+              <div class="toolkit-pills">
+                <span class="toolkit-pill priority">
+                  <!-- Ladybug: Sun/daylight analysis -->
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 3v3"/><path d="M12 18v3"/><path d="M5.64 5.64l2.12 2.12"/><path d="M16.24 16.24l2.12 2.12"/><path d="M3 12h3"/><path d="M18 12h3"/><path d="M5.64 18.36l2.12-2.12"/><path d="M16.24 7.76l2.12-2.12"/></svg>
+                  Ladybug
+                </span>
+                <span class="toolkit-pill">
+                  <!-- Honeybee: Hexagonal honeycomb -->
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8.66 5v10L12 22l-8.66-5V7L12 2z"/><path d="M12 8v8"/><path d="M7.07 5l4.93 3 4.93-3"/><path d="M7.07 19l4.93-3 4.93 3"/></svg>
+                  Honeybee
+                </span>
+                <span class="toolkit-pill">
+                  <!-- Mask R-CNN: Object detection -->
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="3" width="18" height="18" rx="2" stroke-dasharray="4 2"/><rect x="7" y="7" width="10" height="10" rx="1"/><circle cx="12" cy="12" r="2.5"/></svg>
+                  Mask R-CNN
+                </span>
+              </div>
+            </div>
+
+            <div class="toolkit-category">
+              <div class="toolkit-category-label">Yaratıcı & Medya</div>
+              <div class="toolkit-pills">
+                <span class="toolkit-pill priority">
+                  <!-- Photoshop: Ps text mark -->
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="3" stroke="currentColor"/><text x="5.5" y="17" fill="currentColor" stroke="none" font-size="13" font-weight="700" font-family="Inter, sans-serif">Ps</text></svg>
+                  Photoshop
+                </span>
+                <span class="toolkit-pill">
+                  <!-- Figma: Component shapes -->
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z"/><path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z"/><circle cx="15.5" cy="12" r="3.5"/><path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z"/><path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z"/></svg>
+                  Figma
+                </span>
+                <span class="toolkit-pill">
+                  <!-- DaVinci Resolve: Color wheel -->
+                  <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6"/><path d="M19.8 7.5l-5.2 3"/><path d="M19.8 16.5l-5.2-3"/><path d="M12 21v-6"/><path d="M4.2 16.5l5.2-3"/><path d="M4.2 7.5l5.2 3"/></svg>
+                  DaVinci Resolve
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Experience & Education -->
+          <div class="about-left">
+            <div class="section-label">Deneyim & Eğitim</div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h3>Mimarlık Doktora</h3>
+                  <p>Özyeğin Üniversitesi<br>YZ Tabanlı Yapı Elemanı Tespiti</p>
+                  <span class="timeline-date">2023 — Devam Ediyor</span>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-content">
+                  <h3>Tasarım Koordinatörü</h3>
+                  <p>Rumman İnşaat<br>Tasarım Birimi</p>
+                  <span class="timeline-date">2020 — Devam Ediyor</span>
+                </div>
+              </div>
+              <div class="timeline-item">
+                <div class="timeline-dot inactive"></div>
+                <div class="timeline-content">
+                  <h3>TÜBİTAK Araştırmacısı</h3>
+                  <p>Bilimsel & Teknolojik Araştırma<br>Bina Performansı</p>
+                  <span class="timeline-date">2023 — 2025</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dark Footer -->
+        <div class="about-footer">
+          <div class="about-footer-links">
+            <a href="mailto:mimarenesyildiz@gmail.com" class="about-footer-link">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                <polyline points="22,6 12,13 2,6"/>
+              </svg>
+              E-posta
+            </a>
+            <a href="https://github.com/mimarenesyildiz" target="_blank" rel="noopener noreferrer" class="about-footer-link">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+              </svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/mimarenes/" target="_blank" rel="noopener noreferrer" class="about-footer-link">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                <rect x="2" y="9" width="4" height="12"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // ========== DARK MODE ==========
+    const themeToggle = document.getElementById('themeToggle');
+    const html = document.documentElement;
+    
+    // Check for saved theme - default to light if no preference
+    function getPreferredTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) return savedTheme;
+      // Default to light mode on first visit
+      return 'light';
+    }
+    
+    function updateThemeToggle(theme) {
+      if (!themeToggle) return;
+      const isDark = theme === 'dark';
+      const nextLabel = isDark ? 'Aydınlık moda geç' : 'Karanlık moda geç';
+      themeToggle.setAttribute('aria-pressed', String(isDark));
+      themeToggle.setAttribute('aria-label', nextLabel);
+      themeToggle.setAttribute('title', nextLabel);
+    }
+
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        html.setAttribute('data-theme', 'dark');
+      } else {
+        html.setAttribute('data-theme', 'light');
+      }
+      localStorage.setItem('theme', theme);
+      updateThemeToggle(theme);
+      document.getElementById('themeColorMeta').setAttribute('content', theme === 'dark' ? '#0a0a0a' : '#f8f8f8');
+      document.dispatchEvent(new CustomEvent('themeChanged', { detail: { theme: theme, isDark: theme === 'dark' } }));
+    }
+    
+    // Initialize theme - default to light
+    const initialTheme = getPreferredTheme();
+    setTheme(initialTheme);
+    
+    // Toggle theme
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = html.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      setTheme(newTheme);
+    });
+
+    // ========== ROTATING WORD ANIMATION ==========
+    const words = ['ölçülebilir', 'evrilebilir', 'optimize', 'dayanıklı'];
+    let wordIndex = 0;
+    const heroKeyword = document.getElementById('rotatingWord');
+
+    // Initial underline reveal
+    setTimeout(() => heroKeyword.classList.add('visible'), 800);
+
+    function rotateWord() {
+      // 1. Remove underline
+      heroKeyword.classList.remove('visible');
+
+      // 2. Slide out upward
+      setTimeout(() => {
+        heroKeyword.classList.add('out');
+      }, 200);
+
+      // 3. Swap text, position below, then slide in
+      setTimeout(() => {
+        wordIndex = (wordIndex + 1) % words.length;
+        heroKeyword.textContent = words[wordIndex];
+        heroKeyword.classList.remove('out');
+        heroKeyword.classList.add('in');
+
+        // Intentional reflow to apply .in styles
+        void heroKeyword.offsetHeight;
+
+        requestAnimationFrame(() => {
+          heroKeyword.classList.remove('in');
+          // 4. Re-reveal underline after settling
+          setTimeout(() => heroKeyword.classList.add('visible'), 350);
+        });
+      }, 500);
+    }
+
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setInterval(rotateWord, 3000); }
+
+    // ========== LAZY LOADING WITH INTERSECTION OBSERVER ==========
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.src = img.dataset.src;
+          if (img.dataset.srcset) {
+            img.srcset = img.dataset.srcset;
+          }
+          img.removeAttribute('data-src');
+          img.removeAttribute('data-srcset');
+          observer.unobserve(img);
+        }
+      });
+    }, {
+      rootMargin: '50px 0px',
+      threshold: 0.01
+    });
+    
+    lazyImages.forEach(img => imageObserver.observe(img));
+
+    // ========== FILTER SYSTEM ==========
+    const subNav = document.getElementById('subNav');
+    const worksSection = document.getElementById('worksSection');
+    const items = document.querySelectorAll('.work-item');
+    const noResults = document.getElementById('noResults');
+    const inlineTags = document.querySelectorAll('.inline-tag');
+    const nav = document.querySelector('.nav');
+    const logoLink = document.getElementById('logoLink');
+
+    // Sub categories (shown when a main category is expanded)
+    const subCategories = {
+      tasarim: [
+        { label: 'Tümü', filter: 'tasarim-all' },
+        { label: 'Mimari', filter: 'mimari' },
+        { label: 'Mobilya', filter: 'mobilya' },
+        { label: 'Web', filter: 'web' }
+      ],
+      arastirma: [
+        { label: 'Tümü', filter: 'arastirma-all' },
+        { label: 'Yayın', filter: 'yayin' },
+        { label: 'Fikir', filter: 'fikir' }
+      ],
+      yazilim: [
+        { label: 'Tümü', filter: 'yazilim-all' },
+        { label: 'AI', filter: 'ai' },
+        { label: 'Optimizasyon', filter: 'optimizasyon' },
+        { label: 'Fabrikasyon', filter: 'fabrikasyon' }
+      ]
+    };
+
+    let currentCategory = 'selected';
+    let currentFilter = 'featured';
+    let expandedCategory = null;
+
+    // Initialize
+    attachSubNavHandlers();
+
+    // On page load, check hash for initial filter
+    const initialHash = location.hash.slice(1);
+    if (initialHash) {
+      let category = 'tasarim';
+      if (['arastirma-all', 'yayin', 'fikir'].includes(initialHash) || initialHash.includes('arastirma')) {
+        category = 'arastirma';
+      } else if (['yazilim-all', 'ai', 'optimizasyon', 'fabrikasyon'].includes(initialHash) || initialHash.includes('yazilim')) {
+        category = 'yazilim';
+      }
+      expandedCategory = category;
+      currentCategory = category;
+      currentFilter = initialHash;
+      rebuildSubNav();
+      updateInlineTags(initialHash);
+      filterItems(initialHash);
+    } else {
+      filterItems('featured');
+    }
+
+    // Logo click - back to initial state
+    logoLink.addEventListener('click', (e) => {
+      e.preventDefault();
+      document.querySelectorAll('.sub-nav-link').forEach(l => l.classList.remove('active'));
+      expandedCategory = null;
+      currentCategory = 'selected';
+      currentFilter = 'featured';
+      rebuildSubNav();
+      updateInlineTags('featured');
+      filterItems('featured');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Inline tag click
+    inlineTags.forEach(tag => {
+      tag.addEventListener('click', () => {
+        const filter = tag.dataset.filter;
+        
+        let category = 'tasarim';
+        if (filter.includes('arastirma') || filter === 'yayin' || filter === 'fikir') {
+          category = 'arastirma';
+        } else if (filter.includes('yazilim') || filter === 'ai' || filter === 'optimizasyon' || filter === 'fabrikasyon') {
+          category = 'yazilim';
+        }
+
+          expandedCategory = category;
+        currentCategory = category;
+        currentFilter = filter;
+        rebuildSubNav();
+        updateInlineTags(filter);
+        filterItems(filter);
+  
+        scrollToSubNav();
+      });
+    });
+
+    function rebuildSubNav() {
+      let linksHTML = '';
+      
+      // Selected/back is always first
+      const starIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>`;
+      const backIcon = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>`;
+      const icon = expandedCategory === null ? starIcon : backIcon;
+      linksHTML += `<button class="sub-nav-link ${currentFilter === 'featured' ? 'active' : ''}" data-filter="featured" data-category="selected">${icon}</button>`;
+
+      if (expandedCategory === null) {
+        linksHTML += `<button class="sub-nav-link" data-filter="tasarim-all" data-category="tasarim" data-expandable="true">Tasarım</button>`;
+        linksHTML += `<button class="sub-nav-link" data-filter="arastirma-all" data-category="arastirma" data-expandable="true">Araştırma</button>`;
+        linksHTML += `<button class="sub-nav-link" data-filter="yazilim-all" data-category="yazilim" data-expandable="true">Yazılım</button>`;
+      } else {
+        // Show sub categories of expanded category (including "All")
+        const subs = subCategories[expandedCategory];
+        if (subs) {
+          subs.forEach(item => {
+            linksHTML += `<button class="sub-nav-link ${currentFilter === item.filter ? 'active' : ''}" data-filter="${item.filter}">${item.label}</button>`;
+          });
+        }
+      }
+      
+      subNav.innerHTML = `<div class="sub-nav-container">${linksHTML}</div>`;
+      
+      attachSubNavHandlers();
+    }
+
+    function attachSubNavHandlers() {
+      document.querySelectorAll('.sub-nav-link').forEach(s => {
+        s.addEventListener('click', handleSubClick);
+      });
+
+    }
+
+    function scrollToSubNav() {
+      const anchor = document.getElementById('subNavAnchor');
+      const anchorTop = anchor.getBoundingClientRect().top + window.scrollY;
+      // Scroll so content starts right below the navbar (56px)
+      window.scrollTo({ top: anchorTop - 56, behavior: 'smooth' });
+    }
+
+    function handleSubClick(e) {
+      e.preventDefault();
+      const link = e.target.closest('.sub-nav-link');
+      if (!link) return;
+      const filter = link.dataset.filter;
+      const category = link.dataset.category;
+      const isExpandable = link.dataset.expandable === 'true';
+
+      // If clicking Selected, go back to main categories view
+      if (filter === 'featured') {
+        expandedCategory = null;
+        currentCategory = 'selected';
+        currentFilter = 'featured';
+          rebuildSubNav();
+        updateInlineTags('featured');
+        filterItems('featured');
+        scrollToSubNav();
+          return;
+      }
+
+      // If clicking a main category (Work, Research, Code) - expand it
+      if (isExpandable && category) {
+        expandedCategory = category;
+        currentCategory = category;
+        // Default to "All" for that category
+        currentFilter = category + '-all';
+
+          rebuildSubNav();
+        updateInlineTags(currentFilter);
+        filterItems(currentFilter);
+        scrollToSubNav();
+        return;
+      }
+
+      // Regular sub-category click
+      document.querySelectorAll('.sub-nav-link').forEach(s => s.classList.remove('active'));
+      e.target.classList.add('active');
+
+      currentFilter = filter;
+      updateInlineTags(filter);
+      filterItems(filter);
+      scrollToSubNav();
+    }
+
+    function updateInlineTags(activeFilter) {
+      inlineTags.forEach(tag => {
+        tag.classList.toggle('active', tag.dataset.filter === activeFilter);
+      });
+    }
+
+
+
+    // URL state sync
+    function updateURL(filter) {
+      history.replaceState(null, '', filter === 'featured' ? location.pathname : '#' + filter);
+    }
+
+    function filterItems(filter) {
+      let count = 0;
+      items.forEach(item => {
+        const tags = item.dataset.tags ? item.dataset.tags.split(',') : [];
+        const show = tags.includes(filter);
+        item.classList.toggle('hiding', !show);
+        if (show) count++;
+      });
+      noResults.classList.toggle('visible', count === 0);
+      resetAnimations();
+      updateURL(filter);
+    }
+
+    function resetAnimations() {
+      const visibleItems = document.querySelectorAll('.work-item:not(.hiding)');
+      visibleItems.forEach((item, index) => {
+        item.classList.remove('visible');
+        setTimeout(() => {
+          item.classList.add('visible');
+        }, index * 100);
+      });
+    }
+
+    // About link
+    document.getElementById('aboutLink').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+    });
+
+    // Scroll reveal with Intersection Observer
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const visibleItems = document.querySelectorAll('.work-item:not(.hiding)');
+          const index = Array.from(visibleItems).indexOf(entry.target);
+          setTimeout(() => {
+            entry.target.classList.add('visible');
+          }, index * 100);
+        }
+      });
+    }, {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    });
+
+    document.querySelectorAll('.work-item').forEach(item => {
+      revealObserver.observe(item);
+    });
+
+    // ========== MOBILE/TABLET: Scroll-based sketch/render toggle ==========
+    const isTouchDevice = window.matchMedia('(hover: none), (pointer: coarse)').matches;
+
+    if (isTouchDevice) {
+      const sketchRenderObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          const visual = entry.target;
+          if (entry.isIntersecting) {
+            visual.classList.add('in-view');
+          } else {
+            visual.classList.remove('in-view');
+          }
+        });
+      }, {
+        // Sadece ekranın ortasındaki %15'lik bölgede aktif
+        rootMargin: '-42.5% 0px -42.5% 0px',
+        threshold: 0
+      });
+
+      document.querySelectorAll('.work-visual').forEach(visual => {
+        sketchRenderObserver.observe(visual);
+      });
+    }
+
+    // Nav scroll effect + sub-nav merge
+    const subNavAnchor = document.getElementById('subNavAnchor');
+    const navInner = nav.querySelector('.nav-inner');
+    const navMenu = nav.querySelector('.nav-menu');
+    let isMerged = false;
+
+    let scrollTicking = false;
+    window.addEventListener('scroll', () => {
+      if (!scrollTicking) {
+        requestAnimationFrame(() => {
+          if (window.scrollY > 10) {
+            nav.classList.add('scrolled');
+          } else {
+            nav.classList.remove('scrolled');
+          }
+
+          // Sub-nav merge/unmerge (disabled on mobile)
+          const isMobile = window.innerWidth <= 768;
+          const anchorRect = subNavAnchor.getBoundingClientRect();
+          if (!isMobile && anchorRect.top <= 56 && !isMerged) {
+            isMerged = true;
+            nav.classList.add('nav--merged');
+            subNavAnchor.classList.add('active');
+            navInner.insertBefore(subNav, navMenu);
+          } else if ((isMobile || anchorRect.top > 56) && isMerged) {
+            isMerged = false;
+            nav.classList.remove('nav--merged');
+            subNavAnchor.classList.remove('active');
+            subNavAnchor.after(subNav);
+          }
+          scrollTicking = false;
+        });
+        scrollTicking = true;
+      }
+    });
+
+    // About card vertical centering — sayfa en alta inince kart tam ortada
+    function adjustAboutPadding() {
+      const aboutSection = document.getElementById('about');
+      const aboutCard = document.querySelector('.about-card');
+      if (!aboutSection || !aboutCard) return;
+      const vh = window.innerHeight;
+      const cardH = aboutCard.offsetHeight;
+      const navH = 56;
+      const topPad = Math.max((vh - cardH - navH) / 2, 40);
+      aboutSection.style.paddingTop = topPad + 'px';
+      aboutSection.style.paddingBottom = topPad + 'px';
+    }
+    adjustAboutPadding();
+    let resizeTicking = false;
+    window.addEventListener('resize', () => {
+      if (!resizeTicking) {
+        requestAnimationFrame(() => {
+          adjustAboutPadding();
+          resizeTicking = false;
+        });
+        resizeTicking = true;
+      }
+    });
+  </script>
+<!-- Lightbox -->
+<div class="lightbox-overlay" id="lightboxOverlay">
+  <button class="lightbox-close" aria-label="Kapat">&times;</button>
+  <button class="lightbox-nav prev" aria-label="Önceki">&#8249;</button>
+  <button class="lightbox-nav next" aria-label="Sonraki">&#8250;</button>
+  <div class="lightbox-img-wrapper">
+    <picture id="lightboxPicture">
+      <source id="lightboxAvif" type="image/avif" srcset="" sizes="90vw">
+      <source id="lightboxWebp" type="image/webp" srcset="" sizes="90vw">
+      <img id="lightboxImg" src="" alt="" sizes="90vw" width="1280" height="720">
+    </picture>
+  </div>
+  <div class="lightbox-counter" id="lightboxCounter"></div>
+</div>
+
+<script>
+(function() {
+  const overlay = document.getElementById('lightboxOverlay');
+  const imgWrapper = overlay.querySelector('.lightbox-img-wrapper');
+  const img = document.getElementById('lightboxImg');
+  const avifSrc = document.getElementById('lightboxAvif');
+  const webpSrc = document.getElementById('lightboxWebp');
+  const counter = document.getElementById('lightboxCounter');
+  let images = [];
+  let currentIdx = 0;
+
+  /* ── Zoom & Pan ── */
+  /* Uses transform: scale() + translate() with transform-origin: 0 0.
+     Zoom level = naturalWidth / displayWidth (pixel-perfect at full res).
+     Pan: mouse position on the OVERLAY maps 1:1 to which part of the
+     zoomed image is visible. Simple, predictable, works everywhere. */
+  var isZoomed = false;
+  var zScale = 1;        /* computed from natural resolution */
+  var displayW = 0, displayH = 0; /* img size before zoom */
+  var tx = 0, ty = 0;    /* current translate px */
+
+  function resetZoom() {
+    isZoomed = false;
+    imgWrapper.classList.remove('zoomed');
+    img.style.transform = '';
+    imgWrapper.style.width = '';
+    imgWrapper.style.height = '';
+    img.sizes = '90vw';
+  }
+
+  function applyTransform() {
+    img.style.transform = 'scale(' + zScale + ') translate(' + tx + 'px, ' + ty + 'px)';
+  }
+
+  /* Clamp translate so the image never leaves the wrapper edges */
+  function clampTx(val) {
+    var maxTx = (displayW * zScale - displayW) / zScale;
+    return Math.max(-maxTx, Math.min(0, val));
+  }
+  function clampTy(val) {
+    var maxTy = (displayH * zScale - displayH) / zScale;
+    return Math.max(-maxTy, Math.min(0, val));
+  }
+
+  /* Parse srcset to find the max width descriptor (e.g. 2560 from "…-2560w.jpg 2560w") */
+  function getMaxSrcsetWidth() {
+    var srcset = img.getAttribute('srcset') || '';
+    var max = 0;
+    srcset.split(',').forEach(function(entry) {
+      var m = entry.trim().match(/(\d+)w\s*$/);
+      if (m) max = Math.max(max, parseInt(m[1], 10));
+    });
+    return max;
+  }
+
+  function toggleZoom(e) {
+    e.stopPropagation();
+    if (isZoomed) { resetZoom(); return; }
+
+    var rect = img.getBoundingClientRect();
+    displayW = rect.width;
+    displayH = rect.height;
+
+    /* Compute zoom: use the max available srcset width as the true resolution.
+       This is more reliable than naturalWidth which depends on which variant
+       the browser chose to download. */
+    var maxSrcW = getMaxSrcsetWidth();
+    var natW = maxSrcW || img.naturalWidth || img.width;
+    zScale = natW / displayW;
+    /* Ensure meaningful zoom: min 1.8x, max 6x */
+    zScale = Math.max(1.8, Math.min(6, zScale));
+
+    /* Force browser to load highest-res srcset variant */
+    img.sizes = Math.round(displayW * zScale) + 'px';
+
+    /* Lock wrapper size */
+    imgWrapper.style.width = displayW + 'px';
+    imgWrapper.style.height = displayH + 'px';
+    isZoomed = true;
+    imgWrapper.classList.add('zoomed');
+
+    /* Zoom into click point */
+    var cxRatio = (e.clientX - rect.left) / displayW;
+    var cyRatio = (e.clientY - rect.top) / displayH;
+    tx = clampTx(-cxRatio * displayW * (zScale - 1) / zScale);
+    ty = clampTy(-cyRatio * displayH * (zScale - 1) / zScale);
+    applyTransform();
+  }
+
+  /* Pan: mouse position over the OVERLAY controls which part is shown.
+     Ratio 0,0 (top-left of overlay) → show top-left of image.
+     Ratio 1,1 (bottom-right) → show bottom-right.
+     This is intuitive and works regardless of wrapper position. */
+  function handleMouseMove(e) {
+    if (!isZoomed) return;
+    /* Use full viewport as reference area for maximum control range */
+    var rx = e.clientX / window.innerWidth;
+    var ry = e.clientY / window.innerHeight;
+    rx = Math.max(0, Math.min(1, rx));
+    ry = Math.max(0, Math.min(1, ry));
+
+    var maxTx = (displayW * zScale - displayW) / zScale;
+    var maxTy = (displayH * zScale - displayH) / zScale;
+    tx = -rx * maxTx;
+    ty = -ry * maxTy;
+    applyTransform();
+  }
+
+  /* ── Touch: swipe nav, pinch-to-zoom, drag pan, swipe-down close ── */
+  var tStartX = 0, tStartY = 0, tStartTx = 0, tStartTy = 0;
+  var swipeDx = 0, swipeDy = 0, isSwiping = false;
+  var pinchStartDist = 0, pinchStartScale = 1;
+
+  function getPinchDist(e) {
+    var dx = e.touches[0].clientX - e.touches[1].clientX;
+    var dy = e.touches[0].clientY - e.touches[1].clientY;
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
+  function handleTouchStart(e) {
+    e.preventDefault();
+
+    /* Pinch start (2 fingers) */
+    if (e.touches.length === 2) {
+      pinchStartDist = getPinchDist(e);
+      pinchStartScale = isZoomed ? zScale : 1;
+      if (!isZoomed) {
+        var rect = img.getBoundingClientRect();
+        displayW = rect.width;
+        displayH = rect.height;
+      }
+      return;
+    }
+
+    if (e.touches.length !== 1) return;
+    tStartX = e.touches[0].clientX;
+    tStartY = e.touches[0].clientY;
+    swipeDx = 0; swipeDy = 0; isSwiping = !isZoomed;
+
+    if (isZoomed) {
+      tStartTx = tx; tStartTy = ty;
+    }
+  }
+
+  function handleTouchMove(e) {
+    e.preventDefault();
+
+    /* Pinch zoom (2 fingers) */
+    if (e.touches.length === 2) {
+      var dist = getPinchDist(e);
+      var newScale = pinchStartScale * (dist / pinchStartDist);
+      newScale = Math.max(1, Math.min(6, newScale));
+
+      if (newScale <= 1.05) {
+        resetZoom();
+        return;
+      }
+
+      if (!isZoomed) {
+        isZoomed = true;
+        imgWrapper.classList.add('zoomed');
+        imgWrapper.style.width = displayW + 'px';
+        imgWrapper.style.height = displayH + 'px';
+        img.sizes = Math.round(displayW * newScale) + 'px';
+      }
+
+      zScale = newScale;
+      /* Center the zoom */
+      var midX = (e.touches[0].clientX + e.touches[1].clientX) / 2;
+      var midY = (e.touches[0].clientY + e.touches[1].clientY) / 2;
+      var rect = imgWrapper.getBoundingClientRect();
+      var cxRatio = (midX - rect.left) / displayW;
+      var cyRatio = (midY - rect.top) / displayH;
+      tx = clampTx(-cxRatio * displayW * (zScale - 1) / zScale);
+      ty = clampTy(-cyRatio * displayH * (zScale - 1) / zScale);
+      applyTransform();
+      return;
+    }
+
+    if (e.touches.length !== 1) return;
+    var cx = e.touches[0].clientX;
+    var cy = e.touches[0].clientY;
+
+    if (isZoomed) {
+      /* Pan when zoomed */
+      var dx = (cx - tStartX) / zScale;
+      var dy = (cy - tStartY) / zScale;
+      tx = clampTx(tStartTx + dx);
+      ty = clampTy(tStartTy + dy);
+      applyTransform();
+      return;
+    }
+
+    /* Swipe gestures when not zoomed */
+    swipeDx = cx - tStartX;
+    swipeDy = cy - tStartY;
+
+    /* Visual feedback: slide image horizontally or pull down */
+    if (Math.abs(swipeDx) > Math.abs(swipeDy) && images.length > 1) {
+      imgWrapper.style.transition = 'none';
+      imgWrapper.style.transform = 'scale(1) translateX(' + swipeDx * 0.4 + 'px)';
+    } else if (swipeDy > 0) {
+      var progress = Math.min(swipeDy / 300, 1);
+      imgWrapper.style.transition = 'none';
+      imgWrapper.style.transform = 'scale(' + (1 - progress * 0.3) + ') translateY(' + swipeDy * 0.5 + 'px)';
+      overlay.style.opacity = 1 - progress * 0.6;
+    }
+  }
+
+  function handleTouchEnd(e) {
+    /* Reset pinch if fingers lifted */
+    if (e.touches.length < 2) pinchStartDist = 0;
+
+    if (!isSwiping) return;
+    isSwiping = false;
+
+    imgWrapper.style.transition = '';
+    imgWrapper.style.transform = '';
+    overlay.style.opacity = '';
+
+    var absX = Math.abs(swipeDx);
+    var absY = Math.abs(swipeDy);
+
+    /* Swipe down to close */
+    if (swipeDy > 100 && absY > absX) {
+      closeLightbox();
+      return;
+    }
+
+    /* Swipe left/right to navigate */
+    if (absX > 60 && absX > absY && images.length > 1) {
+      if (swipeDx < 0) {
+        slideDirection = 1;
+        showImage((currentIdx + 1) % images.length);
+      } else {
+        slideDirection = -1;
+        showImage((currentIdx - 1 + images.length) % images.length);
+      }
+    }
+  }
+
+  /* ── Double-tap to zoom ── */
+  var lastTapTime = 0;
+  function handleDoubleTap(e) {
+    var now = Date.now();
+    if (now - lastTapTime < 300) {
+      /* Double tap detected */
+      e.preventDefault();
+      e.stopPropagation();
+      if (isZoomed) {
+        resetZoom();
+      } else {
+        var rect = img.getBoundingClientRect();
+        displayW = rect.width;
+        displayH = rect.height;
+        var maxSrcW = getMaxSrcsetWidth();
+        var natW = maxSrcW || img.naturalWidth || img.width;
+        zScale = natW / displayW;
+        zScale = Math.max(2.5, Math.min(4, zScale));
+        img.sizes = Math.round(displayW * zScale) + 'px';
+        imgWrapper.style.width = displayW + 'px';
+        imgWrapper.style.height = displayH + 'px';
+        isZoomed = true;
+        imgWrapper.classList.add('zoomed');
+        var tapX = e.changedTouches ? e.changedTouches[0].clientX : e.clientX;
+        var tapY = e.changedTouches ? e.changedTouches[0].clientY : e.clientY;
+        var cxRatio = (tapX - rect.left) / displayW;
+        var cyRatio = (tapY - rect.top) / displayH;
+        tx = clampTx(-cxRatio * displayW * (zScale - 1) / zScale);
+        ty = clampTy(-cyRatio * displayH * (zScale - 1) / zScale);
+        img.style.transition = 'transform 0.3s ease';
+        applyTransform();
+        setTimeout(function() { img.style.transition = ''; }, 300);
+      }
+      lastTapTime = 0;
+      return true;
+    }
+    lastTapTime = now;
+    return false;
+  }
+
+  imgWrapper.addEventListener('click', toggleZoom);
+  overlay.addEventListener('mousemove', handleMouseMove);
+  overlay.addEventListener('touchstart', handleTouchStart, {passive: false});
+  overlay.addEventListener('touchmove', handleTouchMove, {passive: false});
+  overlay.addEventListener('touchend', function(e) {
+    handleTouchEnd(e);
+    handleDoubleTap(e);
+  });
+
+  var slideDirection = 0; /* -1 = from left, 1 = from right, 0 = no anim */
+
+  function showImage(idx) {
+    var prevIdx = currentIdx;
+    currentIdx = idx;
+    resetZoom();
+    var item = images[idx];
+
+    /* Determine slide direction */
+    if (slideDirection === 0 && prevIdx !== idx) {
+      slideDirection = idx > prevIdx ? 1 : -1;
+    }
+
+    if (slideDirection !== 0) {
+      /* Slide out current */
+      imgWrapper.style.transition = 'transform 0.25s ease, opacity 0.2s ease';
+      imgWrapper.style.transform = 'translateX(' + (-slideDirection * 80) + 'px)';
+      imgWrapper.style.opacity = '0';
+
+      setTimeout(function() {
+        /* Swap image */
+        avifSrc.setAttribute('srcset', item.avif);
+        webpSrc.setAttribute('srcset', item.webp);
+        img.setAttribute('srcset', item.jpg);
+        img.src = item.fallback;
+        img.alt = item.alt || '';
+        counter.textContent = images.length > 1 ? (idx + 1) + ' / ' + images.length : '';
+
+        /* Slide in from opposite side */
+        imgWrapper.style.transition = 'none';
+        imgWrapper.style.transform = 'translateX(' + (slideDirection * 80) + 'px)';
+        imgWrapper.offsetHeight; /* force reflow */
+        imgWrapper.style.transition = 'transform 0.25s ease, opacity 0.2s ease';
+        imgWrapper.style.transform = 'translateX(0)';
+        imgWrapper.style.opacity = '1';
+
+        setTimeout(function() {
+          imgWrapper.style.transition = '';
+          imgWrapper.style.transform = '';
+          imgWrapper.style.opacity = '';
+        }, 260);
+
+        slideDirection = 0;
+      }, 200);
+    } else {
+      avifSrc.setAttribute('srcset', item.avif);
+      webpSrc.setAttribute('srcset', item.webp);
+      img.setAttribute('srcset', item.jpg);
+      img.src = item.fallback;
+      img.alt = item.alt || '';
+      counter.textContent = images.length > 1 ? (idx + 1) + ' / ' + images.length : '';
+    }
+  }
+
+  function openLightbox(el) {
+    try {
+      images = JSON.parse(el.getAttribute('data-lightbox-images'));
+    } catch(e) { return; }
+    overlay.classList.toggle('has-multiple', images.length > 1);
+    currentIdx = 0;
+    showImage(0);
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeLightbox() {
+    resetZoom();
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+
+  overlay.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+  overlay.addEventListener('click', function(e) {
+    if (e.target === overlay) closeLightbox();
+  });
+
+  overlay.querySelector('.lightbox-nav.prev').addEventListener('click', function(e) {
+    e.stopPropagation();
+    slideDirection = -1;
+    showImage((currentIdx - 1 + images.length) % images.length);
+  });
+  overlay.querySelector('.lightbox-nav.next').addEventListener('click', function(e) {
+    e.stopPropagation();
+    slideDirection = 1;
+    showImage((currentIdx + 1) % images.length);
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (!overlay.classList.contains('active')) return;
+    if (e.key === 'Escape') { if (isZoomed) { resetZoom(); } else { closeLightbox(); } }
+    if (e.key === 'ArrowLeft' && !isZoomed) { slideDirection = -1; showImage((currentIdx - 1 + images.length) % images.length); }
+    if (e.key === 'ArrowRight' && !isZoomed) { slideDirection = 1; showImage((currentIdx + 1) % images.length); }
+  });
+
+  document.querySelectorAll('[data-lightbox]').forEach(function(card) {
+    card.addEventListener('click', function(e) {
+      e.preventDefault();
+      openLightbox(card);
+    });
+    card.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openLightbox(card);
+      }
+    });
+  });
+})();
+</script>
+
+<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js').catch(() => {});
+  }
+</script>
+
+</body>
+</html>
