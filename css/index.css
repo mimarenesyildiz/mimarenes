@@ -703,6 +703,17 @@ code {
   .work-visual.in-view > img.render {
     opacity: 1;
   }
+
+  .work-visual.in-view ~ .work-info .work-arrow,
+  .work-item:has(.work-visual.in-view) .work-arrow {
+    color: var(--accent);
+    gap: 12px;
+  }
+
+  .work-visual.in-view ~ .work-info .work-arrow svg,
+  .work-item:has(.work-visual.in-view) .work-arrow svg {
+    transform: translateX(3px);
+  }
 }
 
 /* Light/Dark mode image switching */
