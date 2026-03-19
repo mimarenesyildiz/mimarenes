@@ -17,6 +17,8 @@
   <meta property="og:image" content="https://mimarenes.com/anasayfa/optimized/mimarenes-site-800w.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Enes Yıldız">
+  <meta property="og:locale" content="tr_TR">
   
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
@@ -72,16 +74,6 @@
     ],
     "knowsAbout": ["Mimarlık", "Hesaplamalı Tasarım", "Parametrik Mimarlık", "Grasshopper", "Makine Öğrenmesi"]
   }
-  </script>
-
-  <!-- Google Analytics 4 -->
-  <!-- TODO: G-XXXXXXXXXX kısmını kendi GA4 Measurement ID'nizle değiştirin -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
   </script>
 
   <link rel="stylesheet" href="css/index.css">
@@ -2076,6 +2068,38 @@
       </div>
     </div>
   </section>
+
+  <footer class="footer">
+    <div class="footer-inner footer-with-directory">
+      <div class="footer-directory" aria-label="Portfolyo kategorileri">
+        <div class="footer-directory-group">
+          <a href="#tasarim-all" class="footer-directory-anchor">Tasarım</a>
+          <a href="#mimari" class="footer-directory-link">Mimari</a>
+          <a href="#web" class="footer-directory-link">Web</a>
+          <a href="#mobilya" class="footer-directory-link">Mobilya</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="#arastirma-all" class="footer-directory-anchor">Araştırma</a>
+          <a href="#fikir" class="footer-directory-link">Fikir</a>
+          <a href="#yayin" class="footer-directory-link">Yayın</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="#yazilim-all" class="footer-directory-anchor">Yazılım</a>
+          <a href="#ai" class="footer-directory-link">AI</a>
+          <a href="#fabrikasyon" class="footer-directory-link">Fabrikasyon</a>
+          <a href="#optimizasyon" class="footer-directory-link">Optimizasyon</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.footer-directory a').forEach(function(link) {
+      link.addEventListener('click', function() {
+        setTimeout(function() { window.location.reload(); }, 10);
+      });
+    });
+  </script>
 
   <script>
     // ========== DARK MODE ==========
