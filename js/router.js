@@ -7,59 +7,65 @@
 (function () {
   'use strict';
 
-  var pageBody = document.getElementById('page-body');
-  if (!pageBody) return;
+  var pageBody, indexCssLink, subpageCssLink, currentPageStyle;
+  var subpageCssLoaded, fontCssLoaded;
+  var navigating = false;
 
-  var indexCssLink = document.querySelector('link[href*="index.css"]');
-  var currentPageStyle = null;
-  var subpageCssLoaded = !!document.querySelector('link[href*="subpage.css"]');
-  var fontCssLoaded = !!document.querySelector('link[href*="inter.css"]');
+  function init() {
+    pageBody = document.getElementById('page-body');
+    if (!pageBody) return;
 
-  // İlk yüklemede mevcut state'i kaydet
-  history.replaceState({ routerPage: location.href }, '', location.href);
+    indexCssLink = document.querySelector('link[href*="index.css"]:not([rel="preload"])');
+    subpageCssLink = document.querySelector('link[href*="subpage.css"]');
+    currentPageStyle = null;
+    subpageCssLoaded = !!subpageCssLink;
+    fontCssLoaded = !!document.querySelector('link[href*="inter.css"]');
 
-  // ── Click interception ──
-  document.addEventListener('click', function (e) {
-    var link = e.target.closest('a[href]');
-    if (!link) return;
+    // İlk yüklemede mevcut state'i kaydet
+    history.replaceState({ routerPage: location.href }, '', location.href);
 
-    var href = link.getAttribute('href');
-    if (!href || href.startsWith('#') || href.startsWith('http') ||
-        href.startsWith('mailto:') || href.startsWith('tel:') ||
-        e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+    // ── Click interception ──
+    document.addEventListener('click', function (e) {
+      var link = e.target.closest('a[href]');
+      if (!link) return;
 
-    // Sadece .html linklerini yakala
-    var cleanHref = href.split('#')[0];
-    if (!cleanHref.endsWith('.html')) return;
+      var href = link.getAttribute('href');
+      if (!href || href.startsWith('#') || href.startsWith('http') ||
+          href.startsWith('mailto:') || href.startsWith('tel:') ||
+          e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
 
-    var resolved = new URL(href, location.href);
+      // Sadece .html linklerini yakala
+      var cleanHref = href.split('#')[0];
+      if (!cleanHref.endsWith('.html')) return;
 
-    // index.html'e dönüş → full reload
-    if (resolved.pathname === '/' ||
-        resolved.pathname.endsWith('/index.html')) {
-      return; // normal navigasyon
-    }
+      var resolved = new URL(href, location.href);
 
-    e.preventDefault();
-    navigateTo(resolved.href);
-  });
-
-  // ── Popstate (geri/ileri) ──
-  window.addEventListener('popstate', function (e) {
-    if (e.state && e.state.routerPage) {
-      var url = e.state.routerPage;
-      var resolved = new URL(url);
       // index.html'e dönüş → full reload
       if (resolved.pathname === '/' ||
           resolved.pathname.endsWith('/index.html')) {
-        location.reload();
-        return;
+        return; // normal navigasyon
       }
-      loadPage(url);
-    } else {
-      location.reload();
-    }
-  });
+
+      e.preventDefault();
+      if (!navigating) navigateTo(resolved.href);
+    });
+
+    // ── Popstate (geri/ileri) ──
+    window.addEventListener('popstate', function (e) {
+      if (e.state && e.state.routerPage) {
+        var url = e.state.routerPage;
+        var resolved = new URL(url);
+        if (resolved.pathname === '/' ||
+            resolved.pathname.endsWith('/index.html')) {
+          location.reload();
+          return;
+        }
+        loadPage(url);
+      } else {
+        location.reload();
+      }
+    });
+  }
 
   function navigateTo(url) {
     history.pushState({ routerPage: url }, '', url);
@@ -67,6 +73,8 @@
   }
 
   function loadPage(url) {
+    navigating = true;
+
     fetch(url)
       .then(function (r) {
         if (!r.ok) { location.href = url; return null; }
@@ -79,38 +87,55 @@
         var newBody = doc.getElementById('page-body');
         if (!newBody) { location.href = url; return; }
 
-        // 1. İçerik swap
-        pageBody.innerHTML = newBody.innerHTML;
-
-        // 2. Title
-        document.title = doc.title;
-
-        // 3. Nav linklerini subpage moduna güncelle
-        updateNav(url);
-
-        // 4. CSS swap
+        // 1. Önce CSS swap (subpage.css aktif, index.css devre dışı)
+        //    Böylece içerik swap edildiğinde doğru stiller hazır olur
         swapCSS(url);
 
-        // 5. Inline style (accent renkleri)
+        // 2. Inline style (accent renkleri)
         injectPageStyles(doc);
 
-        // 6. Scroll
+        // 3. Nav elementlerinin animasyonlarını sıfırla
+        //    (index.css'teki opacity:0 + animation kaldırılınca
+        //     default opacity:1'e döner, ama garanti olsun)
+        freezeNav();
+
+        // 4. İçerik swap
+        pageBody.innerHTML = newBody.innerHTML;
+
+        // 5. Title
+        document.title = doc.title;
+
+        // 6. Nav linklerini subpage moduna güncelle
+        updateNav(url);
+
+        // 7. Scroll
         window.scrollTo(0, 0);
 
-        // 7. body class
+        // 8. body class
         document.body.classList.remove('js-loading');
 
-        // 8. Gerekli scriptleri yükle, sonra reinit et
+        // 9. Gerekli scriptleri yükle, sonra reinit et
         var basePath = resolveBasePath(url);
         ensureScripts(basePath).then(function () {
           reinitImageLoader();
           reinitObservers();
           trackPageView(url);
+          navigating = false;
         });
       })
       .catch(function () {
         location.href = url;
       });
+  }
+
+  // ── Nav'ı dondur (animasyon kalıntılarını temizle) ──
+  function freezeNav() {
+    var els = document.querySelectorAll('.nav-logo, .nav-link, .theme-toggle');
+    els.forEach(function (el) {
+      el.style.opacity = '1';
+      el.style.transform = 'none';
+      el.style.animation = 'none';
+    });
   }
 
   // ── Nav güncelleme ──
@@ -130,6 +155,8 @@
       a.className = aboutEl.className;
       a.textContent = aboutEl.textContent;
       a.href = indexPath + '#about';
+      a.style.opacity = '1';
+      a.style.animation = 'none';
       aboutEl.parentNode.replaceChild(a, aboutEl);
     } else if (aboutEl) {
       aboutEl.setAttribute('href', indexPath + '#about');
@@ -139,8 +166,6 @@
   function resolveIndexPath(subpageUrl) {
     var path = new URL(subpageUrl).pathname;
     var segments = path.split('/').filter(Boolean);
-    // segments: ['tasarim', 'mimari', 'seyir-kulesi.html']
-    // index.html root'ta, depth = segments.length - 1
     var depth = segments.length - 1;
     var prefix = '';
     for (var i = 0; i < depth; i++) prefix += '../';
@@ -160,16 +185,18 @@
 
     var basePath = resolveBasePath(url);
 
-    // subpage.css yükle (henüz yüklenmemişse)
-    if (!subpageCssLoaded) {
-      var link = document.createElement('link');
-      link.rel = 'stylesheet';
-      link.href = basePath + 'css/subpage.css';
-      document.head.appendChild(link);
+    // subpage.css: disabled olarak eklenmişse aktif et, yoksa yükle
+    if (subpageCssLink) {
+      subpageCssLink.disabled = false;
+    } else if (!subpageCssLoaded) {
+      subpageCssLink = document.createElement('link');
+      subpageCssLink.rel = 'stylesheet';
+      subpageCssLink.href = basePath + 'css/subpage.css';
+      document.head.appendChild(subpageCssLink);
       subpageCssLoaded = true;
     }
 
-    // inter.css font yükle (henüz yüklenmemişse)
+    // inter.css font yükle
     if (!fontCssLoaded) {
       var fontLink = document.createElement('link');
       fontLink.rel = 'stylesheet';
@@ -290,5 +317,12 @@
         page_title: document.title
       });
     }
+  }
+
+  // ── Başlat ──
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
   }
 })();
