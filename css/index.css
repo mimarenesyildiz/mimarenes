@@ -3,9 +3,14 @@
   navigation: auto;
 }
 
+::view-transition-group(main-nav),
 ::view-transition-old(main-nav),
 ::view-transition-new(main-nav) {
   animation: none;
+}
+
+::view-transition-image-pair(main-nav) {
+  isolation: auto;
 }
 
 /* ========== CRITICAL CSS - Above the fold ========== */
