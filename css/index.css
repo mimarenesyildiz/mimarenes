@@ -1,3 +1,13 @@
+/* ========== VIEW TRANSITIONS ========== */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(main-nav),
+::view-transition-new(main-nav) {
+  animation: none;
+}
+
 /* ========== CRITICAL CSS - Above the fold ========== */
 * {
   margin: 0;
@@ -154,6 +164,7 @@ code {
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   transition: background 0.3s ease, box-shadow 0.3s ease;
+  view-transition-name: main-nav;
 }
 
 [data-theme="dark"] .nav {
