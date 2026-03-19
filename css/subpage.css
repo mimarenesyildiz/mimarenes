@@ -1,5 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
 
+/* ========== VIEW TRANSITIONS ========== */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(main-nav),
+::view-transition-new(main-nav) {
+  animation: none;
+}
+
 /* ===== Subpage Common Styles =====
    Shared across all project detail pages.
    Override --accent vars in page-level <style> if needed.
@@ -88,6 +98,7 @@ img { max-width: 100%; height: auto; display: block; }
   background: rgba(248, 248, 248, 0.85);
   backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
   transition: all 0.3s ease;
+  view-transition-name: main-nav;
 }
 [data-theme="dark"] .nav { background: rgba(20, 20, 20, 0.9); }
 .nav.scrolled { background: rgba(248, 248, 248, 0.95); box-shadow: 0 1px 0 rgba(0,0,0,0.05); }
