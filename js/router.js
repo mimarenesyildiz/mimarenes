@@ -1,3 +1,4 @@
+alert('Router yüklendi!');
 /* ===== SPA Router (PJAX) =====
    Nav bar'ı sabit tutarak sadece #page-body içeriğini değiştirir.
    - Index → Subpage: fetch + swap
