@@ -1,22 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
 
-/* ========== VIEW TRANSITIONS ========== */
-@view-transition {
-  navigation: auto;
-}
-
-::view-transition-group(root),
-::view-transition-old(root),
-::view-transition-new(root),
-::view-transition-old(page-content),
-::view-transition-new(page-content) {
-  animation: none;
-}
-
-#page-body {
-  view-transition-name: page-content;
-}
-
 /* ===== Subpage Common Styles =====
    Shared across all project detail pages.
    Override --accent vars in page-level <style> if needed.
