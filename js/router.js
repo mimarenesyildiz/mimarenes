@@ -100,14 +100,13 @@
         // 7. body class
         document.body.classList.remove('js-loading');
 
-        // 8. Image loader yeniden başlat
-        reinitImageLoader();
-
-        // 9. Scroll reveal + video observer
-        reinitObservers();
-
-        // 10. Analytics
-        trackPageView(url);
+        // 8. Gerekli scriptleri yükle, sonra reinit et
+        var basePath = resolveBasePath(url);
+        ensureScripts(basePath).then(function () {
+          reinitImageLoader();
+          reinitObservers();
+          trackPageView(url);
+        });
       })
       .catch(function () {
         location.href = url;
@@ -205,6 +204,33 @@
       currentPageStyle.textContent = css;
       document.head.appendChild(currentPageStyle);
     }
+  }
+
+  // ── Script yükleme ──
+  var scriptsLoaded = {
+    imageLoader: typeof PriorityImageLoader === 'function'
+  };
+
+  function loadScript(src) {
+    return new Promise(function (resolve, reject) {
+      var s = document.createElement('script');
+      s.src = src;
+      s.onload = resolve;
+      s.onerror = reject;
+      document.head.appendChild(s);
+    });
+  }
+
+  function ensureScripts(basePath) {
+    var promises = [];
+    if (!scriptsLoaded.imageLoader) {
+      promises.push(
+        loadScript(basePath + 'js/image-loader.js').then(function () {
+          scriptsLoaded.imageLoader = true;
+        })
+      );
+    }
+    return promises.length ? Promise.all(promises) : Promise.resolve();
   }
 
   // ── Image loader reinit ──
