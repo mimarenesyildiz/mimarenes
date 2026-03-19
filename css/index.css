@@ -195,10 +195,11 @@ code {
 }
 
 .nav-logo {
+  font-family: 'Outfit', sans-serif;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   color: var(--gray-900);
-  letter-spacing: -0.02em;
+  letter-spacing: -0.034em;
   opacity: 0;
   animation: fadeSlideDown 0.5s ease 0.1s forwards;
   cursor: pointer;
@@ -216,6 +217,7 @@ code {
 }
 
 .nav-link {
+  font-family: 'Manrope', sans-serif;
   font-size: 13px;
   font-weight: 400;
   color: var(--gray-500);

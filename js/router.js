@@ -91,6 +91,9 @@
 
         console.log('[Router] Sayfa yüklendi, swap başlıyor');
 
+        // DEBUG: Router çalıştığını göster (geçici kırmızı border)
+        document.querySelector('.nav').style.borderBottom = '3px solid red';
+
         // 1. Önce CSS swap (subpage.css aktif, index.css devre dışı)
         //    Böylece içerik swap edildiğinde doğru stiller hazır olur
         swapCSS(url);
