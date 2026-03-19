@@ -13,7 +13,8 @@
 
   function init() {
     pageBody = document.getElementById('page-body');
-    if (!pageBody) return;
+    if (!pageBody) { console.warn('[Router] #page-body bulunamadı'); return; }
+    console.log('[Router] Başlatıldı');
 
     indexCssLink = document.querySelector('link[href*="index.css"]:not([rel="preload"])');
     subpageCssLink = document.querySelector('link[href*="subpage.css"]');
@@ -47,6 +48,7 @@
       }
 
       e.preventDefault();
+      console.log('[Router] Navigasyon yakalandı:', resolved.href);
       if (!navigating) navigateTo(resolved.href);
     });
 
@@ -87,6 +89,8 @@
         var newBody = doc.getElementById('page-body');
         if (!newBody) { location.href = url; return; }
 
+        console.log('[Router] Sayfa yüklendi, swap başlıyor');
+
         // 1. Önce CSS swap (subpage.css aktif, index.css devre dışı)
         //    Böylece içerik swap edildiğinde doğru stiller hazır olur
         swapCSS(url);
@@ -123,7 +127,8 @@
           navigating = false;
         });
       })
-      .catch(function () {
+      .catch(function (err) {
+        console.error('[Router] Fetch hatası:', err);
         location.href = url;
       });
   }
