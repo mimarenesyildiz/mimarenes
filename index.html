@@ -107,7 +107,190 @@
     </div>
   </nav>
 
-  <script src="js/router.js"></script>
+  <script>
+  /* ===== SPA Router (PJAX) ===== */
+  (function () {
+    'use strict';
+    var pageBody, indexCssLink, subpageCssLink, currentPageStyle;
+    var subpageCssLoaded, fontCssLoaded, navigating = false;
+
+    function init() {
+      pageBody = document.getElementById('page-body');
+      if (!pageBody) return;
+      indexCssLink = document.querySelector('link[href*="index.css"]:not([rel="preload"])');
+      subpageCssLink = document.querySelector('link[href*="subpage.css"]');
+      subpageCssLoaded = !!subpageCssLink;
+      fontCssLoaded = !!document.querySelector('link[href*="inter.css"]');
+      history.replaceState({ routerPage: location.href }, '', location.href);
+
+      document.addEventListener('click', function (e) {
+        var link = e.target.closest('a[href]');
+        if (!link) return;
+        var href = link.getAttribute('href');
+        if (!href || href.startsWith('#') || href.startsWith('http') ||
+            href.startsWith('mailto:') || href.startsWith('tel:') ||
+            e.ctrlKey || e.metaKey || e.shiftKey || e.altKey) return;
+        var cleanHref = href.split('#')[0];
+        if (!cleanHref.endsWith('.html')) return;
+        var resolved = new URL(href, location.href);
+        if (resolved.pathname === '/' || resolved.pathname.endsWith('/index.html')) return;
+        e.preventDefault();
+        if (!navigating) navigateTo(resolved.href);
+      });
+
+      window.addEventListener('popstate', function (e) {
+        if (e.state && e.state.routerPage) {
+          var url = e.state.routerPage;
+          var resolved = new URL(url);
+          if (resolved.pathname === '/' || resolved.pathname.endsWith('/index.html')) {
+            location.reload(); return;
+          }
+          loadPage(url);
+        } else { location.reload(); }
+      });
+    }
+
+    function navigateTo(url) {
+      history.pushState({ routerPage: url }, '', url);
+      loadPage(url);
+    }
+
+    function loadPage(url) {
+      navigating = true;
+      fetch(url).then(function (r) {
+        if (!r.ok) { location.href = url; return null; }
+        return r.text();
+      }).then(function (html) {
+        if (!html) return;
+        var doc = new DOMParser().parseFromString(html, 'text/html');
+        var newBody = doc.getElementById('page-body');
+        if (!newBody) { location.href = url; return; }
+
+        swapCSS(url);
+        injectPageStyles(doc);
+        freezeNav();
+        pageBody.innerHTML = newBody.innerHTML;
+        document.title = doc.title;
+        updateNav(url);
+        window.scrollTo(0, 0);
+        document.body.classList.remove('js-loading');
+
+        var basePath = resolveBasePath(url);
+        ensureScripts(basePath).then(function () {
+          reinitImageLoader();
+          reinitObservers();
+          if (typeof gtag === 'function') {
+            gtag('event', 'page_view', { page_location: url, page_title: document.title });
+          }
+          navigating = false;
+        });
+      }).catch(function () { location.href = url; });
+    }
+
+    function freezeNav() {
+      document.querySelectorAll('.nav-logo, .nav-link, .theme-toggle').forEach(function (el) {
+        el.style.opacity = '1';
+        el.style.transform = 'none';
+        el.style.animation = 'none';
+      });
+    }
+
+    function updateNav(url) {
+      var logo = document.querySelector('.nav-logo');
+      var aboutEl = document.getElementById('aboutLink') || document.querySelector('.nav-link');
+      var indexPath = resolveIndexPath(url);
+      if (logo) logo.setAttribute('href', indexPath);
+      if (aboutEl && aboutEl.tagName === 'BUTTON') {
+        var a = document.createElement('a');
+        a.className = aboutEl.className;
+        a.textContent = aboutEl.textContent;
+        a.href = indexPath + '#about';
+        a.style.opacity = '1';
+        a.style.animation = 'none';
+        aboutEl.parentNode.replaceChild(a, aboutEl);
+      } else if (aboutEl) {
+        aboutEl.setAttribute('href', indexPath + '#about');
+      }
+    }
+
+    function resolveIndexPath(u) {
+      var s = new URL(u).pathname.split('/').filter(Boolean);
+      var p = ''; for (var i = 0; i < s.length - 1; i++) p += '../';
+      return p + 'index.html';
+    }
+
+    function swapCSS(url) {
+      if (indexCssLink) indexCssLink.disabled = true;
+      var fp = document.querySelector('link[href*="index-font-presets"]');
+      if (fp) fp.disabled = true;
+      var bp = resolveBasePath(url);
+      if (subpageCssLink) { subpageCssLink.disabled = false; }
+      else if (!subpageCssLoaded) {
+        subpageCssLink = document.createElement('link');
+        subpageCssLink.rel = 'stylesheet'; subpageCssLink.href = bp + 'css/subpage.css';
+        document.head.appendChild(subpageCssLink); subpageCssLoaded = true;
+      }
+      if (!fontCssLoaded) {
+        var fl = document.createElement('link');
+        fl.rel = 'stylesheet'; fl.href = bp + 'fonts/inter.css';
+        document.head.appendChild(fl); fontCssLoaded = true;
+      }
+    }
+
+    function resolveBasePath(u) {
+      var s = new URL(u).pathname.split('/').filter(Boolean);
+      var p = ''; for (var i = 0; i < s.length - 1; i++) p += '../';
+      return p;
+    }
+
+    function injectPageStyles(doc) {
+      var old = document.getElementById('router-page-style');
+      if (old) old.remove();
+      var styles = doc.querySelectorAll('head style');
+      if (styles.length) {
+        var el = document.createElement('style'); el.id = 'router-page-style';
+        var css = ''; styles.forEach(function (s) { css += s.textContent; });
+        el.textContent = css; document.head.appendChild(el);
+      }
+    }
+
+    var scriptsReady = typeof PriorityImageLoader === 'function';
+    function ensureScripts(bp) {
+      if (scriptsReady) return Promise.resolve();
+      return new Promise(function (resolve) {
+        var s = document.createElement('script');
+        s.src = bp + 'js/image-loader.js';
+        s.onload = function () { scriptsReady = true; resolve(); };
+        s.onerror = resolve;
+        document.head.appendChild(s);
+      });
+    }
+
+    function reinitImageLoader() {
+      if (window.imageLoader && window.imageLoader.observer) window.imageLoader.observer.disconnect();
+      if (typeof PriorityImageLoader === 'function') window.imageLoader = new PriorityImageLoader();
+    }
+
+    function reinitObservers() {
+      var ro = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('visible'); ro.unobserve(e.target); } });
+      }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+      document.querySelectorAll('.reveal').forEach(function (el) { ro.observe(el); });
+      var vids = document.querySelectorAll('video[autoplay]');
+      if (vids.length) {
+        var vo = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) { if (e.isIntersecting) e.target.play().catch(function(){}); else e.target.pause(); });
+        }, { threshold: 0.25 });
+        vids.forEach(function (v) { vo.observe(v); });
+      }
+      var nav = document.querySelector('.nav');
+      if (nav) { nav.classList.remove('scrolled'); nav.classList.remove('nav--merged'); }
+    }
+
+    if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+    else init();
+  })();
+  </script>
   <div id="page-body">
   <!-- Hero -->
   <section class="hero">
