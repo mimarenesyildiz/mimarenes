@@ -529,7 +529,6 @@ code {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.38);
   transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
   position: relative;
-  overflow: hidden;
 }
 
 [data-theme="dark"] .sub-nav-container {
@@ -546,20 +545,14 @@ code {
   color: var(--gray-600);
   transition: all 0.25s ease;
   padding: 6px 16px;
-  position: relative;
-  border-radius: 999px;
-  z-index: 1;
-}
-
-.sub-nav-link::after {
-  content: '';
-  position: absolute;
-  inset: 0;
   border-radius: 999px;
   background: transparent;
   border: 1px solid transparent;
-  transition: all 0.25s ease;
-  z-index: -1;
+  box-shadow: none;
+}
+
+.sub-nav-link::after {
+  display: none;
 }
 
 .sub-nav-link:hover {
@@ -568,22 +561,16 @@ code {
 
 .sub-nav-link.active {
   color: var(--gray-900);
-}
-
-.sub-nav-link.active::after {
   background: linear-gradient(135deg, #fffdfb 0%, #f2eae3 100%);
   border-color: rgba(48, 31, 18, 0.06);
   box-shadow: 0 6px 16px rgba(48, 31, 18, 0.14);
 }
 
-[data-theme="dark"] .sub-nav-link.active::after {
+[data-theme="dark"] .sub-nav-link.active {
+  color: #1a1a1a;
   background: linear-gradient(135deg, #edf5f8 0%, #d9e8ef 100%);
   border-color: rgba(116, 183, 210, 0.14);
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.24);
-}
-
-[data-theme="dark"] .sub-nav-link.active {
-  color: #1a1a1a;
 }
 
 .sub-nav-link[data-category="selected"] {
@@ -594,16 +581,8 @@ code {
   color: var(--accent);
 }
 
-.sub-nav-link[data-category="selected"].active::after {
-  background: linear-gradient(135deg, #fffdfb 0%, #f2eae3 100%);
-  border-color: rgba(48, 31, 18, 0.06);
-  box-shadow: 0 6px 16px rgba(48, 31, 18, 0.14);
-}
-
-[data-theme="dark"] .sub-nav-link[data-category="selected"].active::after {
-  background: linear-gradient(135deg, #edf5f8 0%, #d9e8ef 100%);
-  border-color: rgba(116, 183, 210, 0.14);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.24);
+[data-theme="dark"] .sub-nav-link[data-category="selected"].active {
+  color: var(--accent);
 }
 
 .sub-nav-link svg {
@@ -2236,11 +2215,8 @@ code {
 /* Button reset styles for converted elements */
 button.sub-nav-link,
 button.nav-link {
-  background: none;
-  border: none;
   font: inherit;
   cursor: pointer;
-  padding: 0;
 }
 button.inline-tag {
   background: none;
@@ -2251,11 +2227,13 @@ button.inline-tag {
   line-height: inherit;
 }
 button.sub-nav-link {
-  padding: 6px 16px;
+  padding: 6px 16px !important;
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.01em;
+  background: transparent;
+  border: 1px solid transparent;
 }
 
 /* Reduced motion */
