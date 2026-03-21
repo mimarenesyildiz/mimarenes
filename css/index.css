@@ -521,35 +521,41 @@ code {
 .sub-nav-container {
   display: flex;
   align-items: center;
-  gap: 0;
+  gap: 4px;
+  background: var(--gray-200);
+  border-radius: 12px;
+  padding: 4px;
+}
+
+[data-theme="dark"] .sub-nav-container {
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .sub-nav-link {
   font-family: 'Manrope', sans-serif;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.01em;
-  color: var(--gray-900);
-  transition: color 0.25s;
-  padding: 14px 14px 8px;
+  color: var(--gray-600);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 8px 18px;
   position: relative;
+  border-radius: 9px;
+  z-index: 1;
 }
 
 .sub-nav-link::after {
   content: '';
   position: absolute;
-  bottom: -1px;
-  left: 14px;
-  right: 14px;
-  height: 2px;
-  background: var(--gray-900);
-  border-radius: 1px;
-  transform: scaleX(0);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  inset: 0;
+  border-radius: 9px;
+  background: transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
 }
 
 .sub-nav-link:hover {
-  color: var(--gray-600);
+  color: var(--gray-900);
 }
 
 .sub-nav-link.active {
@@ -557,21 +563,26 @@ code {
 }
 
 .sub-nav-link.active::after {
-  transform: scaleX(1);
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="dark"] .sub-nav-link.active::after {
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
 }
 
 .sub-nav-link[data-category="selected"] {
-  padding: 14px 16px;
-}
-
-.sub-nav-link[data-category="selected"]::after {
-  left: 12px;
-  right: 12px;
-  background: var(--accent);
+  padding: 8px 14px;
 }
 
 .sub-nav-link[data-category="selected"].active {
   color: var(--accent);
+}
+
+.sub-nav-link[data-category="selected"].active::after {
+  background: var(--accent-light);
+  box-shadow: none;
 }
 
 .sub-nav-link svg {
@@ -1852,7 +1863,7 @@ code {
   }
 
   .sub-nav-link {
-    padding: 14px 10px 8px;
+    padding: 7px 12px;
     font-size: 12px;
   }
 
@@ -2219,10 +2230,10 @@ button.inline-tag {
   line-height: inherit;
 }
 button.sub-nav-link {
-  padding: 14px 14px 8px;
+  padding: 8px 18px;
   font-family: 'Manrope', sans-serif;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 14px;
   letter-spacing: 0.01em;
 }
 
