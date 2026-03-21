@@ -203,6 +203,19 @@ code {
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
+/* Desktop + tablet: keep top navigation bar fully transparent */
+@media (min-width: 769px) {
+  .nav,
+  [data-theme="dark"] .nav,
+  .nav.scrolled,
+  [data-theme="dark"] .nav.scrolled {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+  }
+}
+
 .nav-inner {
   max-width: var(--content-max);
   margin: 0 auto;
@@ -372,6 +385,16 @@ code {
 
 .nav-link.active {
   color: var(--gray-900);
+}
+
+/* Desktop + tablet: hide top-left/right text controls after scroll */
+@media (min-width: 769px) {
+  .nav.scrolled .nav-logo,
+  .nav.scrolled #aboutLink {
+    opacity: 0 !important;
+    visibility: hidden;
+    pointer-events: none;
+  }
 }
 
 /* ========== HERO ========== */
@@ -658,6 +681,9 @@ code {
     position: sticky;
     top: 56px;
     z-index: 999;
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
   }
 }
 
