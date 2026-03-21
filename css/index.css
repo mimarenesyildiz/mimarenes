@@ -2215,8 +2215,11 @@ code {
 /* Button reset styles for converted elements */
 button.sub-nav-link,
 button.nav-link {
+  background: none;
+  border: none;
   font: inherit;
   cursor: pointer;
+  padding: 0;
 }
 button.inline-tag {
   background: none;
@@ -2232,8 +2235,18 @@ button.sub-nav-link {
   font-weight: 600;
   font-size: 13px;
   letter-spacing: 0.01em;
-  background: transparent;
-  border: 1px solid transparent;
+}
+button.sub-nav-link.active {
+  background: linear-gradient(135deg, #fffdfb 0%, #f2eae3 100%) !important;
+  border: 1px solid rgba(48, 31, 18, 0.06) !important;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(48, 31, 18, 0.14);
+}
+[data-theme="dark"] button.sub-nav-link.active {
+  background: linear-gradient(135deg, #edf5f8 0%, #d9e8ef 100%) !important;
+  border-color: rgba(116, 183, 210, 0.14) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.24);
+  color: #1a1a1a;
 }
 
 /* Reduced motion */
