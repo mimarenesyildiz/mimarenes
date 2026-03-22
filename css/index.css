@@ -2335,7 +2335,7 @@ button.inline-tag {
 }
 
 /* Footer Categories */
-.footer { padding: 40px var(--content-padding); border-top: 1px solid var(--gray-200); margin-top: 0; }
+.footer { padding: 18px 9px; border-top: 1px solid var(--gray-200); margin-top: 0; }
 .footer-inner { max-width: var(--content-max); margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--gray-400); }
 .footer-with-directory { flex-direction: column; gap: 16px; width: 100%; }
 .footer-directory { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 18px; width: 100%; }
