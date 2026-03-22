@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Manrope:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&display=swap');
 
 /* ========== VIEW TRANSITIONS ========== */
 @view-transition {
@@ -24,9 +24,9 @@
   --bg: #f8f8f8;
   --gray-100: #f0f0f0;
   --gray-200: #e5e5e5;
-  --gray-300: #d0d0d0;
-  --gray-400: #999999;
-  --gray-500: #666666;
+  --gray-300: #e5e5e5;
+  --gray-400: #888888;
+  --gray-500: #888888;
   --gray-600: #444444;
   --gray-900: #1a1a1a;
   --accent: #1F6F90;
@@ -39,8 +39,8 @@
   --white-dark: #141414;
   --gray-100-dark: #1a1a1a;
   --gray-200-dark: #252525;
-  --gray-300-dark: #333333;
-  --gray-400-dark: #666666;
+  --gray-300-dark: #252525;
+  --gray-400-dark: #888888;
   --gray-500-dark: #888888;
   --gray-600-dark: #aaaaaa;
   --gray-900-dark: #f0f0f0;
@@ -109,7 +109,7 @@ img { max-width: 100%; height: auto; display: block; }
   height: 56px; display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo {
-  font-family: 'Outfit', sans-serif; font-size: 18px; font-weight: 600; color: var(--gray-900); letter-spacing: -0.034em;
+  font-family: 'Manrope', sans-serif; font-size: 18px; font-weight: 600; color: var(--gray-900); letter-spacing: -0.034em;
   opacity: 0; animation: fadeSlideDown 0.5s ease 0.1s forwards; cursor: pointer; transition: color 0.25s;
 }
 .nav-logo:hover { color: var(--accent); }
