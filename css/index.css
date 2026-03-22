@@ -190,7 +190,7 @@ code {
 }
 
 [data-theme="dark"] .nav {
-  background: rgba(20, 20, 20, 0.9);
+  background: transparent;
 }
 
 .nav.scrolled {
@@ -199,8 +199,8 @@ code {
 }
 
 [data-theme="dark"] .nav.scrolled {
-  background: rgba(20, 20, 20, 0.95);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+  background: transparent;
+  box-shadow: none;
 }
 
 /* Desktop + tablet: keep top navigation bar fully transparent */
@@ -557,11 +557,11 @@ code {
   background: rgba(248, 248, 248, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  height: 56px;
+  height: 36px;
 }
 
 [data-theme="dark"] .sub-nav {
-  background: rgba(10, 10, 10, 0.95);
+  background: transparent;
 }
 
 /* When sub-nav is merged into navbar */
@@ -582,7 +582,7 @@ code {
 
 /* Placeholder height when sub-nav moves into navbar */
 #subNavAnchor.active {
-  height: 56px;
+  height: 36px;
 }
 
 .sub-nav-container {
