@@ -690,7 +690,7 @@ code {
 .works {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: 24px var(--content-padding) 80px;
+  padding: 40px var(--content-padding) 80px;
   transition: max-width 0.5s ease;
 }
 
@@ -2308,7 +2308,9 @@ button.sub-nav-link,
 button.nav-link {
   background: none;
   border: none;
-  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
   cursor: pointer;
 }
 button.inline-tag {
