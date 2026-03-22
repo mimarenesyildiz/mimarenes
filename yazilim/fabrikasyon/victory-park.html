@@ -34,16 +34,30 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": "Victory Park Konut Kompleksi",
-    "description": "Victory Park (Park Pobedy) Moskova konut kompleksi doğal taş cephe imalat ve montaj projeleri. 7.436 adet parametrik taş imalat çizimi.",
-    "url": "https://mimarenes.com/yazilim/fabrikasyon/victory-park.html",
-    "image": "https://mimarenes.com/anasayfa/optimized/victory-park-800w.jpg",
-    "author": {
-      "@type": "Person",
-      "name": "Enes Yıldız",
-      "url": "https://mimarenes.com"
-    }
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "name": "Victory Park Konut Kompleksi",
+        "description": "Victory Park (Park Pobedy) Moskova konut kompleksi doğal taş cephe imalat ve montaj projeleri. 7.436 adet parametrik taş imalat çizimi.",
+        "url": "https://mimarenes.com/yazilim/fabrikasyon/victory-park.html",
+        "image": "https://mimarenes.com/anasayfa/optimized/victory-park-800w.jpg",
+        "author": {
+          "@type": "Person",
+          "@id": "https://mimarenes.com/#person",
+          "name": "Enes Yıldız",
+          "url": "https://mimarenes.com"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://mimarenes.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Yazılım", "item": "https://mimarenes.com/yazilim/" },
+          { "@type": "ListItem", "position": 3, "name": "Fabrikasyon", "item": "https://mimarenes.com/yazilim/fabrikasyon/" },
+          { "@type": "ListItem", "position": 4, "name": "Victory Park Konut Kompleksi" }
+        ]
+      }
+    ]
   }
   </script>
   <!-- Google Analytics -->

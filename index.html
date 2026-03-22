@@ -50,29 +50,71 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Enes Yıldız",
-    "jobTitle": "Mimar, Araştırmacı, Geliştirici",
-    "url": "https://mimarenes.com",
-    "sameAs": [
-      "https://github.com/mimarenesyildiz",
-      "https://linkedin.com/in/mimarenes/"
-    ],
-    "worksFor": {
-      "@type": "Organization",
-      "name": "Rumman İnşaat"
-    },
-    "alumniOf": [
+    "@graph": [
       {
-        "@type": "CollegeOrUniversity",
-        "name": "Özyeğin University"
+        "@type": "Person",
+        "@id": "https://mimarenes.com/#person",
+        "name": "Enes Yıldız",
+        "givenName": "Enes",
+        "familyName": "Yıldız",
+        "jobTitle": ["Mimar", "Araştırmacı", "Geliştirici"],
+        "description": "İstanbul merkezli mimar, hesaplamalı tasarım araştırmacısı ve yazılım geliştirici. Mimarlık pratiğini veri, simülasyon ve algoritmalar üzerine kurar; tasarım problemlerini ölçerek ve optimize ederek çözer.",
+        "url": "https://mimarenes.com",
+        "email": "mimarenesyildiz@gmail.com",
+        "image": "https://mimarenes.com/anasayfa/enesyildiz-200w.jpg",
+        "sameAs": [
+          "https://github.com/mimarenesyildiz",
+          "https://www.linkedin.com/in/mimarenes/"
+        ],
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Rumman İnşaat",
+          "department": "Tasarım Birimi"
+        },
+        "alumniOf": [
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Özyeğin Üniversitesi",
+            "department": "Mimarlık Doktora"
+          },
+          {
+            "@type": "CollegeOrUniversity",
+            "name": "Mimar Sinan Güzel Sanatlar Üniversitesi",
+            "department": "Mimarlık Yüksek Lisans"
+          }
+        ],
+        "knowsAbout": [
+          "Mimarlık",
+          "Hesaplamalı Tasarım",
+          "Parametrik Mimarlık",
+          "Grasshopper",
+          "Rhino 3D",
+          "Revit",
+          "Python",
+          "C#",
+          "Makine Öğrenmesi",
+          "Mask R-CNN",
+          "Performans Simülasyonu",
+          "Dijital Fabrikasyon",
+          "BIM",
+          "Evrimsel Optimizasyon"
+        ],
+        "knowsLanguage": ["tr", "en"],
+        "nationality": {
+          "@type": "Country",
+          "name": "Türkiye"
+        }
       },
       {
-        "@type": "CollegeOrUniversity", 
-        "name": "Mimar Sinan Fine Arts University"
+        "@type": "WebSite",
+        "@id": "https://mimarenes.com/#website",
+        "url": "https://mimarenes.com",
+        "name": "Enes Yıldız | Mimar · Araştırmacı · Geliştirici",
+        "description": "Mimarlık pratiğimi veri, simülasyon ve algoritmalar üzerine kuruyor; tasarım problemlerini ölçerek ve optimize ederek çözüyorum.",
+        "inLanguage": "tr-TR",
+        "author": { "@id": "https://mimarenes.com/#person" }
       }
-    ],
-    "knowsAbout": ["Mimarlık", "Hesaplamalı Tasarım", "Parametrik Mimarlık", "Grasshopper", "Makine Öğrenmesi"]
+    ]
   }
   </script>
 

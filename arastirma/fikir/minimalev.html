@@ -135,16 +135,30 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": "Online İç Mimarlık Tasarım ve Danışmanlık Platformu",
-    "description": "Minimalev.com - Online iç mimarlık tasarım ve danışmanlık platformu. Kurucu Enes Yıldız'ın girişimcilik hikayesi.",
-    "url": "https://mimarenes.com/arastirma/fikir/minimalev.html",
-    "image": "https://mimarenes.com/anasayfa/optimized/minimalev-800w.jpg",
-    "author": {
-      "@type": "Person",
-      "name": "Enes Yıldız",
-      "url": "https://mimarenes.com"
-    }
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "name": "Online İç Mimarlık Tasarım ve Danışmanlık Platformu",
+        "description": "Minimalev.com - Online iç mimarlık tasarım ve danışmanlık platformu. Kurucu Enes Yıldız'ın girişimcilik hikayesi.",
+        "url": "https://mimarenes.com/arastirma/fikir/minimalev.html",
+        "image": "https://mimarenes.com/anasayfa/optimized/minimalev-800w.jpg",
+        "author": {
+          "@type": "Person",
+          "@id": "https://mimarenes.com/#person",
+          "name": "Enes Yıldız",
+          "url": "https://mimarenes.com"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://mimarenes.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Araştırma", "item": "https://mimarenes.com/arastirma/" },
+          { "@type": "ListItem", "position": 3, "name": "Fikir", "item": "https://mimarenes.com/arastirma/fikir/" },
+          { "@type": "ListItem", "position": 4, "name": "Minimalev" }
+        ]
+      }
+    ]
   }
   </script>
   <!-- Google Analytics -->
