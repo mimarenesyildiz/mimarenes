@@ -190,7 +190,7 @@ code {
 }
 
 [data-theme="dark"] .nav {
-  background: rgba(20, 20, 20, 0.9);
+  background: transparent;
 }
 
 .nav.scrolled {
@@ -199,8 +199,8 @@ code {
 }
 
 [data-theme="dark"] .nav.scrolled {
-  background: rgba(20, 20, 20, 0.95);
-  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+  background: transparent;
+  box-shadow: none;
 }
 
 /* Desktop + tablet: keep top navigation bar fully transparent */
@@ -561,7 +561,7 @@ code {
 }
 
 [data-theme="dark"] .sub-nav {
-  background: rgba(10, 10, 10, 0.95);
+  background: transparent;
 }
 
 /* When sub-nav is merged into navbar */
