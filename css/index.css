@@ -557,7 +557,7 @@ code {
   background: rgba(248, 248, 248, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  height: 56px;
+  height: 36px;
 }
 
 [data-theme="dark"] .sub-nav {
@@ -582,7 +582,7 @@ code {
 
 /* Placeholder height when sub-nav moves into navbar */
 #subNavAnchor.active {
-  height: 56px;
+  height: 36px;
 }
 
 .sub-nav-container {
