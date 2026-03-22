@@ -588,17 +588,15 @@ code {
   display: flex;
   align-items: center;
   gap: 8px;
-  background: rgba(159, 111, 69, 0.08);
+  background: rgba(245, 241, 237, 1);
   border: 1px solid rgba(48, 31, 18, 0.08);
   border-radius: 999px;
   padding: 3px 5px;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.42), 0 6px 16px rgba(48, 31, 18, 0.06);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
 }
 
 [data-theme="dark"] .sub-nav-container {
-  background: rgba(208, 161, 115, 0.08);
+  background: rgba(28, 28, 30, 1);
   border-color: rgba(116, 183, 210, 0.1);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 6px 18px rgba(0, 0, 0, 0.2);
 }
