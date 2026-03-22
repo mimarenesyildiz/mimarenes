@@ -241,7 +241,7 @@ code {
 }
 
 .nav-logo {
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
   color: var(--gray-900);
   letter-spacing: -0.02em;
@@ -262,6 +262,7 @@ code {
 }
 
 .nav-link {
+  font-family: 'Manrope', sans-serif;
   font-size: 13px;
   font-weight: 400;
   color: var(--gray-500);
