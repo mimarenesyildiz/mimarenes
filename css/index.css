@@ -44,7 +44,7 @@
   --gray-900-dark: #f0f0f0;
   --accent-dark: #74B7D2;
   --accent-light-dark: rgba(116, 183, 210, 0.16);
-  --surface-background: linear-gradient(90deg, rgba(197, 111, 52, 0.22) 0 50%, rgba(47, 110, 138, 0.18) 50% 100%);
+  --surface-background: linear-gradient(90deg, rgba(240, 224, 210, 1) 0 50%, rgba(218, 233, 240, 1) 50% 100%);
   --surface-elevated: linear-gradient(135deg, #fffdfb 0%, #f2eae3 100%);
   --surface-inset-border: rgba(48, 31, 18, 0.1);
   --surface-divider: rgba(48, 31, 18, 0.08);
@@ -81,7 +81,7 @@
   --gray-900: var(--gray-900-dark);
   --accent: var(--accent-dark);
   --accent-light: var(--accent-light-dark);
-  --surface-background: linear-gradient(90deg, rgba(197, 111, 52, 0.12) 0 50%, rgba(31, 111, 144, 0.24) 50% 100%);
+  --surface-background: linear-gradient(90deg, rgba(45, 35, 28, 1) 0 50%, rgba(22, 38, 48, 1) 50% 100%);
   --surface-elevated: linear-gradient(135deg, rgba(17, 25, 30, 0.94) 0%, rgba(11, 18, 23, 0.98) 100%);
   --surface-inset-border: rgba(116, 183, 210, 0.16);
   --surface-divider: rgba(255, 255, 255, 0.1);
