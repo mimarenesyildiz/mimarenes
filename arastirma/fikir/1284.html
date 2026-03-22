@@ -67,16 +67,30 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": "Belirsiz Gelecek İçin Dirençli Modül Tasarımı",
-    "description": "Her renovasyon binayı yıpratır. 12/84 sistemi bu döngüyü kırar: tek modüler mantık, 276 plan seçeneği, %3-5 fire oranı. Habraken'in Open Building teorisinden İHH Genel Merkez'e.",
-    "url": "https://mimarenes.com/arastirma/fikir/1284.html",
-    "image": "https://mimarenes.com/anasayfa/optimized/1284-800w.jpg",
-    "author": {
-      "@type": "Person",
-      "name": "Enes Yıldız",
-      "url": "https://mimarenes.com"
-    }
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "name": "Belirsiz Gelecek İçin Dirençli Modül Tasarımı",
+        "description": "Her renovasyon binayı yıpratır. 12/84 sistemi bu döngüyü kırar: tek modüler mantık, 276 plan seçeneği, %3-5 fire oranı. Habraken'in Open Building teorisinden İHH Genel Merkez'e.",
+        "url": "https://mimarenes.com/arastirma/fikir/1284.html",
+        "image": "https://mimarenes.com/anasayfa/optimized/1284-800w.jpg",
+        "author": {
+          "@type": "Person",
+          "@id": "https://mimarenes.com/#person",
+          "name": "Enes Yıldız",
+          "url": "https://mimarenes.com"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://mimarenes.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Araştırma", "item": "https://mimarenes.com/arastirma/" },
+          { "@type": "ListItem", "position": 3, "name": "Fikir", "item": "https://mimarenes.com/arastirma/fikir/" },
+          { "@type": "ListItem", "position": 4, "name": "12/84 Modüler Koordinasyon" }
+        ]
+      }
+    ]
   }
   </script>
   <!-- Google Analytics -->

@@ -42,16 +42,30 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "CreativeWork",
-    "name": "Tasarım Fakültesi",
-    "description": "Tasarım Fakültesi Projesi - Kentsel dokuyla diyalog kuran modüler mimari tasarım, Balıkesir",
-    "url": "https://mimarenes.com/tasarim/mimari/tasarim-fakultesi.html",
-    "image": "https://mimarenes.com/anasayfa/optimized/tasarim-fakultesi-800w.jpg",
-    "author": {
-      "@type": "Person",
-      "name": "Enes Yıldız",
-      "url": "https://mimarenes.com"
-    }
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "name": "Tasarım Fakültesi",
+        "description": "Tasarım Fakültesi Projesi - Kentsel dokuyla diyalog kuran modüler mimari tasarım, Balıkesir",
+        "url": "https://mimarenes.com/tasarim/mimari/tasarim-fakultesi.html",
+        "image": "https://mimarenes.com/anasayfa/optimized/tasarim-fakultesi-800w.jpg",
+        "author": {
+          "@type": "Person",
+          "@id": "https://mimarenes.com/#person",
+          "name": "Enes Yıldız",
+          "url": "https://mimarenes.com"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://mimarenes.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Tasarım", "item": "https://mimarenes.com/tasarim/" },
+          { "@type": "ListItem", "position": 3, "name": "Mimari", "item": "https://mimarenes.com/tasarim/mimari/" },
+          { "@type": "ListItem", "position": 4, "name": "Tasarım Fakültesi" }
+        ]
+      }
+    ]
   }
   </script>
   <!-- Google Analytics -->

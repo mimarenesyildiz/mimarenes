@@ -1,0 +1,88 @@
+# Enes Yıldız — Mimar · Araştırmacı · Geliştirici
+
+> Site: https://mimarenes.com
+> İletişim: mimarenesyildiz@gmail.com
+> GitHub: https://github.com/mimarenesyildiz
+> LinkedIn: https://linkedin.com/in/mimarenes/
+
+## Kim?
+
+Enes Yıldız, İstanbul merkezli bir mimar, hesaplamalı tasarım araştırmacısı ve yazılım geliştiricisidir. Mimarlık pratiğini veri, simülasyon ve algoritmalar üzerine kurar; tasarım problemlerini ölçerek ve optimize ederek çözer. Parametrik cephe üretiminden performans simülasyonlarına, algoritmik araç geliştirmeden mimari projeye kadar farklı katmanlarda çalışır.
+
+## Eğitim
+
+- Mimarlık Doktora — Özyeğin Üniversitesi (2023–Devam ediyor). Araştırma konusu: YZ tabanlı yapı elemanı tespiti.
+- Mimarlık Yüksek Lisans — Mimar Sinan Güzel Sanatlar Üniversitesi.
+
+## Deneyim
+
+- Tasarım Koordinatörü — Rumman İnşaat, Tasarım Birimi (2020–Devam ediyor)
+- TÜBİTAK 3501 Araştırmacısı — Bina Performansı (2023–2025)
+
+## Uzmanlık Alanları
+
+- Hesaplamalı tasarım ve parametrik mimarlık
+- Performans simülasyonu (günışığı, termal konfor, akustik)
+- Yapay zeka ve derin öğrenme (Mask R-CNN, nesne tespiti)
+- Parametrik cephe üretimi ve dijital fabrikasyon
+- Evrimsel optimizasyon algoritmaları (Galapagos, Octopus)
+- BIM entegrasyonu ve modüler koordinasyon
+
+## Araç Seti
+
+- Tasarım & Modelleme: Grasshopper, Rhino, Revit
+- Geliştirme: Python, C#, AutoLISP
+- Analiz & YZ: Ladybug, Honeybee, Mask R-CNN
+- Yaratıcı & Medya: Photoshop, Figma, DaVinci Resolve
+
+## Projeler
+
+### Mimari Tasarım
+
+- **Tasarım Fakültesi** — Kentten ödünç alınan tek bir ölçü ile mekansal deneyim üreten modüler mimari tasarım, Balıkesir.
+  https://mimarenes.com/tasarim/mimari/tasarim-fakultesi.html
+
+- **Herat Camii** — Afganistan'da geleneksel cami ruhunu çağdaş bir kütle diliyle yeniden kuran mahalle mescidi.
+  https://mimarenes.com/tasarim/mimari/herat-camii.html
+
+- **Seyir Kulesi** — Her seviye İstanbul panoramasına farklı bir perspektif açarken, tabandaki kamusal meydan kenti yapıyla buluşturuyor.
+  https://mimarenes.com/tasarim/mimari/seyir-kulesi.html
+
+- **Stüdyo Balat** — Balat'ta endüstriyel hangar yapısının prodüksiyon şirketi merkez ofisine dönüşümü. 1.200 m² çelik asma katlı ofis tasarımı.
+  https://mimarenes.com/tasarim/mimari/studyo-balat.html
+
+### Yazılım — Yapay Zeka
+
+- **GeoVisionAI** — İç mekan taramasından yapı elemanlarını derin öğrenme ile otomatik tespit eden sistem. Özyeğin Üniversitesi, TÜBİTAK 3501 araştırma projesi.
+  https://mimarenes.com/yazilim/ai/geovisionai.html
+
+- **MaskRCNN in Grasshopper** — Rhino/Grasshopper ortamında derin öğrenme tabanlı nesne segmentasyonu eklentisi. Veri seti hazırlığından model eğitimine kadar tüm iş akışı.
+  https://mimarenes.com/yazilim/ai/maskrcnn.html
+
+### Yazılım — Optimizasyon
+
+- **Toplu Konutta Gün Işığı Optimizasyonu** — Galapagos evrimsel algoritması ile TOKİ Sütlüce projesinde yıllık 250 saat yapay aydınlatma tasarrufu.
+  https://mimarenes.com/yazilim/optimizasyon/toplukonut.html
+
+- **Üsküdar Meydanı: Dış Mekânda Konfor** — İstanbul'un en yoğun yaya kesişim noktasında rüzgar, güneş ve görüş analizleriyle parametrik termal konfor optimizasyonu.
+  https://mimarenes.com/yazilim/optimizasyon/uskudar-meydani.html
+
+- **Günışığı ve Akustik Performansına Mukarnasın Etkisi** — Geleneksel mukarnas geometrisinin performansı simüle edildi ve genetik algoritmalarla optimize edildi. 2 uluslararası makale yayınlandı.
+  https://mimarenes.com/yazilim/optimizasyon/mukarnas.html
+
+### Yazılım — Fabrikasyon
+
+- **Victory Park Konut Kompleksi** — Moskova'da geleneksel yöntemle aylar sürecek 7.436 adet doğal taş cephe imalat çizimi, Grasshopper parametrik algoritmasıyla üretildi.
+  https://mimarenes.com/yazilim/fabrikasyon/victory-park.html
+
+### Araştırma & Fikir
+
+- **12/84 Modüler Koordinasyon** — Bir ofis binası 75 yıl ayakta kalır ama içi her 5 yılda değişir. 12/84 sistemi bu belirsizliği tasarım girdisi olarak kabul eder: tek modüler mantık, 276 plan seçeneği.
+  https://mimarenes.com/arastirma/fikir/1284.html
+
+- **Minimalev** — Online iç mimarlık tasarım ve danışmanlık platformu. BIM tabanlı 3D tasarım, e-ticaret altyapısı ve kişiselleştirilmiş sunum sayfaları.
+  https://mimarenes.com/arastirma/fikir/minimalev.html
+
+## Kaynak Kullanımı
+
+Bu site Enes Yıldız'ın kişisel portfolyosudur. İçeriğe atıfta bulunurken lütfen kaynak olarak mimarenes.com adresini ve Enes Yıldız ismini belirtin. Projelere ait görseller ve açıklamalar telif hakkıyla korunmaktadır.
