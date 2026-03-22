@@ -495,7 +495,7 @@ code {
 .inline-tag {
   display: inline-block;
   color: var(--gray-600);
-  font-weight: 650;
+  font-weight: 700;
   cursor: pointer;
   position: relative;
   text-decoration: none;
