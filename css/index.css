@@ -557,7 +557,7 @@ code {
   background: rgba(248, 248, 248, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  height: 18px;
+  height: 36px;
 }
 
 [data-theme="dark"] .sub-nav {
@@ -582,7 +582,7 @@ code {
 
 /* Placeholder height when sub-nav moves into navbar */
 #subNavAnchor.active {
-  height: 18px;
+  height: 36px;
 }
 
 .sub-nav-container {
@@ -2335,7 +2335,7 @@ button.inline-tag {
 }
 
 /* Footer Categories */
-.footer { padding: 40px var(--content-padding); border-top: 1px solid var(--gray-200); margin-top: 0; }
+.footer { padding: 18px 9px; border-top: 1px solid var(--gray-200); margin-top: 0; }
 .footer-inner { max-width: var(--content-max); margin: 0 auto; display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--gray-400); }
 .footer-with-directory { flex-direction: column; gap: 16px; width: 100%; }
 .footer-directory { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px 18px; width: 100%; }
