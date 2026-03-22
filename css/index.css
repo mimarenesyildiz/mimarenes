@@ -2314,7 +2314,8 @@ button.nav-link {
 button.inline-tag {
   background: none;
   border: none;
-  font: inherit;
+  font-family: inherit;
+  font-size: inherit;
   cursor: pointer;
   padding: 0;
   line-height: inherit;
