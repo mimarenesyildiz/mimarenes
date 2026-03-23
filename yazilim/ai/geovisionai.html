@@ -1,0 +1,827 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="İç mekân taramasından yapı elemanlarını elle modellemek saatler alır. GeoVisionAI, bunu derin öğrenme ile otomatikleştiriyor. Özyeğin Üniversitesi, TÜBİTAK 3501 araştırma projesi.">
+  <meta name="author" content="Enes Yıldız">
+  <meta name="keywords" content="GeoVisionAI, Grasshopper, Mask R-CNN, yapay zeka, mimari, yapı bileşeni tespiti, NURBS, TÜBİTAK">
+  <meta name="theme-color" content="#f8f8f8" id="themeColorMeta">
+  <meta name="view-transition" content="same-origin">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mimarenes.com/yazilim/ai/geovisionai.html">
+  <meta property="og:title" content="GeoVisionAI | Enes Yıldız">
+  <meta property="og:description" content="İç mekân taramasından yapı elemanlarını elle modellemek saatler alır. GeoVisionAI, bunu derin öğrenme ile otomatikleştiriyor. Özyeğin Üniversitesi, TÜBİTAK 3501 araştırma projesi.">
+  <meta property="og:image" content="https://mimarenes.com/anasayfa/optimized/geovisionai-800w.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Enes Yıldız">
+  <meta property="og:locale" content="tr_TR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GeoVisionAI | Enes Yıldız">
+  <meta name="twitter:description" content="İç mekân taramasından yapı elemanlarını elle modellemek saatler alır. GeoVisionAI, bunu derin öğrenme ile otomatikleştiriyor. Özyeğin Üniversitesi, TÜBİTAK 3501 araştırma projesi.">
+  <meta name="twitter:image" content="https://mimarenes.com/anasayfa/optimized/geovisionai-800w.jpg">
+
+  <title>GeoVisionAI | Enes Yıldız</title>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="canonical" href="https://mimarenes.com/yazilim/ai/geovisionai.html">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="../../fonts/inter.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../css/nav.css">
+  <link rel="stylesheet" href="../../css/subpage.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "name": "GeoVisionAI",
+        "description": "İç mekan taramasından yapı elemanlarını derin öğrenme ile otomatik tespit eden sistem. Özyeğin Üniversitesi, TÜBİTAK 3501 araştırma projesi.",
+        "url": "https://mimarenes.com/yazilim/ai/geovisionai.html",
+        "image": "https://mimarenes.com/anasayfa/optimized/geovisionai-800w.jpg",
+        "author": {
+          "@type": "Person",
+          "@id": "https://mimarenes.com/#person",
+          "name": "Enes Yıldız",
+          "url": "https://mimarenes.com"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://mimarenes.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Yazılım", "item": "https://mimarenes.com/yazilim/" },
+          { "@type": "ListItem", "position": 3, "name": "Yapay Zeka", "item": "https://mimarenes.com/yazilim/ai/" },
+          { "@type": "ListItem", "position": 4, "name": "GeoVisionAI" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    /* ========== PAGE-SPECIFIC STYLES ========== */
+
+    /* Section Title (unique to this page) */
+    .section-title {
+      padding: 0 5vw; margin: 80px 0 8px; max-width: 780px;
+    }
+    .section-title h2 {
+      font-size: clamp(22px, 3vw, 30px); font-weight: 400; letter-spacing: -0.02em;
+      color: var(--gray-900); line-height: 1.2;
+    }
+    .section-title h3 {
+      font-size: clamp(16px, 2.5vw, 22px); font-weight: 400; letter-spacing: -0.015em;
+      color: var(--gray-900); line-height: 1.3; margin-top: 48px;
+    }
+
+    /* Component List (unique to this page) */
+    .component-list {
+      padding: 0 5vw; margin: 48px 0; max-width: 780px;
+    }
+    .component-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .component-item:first-child { border-top: 1px solid var(--gray-200); }
+    .component-name {
+      font-size: 13px; font-weight: 600; color: var(--gray-900);
+      letter-spacing: -0.01em; margin-bottom: 6px;
+      font-family: var(--mono);
+    }
+    .component-tr {
+      font-size: 12px; color: var(--gray-400); margin-bottom: 8px;
+    }
+    .component-desc {
+      font-size: 15px; color: var(--gray-500); line-height: 1.65;
+    }
+
+    /* Page-specific data table addition */
+    .data-table-wrap h2 {
+      font-size: 11px; font-weight: 500; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--gray-400); margin-bottom: 20px;
+    }
+    .data-table .val-good { color: var(--accent); font-weight: 500; }
+
+    /* Page-specific layout variants */
+    .text-img-row.img-left.img-half { grid-template-columns: 50% 1fr; }
+    .text-img-row.installer-row { grid-template-columns: 27% 1fr; }
+
+    /* Page-specific data-value override */
+    .data-value a:hover { text-decoration: underline; }
+
+    /* Responsive (page-specific rules only) */
+    @media (max-width: 1024px) {
+      .text-img-row.installer-row { grid-template-columns: 29% 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .section-title { padding: 0 20px; margin: 60px 0 8px; }
+      .component-list { padding: 0 20px; }
+    }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK3V82N7CD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YK3V82N7CD');
+  </script>
+</head>
+<body class="js-loading">
+  <div id="nav-placeholder"></div>
+  <script src="../../js/nav.js"></script>
+
+  <div class="main-content">
+    <main class="page-content">
+
+      <!-- HEADER -->
+      <header class="project-header">
+        <div class="blog-meta">
+          <span class="blog-tag">Araştırma</span>
+          <span class="blog-date">2023–2025</span>
+        </div>
+        <p class="project-eyebrow">TÜBİTAK 3501 — 222M494</p>
+        <h1 class="project-title">GeoVisionAI</h1>
+        <p class="project-location">Özyeğin Üniversitesi · Yapay Zekâ Tabanlı Grasshopper Eklentisi</p>
+      </header>
+
+
+      <!-- GİRİŞ METNİ -->
+      <div class="text-block reveal">
+        <p>GeoVisionAI, üç boyutlu iç mekân tarama verisi kullanılarak yapı bileşenlerini otomatik tespit eden ve üç boyutlu NURBS model oluşturan bir Grasshopper eklentisidir. TÜBİTAK 3501 kapsamında Özyeğin Üniversitesi'nde yürütülen araştırma projesi çerçevesinde geliştirilmiştir.</p>
+        <p>Arka planda Mask R-CNN derin öğrenme algoritmasını kullanan eklenti; duvarlar, kapılar, pencereler, parke, seramik ve halı gibi yapı bileşenlerini mesh modeller üzerinden otomatik olarak tanımlar ve gerçek dünya ölçüleriyle üç boyutlu NURBS geometriye dönüştürür.</p>
+      </div>
+
+
+      <!-- SÜREÇ DİYAGRAMI -->
+      <div class="process-timeline reveal">
+        <div class="timeline-inner">
+          <div class="timeline-line-wrap">
+            <div class="timeline-line"></div>
+            <div class="timeline-steps">
+              <div class="tl-step">
+                <div class="tl-dot">1</div>
+                <div class="tl-body">
+                  <h4>3B Tarama</h4>
+                  <ul>
+                    <li>Nokta bulutu verisi</li>
+                    <li>Mesh model</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step">
+                <div class="tl-dot">2</div>
+                <div class="tl-body">
+                  <h4>Veri Seti</h4>
+                  <ul>
+                    <li>Etiketleme</li>
+                    <li>Temizlik &amp; b&ouml;lme</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step active">
+                <div class="tl-dot">3</div>
+                <div class="tl-body">
+                  <h4>Mask R-CNN E&gbreve;itimi</h4>
+                  <ul>
+                    <li>ResNet-101 + FPN</li>
+                    <li>COCO transfer</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step active">
+                <div class="tl-dot">4</div>
+                <div class="tl-body">
+                  <h4>Bile&scedil;en Tespiti</h4>
+                  <ul>
+                    <li>Segmentasyon</li>
+                    <li>S&inodot;n&inodot;f tahmini</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step">
+                <div class="tl-dot">5</div>
+                <div class="tl-body">
+                  <h4>NURBS Model</h4>
+                  <ul>
+                    <li>3B geometri &uuml;retimi</li>
+                    <li>Analiz &amp; rapor</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- GENEL DİAGRAM -->
+      <div class="img-full software-lead-visual reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-1-800w.avif 800w,
+                  ../../img/geovisionai/optimized/geovisionai-1-1280w.avif 1280w,
+                  ../../img/geovisionai/optimized/geovisionai-1-1920w.avif 1920w,
+                  ../../img/geovisionai/optimized/geovisionai-1-2560w.avif 2560w,
+                  ../../img/geovisionai/optimized/geovisionai-1-3840w.avif 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-1-800w.webp 800w,
+                  ../../img/geovisionai/optimized/geovisionai-1-1280w.webp 1280w,
+                  ../../img/geovisionai/optimized/geovisionai-1-1920w.webp 1920w,
+                  ../../img/geovisionai/optimized/geovisionai-1-2560w.webp 2560w,
+                  ../../img/geovisionai/optimized/geovisionai-1-3840w.webp 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/geovisionai/optimized/geovisionai-1-800w.jpg"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-1-800w.jpg 800w,
+                  ../../img/geovisionai/optimized/geovisionai-1-1280w.jpg 1280w,
+                  ../../img/geovisionai/optimized/geovisionai-1-1920w.jpg 1920w,
+                  ../../img/geovisionai/optimized/geovisionai-1-2560w.jpg 2560w,
+                  ../../img/geovisionai/optimized/geovisionai-1-3840w.jpg 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Geliştirilen birleşik modelin genel diagramı" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">GeoVisionAI eklentisinin genel iş akış diagramı: 3B taramadan yapı bileşeni tespitine ve NURBS model oluşturmaya uzanan süreç.</p>
+
+
+      <!-- GEOVİSIONAI EKLENTİSİ BAŞLIĞI -->
+      <div class="section-title reveal">
+        <h2>GeoVisionAI Eklentisi</h2>
+      </div>
+
+      <div class="text-block reveal">
+        <p>Eklenti, C# programlama dili ile geliştirilen altı ana komponent ve bir kurulum komponentinden oluşmaktadır.</p>
+      </div>
+
+
+      <!-- KOMPONENT LİSTESİ -->
+      <div class="component-list reveal">
+        <div class="component-item">
+          <div class="component-name">MaskRCNN Installer</div>
+          <div class="component-tr">Kurulum Komponenti</div>
+          <div class="component-desc">Gerekli tüm bağımlılıkları tek butonla kurar.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">Bounding Box Detector</div>
+          <div class="component-tr">Bounding Box Yaratıcı</div>
+          <div class="component-desc">Mesh modelin genişlik, uzunluk ve yükseklik ölçülerini hesaplar.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">Viewport Size Analyzer</div>
+          <div class="component-tr">Viewport Ölçer</div>
+          <div class="component-desc">Rhino viewport oranlarının uygunluğunu doğrular.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">Mesh Capture Tool</div>
+          <div class="component-tr">Görünüş Yakalayıcı</div>
+          <div class="component-desc">Altı yön görünüşünü yakalar ve imaj olarak kaydeder.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">AI Detection and Mask Processing Tool</div>
+          <div class="component-tr">Öğe Tanımlayıcı</div>
+          <div class="component-desc">Mask R-CNN ile yapı bileşenlerini tespit eder ve maske dosyaları üretir.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">Geo Mask Transformer</div>
+          <div class="component-tr">Öğe Yerleştirici</div>
+          <div class="component-desc">Maskeleri gerçek dünya ölçülerine dönüştürerek üç boyutlu konumlandırır.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">Curve Grouping by Mask Type</div>
+          <div class="component-tr">Öğe Sınıflandırıcı</div>
+          <div class="component-desc">Tanımlanan öğeleri türlerine göre gruplandırır.</div>
+        </div>
+      </div>
+
+
+      <!-- ORTAM KURULUMU -->
+      <div class="section-title reveal">
+        <h3>Ortam Kurulumu</h3>
+      </div>
+
+      <div class="text-img-row img-left installer-row reveal">
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-2-800w.avif 800w,
+                  ../../img/geovisionai/optimized/geovisionai-2-1280w.avif 1280w,
+                  ../../img/geovisionai/optimized/geovisionai-2-1920w.avif 1920w,
+                  ../../img/geovisionai/optimized/geovisionai-2-2560w.avif 2560w,
+                  ../../img/geovisionai/optimized/geovisionai-2-3840w.avif 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-2-800w.webp 800w,
+                  ../../img/geovisionai/optimized/geovisionai-2-1280w.webp 1280w,
+                  ../../img/geovisionai/optimized/geovisionai-2-1920w.webp 1920w,
+                  ../../img/geovisionai/optimized/geovisionai-2-2560w.webp 2560w,
+                  ../../img/geovisionai/optimized/geovisionai-2-3840w.webp 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/geovisionai/optimized/geovisionai-2-800w.jpg"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-2-800w.jpg 800w,
+                  ../../img/geovisionai/optimized/geovisionai-2-1280w.jpg 1280w,
+                  ../../img/geovisionai/optimized/geovisionai-2-1920w.jpg 1920w,
+                  ../../img/geovisionai/optimized/geovisionai-2-2560w.jpg 2560w,
+                  ../../img/geovisionai/optimized/geovisionai-2-3840w.jpg 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="MaskRCNN Installer komponenti Grasshopper arayüzü" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">MaskRCNN Installer komponentinin Grasshopper arayüzü. Kurulum, durum kontrolü ve manuel işlem seçenekleri görülmektedir.</p>
+        </div>
+        <div class="row-text">
+          <h2>TEK SEFERLİK KURULUM</h2>
+          <p>Teknik bilgisi olmayan kullanıcıların sistemi kolayca kurabilmesi için MaskRCNN Installer komponenti geliştirilmiştir. Tek bir butonla Git, Miniconda, GitHub deposu, eğitilmiş model ve Python ortamı kurulumu otomatik olarak gerçekleştirilir.</p>
+          <p>Kurulum tamamlandığında durum paneli tüm bileşenlerin hazır olup olmadığını kontrol eder. Eksik bileşenler varsa kullanıcı uyarılır; tümü başarılı olduktan sonra ana iş akışına geçilebilir.</p>
+        </div>
+      </div>
+
+
+      <!-- SÜRECİN İŞLEYİŞİ -->
+      <div class="section-title reveal">
+        <h3>Sürecin İşleyişi</h3>
+      </div>
+
+      <div class="text-block reveal">
+        <p>Kurulum tamamlandıktan sonra kullanıcı, üç boyutlu mekân taramasını Rhino ortamına aktarır ve Grasshopper kodundaki butonları sırasıyla çalıştırır. Süreç dört ana aşamadan oluşur: mesh modelin hazırlanması, cephe görünüşlerinin oluşturulması, yapı bileşenlerinin tespiti ve NURBS modelin üretilmesi.</p>
+      </div>
+
+      <div class="img-medium center reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-3-800w.avif 800w,
+                  ../../img/geovisionai/optimized/geovisionai-3-1280w.avif 1280w,
+                  ../../img/geovisionai/optimized/geovisionai-3-1920w.avif 1920w,
+                  ../../img/geovisionai/optimized/geovisionai-3-2560w.avif 2560w,
+                  ../../img/geovisionai/optimized/geovisionai-3-3840w.avif 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-3-800w.webp 800w,
+                  ../../img/geovisionai/optimized/geovisionai-3-1280w.webp 1280w,
+                  ../../img/geovisionai/optimized/geovisionai-3-1920w.webp 1920w,
+                  ../../img/geovisionai/optimized/geovisionai-3-2560w.webp 2560w,
+                  ../../img/geovisionai/optimized/geovisionai-3-3840w.webp 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/geovisionai/optimized/geovisionai-3-800w.jpg"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-3-800w.jpg 800w,
+                  ../../img/geovisionai/optimized/geovisionai-3-1280w.jpg 1280w,
+                  ../../img/geovisionai/optimized/geovisionai-3-1920w.jpg 1920w,
+                  ../../img/geovisionai/optimized/geovisionai-3-2560w.jpg 2560w,
+                  ../../img/geovisionai/optimized/geovisionai-3-3840w.jpg 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="GeoVisionAI iş akış diagramı" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">GeoVisionAI eklentisinin çalışma iş akış diagramı.</p>
+
+      <div class="text-img-row img-left img-half align-top reveal">
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-4-800w.avif 800w,
+                  ../../img/geovisionai/optimized/geovisionai-4-1280w.avif 1280w,
+                  ../../img/geovisionai/optimized/geovisionai-4-1920w.avif 1920w,
+                  ../../img/geovisionai/optimized/geovisionai-4-2560w.avif 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-4-800w.webp 800w,
+                  ../../img/geovisionai/optimized/geovisionai-4-1280w.webp 1280w,
+                  ../../img/geovisionai/optimized/geovisionai-4-1920w.webp 1920w,
+                  ../../img/geovisionai/optimized/geovisionai-4-2560w.webp 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/geovisionai/optimized/geovisionai-4-800w.jpg"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-4-800w.jpg 800w,
+                  ../../img/geovisionai/optimized/geovisionai-4-1280w.jpg 1280w,
+                  ../../img/geovisionai/optimized/geovisionai-4-1920w.jpg 1920w,
+                  ../../img/geovisionai/optimized/geovisionai-4-2560w.jpg 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="GeoVisionAI Grasshopper kodu" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">GeoVisionAI eklentisinin Grasshopper kodu. Butonlar ile kullanıcı yönlendirilmekte, arka planda geliştirilen komponentler çalışmaktadır.</p>
+        </div>
+        <div class="row-text">
+          <h2>GRASSHOPPER KODU</h2>
+          <p>Grasshopper arayüzünde beş ana buton yer alır: Install Button ile kurulum, ardından sırasıyla Button 1–4 ile ana süreç yürütülür. Her buton arka planda ilgili komponentleri tetikler ve sonuçlar otomatik olarak bir sonraki aşamaya aktarılır.</p>
+        </div>
+      </div>
+
+
+      <!-- MESH MODELİN HAZIRLANMASI -->
+      <div class="section-title reveal">
+        <h3>Mesh Modelin Hazırlanması</h3>
+      </div>
+
+      <div class="text-img-row img-right reveal">
+        <div class="row-text">
+          <p>Üç boyutlu iç mekân taraması sonucu elde edilen mesh model, Grasshopper ortamına aktarılır. Bounding Box Detector komponenti mesh modelin etrafına sınırlayıcı kutu oluşturarak genişlik, uzunluk ve yükseklik ölçülerini hesaplar. Bu değerler, ilerleyen aşamalarda piksel koordinatlarının gerçek dünya ölçülerine dönüştürülmesi için temel referans olarak kullanılır.</p>
+        </div>
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-5-800w.avif 800w,
+                  ../../img/geovisionai/optimized/geovisionai-5-1280w.avif 1280w,
+                  ../../img/geovisionai/optimized/geovisionai-5-1920w.avif 1920w,
+                  ../../img/geovisionai/optimized/geovisionai-5-2560w.avif 2560w,
+                  ../../img/geovisionai/optimized/geovisionai-5-3840w.avif 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-5-800w.webp 800w,
+                  ../../img/geovisionai/optimized/geovisionai-5-1280w.webp 1280w,
+                  ../../img/geovisionai/optimized/geovisionai-5-1920w.webp 1920w,
+                  ../../img/geovisionai/optimized/geovisionai-5-2560w.webp 2560w,
+                  ../../img/geovisionai/optimized/geovisionai-5-3840w.webp 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/geovisionai/optimized/geovisionai-5-800w.jpg"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-5-800w.jpg 800w,
+                  ../../img/geovisionai/optimized/geovisionai-5-1280w.jpg 1280w,
+                  ../../img/geovisionai/optimized/geovisionai-5-1920w.jpg 1920w,
+                  ../../img/geovisionai/optimized/geovisionai-5-2560w.jpg 2560w,
+                  ../../img/geovisionai/optimized/geovisionai-5-3840w.jpg 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="3B tarama mesh modeli" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">Üç boyutlu iç mekân taraması sonucu elde edilen mesh model — eklentinin başlangıç girdisi.</p>
+        </div>
+      </div>
+
+
+      <!-- CEPHE GÖRÜNÜŞLERİNİN OLUŞTURULMASI -->
+      <div class="section-title reveal">
+        <h3>Cephe Görünüşlerinin Oluşturulması</h3>
+      </div>
+
+      <div class="text-img-row img-right align-top reveal">
+        <div class="row-text">
+          <p>Görünüş yakalama aşamasına geçilmeden önce Viewport Size Analyzer komponenti Rhino viewport oranlarını kontrol eder. Görüntü alanı uygun değilse kullanıcı uyarılır ve süreç durdurulur.</p>
+          <p>Viewport uygunsa Mesh Capture Tool devreye girer. Mesh geometrisinin merkezinden ortografik kamerayla altı yön görünüşü (kuzey, güney, doğu, batı, tavan, taban) yakalanır. Her görünüş JPEG ve PNG formatında kaydedilir, ardından alpha eşiğine göre siyah-beyaz maskelere dönüştürülür.</p>
+        </div>
+      </div>
+
+
+      <!-- YAPI BİLEŞENLERİNİN TESPİTİ -->
+      <div class="section-title reveal">
+        <h3>Yapı Bileşenlerinin Tespiti</h3>
+      </div>
+
+      <div class="text-block reveal">
+        <p>Cephe görünüşleri hazırlandıktan sonra AI Detection and Mask Processing Tool komponenti devreye girer. Komponent, iç mekân fotoğraflarından oluşan özel bir veriseti ile eğitilmiş Mask R-CNN modelini kullanır. Arka planda Python betiği çalıştırılarak her görünüş üzerinde segmentasyon ve nesne tanıma işlemi gerçekleştirilir. Tespit edilen yapı bileşenleri için ayrı ayrı maske dosyaları oluşturulur ve kaydedilir.</p>
+      </div>
+
+      <div class="img-medium center reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-6-800w.avif 800w,
+                  ../../img/geovisionai/optimized/geovisionai-6-1280w.avif 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-6-800w.webp 800w,
+                  ../../img/geovisionai/optimized/geovisionai-6-1280w.webp 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/geovisionai/optimized/geovisionai-6-800w.jpg"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-6-800w.jpg 800w,
+                  ../../img/geovisionai/optimized/geovisionai-6-1280w.jpg 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Mask R-CNN dört cephe tespiti" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">Mask R-CNN algoritmasının dört cephe görünüşünde yapı bileşeni tespiti. Kırmızı maskeler tespit edilen pencere ve kapıları göstermektedir.</p>
+
+
+      <!-- NURBS MODELİN ÜRETİLMESİ -->
+      <div class="section-title reveal">
+        <h3>NURBS Modelin Üretilmesi</h3>
+      </div>
+
+      <div class="text-img-row img-right align-top reveal">
+        <div class="row-text">
+          <p>Tespit edilen maskeler, Geo Mask Transformer komponenti tarafından gerçek dünya ölçülerine dönüştürülür. Her maske için sınırlayıcı dikdörtgen çizilir, bounding box boyutlarıyla oran-orantı kurularak piksel değerleri oda boyutlarına ölçeklenir ve ilgili yüzeye (kuzey, güney, doğu, batı, tavan, taban) taşınarak döndürülür.</p>
+          <p>Son aşamada Curve Grouping by Mask Type komponenti öğeleri sınıflandırır. Öğe ve maske sayısının tutarlılığı kontrol edildikten sonra her öğenin alanı eşik değerle karşılaştırılır. Eşiği aşan öğeler maske adına göre kapı, pencere, döşeme, seramik ve halı listelerine atanır.</p>
+        </div>
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-7-800w.avif 800w,
+                  ../../img/geovisionai/optimized/geovisionai-7-1280w.avif 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-7-800w.webp 800w,
+                  ../../img/geovisionai/optimized/geovisionai-7-1280w.webp 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/geovisionai/optimized/geovisionai-7-800w.jpg"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-7-800w.jpg 800w,
+                  ../../img/geovisionai/optimized/geovisionai-7-1280w.jpg 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Cephe görünüşü ve maske oluşturma süreci" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">Üstte cephe görünüşü, altta (a) orijinal imaj, (b) siyah-beyaz maske, (c) pencere maskesi.</p>
+        </div>
+      </div>
+
+      <div class="img-medium center reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-8-800w.avif 800w,
+                  ../../img/geovisionai/optimized/geovisionai-8-1280w.avif 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-8-800w.webp 800w,
+                  ../../img/geovisionai/optimized/geovisionai-8-1280w.webp 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/geovisionai/optimized/geovisionai-8-800w.jpg"
+    data-srcset="../../img/geovisionai/optimized/geovisionai-8-800w.jpg 800w,
+                  ../../img/geovisionai/optimized/geovisionai-8-1280w.jpg 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="3B taramadan NURBS modele dönüşüm süreci" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">(a) Mesh model, (b) Mask R-CNN tespiti ve maskeleme, (c) NURBS çizgi tanımları, (d) üç boyutlu NURBS model.</p>
+
+
+      <!-- KATKILAR -->
+      <div class="highlight-block reveal">
+        <p>C# ile geliştirilen <span class="hl-accent">6 özgün Grasshopper komponenti</span> ile 3B taramadan NURBS modele uzanan uçtan uca süreç tek ortamda gerçekleştirildi.</p>
+      </div>
+
+      <div class="text-block reveal">
+        <p>Üç boyutlu tarama mesh verilerinden yapı bileşenlerinin tespit edilip sınıflandırılabileceği ve Grasshopper ortamında üç boyutlu NURBS geometrisi olarak yeniden oluşturulabileceği gösterilmiştir.</p>
+      </div>
+
+
+      <!-- PROJE VERİLERİ -->
+      <section class="project-data reveal">
+        <div class="data-grid">
+          <div class="data-item">
+            <span class="data-label">Tür</span>
+            <span class="data-value">Yapay Zekâ Tabanlı Eklenti</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Araçlar</span>
+            <span class="data-value">Rhino/Grasshopper, C#, Python</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Yöntem</span>
+            <span class="data-value">Mask R-CNN tabanlı görüntü analizi</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Çıktı</span>
+            <span class="data-value">Mimari eleman tespiti ve 3B model üretimi</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- İLGİLİ PROJELER -->
+      <div class="project-footer-section">
+        <div class="related-header">
+          <h3>İlgili Projeler</h3>
+        </div>
+        <div class="related-projects reveal">
+          <a href="../fabrikasyon/victory-park.html" class="related-card">
+            <div class="related-visual">
+              <picture class="render light-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/victory-park-800w.avif 800w,
+                  ../../anasayfa/optimized/victory-park-1280w.avif 1280w,
+                  ../../anasayfa/optimized/victory-park-1920w.avif 1920w,
+                  ../../anasayfa/optimized/victory-park-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/victory-park-800w.webp 800w,
+                  ../../anasayfa/optimized/victory-park-1280w.webp 1280w,
+                  ../../anasayfa/optimized/victory-park-1920w.webp 1920w,
+                  ../../anasayfa/optimized/victory-park-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Victory Park Konut Kompleksi"
+                  data-srcset="../../anasayfa/optimized/victory-park-800w.jpg 800w,
+                  ../../anasayfa/optimized/victory-park-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/victory-park-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/victory-park-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/victory-park-800w.jpg">
+              </picture>
+              <picture class="sketch light-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/victory-park-eskiz-800w.avif 800w,
+                  ../../anasayfa/optimized/victory-park-eskiz-1280w.avif 1280w,
+                  ../../anasayfa/optimized/victory-park-eskiz-1920w.avif 1920w,
+                  ../../anasayfa/optimized/victory-park-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/victory-park-eskiz-800w.webp 800w,
+                  ../../anasayfa/optimized/victory-park-eskiz-1280w.webp 1280w,
+                  ../../anasayfa/optimized/victory-park-eskiz-1920w.webp 1920w,
+                  ../../anasayfa/optimized/victory-park-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Victory Park Konut Kompleksi Eskiz"
+                  data-srcset="../../anasayfa/optimized/victory-park-eskiz-800w.jpg 800w,
+                  ../../anasayfa/optimized/victory-park-eskiz-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/victory-park-eskiz-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/victory-park-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/victory-park-eskiz-800w.jpg">
+              </picture>
+              <picture class="render dark-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/victory-park-gece-800w.avif 800w,
+                  ../../anasayfa/optimized/victory-park-gece-1280w.avif 1280w,
+                  ../../anasayfa/optimized/victory-park-gece-1920w.avif 1920w,
+                  ../../anasayfa/optimized/victory-park-gece-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/victory-park-gece-800w.webp 800w,
+                  ../../anasayfa/optimized/victory-park-gece-1280w.webp 1280w,
+                  ../../anasayfa/optimized/victory-park-gece-1920w.webp 1920w,
+                  ../../anasayfa/optimized/victory-park-gece-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Victory Park Konut Kompleksi"
+                  data-srcset="../../anasayfa/optimized/victory-park-gece-800w.jpg 800w,
+                  ../../anasayfa/optimized/victory-park-gece-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/victory-park-gece-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/victory-park-gece-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/victory-park-gece-800w.jpg">
+              </picture>
+              <picture class="sketch dark-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/victory-park-gece-eskiz-800w.avif 800w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-1280w.avif 1280w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-1920w.avif 1920w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/victory-park-gece-eskiz-800w.webp 800w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-1280w.webp 1280w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-1920w.webp 1920w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Victory Park Konut Kompleksi Eskiz"
+                  data-srcset="../../anasayfa/optimized/victory-park-gece-eskiz-800w.jpg 800w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/victory-park-gece-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/victory-park-gece-eskiz-800w.jpg">
+              </picture>
+            </div>
+            <div class="related-info">
+              <p class="related-meta">Fabrikasyon</p>
+              <h4 class="related-title">Victory Park Konut Kompleksi</h4>
+            </div>
+          </a>
+          <a href="../optimizasyon/toplukonut.html" class="related-card">
+            <div class="related-visual">
+              <picture class="render light-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/toplukonut-800w.avif 800w,
+                  ../../anasayfa/optimized/toplukonut-1280w.avif 1280w,
+                  ../../anasayfa/optimized/toplukonut-1920w.avif 1920w,
+                  ../../anasayfa/optimized/toplukonut-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/toplukonut-800w.webp 800w,
+                  ../../anasayfa/optimized/toplukonut-1280w.webp 1280w,
+                  ../../anasayfa/optimized/toplukonut-1920w.webp 1920w,
+                  ../../anasayfa/optimized/toplukonut-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Toplu Konutta Gün Işığı Optimizasyonu"
+                  data-srcset="../../anasayfa/optimized/toplukonut-800w.jpg 800w,
+                  ../../anasayfa/optimized/toplukonut-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/toplukonut-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/toplukonut-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/toplukonut-800w.jpg">
+              </picture>
+              <picture class="sketch light-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/toplukonut-eskiz-800w.avif 800w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1280w.avif 1280w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1920w.avif 1920w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/toplukonut-eskiz-800w.webp 800w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1280w.webp 1280w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1920w.webp 1920w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Toplu Konutta Gün Işığı Optimizasyonu Eskiz"
+                  data-srcset="../../anasayfa/optimized/toplukonut-eskiz-800w.jpg 800w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/toplukonut-eskiz-800w.jpg">
+              </picture>
+              <picture class="render dark-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-800w.avif 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-1280w.avif 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-1920w.avif 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-800w.webp 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-1280w.webp 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-1920w.webp 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Toplu Konutta Gün Işığı Optimizasyonu"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-800w.jpg 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/toplukonut-gece-800w.jpg">
+              </picture>
+              <picture class="sketch dark-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-eskiz-800w.avif 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1280w.avif 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1920w.avif 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-eskiz-800w.webp 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1280w.webp 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1920w.webp 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Toplu Konutta Gün Işığı Optimizasyonu Eskiz"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-eskiz-800w.jpg 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/toplukonut-gece-eskiz-800w.jpg">
+              </picture>
+            </div>
+            <div class="related-info">
+              <p class="related-meta">Optimizasyon</p>
+              <h4 class="related-title">Toplu Konutta Gün Işığı Optimizasyonu</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner footer-with-directory">
+      <div class="footer-directory" aria-label="Portfolyo kategorileri">
+        <div class="footer-directory-group">
+          <a href="../../index.html#tasarim-all" class="footer-directory-anchor">Tasarım</a>
+          <a href="../../index.html#mimari" class="footer-directory-link">Mimari</a>
+          <a href="../../index.html#web" class="footer-directory-link">Web</a>
+          <a href="../../index.html#mobilya" class="footer-directory-link">Mobilya</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="../../index.html#arastirma-all" class="footer-directory-anchor">Araştırma</a>
+          <a href="../../index.html#fikir" class="footer-directory-link">Fikir</a>
+          <a href="../../index.html#yayin" class="footer-directory-link">Yayın</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="../../index.html#yazilim-all" class="footer-directory-anchor">Yazılım</a>
+          <a href="../../index.html#ai" class="footer-directory-link">AI</a>
+          <a href="../../index.html#fabrikasyon" class="footer-directory-link">Fabrikasyon</a>
+          <a href="../../index.html#optimizasyon" class="footer-directory-link">Optimizasyon</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:mimarenesyildiz@gmail.com" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          E-posta
+        </a>
+        <a href="https://github.com/mimarenesyildiz" target="_blank" rel="noopener noreferrer" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/mimarenes/" target="_blank" rel="noopener noreferrer" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/image-loader.js"></script>
+</body>
+</html>

@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="tr-TR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="İstanbul'un en yoğun yaya kesişim noktalarından birinde rüzgâr, güneş ve görüş analizleriyle yönlendirilen parametrik bir termal konfor optimizasyonu çalışması.">
+  <meta name="author" content="Enes Yıldız">
+  <meta name="keywords" content="Dış mekan termal konfor, Kentsel tasarım, Parametrik tasarım, Üsküdar Meydanı, UTCI, Grasshopper, Ladybug, Galapagos">
+  <meta name="theme-color" content="#f8f8f8" id="themeColorMeta">
+  <meta name="view-transition" content="same-origin">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mimarenes.com/yazilim/optimizasyon/uskudar-meydani.html">
+  <meta property="og:title" content="Üsküdar Meydanı: Dış Mekânda Konfor | Enes Yıldız">
+  <meta property="og:description" content="İstanbul'un en yoğun yaya kesişim noktalarından birinde rüzgâr, güneş ve görüş analizleriyle yönlendirilen parametrik bir termal konfor optimizasyonu çalışması.">
+  <meta property="og:image" content="https://mimarenes.com/anasayfa/optimized/uskudar-meydani-800w.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Enes Yıldız">
+  <meta property="og:locale" content="tr_TR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Üsküdar Meydanı: Dış Mekânda Konfor | Enes Yıldız">
+  <meta name="twitter:description" content="İstanbul'un en yoğun yaya kesişim noktalarından birinde rüzgâr, güneş ve görüş analizleriyle yönlendirilen parametrik bir termal konfor optimizasyonu çalışması.">
+  <meta name="twitter:image" content="https://mimarenes.com/anasayfa/optimized/uskudar-meydani-800w.jpg">
+
+  <title>Üsküdar Meydanı: Dış Mekânda Konfor | Enes Yıldız</title>
+  <link rel="icon" type="image/svg+xml" href="../../favicon.svg">
+  <link rel="canonical" href="https://mimarenes.com/yazilim/optimizasyon/uskudar-meydani.html">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="stylesheet" href="../../fonts/inter.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="../../css/nav.css">
+  <link rel="stylesheet" href="../../css/subpage.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "name": "Üsküdar Meydanı: Dış Mekânda Konfor",
+        "description": "Üsküdar Meydanı'nda parametrik tasarım ve çevresel analiz ile dış mekan termal konfor ve görüş optimizasyonu",
+        "url": "https://mimarenes.com/yazilim/optimizasyon/uskudar-meydani.html",
+        "image": "https://mimarenes.com/anasayfa/optimized/uskudar-meydani-800w.jpg",
+        "author": {
+          "@type": "Person",
+          "@id": "https://mimarenes.com/#person",
+          "name": "Enes Yıldız",
+          "url": "https://mimarenes.com"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Ana Sayfa", "item": "https://mimarenes.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Yazılım", "item": "https://mimarenes.com/yazilim/" },
+          { "@type": "ListItem", "position": 3, "name": "Optimizasyon", "item": "https://mimarenes.com/yazilim/optimizasyon/" },
+          { "@type": "ListItem", "position": 4, "name": "Üsküdar Meydanı: Dış Mekânda Konfor" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK3V82N7CD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YK3V82N7CD');
+  </script>
+</head>
+<body class="js-loading">
+  <div id="nav-placeholder"></div>
+  <script src="../../js/nav.js"></script>
+
+  <div class="main-content">
+    <main class="page-content">
+
+      <!-- ==================== HEADER ==================== -->
+      <header class="project-header">
+        <div class="blog-meta">
+          <span class="blog-tag">Araştırma</span>
+          <span class="blog-date">2024</span>
+        </div>
+        <p class="project-eyebrow">Termal Konfor &amp; Görüş Optimizasyonu</p>
+        <h1 class="project-title">Üsküdar Meydanı: Dış Mekânda Konfor</h1>
+        <p class="project-location">Üsküdar, İstanbul</p>
+      </header>
+
+
+      <!-- ==================== GİRİŞ METNİ ==================== -->
+      <div class="text-block reveal">
+        <p>Üsküdar Meydanı'nda dış mekan termal konforunu, çevredeki kültürel yapıların görünürlüğünden ödün vermeden optimize eden parametrik bir kentsel tasarım araştırması. Rhino, Grasshopper, Ladybug ve Galapagos kullanılarak mevcut durum simüle edilmiş, UTCI tabanlı termal konfor hesaplamaları yapılmış ve genetik algoritma ile görünürlük-konfor dengesi optimize edilmiştir.Yeşil altyapının stratejik yerleşimi ile ısı adası etkisi azaltılırken metro çıkışlarından kıyı şeridine ve tarihi yapılara olan görüş hatları korunmuştur.</p>
+      </div>
+
+
+      <!-- SÜREÇ DİYAGRAMI -->
+      <div class="process-timeline reveal">
+        <div class="timeline-inner">
+          <div class="timeline-line-wrap">
+            <div class="timeline-line"></div>
+            <div class="timeline-steps">
+              <div class="tl-step">
+                <div class="tl-dot">1</div>
+                <div class="tl-body">
+                  <h4>Alan Modeli</h4>
+                  <ul>
+                    <li>3B kent modeli</li>
+                    <li>Metro &ccedil;&inodot;k&inodot;&scedil;lar&inodot;</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step">
+                <div class="tl-dot">2</div>
+                <div class="tl-body">
+                  <h4>G&ouml;r&uuml;&scedil; Analizi</h4>
+                  <ul>
+                    <li>56 g&ouml;r&uuml;&scedil; noktas&inodot;</li>
+                    <li>Tarihi yap&inodot;lar</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step active">
+                <div class="tl-dot">3</div>
+                <div class="tl-body">
+                  <h4>UTCI Analizi</h4>
+                  <ul>
+                    <li>Ladybug / EPW</li>
+                    <li>15 konfor noktas&inodot;</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step active">
+                <div class="tl-dot">4</div>
+                <div class="tl-body">
+                  <h4>Galapagos</h4>
+                  <ul>
+                    <li>A&gbreve;a&ccedil; yerle&scedil;imi</li>
+                    <li>5 a&scedil;amal&inodot; optimizasyon</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step">
+                <div class="tl-dot">5</div>
+                <div class="tl-body">
+                  <h4>Entegre Sonu&ccedil;</h4>
+                  <ul>
+                    <li>Konfor &amp; g&ouml;r&uuml;&scedil; dengesi</li>
+                    <li>45 a&gbreve;a&ccedil; &ouml;nerisi</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ==================== HERO IMAGE ==================== -->
+      <div class="img-bleed reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="../../img/uskudar-meydani/optimized/uskudar-meydani-1-800w.avif 800w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-1-1280w.avif 1280w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-1-1920w.avif 1920w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-1-2560w.avif 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/uskudar-meydani/optimized/uskudar-meydani-1-800w.webp 800w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-1-1280w.webp 1280w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-1-1920w.webp 1920w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-1-2560w.webp 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/uskudar-meydani/optimized/uskudar-meydani-1-800w.jpg"
+    data-srcset="../../img/uskudar-meydani/optimized/uskudar-meydani-1-800w.jpg 800w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-1-1280w.jpg 1280w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-1-1920w.jpg 1920w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-1-2560w.jpg 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Üsküdar Meydanı araştırma alanı ve tarihi yapılar" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">Üsküdar Meydanı araştırma alanı ve çevresindeki tarihi yapılar</p>
+
+
+      <!-- ==================== VURGU ==================== -->
+      <div class="highlight-block reveal">
+        <p>Bir meydan tasarımında iki çelişen hedef: <span class="hl-accent">serin kalmak</span> ve <span class="hl-accent">görüşü korumak.</span> Evrimsel optimizasyon ile ağaç yerleşimi, termal konfor ve görüş açıklığı eş zamanlı olarak çözüldü.</p>
+      </div>
+
+
+      <!-- ==================== PROBLEM ==================== -->
+      <div class="text-block reveal">
+        <h2>Problem</h2>
+        <p>Meydandaki tasarlanmamış metro çıkışları ve yoğun beton örtü, alanın hem estetik hem de işlevsel potansiyelini kısıtlıyor. Yayalar metro çıkışlarından kıyı şeridine ve tarihi yapılara net bir görüş hattına sahip değil. Kentsel ısı adası etkisi, yeşil alan eksikliğiyle birlikte artıyor.</p>
+      </div>
+
+
+      <!-- ==================== ARAÇLAR KARŞILAŞTIRMASI ==================== -->
+      <div class="comparison reveal">
+        <div class="comparison-card">
+          <p class="comparison-label">3B Modelleme &amp; Parametrik</p>
+          <h3>Rhino + Grasshopper</h3>
+          <ul>
+            <li>Karmaşık geometriler için 3B modelleme</li>
+            <li>Parametrik modelleme ile görsel programlama</li>
+            <li>Dinamik tasarım varyasyonları</li>
+            <li>Çoklu senaryo</li>
+          </ul>
+        </div>
+        <div class="comparison-card accent">
+          <p class="comparison-label">Analiz &amp; Optimizasyon</p>
+          <h3>Ladybug + Galapagos</h3>
+          <ul>
+            <li>Güneş radyasyonu, gün ışığı ve termal konfor analizi</li>
+            <li>Hava durumu verisi ile UTCI değerlendirmesi</li>
+            <li>Genetik algoritma tabanlı evrimsel çözücü</li>
+            <li>Kriterlere göre optimum çözüm</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- ==================== ÇALIŞMA ALANI ==================== -->
+      <div class="text-block reveal">
+        <h2>Çalışma Alanı</h2>
+        <p>İstanbul'un Anadolu yakasında tarihi öneme sahip bir ulaşım merkezi. Feribot, metro ve otobüs hatlarının kesiştiği meydan; Mihrimah Sultan Camii ve Şemsi Paşa Camii gibi kültürel yapılarla çevrili.</p>
+      </div>
+
+
+      <!-- ==================== SİMÜLASYON SÜRECİ ==================== -->
+      <div class="text-img-row img-right align-top reveal">
+        <div class="row-text">
+          <h2>Simülasyon Süreci</h2>
+          <p>Üç aşamalı bir süreç izlendi: görüş analizi, termal konfor hesaplaması ve optimizasyon.</p>
+          <ul class="step-list">
+            <li>Metro çıkışlarından kıyı ve camilere görüş hatlarının tanımlanması</li>
+            <li>43-224 arası ağacın kontrollü parametrelerle yerleştirilmesi</li>
+            <li>Üç farklı ağaç modelinin kullanılması</li>
+            <li>EPW dosyasından iklim verisi ile UTCI hesaplaması</li>
+            <li>Beş aşamalı Galapagos optimizasyonu</li>
+          </ul>
+        </div>
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="../../img/uskudar-meydani/optimized/uskudar-meydani-2-800w.avif 800w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-2-1280w.avif 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/uskudar-meydani/optimized/uskudar-meydani-2-800w.webp 800w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-2-1280w.webp 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/uskudar-meydani/optimized/uskudar-meydani-2-800w.jpg"
+    data-srcset="../../img/uskudar-meydani/optimized/uskudar-meydani-2-800w.jpg 800w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-2-1280w.jpg 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Seçilen noktalar, metro çıkışları, önerilen kamusal alanlar ve ağaçlandırma bölgesi" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">Seçilen noktalar, metro çıkışları, önerilen kamusal alanlar ve ağaçlandırma bölgesi</p>
+        </div>
+      </div>
+
+
+      <!-- ==================== OPTİMİZASYON PARAMETRELERİ ==================== -->
+      <div class="data-table-wrap reveal">
+        <h2>Optimizasyon Parametreleri</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Kategori</th>
+              <th>Değişken</th>
+              <th>Değer</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Çözünürlük</td>
+              <td>Görüş Açısı Sayısı</td>
+              <td>56</td>
+            </tr>
+            <tr>
+              <td>Çözünürlük</td>
+              <td>Termal Konfor Noktaları</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>Optimizasyon</td>
+              <td>Ağaç Sayısı</td>
+              <td class="val-good">43 &ndash; 224</td>
+            </tr>
+            <tr>
+              <td>Optimizasyon</td>
+              <td>Ağaç Boyut Çarpanı</td>
+              <td class="val-good">0.5 &ndash; 1.5</td>
+            </tr>
+            <tr>
+              <td>Optimizasyon</td>
+              <td>Toplanma Alanı Çarpanı</td>
+              <td class="val-good">0.6 &ndash; 1.0</td>
+            </tr>
+            <tr>
+              <td>Hedef</td>
+              <td>Engelsiz Görüş Vektörleri</td>
+              <td class="val-good">Maksimize</td>
+            </tr>
+            <tr>
+              <td>Hedef</td>
+              <td>Nötr Konfor Yüzdesi</td>
+              <td class="val-good">Maksimize</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <!-- ==================== SONUÇLAR ==================== -->
+      <div class="text-block reveal">
+        <h2>Sonuçlar</h2>
+        <p>Beş aşamalı optimizasyon sürecinde önce görünürlük, sonra termal konfor ayrı ayrı optimize edildi. Son aşamada bu iki faktör dengelenerek entegre bir çözüm elde edildi.</p>
+      </div>
+
+      <!-- Optimizasyon Karşılaştırma -->
+      <div class="comparison reveal">
+        <div class="comparison-card">
+          <p class="comparison-label">Yalnız Görünürlük</p>
+          <h3>Adım 1 &amp; 2</h3>
+          <ul>
+            <li>Maksimum: 244 birim</li>
+            <li>Minimum: 74 birim</li>
+            <li>Fark: 170 birim</li>
+          </ul>
+        </div>
+        <div class="comparison-card accent">
+          <p class="comparison-label">Yalnız Termal Konfor</p>
+          <h3>Adım 3 &amp; 4</h3>
+          <ul>
+            <li>Maksimum: 47.042.226 birim</li>
+            <li>Minimum: 45.877.169 birim</li>
+            <li>Fark: 1.165.057 birim</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- UTCI Görseli -->
+      <div class="img-large center software-lead-visual reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="../../img/uskudar-meydani/optimized/uskudar-meydani-3-800w.avif 800w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-3-1280w.avif 1280w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-3-1920w.avif 1920w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-3-2560w.avif 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/uskudar-meydani/optimized/uskudar-meydani-3-800w.webp 800w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-3-1280w.webp 1280w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-3-1920w.webp 1920w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-3-2560w.webp 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/uskudar-meydani/optimized/uskudar-meydani-3-800w.jpg"
+    data-srcset="../../img/uskudar-meydani/optimized/uskudar-meydani-3-800w.jpg 800w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-3-1280w.jpg 1280w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-3-1920w.jpg 1920w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-3-2560w.jpg 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="UTCI skorları ve optimizasyon sonucu" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">UTCI skorları ve optimizasyon sonucu</p>
+
+
+      <!-- Galapagos Görseli -->
+      <div class="img-large center reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="../../img/uskudar-meydani/optimized/uskudar-meydani-4-800w.avif 800w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-4-1280w.avif 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="../../img/uskudar-meydani/optimized/uskudar-meydani-4-800w.webp 800w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-4-1280w.webp 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../img/uskudar-meydani/optimized/uskudar-meydani-4-800w.jpg"
+    data-srcset="../../img/uskudar-meydani/optimized/uskudar-meydani-4-800w.jpg 800w,
+                  ../../img/uskudar-meydani/optimized/uskudar-meydani-4-1280w.jpg 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Galapagos Solver sonuçları" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">Galapagos Solver sonuçları</p>
+
+
+      <!-- Entegre Optimizasyon -->
+      <div class="text-block reveal">
+        <h2>Entegre Optimizasyon</h2>
+        <p>Beşinci adımda görünürlük ve termal konfor farkları birleştirilerek dengeli bir çözüm arandı. En yüksek fitness değeri 8.058 birim olarak elde edildi: 221 görünürlük skoru, 45 ağaç, 0.5 boyut çarpanı.</p>
+      </div>
+
+
+      <!-- Optimizasyon Sonuç Tablosu -->
+      <div class="data-table-wrap reveal">
+        <h2>Galapagos Optimizasyon Sonuçları</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Fitness</th>
+              <th>Toplanma Alanı</th>
+              <th>Ağaç Dağılımı</th>
+              <th>Boyut Çarpanı</th>
+              <th>Ağaç Sayısı</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="val-good">8058.22</td>
+              <td>21</td>
+              <td>32</td>
+              <td>0</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td class="val-good">8055.61</td>
+              <td>4</td>
+              <td>32</td>
+              <td>0</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>8055.45</td>
+              <td>14</td>
+              <td>32</td>
+              <td>0</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>8054.49</td>
+              <td>22</td>
+              <td>26</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td class="val-good">8038.52</td>
+              <td>20</td>
+              <td>36</td>
+              <td>10</td>
+              <td>6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <!-- ==================== SONUÇ VURGUSU ==================== -->
+      <div class="highlight-block reveal">
+        <p>Parametrik tasarım ve çevresel analiz araçlarıyla <span class="hl-accent">dış mekan termal konforu</span> optimize edildi; yeşil altyapının  yerleşimi ile <span class="hl-accent">ısı adası etkisi</span> azaltılarak meydanın yaşanabilirliği artırıldı.</p>
+      </div>
+
+
+      <!-- ==================== PROJE VERİLERİ ==================== -->
+      <section class="project-data reveal">
+        <div class="data-grid">
+          <div class="data-item">
+            <span class="data-label">Tür</span>
+            <span class="data-value">Dış Mekân Konfor Çalışması</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Araçlar</span>
+            <span class="data-value">Rhino, Grasshopper, Ladybug, Galapagos</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Yöntem</span>
+            <span class="data-value">Parametrik Tasarım &amp; Optimizasyon</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Çıktı</span>
+            <span class="data-value">Görüş korunarak konfor iyileştirmesi</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- İLGİLİ PROJELER -->
+      <div class="project-footer-section">
+        <div class="related-header">
+          <h3>İlgili Projeler</h3>
+        </div>
+        <div class="related-projects reveal">
+          <a href="toplukonut.html" class="related-card">
+            <div class="related-visual">
+              <picture class="render light-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/toplukonut-800w.avif 800w,
+                  ../../anasayfa/optimized/toplukonut-1280w.avif 1280w,
+                  ../../anasayfa/optimized/toplukonut-1920w.avif 1920w,
+                  ../../anasayfa/optimized/toplukonut-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/toplukonut-800w.webp 800w,
+                  ../../anasayfa/optimized/toplukonut-1280w.webp 1280w,
+                  ../../anasayfa/optimized/toplukonut-1920w.webp 1920w,
+                  ../../anasayfa/optimized/toplukonut-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Toplu Konutta Gün Işığı Optimizasyonu"
+                  data-srcset="../../anasayfa/optimized/toplukonut-800w.jpg 800w,
+                  ../../anasayfa/optimized/toplukonut-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/toplukonut-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/toplukonut-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/toplukonut-800w.jpg">
+              </picture>
+              <picture class="sketch light-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/toplukonut-eskiz-800w.avif 800w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1280w.avif 1280w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1920w.avif 1920w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/toplukonut-eskiz-800w.webp 800w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1280w.webp 1280w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1920w.webp 1920w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Toplu Konutta Gün Işığı Optimizasyonu Eskiz"
+                  data-srcset="../../anasayfa/optimized/toplukonut-eskiz-800w.jpg 800w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/toplukonut-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/toplukonut-eskiz-800w.jpg">
+              </picture>
+              <picture class="render dark-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-800w.avif 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-1280w.avif 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-1920w.avif 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-800w.webp 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-1280w.webp 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-1920w.webp 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Toplu Konutta Gün Işığı Optimizasyonu"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-800w.jpg 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/toplukonut-gece-800w.jpg">
+              </picture>
+              <picture class="sketch dark-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-eskiz-800w.avif 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1280w.avif 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1920w.avif 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-eskiz-800w.webp 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1280w.webp 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1920w.webp 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Toplu Konutta Gün Işığı Optimizasyonu Eskiz"
+                  data-srcset="../../anasayfa/optimized/toplukonut-gece-eskiz-800w.jpg 800w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/toplukonut-gece-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/toplukonut-gece-eskiz-800w.jpg">
+              </picture>
+            </div>
+            <div class="related-info">
+              <p class="related-meta">Optimizasyon</p>
+              <h4 class="related-title">Toplu Konutta Gün Işığı Optimizasyonu</h4>
+            </div>
+          </a>
+          <a href="mukarnas.html" class="related-card">
+            <div class="related-visual">
+              <picture class="render light-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/mukarnas-800w.avif 800w,
+                  ../../anasayfa/optimized/mukarnas-1280w.avif 1280w,
+                  ../../anasayfa/optimized/mukarnas-1920w.avif 1920w,
+                  ../../anasayfa/optimized/mukarnas-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/mukarnas-800w.webp 800w,
+                  ../../anasayfa/optimized/mukarnas-1280w.webp 1280w,
+                  ../../anasayfa/optimized/mukarnas-1920w.webp 1920w,
+                  ../../anasayfa/optimized/mukarnas-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Günışığı ve Akustik Performansına Mukarnasın Etkisi"
+                  data-srcset="../../anasayfa/optimized/mukarnas-800w.jpg 800w,
+                  ../../anasayfa/optimized/mukarnas-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/mukarnas-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/mukarnas-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/mukarnas-800w.jpg">
+              </picture>
+              <picture class="sketch light-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/mukarnas-eskiz-800w.avif 800w,
+                  ../../anasayfa/optimized/mukarnas-eskiz-1280w.avif 1280w,
+                  ../../anasayfa/optimized/mukarnas-eskiz-1920w.avif 1920w,
+                  ../../anasayfa/optimized/mukarnas-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/mukarnas-eskiz-800w.webp 800w,
+                  ../../anasayfa/optimized/mukarnas-eskiz-1280w.webp 1280w,
+                  ../../anasayfa/optimized/mukarnas-eskiz-1920w.webp 1920w,
+                  ../../anasayfa/optimized/mukarnas-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Günışığı ve Akustik Performansına Mukarnasın Etkisi Eskiz"
+                  data-srcset="../../anasayfa/optimized/mukarnas-eskiz-800w.jpg 800w,
+                  ../../anasayfa/optimized/mukarnas-eskiz-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/mukarnas-eskiz-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/mukarnas-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/mukarnas-eskiz-800w.jpg">
+              </picture>
+              <picture class="render dark-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/mukarnas-gece-800w.avif 800w,
+                  ../../anasayfa/optimized/mukarnas-gece-1280w.avif 1280w,
+                  ../../anasayfa/optimized/mukarnas-gece-1920w.avif 1920w,
+                  ../../anasayfa/optimized/mukarnas-gece-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/mukarnas-gece-800w.webp 800w,
+                  ../../anasayfa/optimized/mukarnas-gece-1280w.webp 1280w,
+                  ../../anasayfa/optimized/mukarnas-gece-1920w.webp 1920w,
+                  ../../anasayfa/optimized/mukarnas-gece-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Günışığı ve Akustik Performansına Mukarnasın Etkisi"
+                  data-srcset="../../anasayfa/optimized/mukarnas-gece-800w.jpg 800w,
+                  ../../anasayfa/optimized/mukarnas-gece-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/mukarnas-gece-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/mukarnas-gece-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/mukarnas-gece-800w.jpg">
+              </picture>
+              <picture class="sketch dark-only">
+                <source type="image/avif"
+                  data-srcset="../../anasayfa/optimized/mukarnas-gece-eskiz-800w.avif 800w,
+                  ../../anasayfa/optimized/mukarnas-gece-eskiz-1280w.avif 1280w,
+                  ../../anasayfa/optimized/mukarnas-gece-eskiz-1920w.avif 1920w,
+                  ../../anasayfa/optimized/mukarnas-gece-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="../../anasayfa/optimized/mukarnas-gece-eskiz-800w.webp 800w,
+                  ../../anasayfa/optimized/mukarnas-gece-eskiz-1280w.webp 1280w,
+                  ../../anasayfa/optimized/mukarnas-gece-eskiz-1920w.webp 1920w,
+                  ../../anasayfa/optimized/mukarnas-gece-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Günışığı ve Akustik Performansına Mukarnasın Etkisi Eskiz"
+                  data-srcset="../../anasayfa/optimized/mukarnas-gece-eskiz-800w.jpg 800w,
+                  ../../anasayfa/optimized/mukarnas-gece-eskiz-1280w.jpg 1280w,
+                  ../../anasayfa/optimized/mukarnas-gece-eskiz-1920w.jpg 1920w,
+                  ../../anasayfa/optimized/mukarnas-gece-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="../../anasayfa/optimized/mukarnas-gece-eskiz-800w.jpg">
+              </picture>
+            </div>
+            <div class="related-info">
+              <p class="related-meta">Optimizasyon</p>
+              <h4 class="related-title">Günışığı ve Akustik Performansına Mukarnasın Etkisi</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner footer-with-directory">
+      <div class="footer-directory" aria-label="Portfolyo kategorileri">
+        <div class="footer-directory-group">
+          <a href="../../index.html#tasarim-all" class="footer-directory-anchor">Tasarım</a>
+          <a href="../../index.html#mimari" class="footer-directory-link">Mimari</a>
+          <a href="../../index.html#web" class="footer-directory-link">Web</a>
+          <a href="../../index.html#mobilya" class="footer-directory-link">Mobilya</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="../../index.html#arastirma-all" class="footer-directory-anchor">Araştırma</a>
+          <a href="../../index.html#fikir" class="footer-directory-link">Fikir</a>
+          <a href="../../index.html#yayin" class="footer-directory-link">Yayın</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="../../index.html#yazilim-all" class="footer-directory-anchor">Yazılım</a>
+          <a href="../../index.html#ai" class="footer-directory-link">AI</a>
+          <a href="../../index.html#fabrikasyon" class="footer-directory-link">Fabrikasyon</a>
+          <a href="../../index.html#optimizasyon" class="footer-directory-link">Optimizasyon</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <span>&copy; 2025 Enes Yıldız</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../../js/image-loader.js"></script>
+</body>
+</html>

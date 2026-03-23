@@ -1,0 +1,281 @@
+/* ========== SHARED NAVIGATION BAR ==========
+   Tüm sayfalarda aynı üst bar.
+   Ana sayfada .nav--home class'ı ile animasyon eklenir.
+   ============================================= */
+
+/* --- Toggle Variables (Light) --- */
+:root {
+  --surface-background: linear-gradient(90deg, rgba(240, 224, 210, 1) 0 50%, rgba(218, 233, 240, 1) 50% 100%);
+  --surface-elevated: linear-gradient(135deg, #fffdfb 0%, #f2eae3 100%);
+  --surface-inset-border: rgba(48, 31, 18, 0.1);
+  --surface-divider: rgba(48, 31, 18, 0.08);
+  --surface-highlight: rgba(255, 255, 255, 0.38);
+  --surface-highlight-strong: rgba(255, 255, 255, 0.42);
+  --active-pill-background: linear-gradient(135deg, #fffdfb 0%, #f2eae3 100%);
+  --active-pill-border: rgba(48, 31, 18, 0.06);
+  --soft-shadow: 0 6px 16px rgba(48, 31, 18, 0.14);
+  --soft-shadow-hover: 0 10px 22px rgba(48, 31, 18, 0.12);
+  --muted-control-color: var(--gray-500);
+}
+
+/* --- Toggle Variables (Dark) --- */
+[data-theme="dark"] {
+  --surface-background: linear-gradient(90deg, rgba(45, 35, 28, 1) 0 50%, rgba(22, 38, 48, 1) 50% 100%);
+  --surface-elevated: linear-gradient(135deg, rgba(17, 25, 30, 0.94) 0%, rgba(11, 18, 23, 0.98) 100%);
+  --surface-inset-border: rgba(116, 183, 210, 0.16);
+  --surface-divider: rgba(255, 255, 255, 0.1);
+  --surface-highlight: rgba(255, 255, 255, 0.08);
+  --surface-highlight-strong: rgba(255, 255, 255, 0.1);
+  --active-pill-background: linear-gradient(135deg, #edf5f8 0%, #d9e8ef 100%);
+  --active-pill-border: rgba(116, 183, 210, 0.14);
+  --soft-shadow: 0 6px 18px rgba(0, 0, 0, 0.24);
+  --soft-shadow-hover: 0 10px 22px rgba(3, 12, 18, 0.28);
+  --muted-control-color: rgba(240, 240, 240, 0.68);
+}
+
+/* --- View Transitions --- */
+@view-transition {
+  navigation: auto;
+}
+
+::view-transition-old(main-nav),
+::view-transition-new(main-nav) {
+  animation: none;
+}
+
+::view-transition-group(main-nav) {
+  animation-duration: 0s;
+}
+
+/* --- Nav Animation Keyframe --- */
+@keyframes fadeSlideDown {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Nav Container --- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(248, 248, 248, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: background 0.3s ease, box-shadow 0.3s ease;
+  view-transition-name: main-nav;
+}
+
+[data-theme="dark"] .nav {
+  background: rgba(20, 20, 20, 0.9);
+}
+
+.nav.scrolled {
+  background: rgba(248, 248, 248, 0.95);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] .nav.scrolled {
+  background: rgba(20, 20, 20, 0.95);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Desktop + tablet: fully transparent nav */
+@media (min-width: 769px) {
+  .nav,
+  [data-theme="dark"] .nav,
+  .nav.scrolled,
+  [data-theme="dark"] .nav.scrolled {
+    background: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
+  }
+}
+
+/* --- Nav Inner --- */
+.nav-inner {
+  max-width: var(--content-max, 1200px);
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --- Logo --- */
+.nav-logo {
+  font-family: 'Outfit', sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--gray-900);
+  letter-spacing: -0.03em;
+  cursor: pointer;
+  transition: color 0.25s;
+  text-decoration: none;
+}
+
+.nav-logo:hover {
+  color: var(--accent);
+}
+
+/* --- Nav Menu --- */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* --- Nav Link --- */
+.nav-link {
+  font-family: 'Manrope', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--gray-500);
+  cursor: pointer;
+  transition: color 0.25s;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.nav-link:hover {
+  color: var(--gray-900);
+}
+
+.nav-link.active {
+  color: var(--gray-900);
+}
+
+/* --- Theme Toggle --- */
+.theme-toggle {
+  width: 62px;
+  height: 28px;
+  padding: 3px;
+  border: 1px solid var(--surface-inset-border);
+  border-radius: 999px;
+  background: var(--surface-background);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+  box-shadow: inset 0 1px 0 var(--surface-highlight);
+  transition: background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease, transform 0.2s ease;
+}
+
+.theme-toggle::after {
+  content: '';
+  position: absolute;
+  top: 6px;
+  bottom: 6px;
+  left: 50%;
+  width: 1px;
+  background: var(--surface-divider);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  box-shadow: inset 0 1px 0 var(--surface-highlight-strong), var(--soft-shadow-hover);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.theme-toggle-core {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 20px;
+  border-radius: 999px;
+  background: var(--active-pill-background);
+  border: 1px solid var(--active-pill-border);
+  box-shadow: var(--soft-shadow);
+  transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Dark toggle */
+[data-theme="dark"] .theme-toggle {
+  background: var(--surface-background);
+  border-color: var(--surface-inset-border);
+  box-shadow: inset 0 1px 0 var(--surface-highlight);
+}
+
+[data-theme="dark"] .theme-toggle::after {
+  background: var(--surface-divider);
+}
+
+[data-theme="dark"] .theme-toggle:hover {
+  box-shadow: inset 0 1px 0 var(--surface-highlight-strong), var(--soft-shadow-hover);
+}
+
+[data-theme="dark"] .theme-toggle .theme-toggle-core {
+  transform: translateX(32px);
+  background: var(--active-pill-background);
+  border-color: var(--active-pill-border);
+  box-shadow: var(--soft-shadow);
+}
+
+/* --- Theme Icons --- */
+.theme-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.45;
+  transition: opacity 0.25s ease;
+}
+
+.theme-icon-sun {
+  left: 8px;
+  color: #b07030;
+}
+
+.theme-icon-moon {
+  right: 8px;
+  color: #4a8aa8;
+}
+
+[data-theme="dark"] .theme-icon-sun {
+  opacity: 0.3;
+  color: #9a7050;
+}
+
+[data-theme="dark"] .theme-icon-moon {
+  opacity: 0.6;
+  color: #74b7d2;
+}
+
+/* --- Homepage Animations (only when .nav--home is present) --- */
+.nav--home .nav-logo {
+  opacity: 0;
+  animation: fadeSlideDown 0.5s ease 0.1s forwards;
+}
+
+.nav--home .nav-link {
+  opacity: 0;
+  animation: fadeSlideDown 0.5s ease 0.15s forwards;
+}
+
+.nav--home .theme-toggle {
+  opacity: 0;
+  animation: fadeSlideDown 0.5s ease 0.35s forwards;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+  .nav-menu { gap: 20px; }
+  .nav-link { font-size: 18px; }
+}
