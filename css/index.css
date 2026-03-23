@@ -1737,10 +1737,6 @@ code {
     gap: 20px;
   }
 
-  .nav-link {
-    font-size: 12px;
-  }
-
   .sub-nav-link {
     height: 30px;
     padding: 0 10px;
