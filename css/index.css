@@ -455,6 +455,7 @@ code {
     background: transparent;
     backdrop-filter: none;
     -webkit-backdrop-filter: none;
+    padding-top: 12px;
   }
 }
 
@@ -1644,7 +1645,27 @@ code {
   }
 
   .profile-identity h2 {
-    font-size: 20px;
+    font-size: 24px;
+  }
+
+  .profile-identity p {
+    font-size: 15px;
+  }
+
+  .profile-bio {
+    font-size: 16px;
+  }
+
+  .timeline-content h3 {
+    font-size: 16px;
+  }
+
+  .timeline-content p {
+    font-size: 14px;
+  }
+
+  .section-label {
+    font-size: 12px;
   }
 
   .works .work-title {
