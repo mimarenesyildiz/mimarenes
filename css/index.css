@@ -1645,27 +1645,33 @@ code {
   }
 
   .profile-identity h2 {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .profile-identity p {
-    font-size: 15px;
+    font-size: 16px;
   }
 
   .profile-bio {
-    font-size: 16px;
+    font-size: 17px;
+    line-height: 1.75;
   }
 
   .timeline-content h3 {
-    font-size: 16px;
+    font-size: 17px;
   }
 
   .timeline-content p {
-    font-size: 14px;
+    font-size: 15px;
+    line-height: 1.65;
   }
 
   .section-label {
     font-size: 12px;
+  }
+
+  .toolkit-pill {
+    font-size: 14px;
   }
 
   .works .work-title {
