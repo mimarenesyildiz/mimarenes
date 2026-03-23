@@ -89,15 +89,6 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* Page load — only when JS adds .js-loading */
-body.js-loading {
-  opacity: 0;
-  animation: pageLoad 0.8s ease forwards;
-}
-
-@keyframes pageLoad {
-  to { opacity: 1; }
-}
 
 a {
   color: inherit;
