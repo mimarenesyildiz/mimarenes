@@ -262,7 +262,7 @@ code {
 }
 
 .nav-link {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 13px;
   font-weight: 400;
   color: var(--gray-500);
@@ -603,7 +603,7 @@ code {
 }
 
 .sub-nav-link {
-  font-family: 'Outfit', sans-serif;
+  font-family: 'Manrope', sans-serif;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 0.01em;
