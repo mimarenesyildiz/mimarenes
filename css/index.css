@@ -162,7 +162,7 @@ code {
 
 /* ========== HERO ========== */
 .hero {
-  padding: 120px var(--content-padding) 48px;
+  padding: 120px var(--content-padding) 36px;
   text-align: center;
   max-width: 860px;
   margin: 0 auto;
@@ -172,7 +172,7 @@ code {
   font-size: 11px;
   font-weight: 500;
   color: var(--gray-400);
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   opacity: 0;
@@ -297,6 +297,7 @@ code {
 
 .inline-tag.sub {
   color: var(--gray-600);
+  font-weight: 500;
 }
 
 .inline-tag.sub:hover {
@@ -455,7 +456,7 @@ code {
 .works {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: 64px var(--content-padding) 80px;
+  padding: 36px var(--content-padding) 80px;
   transition: max-width 0.5s ease;
 }
 
