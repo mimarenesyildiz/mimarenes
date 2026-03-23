@@ -966,6 +966,7 @@ code {
 }
 
 .works .work-title {
+  font-family: 'Manrope', sans-serif;
   font-size: 36px;
   font-weight: 700;
   letter-spacing: -0.02em;
@@ -1122,7 +1123,7 @@ code {
 
 .works .work-item.type-plugin .work-title {
   font-size: 32px;
-  font-family: var(--font-display);
+  font-family: 'Manrope', sans-serif;
   font-weight: 700;
   letter-spacing: -0.02em;
   line-height: 1.2;
