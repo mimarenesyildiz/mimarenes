@@ -456,7 +456,7 @@ code {
 .works {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: 36px var(--content-padding) 80px;
+  padding: 64px var(--content-padding) 80px;
   transition: max-width 0.5s ease;
 }
 
