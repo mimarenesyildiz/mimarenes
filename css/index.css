@@ -162,7 +162,7 @@ code {
 
 /* ========== HERO ========== */
 .hero {
-  padding: 120px var(--content-padding) 16px;
+  padding: 120px var(--content-padding) 36px;
   text-align: center;
   max-width: 860px;
   margin: 0 auto;
@@ -456,7 +456,7 @@ code {
 .works {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: 16px var(--content-padding) 80px;
+  padding: 48px var(--content-padding) 80px;
   transition: max-width 0.5s ease;
 }
 
