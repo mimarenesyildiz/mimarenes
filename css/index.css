@@ -297,7 +297,7 @@ code {
 
 .inline-tag.sub {
   color: var(--gray-600);
-  font-weight: 500;
+  font-weight: inherit;
 }
 
 .inline-tag.sub:hover {
