@@ -211,37 +211,16 @@ code {
   color: var(--gray-900);
   font-weight: 600;
   position: relative;
-  transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-              transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
-              color 0.3s ease;
+  border-right: 2px solid var(--accent);
+  animation: blink-cursor 0.75s step-end infinite;
 }
-
-.hero-keyword::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 2px;
-  height: 2px;
-  background: var(--accent);
-  border-radius: 1px;
-  transform: scaleX(0);
-  transform-origin: center;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.35s;
+.hero-keyword.typing {
+  animation: none;
+  border-right-color: var(--accent);
 }
-
-.hero-keyword.visible::after {
-  transform: scaleX(1);
-}
-
-.hero-keyword.out {
-  opacity: 0;
-  transform: translateY(-100%);
-}
-
-.hero-keyword.in {
-  opacity: 0;
-  transform: translateY(60%);
+@keyframes blink-cursor {
+  0%, 100% { border-right-color: var(--accent); }
+  50% { border-right-color: transparent; }
 }
 
 /* Hero Tags */
