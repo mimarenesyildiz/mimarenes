@@ -2142,42 +2142,59 @@
   </script>
 
   <script>
-    // ========== ROTATING WORD ANIMATION ==========
+    // ========== TYPEWRITER ANIMATION ==========
     const words = ['ölçülebilir', 'evrilebilir', 'optimize', 'dayanıklı'];
     let wordIndex = 0;
     const heroKeyword = document.getElementById('rotatingWord');
+    const typeSpeed = 70;
+    const deleteSpeed = 40;
+    const pauseBetween = 2000;
 
-    // Initial underline reveal
-    setTimeout(() => heroKeyword.classList.add('visible'), 800);
-
-    function rotateWord() {
-      // 1. Remove underline
-      heroKeyword.classList.remove('visible');
-
-      // 2. Slide out upward
-      setTimeout(() => {
-        heroKeyword.classList.add('out');
-      }, 200);
-
-      // 3. Swap text, position below, then slide in
-      setTimeout(() => {
-        wordIndex = (wordIndex + 1) % words.length;
-        heroKeyword.textContent = words[wordIndex];
-        heroKeyword.classList.remove('out');
-        heroKeyword.classList.add('in');
-
-        // Intentional reflow to apply .in styles
-        void heroKeyword.offsetHeight;
-
-        requestAnimationFrame(() => {
-          heroKeyword.classList.remove('in');
-          // 4. Re-reveal underline after settling
-          setTimeout(() => heroKeyword.classList.add('visible'), 350);
-        });
-      }, 500);
+    function typeWord(word, callback) {
+      heroKeyword.classList.add('typing');
+      let i = 0;
+      function type() {
+        if (i <= word.length) {
+          heroKeyword.textContent = word.slice(0, i);
+          i++;
+          setTimeout(type, typeSpeed);
+        } else {
+          heroKeyword.classList.remove('typing');
+          callback();
+        }
+      }
+      type();
     }
 
-    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) { setInterval(rotateWord, 3000); }
+    function deleteWord(callback) {
+      heroKeyword.classList.add('typing');
+      const text = heroKeyword.textContent;
+      let i = text.length;
+      function del() {
+        if (i >= 0) {
+          heroKeyword.textContent = text.slice(0, i);
+          i--;
+          setTimeout(del, deleteSpeed);
+        } else {
+          heroKeyword.classList.remove('typing');
+          callback();
+        }
+      }
+      del();
+    }
+
+    function cycle() {
+      setTimeout(() => {
+        deleteWord(() => {
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(() => {
+            typeWord(words[wordIndex], cycle);
+          }, 300);
+        });
+      }, pauseBetween);
+    }
+
+    setTimeout(() => cycle(), 1200);
 
     // ========== LAZY LOADING WITH INTERSECTION OBSERVER ==========
     const lazyImages = document.querySelectorAll('img[data-src]');
