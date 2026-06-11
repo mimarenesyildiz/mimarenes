@@ -2045,9 +2045,40 @@
     const words = ['ölçülebilir', 'evrilebilir', 'optimize', 'dayanıklı'];
     let wordIndex = 0;
     const heroKeyword = document.getElementById('rotatingWord');
+    const heroKeywordWrap = heroKeyword.closest('.hero-keyword-wrap');
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const typeSpeed = 70;
     const deleteSpeed = 40;
     const pauseBetween = 2000;
+
+    // Size the wrapper to the longest word so no word gets clipped.
+    // Re-measured after webfonts load and on resize (font-size is viewport-based).
+    function fitKeywordWrap() {
+      const probe = document.createElement('span');
+      probe.className = 'hero-keyword';
+      probe.style.position = 'absolute';
+      probe.style.visibility = 'hidden';
+      probe.style.whiteSpace = 'nowrap';
+      probe.style.animation = 'none';
+      heroKeywordWrap.appendChild(probe);
+      let max = 0;
+      words.forEach(function (w) {
+        probe.textContent = w;
+        max = Math.max(max, probe.getBoundingClientRect().width);
+      });
+      probe.remove();
+      heroKeywordWrap.style.setProperty('--keyword-width', Math.ceil(max + 4) + 'px');
+    }
+
+    fitKeywordWrap();
+    if (document.fonts && document.fonts.ready) {
+      document.fonts.ready.then(fitKeywordWrap);
+    }
+    let keywordResizeTimer;
+    window.addEventListener('resize', function () {
+      clearTimeout(keywordResizeTimer);
+      keywordResizeTimer = setTimeout(fitKeywordWrap, 150);
+    });
 
     function typeWord(word, callback) {
       heroKeyword.classList.add('typing');
@@ -2093,7 +2124,13 @@
       }, pauseBetween);
     }
 
-    setTimeout(() => cycle(), 1200);
+    if (reduceMotion) {
+      // Respect prefers-reduced-motion: keep the first word static, no cursor.
+      heroKeyword.textContent = words[0];
+      heroKeyword.style.borderRight = 'none';
+    } else {
+      setTimeout(() => cycle(), 1200);
+    }
 
     // ========== LAZY LOADING WITH INTERSECTION OBSERVER ==========
     const lazyImages = document.querySelectorAll('img[data-src]');
