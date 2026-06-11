@@ -15,7 +15,7 @@
   --active-pill-border: rgba(48, 31, 18, 0.06);
   --soft-shadow: 0 6px 16px rgba(48, 31, 18, 0.14);
   --soft-shadow-hover: 0 10px 22px rgba(48, 31, 18, 0.12);
-  --muted-control-color: var(--gray-500);
+  --muted-control-color: var(--gray-400);
 }
 
 /* --- Toggle Variables (Dark) --- */
@@ -133,7 +133,7 @@
   font-family: 'Outfit', sans-serif;
   font-size: 16px;
   font-weight: 300;
-  color: var(--gray-500);
+  color: var(--gray-400);
   cursor: pointer;
   transition: color 0.25s;
   letter-spacing: -0.03em;

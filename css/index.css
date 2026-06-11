@@ -10,9 +10,7 @@
   --bg: #f8f8f8;
   --gray-100: #f0f0f0;
   --gray-200: #e5e5e5;
-  --gray-300: #e5e5e5;
   --gray-400: #6b6b6b;
-  --gray-500: #6b6b6b;
   --gray-600: #444444;
   --gray-900: #1a1a1a;
   --accent: #1F6F90;
@@ -27,9 +25,7 @@
   --white-dark: #141414;
   --gray-100-dark: #1a1a1a;
   --gray-200-dark: #252525;
-  --gray-300-dark: #252525;
   --gray-400-dark: #888888;
-  --gray-500-dark: #888888;
   --gray-600-dark: #aaaaaa;
   --gray-900-dark: #f0f0f0;
   --accent-dark: #74B7D2;
@@ -53,9 +49,7 @@
   --white: var(--white-dark);
   --gray-100: var(--gray-100-dark);
   --gray-200: var(--gray-200-dark);
-  --gray-300: var(--gray-300-dark);
   --gray-400: var(--gray-400-dark);
-  --gray-500: var(--gray-500-dark);
   --gray-600: var(--gray-600-dark);
   --gray-900: var(--gray-900-dark);
   --accent: var(--accent-dark);
@@ -229,7 +223,7 @@ code {
 .hero-tags-intro {
   font-size: 14px;
   font-weight: 400;
-  color: var(--gray-500);
+  color: var(--gray-400);
   line-height: 1.8;
   max-width: 480px;
   margin: 36px auto 0;
@@ -435,20 +429,16 @@ code {
 
 /* ========== WORKS CONTAINER ========== */
 .works {
-  max-width: var(--content-max);
+  max-width: 1296px;
   margin: 0 auto;
   padding: 64px var(--content-padding) 80px;
   transition: max-width 0.5s ease;
 }
 
-.works {
-  max-width: var(--content-max-full);
-}
-
 .works-grid {
   display: flex;
   flex-direction: column;
-  gap: 100px;
+  gap: 116px;
 }
 
 /* ========== WORK ITEM ========== */
@@ -641,7 +631,7 @@ code {
 .work-desc {
   display: none;
   font-size: 18px;
-  color: var(--gray-500);
+  color: var(--gray-400);
   max-width: 700px;
   margin: 0 auto;
   line-height: 1.5;
@@ -654,7 +644,7 @@ code {
 
 .works .work-visual {
   aspect-ratio: 16/9;
-  border-radius: 20px;
+  border-radius: 24px;
   margin-bottom: 6px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
   transition: box-shadow 0.4s ease, border-color 0.35s ease;
@@ -708,7 +698,7 @@ code {
   content: '';
   width: 16px;
   height: 1px;
-  background: var(--gray-300);
+  background: var(--gray-200);
 }
 
 .works .work-title {
@@ -757,7 +747,7 @@ code {
 }
 
 .works .work-item.type-blog .work-visual {
-  aspect-ratio: 4/3;
+  aspect-ratio: 16/9;
   margin-bottom: 0;
 }
 
@@ -790,7 +780,7 @@ code {
 
 .works .work-item.type-blog:has(.work-visual:empty) {
   grid-template-columns: 1fr;
-  max-width: 700px;
+  max-width: 860px;
 }
 
 /* ========== PLUGIN CARD – Editorial Split ========== */
@@ -819,11 +809,11 @@ code {
 
 .works .work-item.type-plugin:hover {
   box-shadow: 0 16px 48px rgba(0, 0, 0, 0.06);
-  border-color: var(--gray-300);
+  border-color: var(--gray-200);
 }
 
 .works .work-item.type-plugin .work-visual {
-  aspect-ratio: 1/1;
+  aspect-ratio: 16/9;
   border-radius: 0;
   margin-bottom: 0;
   box-shadow: none;
@@ -864,7 +854,7 @@ code {
   content: '';
   width: 20px;
   height: 1px;
-  background: var(--gray-300);
+  background: var(--gray-200);
 }
 
 .works .work-item.type-plugin .work-title {
@@ -884,7 +874,7 @@ code {
 .works .work-item.type-plugin .work-desc {
   display: block;
   font-size: 15px;
-  color: var(--gray-500);
+  color: var(--gray-400);
   line-height: 1.65;
   max-width: none;
   margin: 0;
@@ -938,13 +928,13 @@ code {
 }
 
 [data-theme="dark"] .works .work-item.type-plugin {
-  border-color: var(--gray-300);
+  border-color: var(--gray-200);
   background: var(--gray-100);
 }
 
 [data-theme="dark"] .works .work-item .plugin-tag {
   background: var(--gray-200);
-  color: var(--gray-500);
+  color: var(--gray-400);
 }
 
 /* --- Mimari Proje Badge --- */
@@ -1063,13 +1053,10 @@ code {
 
 .about-card {
   background: var(--white);
-  border-radius: 20px;
+  border-radius: 24px;
   border: 1px solid var(--gray-200);
   overflow: hidden;
-}
-
-[data-theme="dark"] .about-card {
-  border-color: var(--gray-300);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.04);
 }
 
 /* Profile Header */
@@ -1077,14 +1064,14 @@ code {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 20px;
-  padding: 32px 40px 0;
+  gap: 18px;
+  padding: 28px 40px 0;
 }
 
 .profile-avatar {
-  width: 84px;
-  height: 84px;
-  border-radius: 14px;
+  width: 78px;
+  height: 78px;
+  border-radius: 12px;
   overflow: hidden;
   flex-shrink: 0;
   background: var(--gray-100);
@@ -1113,11 +1100,11 @@ code {
 
 /* Bio */
 .profile-bio {
-  padding: 24px 40px 0;
+  padding: 20px 42px 0;
   font-size: 15px;
-  line-height: 1.75;
-  color: var(--gray-500);
-  max-width: 78ch;
+  line-height: 1.7;
+  color: var(--gray-400);
+  max-width: 96ch;
   margin: 0 auto;
   text-align: center;
 }
@@ -1153,15 +1140,15 @@ code {
 .about-divider {
   height: 1px;
   background: var(--gray-200);
-  margin: 32px 40px;
+  margin: 24px 42px;
 }
 
 /* Two Column Content */
 .about-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  padding: 0 40px 40px;
+  gap: 40px;
+  padding: 0 42px 32px;
 }
 
 /* Experience Section */
@@ -1199,7 +1186,7 @@ code {
 }
 
 .timeline-dot.inactive {
-  background: var(--gray-300);
+  background: var(--gray-200);
 }
 
 .timeline-item:not(:last-child) .timeline-dot::after {
@@ -1222,7 +1209,7 @@ code {
 
 .timeline-content p {
   font-size: 13px;
-  color: var(--gray-500);
+  color: var(--gray-400);
   line-height: 1.4;
 }
 
@@ -1306,7 +1293,7 @@ code {
   gap: 6px;
   font-size: 13px;
   font-weight: 500;
-  padding: 8px 16px;
+  padding: 7px 14px;
   background: var(--gray-100);
   border-radius: 10px;
   color: var(--gray-600);
@@ -1317,7 +1304,7 @@ code {
 
 .toolkit-pill.priority {
   background: var(--white);
-  border-color: var(--gray-300);
+  border-color: var(--gray-200);
   color: var(--gray-900);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.02);
 }
@@ -1328,16 +1315,9 @@ code {
   color: var(--gray-900);
 }
 
-@media (max-width: 768px) {
-  .about-left .timeline {
-    justify-content: flex-start;
-    gap: 28px;
-  }
-}
-
 .toolkit-pill:hover {
   background: var(--gray-200);
-  border-color: var(--gray-300);
+  border-color: var(--gray-200);
 }
 
 .toolkit-pill svg {
@@ -1352,7 +1332,7 @@ code {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   border-top: 1px solid var(--gray-200);
-  margin: 0 40px;
+  margin: 0 48px;
 }
 
 .stat-item {
@@ -1420,10 +1400,6 @@ code {
 .about-footer-link svg {
   width: 15px;
   height: 15px;
-}
-
-[data-theme="dark"] .about-footer {
-  border-top-color: var(--gray-300);
 }
 
 [data-theme="dark"] .about-footer-link:hover {
@@ -1510,85 +1486,20 @@ code {
     max-width: 100%;
   }
 
-  .profile-header {
-    padding: 24px 24px 0;
-  }
-
-  .profile-avatar {
-    width: 64px;
-    height: 64px;
-  }
-
-  .profile-bio {
-    padding: 20px 24px 0;
-    max-width: 100%;
-  }
-
-  .profile-status {
-    margin-left: 24px;
-  }
-
-  .about-divider {
-    margin: 24px 24px;
-  }
-
-  .about-content {
-    padding: 0 24px 32px;
-    gap: 32px;
-  }
-
-  .stats-bar {
-    margin: 0 24px;
-  }
-
-  .about-footer {
-    padding: 20px 24px;
-  }
-}
-
-@media (max-width: 768px) {
-  :root {
-    --content-padding: 20px;
-  }
-
-  .hero {
-    padding: 104px var(--content-padding) 32px;
-  }
-
-  .hero-tags-intro {
-    font-size: 14px;
-    max-width: 460px;
-    margin-top: 28px;
-  }
-
   .about-content {
     grid-template-columns: 1fr;
   }
 
   .profile-header {
-    padding: 20px 20px 0;
-  }
-
-  .profile-avatar {
-    width: 60px;
-    height: 60px;
+    padding: 28px 20px 0;
   }
 
   .profile-bio {
-    padding: 16px 20px 0;
-    max-width: 100%;
+    font-size: 16px;
   }
 
   .profile-status {
     margin-left: 20px;
-  }
-
-  .about-divider {
-    margin: 20px 20px;
-  }
-
-  .about-content {
-    padding: 0 20px 24px;
   }
 
   .stats-bar {
@@ -1617,16 +1528,8 @@ code {
     flex-wrap: wrap;
   }
 
-  .profile-identity h2 {
-    font-size: 24px;
-  }
-
   .profile-identity p {
     font-size: 15px;
-  }
-
-  .profile-bio {
-    font-size: 16px;
   }
 
   .timeline-content h3 {
@@ -1719,22 +1622,24 @@ code {
   }
 
   .works .works-grid {
-    gap: 60px !important;
+    gap: 60px;
   }
 
+  /* !important: bu genel kurallar daha yüksek spesifisiteli
+     .type-blog/.type-plugin taban kurallarını da ezmeli */
   .works .work-item {
     text-align: center !important;
   }
 
   .works .work-visual {
-    aspect-ratio: 16/9 !important;
-    border-radius: 16px !important;
-    margin-bottom: 6px !important;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06) !important;
+    aspect-ratio: 16/9;
+    border-radius: 16px;
+    margin-bottom: 6px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
   }
 
   .works .work-info {
-    text-align: center !important;
+    text-align: center;
   }
 
   .works .work-number {
@@ -1750,13 +1655,13 @@ code {
   }
 
   .works .work-category {
-    display: none !important;
+    display: none;
   }
 
   .works .work-desc {
     display: block !important;
     font-size: 15px !important;
-    color: var(--gray-500) !important;
+    color: var(--gray-400) !important;
     max-width: 700px !important;
     margin: 0 auto 6px !important;
     line-height: 1.5 !important;
@@ -1764,36 +1669,37 @@ code {
 
   /* Blog items stack vertically on mobile */
   .works .work-item.type-blog {
-    display: block !important;
+    display: block;
   }
 
   .works .work-item.type-blog .work-visual {
-    aspect-ratio: 16/9 !important;
-    margin-bottom: 6px !important;
+    aspect-ratio: 16/9;
+    margin-bottom: 6px;
   }
 
   .works .work-item.type-blog .work-info {
-    text-align: center !important;
-    padding-right: 0 !important;
+    text-align: center;
+    padding-right: 0;
   }
 
   .works .work-item.type-blog .work-number {
-    border-left: none !important;
-    padding-left: 0 !important;
-    border-bottom: none !important;
-    padding-bottom: 0 !important;
-    color: var(--gray-400) !important;
+    border-left: none;
+    padding-left: 0;
+    border-bottom: none;
+    padding-bottom: 0;
+    color: var(--gray-400);
   }
 
   .works .work-item.type-blog .work-title {
-    font-size: 22px !important;
+    font-size: 22px;
   }
 
   .works .work-item.type-blog .work-desc {
-    margin: 0 auto !important;
+    margin: 0 auto !important; /* genel .work-desc margin kuralını ezmeli */
   }
 
-  /* Plugin items on mobile: Editorial Split → vertical */
+  /* Plugin items on mobile: Editorial Split → vertical
+     (!important: koyu temadaki [data-theme] kurallarını da ezmeli) */
   .works .work-item.type-plugin {
     display: grid !important;
     grid-template-columns: 1fr !important;
@@ -1806,25 +1712,25 @@ code {
   }
 
   .works .work-item.type-plugin .work-visual {
-    aspect-ratio: 16/9 !important;
-    border-radius: 0 !important;
-    margin-bottom: 0 !important;
-    box-shadow: none !important;
+    aspect-ratio: 16/9;
+    border-radius: 0;
+    margin-bottom: 0;
+    box-shadow: none;
   }
 
   .works .work-item.type-plugin .work-info {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: center !important;
-    padding: 20px 20px 28px !important;
-    gap: 12px !important;
-    text-align: left !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 20px 28px;
+    gap: 12px;
+    text-align: left;
   }
 
   .works .work-item.type-plugin .work-title {
-    font-family: var(--font-display) !important;
-    font-size: 22px !important;
-    letter-spacing: -0.02em !important;
+    font-family: var(--font-display);
+    font-size: 22px;
+    letter-spacing: -0.02em;
   }
 
   .title-keep {
@@ -1835,119 +1741,6 @@ code {
   .works .work-item.hiding {
     display: none !important;
   }
-}
-
-/* ========== INDEX: LARGE 16:9 IMAGE CARDS ========== */
-.works {
-  max-width: 1296px;
-}
-
-.works .works-grid {
-  gap: 116px;
-}
-
-.works .work-visual {
-  aspect-ratio: 16/9;
-  border-radius: 24px;
-  margin-bottom: 6px;
-}
-
-/* Keep research/blog and software/plugin visuals at 16:9 */
-.works .work-item.type-blog .work-visual,
-.works .work-item.type-plugin .work-visual {
-  aspect-ratio: 16/9;
-}
-
-.works .work-item.type-blog:has(.work-visual:empty) {
-  max-width: 860px;
-}
-
-/* ========== ALTERNATIF-10: ABOUT VARIANT A (Refined Classic) ========== */
-.about-card {
-  border-radius: 24px;
-  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.04);
-}
-
-.profile-header {
-  gap: 24px;
-  padding-top: 36px;
-}
-
-.profile-bio {
-  max-width: 86ch;
-}
-
-.profile-bio p + p {
-  margin-top: 14px;
-}
-
-.about-divider {
-  margin: 30px 48px;
-}
-
-.about-content {
-  grid-template-columns: 1.08fr 1fr;
-  gap: 48px;
-  padding: 0 48px 44px;
-}
-
-.stats-bar {
-  margin: 0 48px;
-}
-
-@media (max-width: 768px) {
-  .about-content {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    padding: 0 20px 24px;
-  }
-}
-
-/* ========== ALTERNATIF-15: ABOUT S3 (Compact Balance) ========== */
-.profile-header {
-  padding-top: 28px;
-  gap: 18px;
-}
-
-.profile-avatar {
-  width: 78px;
-  height: 78px;
-  border-radius: 12px;
-}
-
-.profile-bio {
-  max-width: 96ch;
-  line-height: 1.7;
-  padding: 20px 42px 0;
-}
-
-.profile-bio p + p {
-  margin-top: 10px;
-}
-
-.about-divider {
-  margin: 24px 42px;
-}
-
-.about-content {
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  padding: 0 42px 32px;
-}
-
-@media (max-width: 768px) {
-  .about-content {
-    grid-template-columns: 1fr;
-  }
-}
-
-.about-left .timeline {
-  gap: 30px;
-}
-
-.toolkit-pill {
-  border-radius: 10px;
-  padding: 7px 14px;
 }
 
 /* Lightbox card cursor */
@@ -2101,7 +1894,7 @@ button.inline-tag {
 .footer-directory-group { display: inline-flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; }
 .footer-directory-anchor, .footer-directory-link { text-decoration: none; font-size: 13px; letter-spacing: -0.01em; transition: color 0.2s ease, opacity 0.2s ease; }
 .footer-directory-anchor { color: var(--accent); font-weight: 500; }
-.footer-directory-link { color: var(--gray-500); font-weight: 400; }
+.footer-directory-link { color: var(--gray-400); font-weight: 400; }
 .footer-directory-anchor:hover { color: var(--accent-dark); opacity: 1; }
 .footer-directory-link:hover { color: var(--accent); }
 
