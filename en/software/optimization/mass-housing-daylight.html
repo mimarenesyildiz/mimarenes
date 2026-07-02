@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/js/lang.js"></script>
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Same windows, same plan; only the orientation differs. The Galapagos evolutionary algorithm achieved 250 hours of annual artificial-lighting savings.">
+  <meta name="author" content="Enes Yıldız">
+  <meta name="keywords" content="mass housing, daylight, parametric optimization, Grasshopper, Ladybug, Galapagos, TOKİ, Sütlüce, BIM, Revit, Rhino">
+  <meta name="theme-color" content="#f8f8f8" id="themeColorMeta">
+  <meta name="view-transition" content="same-origin">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mimarenes.com/en/software/optimization/mass-housing-daylight.html">
+  <meta property="og:title" content="Daylight Optimization in Mass Housing | Enes Yıldız">
+  <meta property="og:description" content="Same windows, same plan; only the orientation differs. The Galapagos evolutionary algorithm achieved 250 hours of annual artificial-lighting savings.">
+  <meta property="og:image" content="https://mimarenes.com/anasayfa/optimized/toplukonut-800w.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Enes Yıldız">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="tr_TR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Daylight Optimization in Mass Housing | Enes Yıldız">
+  <meta name="twitter:description" content="Same windows, same plan; only the orientation differs. The Galapagos evolutionary algorithm achieved 250 hours of annual artificial-lighting savings.">
+  <meta name="twitter:image" content="https://mimarenes.com/anasayfa/optimized/toplukonut-800w.jpg">
+
+  <title>Daylight Optimization in Mass Housing | Enes Yıldız</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://mimarenes.com/en/software/optimization/mass-housing-daylight.html">
+  <link rel="alternate" hreflang="tr" href="https://mimarenes.com/yazilim/optimizasyon/toplukonut.html">
+  <link rel="alternate" hreflang="en" href="https://mimarenes.com/en/software/optimization/mass-housing-daylight.html">
+  <link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/software/optimization/mass-housing-daylight.html">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#0f0f0f">
+  <meta name="msapplication-TileImage" content="/mstile-150x150.png">
+  <link rel="stylesheet" href="/fonts/inter.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/subpage.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "name": "Daylight Optimization in Mass Housing",
+        "description": "Parametric optimization of daylight performance with Grasshopper and Ladybug in the Block D living rooms of the TOKİ Istanbul Sütlüce housing project",
+        "url": "https://mimarenes.com/en/software/optimization/mass-housing-daylight.html",
+        "image": "https://mimarenes.com/anasayfa/optimized/toplukonut-800w.jpg",
+        "author": {
+          "@type": "Person",
+          "@id": "https://mimarenes.com/#person",
+          "name": "Enes Yıldız",
+          "url": "https://mimarenes.com"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mimarenes.com/en/" },
+          { "@type": "ListItem", "position": 2, "name": "Software", "item": "https://mimarenes.com/en/software/" },
+          { "@type": "ListItem", "position": 3, "name": "Optimization", "item": "https://mimarenes.com/en/software/optimization/" },
+          { "@type": "ListItem", "position": 4, "name": "Daylight Optimization in Mass Housing" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK3V82N7CD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YK3V82N7CD');
+  </script>
+</head>
+<body class="js-loading">
+  <div id="nav-placeholder"></div>
+  <script src="/js/nav.js"></script>
+
+  <div class="main-content">
+    <main class="page-content">
+
+      <!-- HEADER -->
+      <header class="project-header">
+        <div class="blog-meta">
+          <span class="blog-tag">Parametric Design</span>
+          <span class="blog-date">2025</span>
+        </div>
+        <p class="project-eyebrow">Grasshopper / Ladybug / Galapagos</p>
+        <h1 class="project-title">Daylight Optimization <span class="title-break title-keep">in Mass Housing</span></h1>
+        <p class="project-location">TOKİ Istanbul Sütlüce Housing &mdash; Block D</p>
+      </header>
+
+
+      <!-- INTRO TEXT -->
+      <div class="text-block reveal">
+        <p>In this study, the daylight performance of the living rooms in Block D of the TOKİ Istanbul Sütlüce housing project was analyzed and improved with parametric methods. The research was conducted by Burcu Yıldız as part of her master's thesis in Interior Architecture at Haliç University; I developed its computational design and parametric optimization processes.</p>
+        <p>The BIM model created in Revit was transferred into Grasshopper via Rhino.Inside.Revit, Daylight Autonomy (DA&#x2081;&#x2085;&#x2080;) analyses were run with Ladybug, and the building orientation and position were optimized with the Galapagos evolutionary algorithm.</p>
+      </div>
+
+
+      <!-- PROCESS DIAGRAM -->
+      <div class="process-timeline reveal">
+        <div class="timeline-inner">
+          <div class="timeline-line-wrap">
+            <div class="timeline-line"></div>
+            <div class="timeline-steps">
+              <div class="tl-step">
+                <div class="tl-dot">1</div>
+                <div class="tl-body">
+                  <h4>BIM Transfer</h4>
+                  <ul>
+                    <li>Revit &rarr; Rhino.Inside</li>
+                    <li>Living room volumes</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step">
+                <div class="tl-dot">2</div>
+                <div class="tl-body">
+                  <h4>Context Model</h4>
+                  <ul>
+                    <li>Shading elements</li>
+                    <li>Surrounding buildings</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step active">
+                <div class="tl-dot">3</div>
+                <div class="tl-body">
+                  <h4>DA&#x2081;&#x2085;&#x2080; Analysis</h4>
+                  <ul>
+                    <li>Ladybug simulation</li>
+                    <li>Istanbul EPW data</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step active">
+                <div class="tl-dot">4</div>
+                <div class="tl-body">
+                  <h4>Galapagos</h4>
+                  <ul>
+                    <li>Rotate + Move</li>
+                    <li>Evolutionary optimization</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step">
+                <div class="tl-dot">5</div>
+                <div class="tl-body">
+                  <h4>Results</h4>
+                  <ul>
+                    <li>11.4% improvement</li>
+                    <li>Optimized orientation</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- HERO: Block D Photo -->
+      <div class="img-full software-lead-visual reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="/img/toplukonut/optimized/toplukonut-1-800w.avif 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/toplukonut/optimized/toplukonut-1-800w.webp 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/toplukonut/optimized/toplukonut-1-800w.jpg"
+    data-srcset="/img/toplukonut/optimized/toplukonut-1-800w.jpg 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="TOKİ Sütlüce Housing Block D exterior view" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">TOKİ Istanbul Sütlüce Housing &mdash; Block D, view of the Golden Horn</p>
+
+
+      <!-- PROBLEM DEFINITION -->
+      <div class="text-block reveal">
+        <h2>Problem</h2>
+        <p>In mass housing projects, standardized plan types and block layouts are set out without regard for differing environmental conditions and orientations, which can lead to poor daylight performance indoors. The shading effect of surrounding buildings, balcony canopies and the building's own architectural elements make the situation even more critical.</p>
+        <p>In the existing condition, the average Daylight Autonomy (DA&#x2081;&#x2085;&#x2080;) of the Block D living rooms was measured at 59.7%. This means artificial lighting is needed for roughly 4 of the 10 hours the living rooms are used each day.</p>
+      </div>
+
+
+      <!-- SITE PLAN -->
+      <div class="text-img-row img-right-sm align-top reveal">
+        <div class="row-text">
+          <h2>Project Site</h2>
+          <p>Located on the shore of the Golden Horn in Sütlüce, Istanbul, the TOKİ project sits within a dense urban fabric. Block D, chosen as the study area, consists of sub-blocks D1 and D2 and houses 37 apartments from the ground floor to the fifth floor.</p>
+          <p>All living room volumes across the six floors were included in the analysis; baseline simulations were run on these spaces, where the shading effect of the surrounding buildings is felt most critically.</p>
+        </div>
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="/img/toplukonut/optimized/toplukonut-2-800w.avif 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/toplukonut/optimized/toplukonut-2-800w.webp 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/toplukonut/optimized/toplukonut-2-800w.jpg"
+    data-srcset="/img/toplukonut/optimized/toplukonut-2-800w.jpg 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="TOKİ Sütlüce site plan and satellite image" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">Satellite image and site plan</p>
+        </div>
+      </div>
+
+
+      <!-- METHODOLOGY FLOW -->
+      <div class="text-img-row img-left align-top reveal">
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="/img/toplukonut/optimized/toplukonut-3-800w.avif 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/toplukonut/optimized/toplukonut-3-800w.webp 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/toplukonut/optimized/toplukonut-3-800w.jpg"
+    data-srcset="/img/toplukonut/optimized/toplukonut-3-800w.jpg 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Methodology flow diagram" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">BIM-based workflow and optimization process</p>
+        </div>
+        <div class="row-text">
+          <h2>Method</h2>
+          <p>An innovative BIM-based workflow was developed for the study. The 3D geometric model created in Autodesk Revit was transferred into Grasshopper with Rhino.Inside.Revit, and dynamic daylight simulations were run with Ladybug Tools using Istanbul EPW climate data.</p>
+          <p>Once the baseline analysis was complete, three optimization scenarios were set up with the Galapagos evolutionary algorithm: Rotate, Move and Rotate+Move. In every scenario the existing architectural form and window layout were preserved; only the placement and orientation parameters were optimized.</p>
+        </div>
+      </div>
+
+
+      <!-- HIGHLIGHT -->
+      <div class="highlight-block reveal">
+        <p>With the architectural form and window layout untouched, <span class="hl-accent">placement and orientation optimization</span> alone improved daylight performance by 11.4%.</p>
+      </div>
+
+
+      <!-- GRASSHOPPER DEFINITION -->
+      <div class="img-full software-lead-visual reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="/img/toplukonut/optimized/toplukonut-4-800w.avif 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/toplukonut/optimized/toplukonut-4-800w.webp 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/toplukonut/optimized/toplukonut-4-800w.jpg"
+    data-srcset="/img/toplukonut/optimized/toplukonut-4-800w.jpg 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Grasshopper parametric definition" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">The parametric analysis and optimization definition developed in Grasshopper</p>
+
+
+      <div class="text-block reveal">
+        <h2>Computational Design Process</h2>
+        <p>The definition developed in Grasshopper processes the living room volumes transferred from Revit, the shading elements (balcony roofs, balustrades, bars), the fixed surrounding buildings and the window geometries in a layered structure. Elements that move with the building and the fixed surrounding buildings are organized as separate groups.</p>
+        <p>DA&#x2081;&#x2085;&#x2080; analyses were run separately for each floor with Ladybug components, while the Galapagos optimizer solved the Rotate, Move and Rotate+Move scenarios with evolutionary algorithms.</p>
+      </div>
+
+
+      <!-- DAYLIGHT ANALYSIS PLAN -->
+      <div class="img-small center reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="/img/toplukonut/optimized/toplukonut-5-800w.avif 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/toplukonut/optimized/toplukonut-5-800w.webp 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/toplukonut/optimized/toplukonut-5-800w.jpg"
+    data-srcset="/img/toplukonut/optimized/toplukonut-5-800w.jpg 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Daylight analysis on the floor plan" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">First floor plan &mdash; baseline daylight performance of the living rooms (DA&#x2081;&#x2085;&#x2080; %)</p>
+
+
+      <!-- OPTIMIZATION SCENARIOS -->
+      <div class="text-img-row img-right align-top reveal">
+        <div class="row-text">
+          <h2>Optimization Scenarios</h2>
+          <p>Three scenarios parametrically optimized the position and orientation of Block D on its plot. In the Rotate scenario, turning the building 54 degrees from its current position raised the DA&#x2081;&#x2085;&#x2080; value to 62.6%.</p>
+          <p>The Move scenario tried a change of position alone and produced a practically negligible improvement (0.17%). The Rotate+Move scenario, where both parameters were optimized together, achieved the highest performance.</p>
+        </div>
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="/img/toplukonut/optimized/toplukonut-6-800w.avif 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/toplukonut/optimized/toplukonut-6-800w.webp 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/toplukonut/optimized/toplukonut-6-800w.jpg"
+    data-srcset="/img/toplukonut/optimized/toplukonut-6-800w.jpg 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Site comparison of the optimization scenarios" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">Existing condition and the three optimization scenarios</p>
+        </div>
+      </div>
+
+
+      <!-- COMPARISON CARDS -->
+      <div class="comparison reveal">
+        <div class="comparison-card">
+          <p class="comparison-label">Existing Condition</p>
+          <h3>DA&#x2081;&#x2085;&#x2080; &mdash; 59.7%</h3>
+          <ul>
+            <li>Standard TOKİ block layout</li>
+            <li>Heavy shading from surrounding buildings</li>
+            <li>~4 hours of artificial lighting needed daily</li>
+            <li>Performance dropping to 37% on lower floors</li>
+          </ul>
+        </div>
+        <div class="comparison-card accent">
+          <p class="comparison-label">Rotate + Move</p>
+          <h3>DA&#x2081;&#x2085;&#x2080; &mdash; 66.5%</h3>
+          <ul>
+            <li>11.4% performance increase</li>
+            <li>~41 extra minutes of daylight per day</li>
+            <li>~250 fewer hours of artificial lighting per year</li>
+            <li>With form and windows preserved</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- GALAPAGOS -->
+      <div class="text-img-row img-left-sm reveal">
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="/img/toplukonut/optimized/toplukonut-7-800w.avif 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/toplukonut/optimized/toplukonut-7-800w.webp 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/toplukonut/optimized/toplukonut-7-800w.jpg"
+    data-srcset="/img/toplukonut/optimized/toplukonut-7-800w.jpg 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Galapagos evolutionary algorithm optimization result" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">The Galapagos optimization process</p>
+        </div>
+        <div class="row-text">
+          <h2>Optimization with an Evolutionary Algorithm</h2>
+          <p>The Galapagos genetic solver varied the building orientation and position at each iteration, running a Ladybug daylight simulation and identifying the parameter combination that maximizes the average DA&#x2081;&#x2085;&#x2080; value.</p>
+          <p>The findings showed building orientation to be 29 times more effective than a change of position. This result demonstrates how decisive orientation decisions are for daylight performance in the early stages of design.</p>
+        </div>
+      </div>
+
+
+      <!-- DATA TABLE -->
+      <div class="data-table-wrap reveal">
+        <h2>Optimization Comparison by Floor</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Floor</th>
+              <th>Existing DA&#x2081;&#x2085;&#x2080;</th>
+              <th>Rotate</th>
+              <th>Move</th>
+              <th>Rotate + Move</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ground</td>
+              <td class="val-bad">60.5%</td>
+              <td>58.5%</td>
+              <td>59%</td>
+              <td class="val-good">68.2%</td>
+            </tr>
+            <tr>
+              <td>Floor 1</td>
+              <td class="val-bad">53.2%</td>
+              <td>54.7%</td>
+              <td>52.1%</td>
+              <td class="val-good">60.4%</td>
+            </tr>
+            <tr>
+              <td>Floor 2</td>
+              <td class="val-bad">57.7%</td>
+              <td>62.2%</td>
+              <td>58%</td>
+              <td class="val-good">64.7%</td>
+            </tr>
+            <tr>
+              <td>Floor 3</td>
+              <td class="val-bad">64.2%</td>
+              <td>66.1%</td>
+              <td>64.7%</td>
+              <td class="val-good">69.2%</td>
+            </tr>
+            <tr>
+              <td>Floor 4</td>
+              <td class="val-bad">63.7%</td>
+              <td>65.8%</td>
+              <td>63.8%</td>
+              <td class="val-good">67.8%</td>
+            </tr>
+            <tr>
+              <td>Floor 5</td>
+              <td class="val-bad">76.8%</td>
+              <td>75.4%</td>
+              <td>77%</td>
+              <td class="val-good">78.5%</td>
+            </tr>
+            <tr>
+              <td><strong>Average</strong></td>
+              <td class="val-bad"><strong>59.7%</strong></td>
+              <td><strong>62.6%</strong></td>
+              <td><strong>59.8%</strong></td>
+              <td class="val-good"><strong>66.5%</strong></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <!-- CONCLUSION TEXT -->
+      <div class="text-block right reveal">
+        <h2>Conclusion</h2>
+        <p>The study showed that even in existing buildings, meaningful improvements can be achieved through placement and orientation optimization alone, without architectural intervention. The 11.4% performance gain — with window sizes and architectural form untouched — demonstrates the potential of parametric design tools in mass housing planning with concrete data.</p>
+        <p>These results confirm that treating building orientation systematically, especially in the early stages of design, has a decisive impact on daylight performance, energy efficiency and occupant comfort.</p>
+      </div>
+
+
+      <!-- PROJECT DATA -->
+      <section class="project-data reveal">
+        <div class="data-grid">
+          <div class="data-item">
+            <span class="data-label">Type</span>
+            <span class="data-value">Master's Thesis</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Tools</span>
+            <span class="data-value">Grasshopper, Ladybug, Galapagos, Revit, Rhino.Inside.Revit</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Method</span>
+            <span class="data-value">DA&#x2081;&#x2085;&#x2080;-based daylight optimization</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Output</span>
+            <span class="data-value">More daylight</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="project-footer-section">
+        <div class="related-header">
+          <h3>Related Projects</h3>
+        </div>
+        <div class="related-projects reveal">
+          <a href="../fabrication/victory-park.html" class="related-card">
+            <div class="related-visual">
+              <picture class="render light-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/victory-park-800w.avif 800w,
+                  /anasayfa/optimized/victory-park-1280w.avif 1280w,
+                  /anasayfa/optimized/victory-park-1920w.avif 1920w,
+                  /anasayfa/optimized/victory-park-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/victory-park-800w.webp 800w,
+                  /anasayfa/optimized/victory-park-1280w.webp 1280w,
+                  /anasayfa/optimized/victory-park-1920w.webp 1920w,
+                  /anasayfa/optimized/victory-park-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Victory Park"
+                  data-srcset="/anasayfa/optimized/victory-park-800w.jpg 800w,
+                  /anasayfa/optimized/victory-park-1280w.jpg 1280w,
+                  /anasayfa/optimized/victory-park-1920w.jpg 1920w,
+                  /anasayfa/optimized/victory-park-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/victory-park-800w.jpg">
+              </picture>
+              <picture class="sketch light-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/victory-park-eskiz-800w.avif 800w,
+                  /anasayfa/optimized/victory-park-eskiz-1280w.avif 1280w,
+                  /anasayfa/optimized/victory-park-eskiz-1920w.avif 1920w,
+                  /anasayfa/optimized/victory-park-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/victory-park-eskiz-800w.webp 800w,
+                  /anasayfa/optimized/victory-park-eskiz-1280w.webp 1280w,
+                  /anasayfa/optimized/victory-park-eskiz-1920w.webp 1920w,
+                  /anasayfa/optimized/victory-park-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Victory Park sketch"
+                  data-srcset="/anasayfa/optimized/victory-park-eskiz-800w.jpg 800w,
+                  /anasayfa/optimized/victory-park-eskiz-1280w.jpg 1280w,
+                  /anasayfa/optimized/victory-park-eskiz-1920w.jpg 1920w,
+                  /anasayfa/optimized/victory-park-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/victory-park-eskiz-800w.jpg">
+              </picture>
+              <picture class="render dark-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/victory-park-gece-800w.avif 800w,
+                  /anasayfa/optimized/victory-park-gece-1280w.avif 1280w,
+                  /anasayfa/optimized/victory-park-gece-1920w.avif 1920w,
+                  /anasayfa/optimized/victory-park-gece-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/victory-park-gece-800w.webp 800w,
+                  /anasayfa/optimized/victory-park-gece-1280w.webp 1280w,
+                  /anasayfa/optimized/victory-park-gece-1920w.webp 1920w,
+                  /anasayfa/optimized/victory-park-gece-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Victory Park"
+                  data-srcset="/anasayfa/optimized/victory-park-gece-800w.jpg 800w,
+                  /anasayfa/optimized/victory-park-gece-1280w.jpg 1280w,
+                  /anasayfa/optimized/victory-park-gece-1920w.jpg 1920w,
+                  /anasayfa/optimized/victory-park-gece-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/victory-park-gece-800w.jpg">
+              </picture>
+              <picture class="sketch dark-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/victory-park-gece-eskiz-800w.avif 800w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-1280w.avif 1280w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-1920w.avif 1920w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/victory-park-gece-eskiz-800w.webp 800w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-1280w.webp 1280w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-1920w.webp 1920w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Victory Park sketch"
+                  data-srcset="/anasayfa/optimized/victory-park-gece-eskiz-800w.jpg 800w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-1280w.jpg 1280w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-1920w.jpg 1920w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/victory-park-gece-eskiz-800w.jpg">
+              </picture>
+            </div>
+            <div class="related-info">
+              <p class="related-meta">Fabrication</p>
+              <h4 class="related-title">Victory Park Housing Complex</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner footer-with-directory">
+      <div class="footer-directory" aria-label="Portfolio categories">
+        <div class="footer-directory-group">
+          <a href="/en/index.html#design-all" class="footer-directory-anchor">Design</a>
+          <a href="/en/index.html#architecture" class="footer-directory-link">Architecture</a>
+          <a href="/en/index.html#web" class="footer-directory-link">Web</a>
+          <a href="/en/index.html#furniture" class="footer-directory-link">Furniture</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="/en/index.html#research-all" class="footer-directory-anchor">Research</a>
+          <a href="/en/index.html#ideas" class="footer-directory-link">Ideas</a>
+          <a href="/en/index.html#publications" class="footer-directory-link">Publications</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="/en/index.html#software-all" class="footer-directory-anchor">Software</a>
+          <a href="/en/index.html#ai" class="footer-directory-link">AI</a>
+          <a href="/en/index.html#fabrication" class="footer-directory-link">Fabrication</a>
+          <a href="/en/index.html#optimization" class="footer-directory-link">Optimization</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:mimarenesyildiz@gmail.com" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Email
+        </a>
+        <a href="https://github.com/mimarenesyildiz" target="_blank" rel="noopener noreferrer" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/mimarenes/" target="_blank" rel="noopener noreferrer" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/image-loader.js"></script>
+</body>
+</html>

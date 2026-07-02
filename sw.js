@@ -1,7 +1,9 @@
-const CACHE_NAME = 'enes-yildiz-v2';
+const CACHE_NAME = 'enes-yildiz-v3';
 const PRECACHE = [
   '/',
   '/index.html',
+  '/en/',
+  '/en/index.html',
   '/favicon.svg'
 ];
 

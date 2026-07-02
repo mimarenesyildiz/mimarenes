@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/js/lang.js"></script>
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="A plugin that brings the entire Mask R-CNN workflow into Grasshopper — from dataset preparation and model training to detection and publication-quality comparison.">
+  <meta name="author" content="Enes Yıldız">
+  <meta name="keywords" content="Mask R-CNN, Grasshopper, deep learning, instance segmentation, C#, Rhino, computer vision, architecture">
+  <meta name="theme-color" content="#f8f8f8" id="themeColorMeta">
+  <meta name="view-transition" content="same-origin">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mimarenes.com/en/software/ai/maskrcnn.html">
+  <meta property="og:title" content="MaskRCNN in Grasshopper | Enes Yıldız">
+  <meta property="og:description" content="A plugin that brings the entire Mask R-CNN workflow into Grasshopper — from dataset preparation and model training to detection and publication-quality comparison.">
+  <meta property="og:image" content="https://mimarenes.com/anasayfa/optimized/maskrcnn-800w.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Enes Yıldız">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="tr_TR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MaskRCNN in Grasshopper | Enes Yıldız">
+  <meta name="twitter:description" content="A plugin that brings the entire Mask R-CNN workflow into Grasshopper — from dataset preparation and model training to detection and publication-quality comparison.">
+  <meta name="twitter:image" content="https://mimarenes.com/anasayfa/optimized/maskrcnn-800w.jpg">
+
+  <title>MaskRCNN in Grasshopper | Enes Yıldız</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://mimarenes.com/en/software/ai/maskrcnn.html">
+  <link rel="alternate" hreflang="tr" href="https://mimarenes.com/yazilim/ai/maskrcnn.html">
+  <link rel="alternate" hreflang="en" href="https://mimarenes.com/en/software/ai/maskrcnn.html">
+  <link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/software/ai/maskrcnn.html">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#0f0f0f">
+  <meta name="msapplication-TileImage" content="/mstile-150x150.png">
+  <link rel="stylesheet" href="/fonts/inter.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/subpage.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "name": "MaskRCNN in Grasshopper",
+        "description": "MaskRCNN in Grasshopper — a deep-learning-based object segmentation plugin for the Rhino/Grasshopper environment",
+        "url": "https://mimarenes.com/en/software/ai/maskrcnn.html",
+        "image": "https://mimarenes.com/anasayfa/optimized/maskrcnn-800w.jpg",
+        "author": {
+          "@type": "Person",
+          "@id": "https://mimarenes.com/#person",
+          "name": "Enes Yıldız",
+          "url": "https://mimarenes.com"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mimarenes.com/en/" },
+          { "@type": "ListItem", "position": 2, "name": "Software", "item": "https://mimarenes.com/en/software/" },
+          { "@type": "ListItem", "position": 3, "name": "AI", "item": "https://mimarenes.com/en/software/ai/" },
+          { "@type": "ListItem", "position": 4, "name": "MaskRCNN in Grasshopper" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK3V82N7CD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YK3V82N7CD');
+  </script>
+</head>
+<body class="js-loading">
+  <div id="nav-placeholder"></div>
+  <script src="/js/nav.js"></script>
+
+  <div class="main-content">
+    <main class="page-content">
+
+      <!-- HEADER -->
+      <header class="project-header">
+        <div class="blog-meta">
+          <span class="blog-tag">Plugin</span>
+          <span class="blog-date">2025</span>
+        </div>
+        <p class="project-eyebrow">Grasshopper Plugin</p>
+        <h1 class="project-title">MaskRCNN in Grasshopper</h1>
+        <p class="project-location">Deep-Learning-Based Object Segmentation in Rhino/Grasshopper</p>
+      </header>
+
+
+      <!-- INTRO TEXT -->
+      <div class="text-block reveal">
+        <p>MaskRCNN in Grasshopper is a plugin that integrates the Mask R-CNN deep learning framework directly into the Rhino/Grasshopper environment. The entire machine-learning workflow — from dataset preparation and model training to detection and publication-quality model comparison — is managed through visual programming components written in C#.</p>
+        <p>By removing the need for command-line interaction with Python and TensorFlow, the plugin makes deep learning accessible to architects and researchers working in a parametric design environment.</p>
+      </div>
+
+
+      <!-- PROCESS DIAGRAM -->
+      <div class="process-timeline reveal">
+        <div class="timeline-inner">
+          <div class="timeline-line-wrap">
+            <div class="timeline-line"></div>
+            <div class="timeline-steps">
+              <div class="tl-step">
+                <div class="tl-dot">1</div>
+                <div class="tl-body">
+                  <h4>Environment Setup</h4>
+                  <ul>
+                    <li>Python &amp; TensorFlow</li>
+                    <li>GPU configuration</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step">
+                <div class="tl-dot">2</div>
+                <div class="tl-body">
+                  <h4>Dataset Preparation</h4>
+                  <ul>
+                    <li>Splitting &amp; merging</li>
+                    <li>Cleaning &amp; repair</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step active">
+                <div class="tl-dot">3</div>
+                <div class="tl-body">
+                  <h4>Model Training</h4>
+                  <ul>
+                    <li>Mask R-CNN</li>
+                    <li>COCO transfer learning</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step active">
+                <div class="tl-dot">4</div>
+                <div class="tl-body">
+                  <h4>Detection &amp; Inference</h4>
+                  <ul>
+                    <li>Object segmentation</li>
+                    <li>Confidence scores</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step">
+                <div class="tl-dot">5</div>
+                <div class="tl-body">
+                  <h4>Analysis &amp; Comparison</h4>
+                  <ul>
+                    <li>CSV / MD / LaTeX</li>
+                    <li>Performance reports</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- GRASSHOPPER CANVAS VIEW -->
+      <div class="img-full software-lead-visual reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="/img/maskrcnn/optimized/maskrcnn-1-800w.avif 800w,
+                  /img/maskrcnn/optimized/maskrcnn-1-1280w.avif 1280w,
+                  /img/maskrcnn/optimized/maskrcnn-1-1920w.avif 1920w,
+                  /img/maskrcnn/optimized/maskrcnn-1-2560w.avif 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/maskrcnn/optimized/maskrcnn-1-800w.webp 800w,
+                  /img/maskrcnn/optimized/maskrcnn-1-1280w.webp 1280w,
+                  /img/maskrcnn/optimized/maskrcnn-1-1920w.webp 1920w,
+                  /img/maskrcnn/optimized/maskrcnn-1-2560w.webp 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/maskrcnn/optimized/maskrcnn-1-800w.jpg"
+    data-srcset="/img/maskrcnn/optimized/maskrcnn-1-800w.jpg 800w,
+                  /img/maskrcnn/optimized/maskrcnn-1-1280w.jpg 1280w,
+                  /img/maskrcnn/optimized/maskrcnn-1-1920w.jpg 1920w,
+                  /img/maskrcnn/optimized/maskrcnn-1-2560w.jpg 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="MaskRCNN in Grasshopper — overview of the Grasshopper canvas" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">Overview of the Grasshopper canvas — 95 components organized into 8 functional modules.</p>
+
+
+      <!-- COMPONENT MODULES -->
+      <div class="section-title reveal">
+        <h2>Component Modules</h2>
+      </div>
+
+      <div class="text-block reveal">
+        <p>The plugin consists of eight functional modules. Each module takes on a specific task, and data flows from left to right: from environment setup to dataset management, from training to detection and analysis.</p>
+      </div>
+
+
+      <!-- COMPONENT LIST -->
+      <div class="component-list reveal">
+        <div class="component-item">
+          <div class="component-name">Environment Setup</div>
+          <div class="component-tr">Environment Setup</div>
+          <div class="component-desc">Installs Git, Miniconda, the Mask R-CNN repository, COCO weights and the Python environment with a single button. A status check reports missing dependencies.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">Dataset Splitter</div>
+          <div class="component-tr">Dataset Splitter</div>
+          <div class="component-desc">Splits labeled images into training and validation sets at a given ratio. Supports random shuffling and reproducible seeding.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">Dataset Merger</div>
+          <div class="component-tr">Dataset Merger</div>
+          <div class="component-desc">Integrates newly labeled images into an existing split dataset without disturbing its distribution.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">Dataset Cleaner &amp; Fixer</div>
+          <div class="component-tr">Dataset Cleaner</div>
+          <div class="component-desc">Automatically detects and repairs common annotation errors such as orphaned images, out-of-bounds coordinates, self-intersecting polygons and degenerate masks.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">Model Training</div>
+          <div class="component-tr">Model Training</div>
+          <div class="component-desc">Trains a custom model via transfer learning from COCO pre-trained weights. Hyperparameters such as epochs, learning rate and step count are controlled as Grasshopper inputs.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">Detection &amp; Inference</div>
+          <div class="component-tr">Detection &amp; Inference</div>
+          <div class="component-desc">Runs object detection on new images with the trained model. Produces class labels, confidence scores, bounding boxes and binary masks.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">Model Analyzer</div>
+          <div class="component-tr">Model Analyzer</div>
+          <div class="component-desc">Performs post-training evaluation: loss curves, mAP, per-class precision/recall and exportable charts.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">Model Comparator</div>
+          <div class="component-tr">Model Comparator</div>
+          <div class="component-desc">Comprehensively compares multiple models. Generates publication-quality tables in CSV, Markdown and LaTeX formats and identifies the best model.</div>
+        </div>
+      </div>
+
+
+      <!-- WORKFLOW -->
+      <div class="section-title reveal">
+        <h3>Workflow</h3>
+      </div>
+
+      <div class="text-block reveal">
+        <h2>DATASET PREPARATION</h2>
+        <p>The process begins with preparing a labeled image dataset. Polygon annotations in VIA (VGG Image Annotator) JSON format are split into training and validation sets with the Dataset Splitter. When new data arrives, the Dataset Merger integrates it while preserving the existing distribution. Before training starts, the Dataset Cleaner runs six diagnostic checks and automatically repairs faulty annotations.</p>
+      </div>
+
+      <div class="text-block reveal">
+        <h2>TRAINING AND DETECTION</h2>
+        <p>The training module uses the Mask R-CNN architecture, extracting multi-scale features through a ResNet-101 backbone and a Feature Pyramid Network (FPN). Transfer learning is applied from MS COCO pre-trained weights. The trained model then runs inference on new images through the Detection module, identifying architectural elements such as walls, windows and doors along with class labels and confidence scores.</p>
+      </div>
+
+      <div class="text-block reveal">
+        <h2>ANALYSIS AND COMPARISON</h2>
+        <p>The Model Analyzer computes post-training loss curves, mAP values and per-class performance metrics. The Model Comparator ranks multiple models by metrics such as validation loss, parameter count, efficiency and overall score. Results are exported directly from Grasshopper in CSV, Markdown and LaTeX (booktabs) formats.</p>
+      </div>
+
+
+      <!-- HIGHLIGHT -->
+      <div class="highlight-block reveal">
+        <p>Thanks to <span class="hl-accent">95 Grasshopper components</span> written in C#, the entire deep learning process — from dataset preparation to publication-quality model comparison — is managed in a single environment.</p>
+      </div>
+
+
+      <!-- APPLICATIONS -->
+      <div class="text-block reveal">
+        <h2>APPLICATIONS</h2>
+        <p>The plugin can be used to detect building components (walls, windows, doors, façade elements) in architectural photographs and renders. Trained models can feed into broader workflows that combine detected building geometry with environmental simulation. It applies to any object segmentation task, such as structural element recognition, construction progress tracking, damage detection or urban morphology analysis.</p>
+      </div>
+
+
+      <!-- PROJECT DATA -->
+      <section class="project-data reveal">
+        <div class="data-grid">
+          <div class="data-item">
+            <span class="data-label">Type</span>
+            <span class="data-value">Grasshopper Plugin</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Tools</span>
+            <span class="data-value">Rhino/Grasshopper, C#, Python</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Method</span>
+            <span class="data-value">Mask R-CNN, ResNet-101 + FPN</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Output</span>
+            <span class="data-value">8 components</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- RELATED PROJECTS -->
+      <div class="project-footer-section">
+        <div class="related-header">
+          <h3>Related Projects</h3>
+        </div>
+        <div class="related-projects reveal">
+          <a href="../optimization/mass-housing-daylight.html" class="related-card">
+            <div class="related-visual">
+              <picture class="render light-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/toplukonut-800w.avif 800w,
+                  /anasayfa/optimized/toplukonut-1280w.avif 1280w,
+                  /anasayfa/optimized/toplukonut-1920w.avif 1920w,
+                  /anasayfa/optimized/toplukonut-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/toplukonut-800w.webp 800w,
+                  /anasayfa/optimized/toplukonut-1280w.webp 1280w,
+                  /anasayfa/optimized/toplukonut-1920w.webp 1920w,
+                  /anasayfa/optimized/toplukonut-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Daylight Optimization in Mass Housing"
+                  data-srcset="/anasayfa/optimized/toplukonut-800w.jpg 800w,
+                  /anasayfa/optimized/toplukonut-1280w.jpg 1280w,
+                  /anasayfa/optimized/toplukonut-1920w.jpg 1920w,
+                  /anasayfa/optimized/toplukonut-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/toplukonut-800w.jpg">
+              </picture>
+              <picture class="sketch light-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/toplukonut-eskiz-800w.avif 800w,
+                  /anasayfa/optimized/toplukonut-eskiz-1280w.avif 1280w,
+                  /anasayfa/optimized/toplukonut-eskiz-1920w.avif 1920w,
+                  /anasayfa/optimized/toplukonut-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/toplukonut-eskiz-800w.webp 800w,
+                  /anasayfa/optimized/toplukonut-eskiz-1280w.webp 1280w,
+                  /anasayfa/optimized/toplukonut-eskiz-1920w.webp 1920w,
+                  /anasayfa/optimized/toplukonut-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Daylight Optimization in Mass Housing sketch"
+                  data-srcset="/anasayfa/optimized/toplukonut-eskiz-800w.jpg 800w,
+                  /anasayfa/optimized/toplukonut-eskiz-1280w.jpg 1280w,
+                  /anasayfa/optimized/toplukonut-eskiz-1920w.jpg 1920w,
+                  /anasayfa/optimized/toplukonut-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/toplukonut-eskiz-800w.jpg">
+              </picture>
+              <picture class="render dark-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-800w.avif 800w,
+                  /anasayfa/optimized/toplukonut-gece-1280w.avif 1280w,
+                  /anasayfa/optimized/toplukonut-gece-1920w.avif 1920w,
+                  /anasayfa/optimized/toplukonut-gece-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-800w.webp 800w,
+                  /anasayfa/optimized/toplukonut-gece-1280w.webp 1280w,
+                  /anasayfa/optimized/toplukonut-gece-1920w.webp 1920w,
+                  /anasayfa/optimized/toplukonut-gece-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Daylight Optimization in Mass Housing"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-800w.jpg 800w,
+                  /anasayfa/optimized/toplukonut-gece-1280w.jpg 1280w,
+                  /anasayfa/optimized/toplukonut-gece-1920w.jpg 1920w,
+                  /anasayfa/optimized/toplukonut-gece-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/toplukonut-gece-800w.jpg">
+              </picture>
+              <picture class="sketch dark-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-eskiz-800w.avif 800w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1280w.avif 1280w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1920w.avif 1920w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-eskiz-800w.webp 800w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1280w.webp 1280w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1920w.webp 1920w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Daylight Optimization in Mass Housing sketch"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-eskiz-800w.jpg 800w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1280w.jpg 1280w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1920w.jpg 1920w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/toplukonut-gece-eskiz-800w.jpg">
+              </picture>
+            </div>
+            <div class="related-info">
+              <p class="related-meta">Optimization</p>
+              <h4 class="related-title">Daylight Optimization in Mass Housing</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner footer-with-directory">
+      <div class="footer-directory" aria-label="Portfolio categories">
+        <div class="footer-directory-group">
+          <a href="/en/index.html#design-all" class="footer-directory-anchor">Design</a>
+          <a href="/en/index.html#architecture" class="footer-directory-link">Architecture</a>
+          <a href="/en/index.html#web" class="footer-directory-link">Web</a>
+          <a href="/en/index.html#furniture" class="footer-directory-link">Furniture</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="/en/index.html#research-all" class="footer-directory-anchor">Research</a>
+          <a href="/en/index.html#ideas" class="footer-directory-link">Ideas</a>
+          <a href="/en/index.html#publications" class="footer-directory-link">Publications</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="/en/index.html#software-all" class="footer-directory-anchor">Software</a>
+          <a href="/en/index.html#ai" class="footer-directory-link">AI</a>
+          <a href="/en/index.html#fabrication" class="footer-directory-link">Fabrication</a>
+          <a href="/en/index.html#optimization" class="footer-directory-link">Optimization</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:mimarenesyildiz@gmail.com" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Email
+        </a>
+        <a href="https://github.com/mimarenesyildiz" target="_blank" rel="noopener noreferrer" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/mimarenes/" target="_blank" rel="noopener noreferrer" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/image-loader.js"></script>
+</body>
+</html>

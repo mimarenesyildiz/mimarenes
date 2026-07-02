@@ -986,6 +986,28 @@ code {
 .works .work-item[data-category="mobilya"] .work-number { color: var(--cat-mobilya); }
 .works .work-item[data-category="mobilya"] .work-number::before { background: var(--cat-mobilya); }
 
+/* İngilizce sayfa (/en/) kategori karşılıkları — aynı renk değişkenleri */
+.works .work-item[data-category="architecture"] .work-number { color: var(--cat-mimari); }
+.works .work-item[data-category="architecture"] .work-number::before { background: var(--cat-mimari); }
+
+.works .work-item[data-category="ideas"] .work-number { color: var(--cat-fikir); }
+.works .work-item[data-category="ideas"] .work-number::before { background: var(--cat-fikir); }
+
+.works .work-item[data-category="fabrication"] .work-number { color: var(--cat-fabrikasyon); }
+.works .work-item[data-category="fabrication"] .work-number::before { background: var(--cat-fabrikasyon); }
+
+.works .work-item[data-category="optimization"] .work-number { color: var(--cat-optimizasyon); }
+.works .work-item[data-category="optimization"] .work-number::before { background: var(--cat-optimizasyon); }
+
+.works .work-item[data-category="article"] .work-number { color: var(--cat-yayin); }
+.works .work-item[data-category="article"] .work-number::before { background: var(--cat-yayin); }
+
+.works .work-item[data-category="paper"] .work-number { color: var(--cat-yayin); }
+.works .work-item[data-category="paper"] .work-number::before { background: var(--cat-yayin); }
+
+.works .work-item[data-category="furniture"] .work-number { color: var(--cat-mobilya); }
+.works .work-item[data-category="furniture"] .work-number::before { background: var(--cat-mobilya); }
+
 /* ========== WORK ARROW (Click Affordance) ========== */
 .work-arrow {
   display: none;

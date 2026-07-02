@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/js/lang.js"></script>
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="A venture that moves interior design — traditionally built on face-to-face meetings, long timelines and high costs — onto a fully online platform. Structured end to end with BIM-based 3D design, e-commerce infrastructure and personalized presentation pages.">
+  <meta name="author" content="Enes Yıldız">
+  <meta name="keywords" content="minimalev, interior design, online design, consultancy, entrepreneurship, WordPress, WooCommerce, BIM">
+  <meta name="theme-color" content="#f8f8f8" id="themeColorMeta">
+  <meta name="view-transition" content="same-origin">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mimarenes.com/en/research/ideas/minimalev.html">
+  <meta property="og:title" content="Online Interior Design & Consultancy Platform | Enes Yıldız">
+  <meta property="og:description" content="A venture that moves interior design — traditionally built on face-to-face meetings, long timelines and high costs — onto a fully online platform. Structured end to end with BIM-based 3D design, e-commerce infrastructure and personalized presentation pages.">
+  <meta property="og:image" content="https://mimarenes.com/anasayfa/optimized/minimalev-800w.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Enes Yıldız">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="tr_TR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Online Interior Design & Consultancy Platform | Enes Yıldız">
+  <meta name="twitter:description" content="A venture that moves interior design — traditionally built on face-to-face meetings, long timelines and high costs — onto a fully online platform. Structured end to end with BIM-based 3D design, e-commerce infrastructure and personalized presentation pages.">
+  <meta name="twitter:image" content="https://mimarenes.com/anasayfa/optimized/minimalev-800w.jpg">
+
+  <title>Online Interior Design & Consultancy Platform | Enes Yıldız</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://mimarenes.com/en/research/ideas/minimalev.html">
+  <link rel="alternate" hreflang="tr" href="https://mimarenes.com/arastirma/fikir/minimalev.html">
+  <link rel="alternate" hreflang="en" href="https://mimarenes.com/en/research/ideas/minimalev.html">
+  <link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/research/ideas/minimalev.html">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#0f0f0f">
+  <meta name="msapplication-TileImage" content="/mstile-150x150.png">
+  <link rel="stylesheet" href="/fonts/inter.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/subpage.css">
+  <style>
+    :root {
+      --accent: #C56F34;
+      --accent-light: rgba(197, 111, 52, 0.08);
+      --accent-dark: #E19157;
+      --accent-light-dark: rgba(225, 145, 87, 0.12);
+    }
+
+    /* ========== SITE HERO ========== */
+    .site-hero {
+      margin: 80px 0;
+      position: relative;
+    }
+    .site-hero__video-wrap {
+      width: 100%;
+      aspect-ratio: 21/9;
+      overflow: hidden;
+      position: relative;
+    }
+    .site-hero__video-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .site-hero__overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(92,54,16,0.82) 0%,
+        rgba(120,70,20,0.55) 40%,
+        rgba(160,100,40,0.15) 100%
+      );
+      display: flex;
+      align-items: center;
+      padding: 0 5vw;
+    }
+    .site-hero__text {
+      max-width: 440px;
+    }
+    .site-hero__eyebrow {
+      font-family: var(--mono);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.65);
+      margin-bottom: 16px;
+    }
+    .site-hero__title {
+      font-size: clamp(24px, 3vw, 32px);
+      font-weight: 400;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .site-hero__desc {
+      font-size: 14px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 28px;
+    }
+    .site-hero__cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 28px;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: #fff;
+      letter-spacing: 0.02em;
+      transition: all 0.3s ease;
+      background: transparent;
+    }
+    .site-hero__cta:hover {
+      background: var(--accent);
+      border-color: var(--accent);
+      color: #fff;
+    }
+    .site-hero__cta svg {
+      width: 16px;
+      height: 16px;
+      stroke: currentColor;
+    }
+
+    .comparison-card.accent ul li { border-bottom-color: rgba(184,115,51,0.2); }
+
+    .data-value a { color: var(--accent); transition: opacity 0.25s; }
+    .data-value a:hover { opacity: 0.7; }
+
+    @media (max-width: 768px) {
+      .site-hero { margin: 40px 0; }
+      .site-hero__video-wrap { aspect-ratio: 16/9; }
+      .site-hero__title { font-size: 22px; }
+      .site-hero__text { max-width: 100%; }
+    }
+  </style>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "name": "Online Interior Design & Consultancy Platform",
+        "description": "Minimalev.com - an online interior design and consultancy platform. The entrepreneurship story of founder Enes Yıldız.",
+        "url": "https://mimarenes.com/en/research/ideas/minimalev.html",
+        "image": "https://mimarenes.com/anasayfa/optimized/minimalev-800w.jpg",
+        "author": {
+          "@type": "Person",
+          "@id": "https://mimarenes.com/#person",
+          "name": "Enes Yıldız",
+          "url": "https://mimarenes.com"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mimarenes.com/en/" },
+          { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://mimarenes.com/en/research/" },
+          { "@type": "ListItem", "position": 3, "name": "Ideas", "item": "https://mimarenes.com/en/research/ideas/" },
+          { "@type": "ListItem", "position": 4, "name": "Minimalev" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK3V82N7CD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YK3V82N7CD');
+  </script>
+</head>
+<body class="js-loading">
+  <div id="nav-placeholder"></div>
+  <script src="/js/nav.js"></script>
+
+  <div class="main-content">
+    <main class="page-content">
+
+      <!-- HEADER -->
+      <header class="project-header">
+        <div class="blog-meta">
+          <span class="blog-tag">Entrepreneurship</span>
+          <span class="blog-date">2019 – Present</span>
+        </div>
+        <p class="project-eyebrow">minimalev.com</p>
+        <h1 class="project-title">Online Interior Design & Consultancy Platform</h1>
+        <p class="project-location">Digital Venture — Istanbul, Türkiye</p>
+      </header>
+
+
+      <!-- INTRO: PROBLEM → SOLUTION -->
+      <div class="text-block reveal">
+        <h2>Problem → Solution</h2>
+        <p>In Türkiye, interior design is still an industry built on face-to-face meetings, long timelines and high costs. Many people want to make their homes more livable but struggle to access professional design support. Founded in 2019, minimalev.com was launched to move this service onto a digital platform and make it more accessible, faster and more affordable.</p>
+        <p>The starting point is a simple belief: living in an aesthetic, functional space is not a luxury but a basic right.</p>
+      </div>
+
+
+      <!-- MINIMALEV.COM — Video Hero -->
+      <div class="site-hero reveal">
+        <div class="site-hero__video-wrap">
+          <video autoplay muted loop playsinline>
+            <source src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/minimalev/minimalev-5.mp4" type="video/mp4">
+          </video>
+          <div class="site-hero__overlay">
+            <div class="site-hero__text">
+              <span class="site-hero__eyebrow">&nbsp;</span>
+              <h3 class="site-hero__title">minimalev.com</h3>
+              <p class="site-hero__desc">Online interior design and consultancy platform.&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Orders, consultations and 3D design delivery under one roof.</p>
+              <a href="https://www.minimalev.com" target="_blank" rel="noopener noreferrer" class="site-hero__cta">
+                Visit Site
+              <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- MY ROLE -->
+      <div class="text-img-row img-right-xs reveal">
+        <div class="row-text">
+          <h2>Decisions and Responsibilities</h2>
+          <p>The brand identity was built from scratch. WordPress and WooCommerce were chosen as the platform infrastructure, set up so that services could be sold through an e-commerce model.</p>
+          <p>The service flow was shaped in the same process: filling in a needs form, booking an online appointment, reviewing the design together in 3D, and sharing the delivered work on a personalized page.</p>
+        </div>
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="/img/minimalev/optimized/minimalev-1-800w.avif 800w,
+                  /img/minimalev/optimized/minimalev-1-1280w.avif 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/minimalev/optimized/minimalev-1-800w.webp 800w,
+                  /img/minimalev/optimized/minimalev-1-1280w.webp 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/minimalev/optimized/minimalev-1-800w.jpg"
+    data-srcset="/img/minimalev/optimized/minimalev-1-800w.jpg 800w,
+                  /img/minimalev/optimized/minimalev-1-1280w.jpg 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Minimalev isometric design study" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">Isometric view</p>
+        </div>
+      </div>
+
+
+      <!-- HIGHLIGHT SENTENCE -->
+      <div class="highlight-block reveal">
+        <p>European-standard BIM technology was integrated into the infrastructure of an <span class="hl-accent">online interior design platform</span> for the first time.</p>
+      </div>
+
+
+      <!-- SERVICE MODEL: Comparison -->
+      <div class="comparison reveal">
+        <div class="comparison-card">
+          <p class="comparison-label">Traditional Interior Design</p>
+          <h3>The Classic Process</h3>
+          <ul>
+            <li>Mandatory face-to-face meetings</li>
+            <li>Long timelines and high costs</li>
+            <li>Geographic constraints</li>
+            <li>Non-standardized workflow</li>
+          </ul>
+        </div>
+        <div class="comparison-card accent">
+          <p class="comparison-label">The Minimalev Approach</p>
+          <h3>The Digital Process</h3>
+          <ul>
+            <li>Fully online consultations and follow-up</li>
+            <li>Fast delivery, accessible pricing</li>
+            <li>Accessible from anywhere in the world</li>
+            <li>Systematic, scalable workflow</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- PROCESS VIDEO -->
+      <div class="video-block small reveal">
+        <video controls muted playsinline preload="metadata" data-autoplay-on-scroll>
+          <source src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/minimalev/minimalev-6.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p class="img-caption center">How the process works at Minimalev</p>
+
+
+      <!-- PACKAGES -->
+      <div class="text-block reveal">
+        <h2>Service Packages</h2>
+        <p>The platform is built on two main service models. The Basic Service focuses on arranging existing furniture and belongings in the most efficient way — the space is optimized without pushing anyone to buy something new. The Classic Service is a more holistic design package that also includes decoration recommendations. Both can be ordered for a single room or an entire home.</p>
+      </div>
+
+
+      <!-- DELIVERY EXAMPLES: Section Drawings -->
+      <div class="img-small center reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="/img/minimalev/optimized/minimalev-2-800w.avif 800w,
+                  /img/minimalev/optimized/minimalev-2-1280w.avif 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/minimalev/optimized/minimalev-2-800w.webp 800w,
+                  /img/minimalev/optimized/minimalev-2-1280w.webp 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/minimalev/optimized/minimalev-2-800w.jpg"
+    data-srcset="/img/minimalev/optimized/minimalev-2-800w.jpg 800w,
+                  /img/minimalev/optimized/minimalev-2-1280w.jpg 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Minimalev section drawings — living room delivery example" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">Section drawings delivered to the client — dimensioned and detailed</p>
+
+
+      <!-- 3D RENDER -->
+      <div class="text-img-row img-left-xs reveal">
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="/img/minimalev/optimized/minimalev-3-800w.avif 800w,
+                  /img/minimalev/optimized/minimalev-3-1280w.avif 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/minimalev/optimized/minimalev-3-800w.webp 800w,
+                  /img/minimalev/optimized/minimalev-3-1280w.webp 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/minimalev/optimized/minimalev-3-800w.jpg"
+    data-srcset="/img/minimalev/optimized/minimalev-3-800w.jpg 800w,
+                  /img/minimalev/optimized/minimalev-3-1280w.jpg 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Minimalev 3D render — living room" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">3D render — visualization</p>
+        </div>
+        <div class="row-text">
+          <h2>Design Process</h2>
+          <p>After the order, an appointment form is filled in and needs are defined in an online meeting. Designs are then prepared in a BIM-based environment and reviewed together in 3D.</p>
+          <p>Completed work is shared through a page personalized for each client; every step of the process can be followed from a phone.</p>
+        </div>
+      </div>
+
+
+      <!-- BEFORE / AFTER IMAGES -->
+      <div class="img-trio reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="/img/minimalev/optimized/minimalev-4-800w.avif 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/minimalev/optimized/minimalev-4-800w.webp 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/minimalev/optimized/minimalev-4-800w.jpg"
+    data-srcset="/img/minimalev/optimized/minimalev-4-800w.jpg 800w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Minimalev isometric design" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+        <picture>
+  <source type="image/avif"
+    data-srcset="/img/minimalev/optimized/minimalev-1-800w.avif 800w,
+                  /img/minimalev/optimized/minimalev-1-1280w.avif 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/minimalev/optimized/minimalev-1-800w.webp 800w,
+                  /img/minimalev/optimized/minimalev-1-1280w.webp 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/minimalev/optimized/minimalev-1-800w.jpg"
+    data-srcset="/img/minimalev/optimized/minimalev-1-800w.jpg 800w,
+                  /img/minimalev/optimized/minimalev-1-1280w.jpg 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Minimalev isometric view" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+        <picture>
+  <source type="image/avif"
+    data-srcset="/img/minimalev/optimized/minimalev-3-800w.avif 800w,
+                  /img/minimalev/optimized/minimalev-3-1280w.avif 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/minimalev/optimized/minimalev-3-800w.webp 800w,
+                  /img/minimalev/optimized/minimalev-3-1280w.webp 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/minimalev/optimized/minimalev-3-800w.jpg"
+    data-srcset="/img/minimalev/optimized/minimalev-3-800w.jpg 800w,
+                  /img/minimalev/optimized/minimalev-3-1280w.jpg 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Minimalev 3D render" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">Design deliverables from client projects</p>
+
+
+      <!-- SECOND VIDEO -->
+      <div class="video-block small reveal">
+        <video autoplay muted loop playsinline>
+          <source src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/minimalev/minimalev-7.mp4" type="video/mp4">
+        </video>
+      </div>
+      <p class="img-caption center">The service flow on the platform</p>
+
+
+      <!-- LESSONS LEARNED -->
+      <div class="text-block reveal">
+        <h2>Lessons Learned</h2>
+        <p>The Minimalev journey opened up a broad field of learning beyond architectural education. Turning an idea into a product, a product into a brand, and a brand into a sustainable business model is a process that can only be grasped through experience. Practical knowledge accumulated across many areas, from UX design to digital marketing, from e-commerce infrastructure to customer relations.</p>
+        <p>The most important takeaway: good design alone is not enough. Reaching the right people, through the right channel, at the right time is at least as critical as the design itself.</p>
+      </div>
+
+
+      <!-- PROJECT DATA -->
+      <section class="project-data reveal">
+        <div class="data-grid">
+          <div class="data-item">
+            <span class="data-label">Type</span>
+            <span class="data-value">Design Technology Venture</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Year</span>
+            <span class="data-value">2019</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Role</span>
+            <span class="data-value">Founder & Designer</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Context</span>
+            <span class="data-value">A digital interior consultancy model</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="project-footer-section">
+        <div class="related-header">
+          <h3>Related Projects</h3>
+        </div>
+        <div class="related-projects reveal">
+          <a href="/en/design/architecture/studio-balat.html" class="related-card">
+            <div class="related-visual">
+              <picture class="render light-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/studyo-balat-800w.avif 800w,
+                  /anasayfa/optimized/studyo-balat-1280w.avif 1280w,
+                  /anasayfa/optimized/studyo-balat-1920w.avif 1920w,
+                  /anasayfa/optimized/studyo-balat-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/studyo-balat-800w.webp 800w,
+                  /anasayfa/optimized/studyo-balat-1280w.webp 1280w,
+                  /anasayfa/optimized/studyo-balat-1920w.webp 1920w,
+                  /anasayfa/optimized/studyo-balat-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Studio Balat"
+                  data-srcset="/anasayfa/optimized/studyo-balat-800w.jpg 800w,
+                  /anasayfa/optimized/studyo-balat-1280w.jpg 1280w,
+                  /anasayfa/optimized/studyo-balat-1920w.jpg 1920w,
+                  /anasayfa/optimized/studyo-balat-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/studyo-balat-800w.jpg">
+              </picture>
+              <picture class="sketch light-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/studyo-balat-eskiz-800w.avif 800w,
+                  /anasayfa/optimized/studyo-balat-eskiz-1280w.avif 1280w,
+                  /anasayfa/optimized/studyo-balat-eskiz-1920w.avif 1920w,
+                  /anasayfa/optimized/studyo-balat-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/studyo-balat-eskiz-800w.webp 800w,
+                  /anasayfa/optimized/studyo-balat-eskiz-1280w.webp 1280w,
+                  /anasayfa/optimized/studyo-balat-eskiz-1920w.webp 1920w,
+                  /anasayfa/optimized/studyo-balat-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Studio Balat sketch"
+                  data-srcset="/anasayfa/optimized/studyo-balat-eskiz-800w.jpg 800w,
+                  /anasayfa/optimized/studyo-balat-eskiz-1280w.jpg 1280w,
+                  /anasayfa/optimized/studyo-balat-eskiz-1920w.jpg 1920w,
+                  /anasayfa/optimized/studyo-balat-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/studyo-balat-eskiz-800w.jpg">
+              </picture>
+              <picture class="render dark-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/studyo-balat-gece-800w.avif 800w,
+                  /anasayfa/optimized/studyo-balat-gece-1280w.avif 1280w,
+                  /anasayfa/optimized/studyo-balat-gece-1920w.avif 1920w,
+                  /anasayfa/optimized/studyo-balat-gece-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/studyo-balat-gece-800w.webp 800w,
+                  /anasayfa/optimized/studyo-balat-gece-1280w.webp 1280w,
+                  /anasayfa/optimized/studyo-balat-gece-1920w.webp 1920w,
+                  /anasayfa/optimized/studyo-balat-gece-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Studio Balat"
+                  data-srcset="/anasayfa/optimized/studyo-balat-gece-800w.jpg 800w,
+                  /anasayfa/optimized/studyo-balat-gece-1280w.jpg 1280w,
+                  /anasayfa/optimized/studyo-balat-gece-1920w.jpg 1920w,
+                  /anasayfa/optimized/studyo-balat-gece-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/studyo-balat-gece-800w.jpg">
+              </picture>
+              <picture class="sketch dark-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/studyo-balat-gece-eskiz-800w.avif 800w,
+                  /anasayfa/optimized/studyo-balat-gece-eskiz-1280w.avif 1280w,
+                  /anasayfa/optimized/studyo-balat-gece-eskiz-1920w.avif 1920w,
+                  /anasayfa/optimized/studyo-balat-gece-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/studyo-balat-gece-eskiz-800w.webp 800w,
+                  /anasayfa/optimized/studyo-balat-gece-eskiz-1280w.webp 1280w,
+                  /anasayfa/optimized/studyo-balat-gece-eskiz-1920w.webp 1920w,
+                  /anasayfa/optimized/studyo-balat-gece-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Studio Balat sketch"
+                  data-srcset="/anasayfa/optimized/studyo-balat-gece-eskiz-800w.jpg 800w,
+                  /anasayfa/optimized/studyo-balat-gece-eskiz-1280w.jpg 1280w,
+                  /anasayfa/optimized/studyo-balat-gece-eskiz-1920w.jpg 1920w,
+                  /anasayfa/optimized/studyo-balat-gece-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/studyo-balat-gece-eskiz-800w.jpg">
+              </picture>
+            </div>
+            <div class="related-info">
+              <p class="related-meta">Architecture</p>
+              <h4 class="related-title">Studio Balat</h4>
+            </div>
+          </a>
+          <a href="1284.html" class="related-card">
+            <div class="related-visual">
+              <picture class="render light-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/1284-800w.avif 800w,
+                  /anasayfa/optimized/1284-1280w.avif 1280w,
+                  /anasayfa/optimized/1284-1920w.avif 1920w,
+                  /anasayfa/optimized/1284-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/1284-800w.webp 800w,
+                  /anasayfa/optimized/1284-1280w.webp 1280w,
+                  /anasayfa/optimized/1284-1920w.webp 1920w,
+                  /anasayfa/optimized/1284-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="12/84 Modular"
+                  data-srcset="/anasayfa/optimized/1284-800w.jpg 800w,
+                  /anasayfa/optimized/1284-1280w.jpg 1280w,
+                  /anasayfa/optimized/1284-1920w.jpg 1920w,
+                  /anasayfa/optimized/1284-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/1284-800w.jpg">
+              </picture>
+              <picture class="sketch light-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/1284-eskiz-800w.avif 800w,
+                  /anasayfa/optimized/1284-eskiz-1280w.avif 1280w,
+                  /anasayfa/optimized/1284-eskiz-1920w.avif 1920w,
+                  /anasayfa/optimized/1284-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/1284-eskiz-800w.webp 800w,
+                  /anasayfa/optimized/1284-eskiz-1280w.webp 1280w,
+                  /anasayfa/optimized/1284-eskiz-1920w.webp 1920w,
+                  /anasayfa/optimized/1284-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="12/84 Modular sketch"
+                  data-srcset="/anasayfa/optimized/1284-eskiz-800w.jpg 800w,
+                  /anasayfa/optimized/1284-eskiz-1280w.jpg 1280w,
+                  /anasayfa/optimized/1284-eskiz-1920w.jpg 1920w,
+                  /anasayfa/optimized/1284-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/1284-eskiz-800w.jpg">
+              </picture>
+              <picture class="render dark-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/1284-gece-800w.avif 800w,
+                  /anasayfa/optimized/1284-gece-1280w.avif 1280w,
+                  /anasayfa/optimized/1284-gece-1920w.avif 1920w,
+                  /anasayfa/optimized/1284-gece-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/1284-gece-800w.webp 800w,
+                  /anasayfa/optimized/1284-gece-1280w.webp 1280w,
+                  /anasayfa/optimized/1284-gece-1920w.webp 1920w,
+                  /anasayfa/optimized/1284-gece-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="12/84 Modular"
+                  data-srcset="/anasayfa/optimized/1284-gece-800w.jpg 800w,
+                  /anasayfa/optimized/1284-gece-1280w.jpg 1280w,
+                  /anasayfa/optimized/1284-gece-1920w.jpg 1920w,
+                  /anasayfa/optimized/1284-gece-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/1284-gece-800w.jpg">
+              </picture>
+              <picture class="sketch dark-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/1284-gece-eskiz-800w.avif 800w,
+                  /anasayfa/optimized/1284-gece-eskiz-1280w.avif 1280w,
+                  /anasayfa/optimized/1284-gece-eskiz-1920w.avif 1920w,
+                  /anasayfa/optimized/1284-gece-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/1284-gece-eskiz-800w.webp 800w,
+                  /anasayfa/optimized/1284-gece-eskiz-1280w.webp 1280w,
+                  /anasayfa/optimized/1284-gece-eskiz-1920w.webp 1920w,
+                  /anasayfa/optimized/1284-gece-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="12/84 Modular sketch"
+                  data-srcset="/anasayfa/optimized/1284-gece-eskiz-800w.jpg 800w,
+                  /anasayfa/optimized/1284-gece-eskiz-1280w.jpg 1280w,
+                  /anasayfa/optimized/1284-gece-eskiz-1920w.jpg 1920w,
+                  /anasayfa/optimized/1284-gece-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/1284-gece-eskiz-800w.jpg">
+              </picture>
+            </div>
+            <div class="related-info">
+              <p class="related-meta">Idea</p>
+              <h4 class="related-title">Resilient Module Design for an Uncertain Future</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner footer-with-directory">
+      <div class="footer-directory" aria-label="Portfolio categories">
+        <div class="footer-directory-group">
+          <a href="/en/index.html#design-all" class="footer-directory-anchor">Design</a>
+          <a href="/en/index.html#architecture" class="footer-directory-link">Architecture</a>
+          <a href="/en/index.html#web" class="footer-directory-link">Web</a>
+          <a href="/en/index.html#furniture" class="footer-directory-link">Furniture</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="/en/index.html#research-all" class="footer-directory-anchor">Research</a>
+          <a href="/en/index.html#ideas" class="footer-directory-link">Ideas</a>
+          <a href="/en/index.html#publications" class="footer-directory-link">Publications</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="/en/index.html#software-all" class="footer-directory-anchor">Software</a>
+          <a href="/en/index.html#ai" class="footer-directory-link">AI</a>
+          <a href="/en/index.html#fabrication" class="footer-directory-link">Fabrication</a>
+          <a href="/en/index.html#optimization" class="footer-directory-link">Optimization</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:mimarenesyildiz@gmail.com" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Email
+        </a>
+        <a href="https://github.com/mimarenesyildiz" target="_blank" rel="noopener noreferrer" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/mimarenes/" target="_blank" rel="noopener noreferrer" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/image-loader.js"></script>
+</body>
+</html>

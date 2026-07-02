@@ -1,75 +1,220 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://mimarenes.com/</loc>
-    <lastmod>2026-03-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/"/>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://mimarenes.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/"/>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://mimarenes.com/tasarim/mimari/tasarim-fakultesi.html</loc>
-    <lastmod>2026-03-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/tasarim/mimari/tasarim-fakultesi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/design/architecture/design-faculty.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/design/architecture/design-faculty.html"/>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mimarenes.com/en/design/architecture/design-faculty.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/tasarim/mimari/tasarim-fakultesi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/design/architecture/design-faculty.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/design/architecture/design-faculty.html"/>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mimarenes.com/tasarim/mimari/herat-camii.html</loc>
-    <lastmod>2026-03-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/tasarim/mimari/herat-camii.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/design/architecture/herat-mosque.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/design/architecture/herat-mosque.html"/>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mimarenes.com/en/design/architecture/herat-mosque.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/tasarim/mimari/herat-camii.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/design/architecture/herat-mosque.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/design/architecture/herat-mosque.html"/>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mimarenes.com/tasarim/mimari/seyir-kulesi.html</loc>
-    <lastmod>2026-03-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/tasarim/mimari/seyir-kulesi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/design/architecture/observation-tower.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/design/architecture/observation-tower.html"/>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mimarenes.com/yazilim/fabrikasyon/victory-park.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://mimarenes.com/yazilim/optimizasyon/toplukonut.html</loc>
-    <lastmod>2026-03-11</lastmod>
+    <loc>https://mimarenes.com/en/design/architecture/observation-tower.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/tasarim/mimari/seyir-kulesi.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/design/architecture/observation-tower.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/design/architecture/observation-tower.html"/>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mimarenes.com/tasarim/mimari/studyo-balat.html</loc>
-    <lastmod>2026-03-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/tasarim/mimari/studyo-balat.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/design/architecture/studio-balat.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/design/architecture/studio-balat.html"/>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mimarenes.com/arastirma/fikir/minimalev.html</loc>
-    <lastmod>2026-03-11</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://mimarenes.com/arastirma/fikir/1284.html</loc>
-    <lastmod>2026-03-11</lastmod>
+    <loc>https://mimarenes.com/en/design/architecture/studio-balat.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/tasarim/mimari/studyo-balat.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/design/architecture/studio-balat.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/design/architecture/studio-balat.html"/>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mimarenes.com/yazilim/ai/maskrcnn.html</loc>
-    <lastmod>2026-03-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/yazilim/ai/maskrcnn.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/software/ai/maskrcnn.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/software/ai/maskrcnn.html"/>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://mimarenes.com/yazilim/optimizasyon/mukarnas.html</loc>
-    <lastmod>2026-03-11</lastmod>
+    <loc>https://mimarenes.com/en/software/ai/maskrcnn.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/yazilim/ai/maskrcnn.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/software/ai/maskrcnn.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/software/ai/maskrcnn.html"/>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mimarenes.com/yazilim/optimizasyon/toplukonut.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/yazilim/optimizasyon/toplukonut.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/software/optimization/mass-housing-daylight.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/software/optimization/mass-housing-daylight.html"/>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mimarenes.com/en/software/optimization/mass-housing-daylight.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/yazilim/optimizasyon/toplukonut.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/software/optimization/mass-housing-daylight.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/software/optimization/mass-housing-daylight.html"/>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://mimarenes.com/yazilim/optimizasyon/uskudar-meydani.html</loc>
-    <lastmod>2026-03-11</lastmod>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/yazilim/optimizasyon/uskudar-meydani.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/software/optimization/uskudar-square.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/software/optimization/uskudar-square.html"/>
+    <lastmod>2026-07-02</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mimarenes.com/en/software/optimization/uskudar-square.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/yazilim/optimizasyon/uskudar-meydani.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/software/optimization/uskudar-square.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/software/optimization/uskudar-square.html"/>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mimarenes.com/yazilim/optimizasyon/mukarnas.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/yazilim/optimizasyon/mukarnas.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/software/optimization/muqarnas.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/software/optimization/muqarnas.html"/>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mimarenes.com/en/software/optimization/muqarnas.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/yazilim/optimizasyon/mukarnas.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/software/optimization/muqarnas.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/software/optimization/muqarnas.html"/>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mimarenes.com/yazilim/fabrikasyon/victory-park.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/yazilim/fabrikasyon/victory-park.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/software/fabrication/victory-park.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/software/fabrication/victory-park.html"/>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mimarenes.com/en/software/fabrication/victory-park.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/yazilim/fabrikasyon/victory-park.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/software/fabrication/victory-park.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/software/fabrication/victory-park.html"/>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mimarenes.com/arastirma/fikir/1284.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/arastirma/fikir/1284.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/research/ideas/1284.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/research/ideas/1284.html"/>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mimarenes.com/en/research/ideas/1284.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/arastirma/fikir/1284.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/research/ideas/1284.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/research/ideas/1284.html"/>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mimarenes.com/arastirma/fikir/minimalev.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/arastirma/fikir/minimalev.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/research/ideas/minimalev.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/research/ideas/minimalev.html"/>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://mimarenes.com/en/research/ideas/minimalev.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/arastirma/fikir/minimalev.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/research/ideas/minimalev.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/research/ideas/minimalev.html"/>
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

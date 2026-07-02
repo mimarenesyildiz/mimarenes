@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/js/lang.js"></script>
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="A parametric thermal-comfort optimization study guided by wind, sun and visibility analyses at one of Istanbul's busiest pedestrian crossings.">
+  <meta name="author" content="Enes Yıldız">
+  <meta name="keywords" content="outdoor thermal comfort, urban design, parametric design, Üsküdar Square, UTCI, Grasshopper, Ladybug, Galapagos">
+  <meta name="theme-color" content="#f8f8f8" id="themeColorMeta">
+  <meta name="view-transition" content="same-origin">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mimarenes.com/en/software/optimization/uskudar-square.html">
+  <meta property="og:title" content="Üsküdar Square: Outdoor Comfort | Enes Yıldız">
+  <meta property="og:description" content="A parametric thermal-comfort optimization study guided by wind, sun and visibility analyses at one of Istanbul's busiest pedestrian crossings.">
+  <meta property="og:image" content="https://mimarenes.com/anasayfa/optimized/uskudar-meydani-800w.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Enes Yıldız">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="tr_TR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Üsküdar Square: Outdoor Comfort | Enes Yıldız">
+  <meta name="twitter:description" content="A parametric thermal-comfort optimization study guided by wind, sun and visibility analyses at one of Istanbul's busiest pedestrian crossings.">
+  <meta name="twitter:image" content="https://mimarenes.com/anasayfa/optimized/uskudar-meydani-800w.jpg">
+
+  <title>Üsküdar Square: Outdoor Comfort | Enes Yıldız</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://mimarenes.com/en/software/optimization/uskudar-square.html">
+  <link rel="alternate" hreflang="tr" href="https://mimarenes.com/yazilim/optimizasyon/uskudar-meydani.html">
+  <link rel="alternate" hreflang="en" href="https://mimarenes.com/en/software/optimization/uskudar-square.html">
+  <link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/software/optimization/uskudar-square.html">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#0f0f0f">
+  <meta name="msapplication-TileImage" content="/mstile-150x150.png">
+  <link rel="stylesheet" href="/fonts/inter.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/subpage.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "name": "Üsküdar Square: Outdoor Comfort",
+        "description": "Outdoor thermal comfort and visibility optimization at Üsküdar Square through parametric design and environmental analysis",
+        "url": "https://mimarenes.com/en/software/optimization/uskudar-square.html",
+        "image": "https://mimarenes.com/anasayfa/optimized/uskudar-meydani-800w.jpg",
+        "author": {
+          "@type": "Person",
+          "@id": "https://mimarenes.com/#person",
+          "name": "Enes Yıldız",
+          "url": "https://mimarenes.com"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mimarenes.com/en/" },
+          { "@type": "ListItem", "position": 2, "name": "Software", "item": "https://mimarenes.com/en/software/" },
+          { "@type": "ListItem", "position": 3, "name": "Optimization", "item": "https://mimarenes.com/en/software/optimization/" },
+          { "@type": "ListItem", "position": 4, "name": "Üsküdar Square: Outdoor Comfort" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK3V82N7CD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YK3V82N7CD');
+  </script>
+</head>
+<body class="js-loading">
+  <div id="nav-placeholder"></div>
+  <script src="/js/nav.js"></script>
+
+  <div class="main-content">
+    <main class="page-content">
+
+      <!-- ==================== HEADER ==================== -->
+      <header class="project-header">
+        <div class="blog-meta">
+          <span class="blog-tag">Research</span>
+          <span class="blog-date">2024</span>
+        </div>
+        <p class="project-eyebrow">Thermal Comfort &amp; Visibility Optimization</p>
+        <h1 class="project-title">Üsküdar Square: Outdoor Comfort</h1>
+        <p class="project-location">Üsküdar, Istanbul</p>
+      </header>
+
+
+      <!-- ==================== INTRO TEXT ==================== -->
+      <div class="text-block reveal">
+        <p>A parametric urban design study that optimizes outdoor thermal comfort at Üsküdar Square without compromising the visibility of the surrounding cultural landmarks. The existing condition was simulated with Rhino, Grasshopper, Ladybug and Galapagos; UTCI-based thermal comfort calculations were performed; and the visibility-comfort balance was optimized with a genetic algorithm. Strategic placement of green infrastructure reduced the heat island effect while preserving sightlines from the metro exits to the waterfront and the historic buildings.</p>
+      </div>
+
+
+      <!-- PROCESS DIAGRAM -->
+      <div class="process-timeline reveal">
+        <div class="timeline-inner">
+          <div class="timeline-line-wrap">
+            <div class="timeline-line"></div>
+            <div class="timeline-steps">
+              <div class="tl-step">
+                <div class="tl-dot">1</div>
+                <div class="tl-body">
+                  <h4>Site Model</h4>
+                  <ul>
+                    <li>3D city model</li>
+                    <li>Metro exits</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step">
+                <div class="tl-dot">2</div>
+                <div class="tl-body">
+                  <h4>Visibility Analysis</h4>
+                  <ul>
+                    <li>56 view points</li>
+                    <li>Historic buildings</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step active">
+                <div class="tl-dot">3</div>
+                <div class="tl-body">
+                  <h4>UTCI Analysis</h4>
+                  <ul>
+                    <li>Ladybug / EPW</li>
+                    <li>15 comfort points</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step active">
+                <div class="tl-dot">4</div>
+                <div class="tl-body">
+                  <h4>Galapagos</h4>
+                  <ul>
+                    <li>Tree placement</li>
+                    <li>5-stage optimization</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step">
+                <div class="tl-dot">5</div>
+                <div class="tl-body">
+                  <h4>Integrated Result</h4>
+                  <ul>
+                    <li>Comfort &amp; visibility balance</li>
+                    <li>45 trees proposed</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- ==================== HERO IMAGE ==================== -->
+      <div class="img-bleed reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="/img/uskudar-meydani/optimized/uskudar-meydani-1-800w.avif 800w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-1-1280w.avif 1280w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-1-1920w.avif 1920w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-1-2560w.avif 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/uskudar-meydani/optimized/uskudar-meydani-1-800w.webp 800w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-1-1280w.webp 1280w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-1-1920w.webp 1920w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-1-2560w.webp 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/uskudar-meydani/optimized/uskudar-meydani-1-800w.jpg"
+    data-srcset="/img/uskudar-meydani/optimized/uskudar-meydani-1-800w.jpg 800w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-1-1280w.jpg 1280w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-1-1920w.jpg 1920w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-1-2560w.jpg 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Üsküdar Square study area and historic buildings" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">The Üsküdar Square study area and the historic buildings around it</p>
+
+
+      <!-- ==================== HIGHLIGHT ==================== -->
+      <div class="highlight-block reveal">
+        <p>Two conflicting goals in the design of a square: <span class="hl-accent">staying cool</span> and <span class="hl-accent">keeping the view.</span> Evolutionary optimization resolved tree placement, thermal comfort and visual openness simultaneously.</p>
+      </div>
+
+
+      <!-- ==================== PROBLEM ==================== -->
+      <div class="text-block reveal">
+        <h2>Problem</h2>
+        <p>The undesigned metro exits and heavy concrete cover constrain both the aesthetic and functional potential of the square. Pedestrians have no clear line of sight from the metro exits to the waterfront and the historic buildings. The urban heat island effect grows with the lack of green space.</p>
+      </div>
+
+
+      <!-- ==================== TOOL COMPARISON ==================== -->
+      <div class="comparison reveal">
+        <div class="comparison-card">
+          <p class="comparison-label">3D Modeling &amp; Parametric</p>
+          <h3>Rhino + Grasshopper</h3>
+          <ul>
+            <li>3D modeling for complex geometries</li>
+            <li>Visual programming with parametric modeling</li>
+            <li>Dynamic design variations</li>
+            <li>Multiple scenarios</li>
+          </ul>
+        </div>
+        <div class="comparison-card accent">
+          <p class="comparison-label">Analysis &amp; Optimization</p>
+          <h3>Ladybug + Galapagos</h3>
+          <ul>
+            <li>Solar radiation, daylight and thermal comfort analysis</li>
+            <li>UTCI evaluation with weather data</li>
+            <li>Genetic-algorithm-based evolutionary solver</li>
+            <li>Optimal solutions against set criteria</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- ==================== STUDY AREA ==================== -->
+      <div class="text-block reveal">
+        <h2>Study Area</h2>
+        <p>A transport hub of historic significance on Istanbul's Asian side. Where ferry, metro and bus lines intersect, the square is surrounded by cultural landmarks such as the Mihrimah Sultan Mosque and the Şemsi Pasha Mosque.</p>
+      </div>
+
+
+      <!-- ==================== SIMULATION PROCESS ==================== -->
+      <div class="text-img-row img-right align-top reveal">
+        <div class="row-text">
+          <h2>Simulation Process</h2>
+          <p>A three-stage process was followed: visibility analysis, thermal comfort calculation and optimization.</p>
+          <ul class="step-list">
+            <li>Defining sightlines from the metro exits to the shore and the mosques</li>
+            <li>Placing between 43 and 224 trees with controlled parameters</li>
+            <li>Using three different tree models</li>
+            <li>Computing UTCI with climate data from an EPW file</li>
+            <li>Five-stage Galapagos optimization</li>
+          </ul>
+        </div>
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="/img/uskudar-meydani/optimized/uskudar-meydani-2-800w.avif 800w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-2-1280w.avif 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/uskudar-meydani/optimized/uskudar-meydani-2-800w.webp 800w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-2-1280w.webp 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/uskudar-meydani/optimized/uskudar-meydani-2-800w.jpg"
+    data-srcset="/img/uskudar-meydani/optimized/uskudar-meydani-2-800w.jpg 800w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-2-1280w.jpg 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Selected points, metro exits, proposed public spaces and the planting zone" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">Selected points, metro exits, proposed public spaces and the planting zone</p>
+        </div>
+      </div>
+
+
+      <!-- ==================== OPTIMIZATION PARAMETERS ==================== -->
+      <div class="data-table-wrap reveal">
+        <h2>Optimization Parameters</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Category</th>
+              <th>Variable</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Resolution</td>
+              <td>Number of View Angles</td>
+              <td>56</td>
+            </tr>
+            <tr>
+              <td>Resolution</td>
+              <td>Thermal Comfort Points</td>
+              <td>15</td>
+            </tr>
+            <tr>
+              <td>Optimization</td>
+              <td>Number of Trees</td>
+              <td class="val-good">43 &ndash; 224</td>
+            </tr>
+            <tr>
+              <td>Optimization</td>
+              <td>Tree Size Multiplier</td>
+              <td class="val-good">0.5 &ndash; 1.5</td>
+            </tr>
+            <tr>
+              <td>Optimization</td>
+              <td>Gathering Area Multiplier</td>
+              <td class="val-good">0.6 &ndash; 1.0</td>
+            </tr>
+            <tr>
+              <td>Objective</td>
+              <td>Unobstructed View Vectors</td>
+              <td class="val-good">Maximize</td>
+            </tr>
+            <tr>
+              <td>Objective</td>
+              <td>Neutral Comfort Percentage</td>
+              <td class="val-good">Maximize</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <!-- ==================== RESULTS ==================== -->
+      <div class="text-block reveal">
+        <h2>Results</h2>
+        <p>In the five-stage optimization process, visibility and thermal comfort were first optimized separately. In the final stage the two factors were balanced into an integrated solution.</p>
+      </div>
+
+      <!-- Optimization Comparison -->
+      <div class="comparison reveal">
+        <div class="comparison-card">
+          <p class="comparison-label">Visibility Only</p>
+          <h3>Steps 1 &amp; 2</h3>
+          <ul>
+            <li>Maximum: 244 units</li>
+            <li>Minimum: 74 units</li>
+            <li>Range: 170 units</li>
+          </ul>
+        </div>
+        <div class="comparison-card accent">
+          <p class="comparison-label">Thermal Comfort Only</p>
+          <h3>Steps 3 &amp; 4</h3>
+          <ul>
+            <li>Maximum: 47,042,226 units</li>
+            <li>Minimum: 45,877,169 units</li>
+            <li>Range: 1,165,057 units</li>
+          </ul>
+        </div>
+      </div>
+
+
+      <!-- UTCI Image -->
+      <div class="img-large center software-lead-visual reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="/img/uskudar-meydani/optimized/uskudar-meydani-3-800w.avif 800w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-3-1280w.avif 1280w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-3-1920w.avif 1920w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-3-2560w.avif 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/uskudar-meydani/optimized/uskudar-meydani-3-800w.webp 800w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-3-1280w.webp 1280w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-3-1920w.webp 1920w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-3-2560w.webp 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/uskudar-meydani/optimized/uskudar-meydani-3-800w.jpg"
+    data-srcset="/img/uskudar-meydani/optimized/uskudar-meydani-3-800w.jpg 800w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-3-1280w.jpg 1280w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-3-1920w.jpg 1920w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-3-2560w.jpg 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="UTCI scores and the optimization result" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">UTCI scores and the optimization result</p>
+
+
+      <!-- Galapagos Image -->
+      <div class="img-large center reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="/img/uskudar-meydani/optimized/uskudar-meydani-4-800w.avif 800w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-4-1280w.avif 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/uskudar-meydani/optimized/uskudar-meydani-4-800w.webp 800w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-4-1280w.webp 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/uskudar-meydani/optimized/uskudar-meydani-4-800w.jpg"
+    data-srcset="/img/uskudar-meydani/optimized/uskudar-meydani-4-800w.jpg 800w,
+                  /img/uskudar-meydani/optimized/uskudar-meydani-4-1280w.jpg 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Galapagos Solver results" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">Galapagos Solver results</p>
+
+
+      <!-- Integrated Optimization -->
+      <div class="text-block reveal">
+        <h2>Integrated Optimization</h2>
+        <p>In the fifth step, the visibility and thermal comfort ranges were combined in search of a balanced solution. The highest fitness value came to 8,058 units: a visibility score of 221, 45 trees, and a 0.5 size multiplier.</p>
+      </div>
+
+
+      <!-- Optimization Results Table -->
+      <div class="data-table-wrap reveal">
+        <h2>Galapagos Optimization Results</h2>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Fitness</th>
+              <th>Gathering Area</th>
+              <th>Tree Distribution</th>
+              <th>Size Multiplier</th>
+              <th>Number of Trees</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="val-good">8058.22</td>
+              <td>21</td>
+              <td>32</td>
+              <td>0</td>
+              <td>2</td>
+            </tr>
+            <tr>
+              <td class="val-good">8055.61</td>
+              <td>4</td>
+              <td>32</td>
+              <td>0</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>8055.45</td>
+              <td>14</td>
+              <td>32</td>
+              <td>0</td>
+              <td>5</td>
+            </tr>
+            <tr>
+              <td>8054.49</td>
+              <td>22</td>
+              <td>26</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td class="val-good">8038.52</td>
+              <td>20</td>
+              <td>36</td>
+              <td>10</td>
+              <td>6</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+
+      <!-- ==================== CLOSING HIGHLIGHT ==================== -->
+      <div class="highlight-block reveal">
+        <p>Parametric design and environmental analysis tools optimized <span class="hl-accent">outdoor thermal comfort</span>; the placement of green infrastructure reduced the <span class="hl-accent">heat island effect</span> and made the square more livable.</p>
+      </div>
+
+
+      <!-- ==================== PROJECT DATA ==================== -->
+      <section class="project-data reveal">
+        <div class="data-grid">
+          <div class="data-item">
+            <span class="data-label">Type</span>
+            <span class="data-value">Outdoor Comfort Study</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Tools</span>
+            <span class="data-value">Rhino, Grasshopper, Ladybug, Galapagos</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Method</span>
+            <span class="data-value">Parametric Design &amp; Optimization</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Output</span>
+            <span class="data-value">Comfort gains with views preserved</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- RELATED PROJECTS -->
+      <div class="project-footer-section">
+        <div class="related-header">
+          <h3>Related Projects</h3>
+        </div>
+        <div class="related-projects reveal">
+          <a href="mass-housing-daylight.html" class="related-card">
+            <div class="related-visual">
+              <picture class="render light-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/toplukonut-800w.avif 800w,
+                  /anasayfa/optimized/toplukonut-1280w.avif 1280w,
+                  /anasayfa/optimized/toplukonut-1920w.avif 1920w,
+                  /anasayfa/optimized/toplukonut-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/toplukonut-800w.webp 800w,
+                  /anasayfa/optimized/toplukonut-1280w.webp 1280w,
+                  /anasayfa/optimized/toplukonut-1920w.webp 1920w,
+                  /anasayfa/optimized/toplukonut-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Daylight Optimization in Mass Housing"
+                  data-srcset="/anasayfa/optimized/toplukonut-800w.jpg 800w,
+                  /anasayfa/optimized/toplukonut-1280w.jpg 1280w,
+                  /anasayfa/optimized/toplukonut-1920w.jpg 1920w,
+                  /anasayfa/optimized/toplukonut-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/toplukonut-800w.jpg">
+              </picture>
+              <picture class="sketch light-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/toplukonut-eskiz-800w.avif 800w,
+                  /anasayfa/optimized/toplukonut-eskiz-1280w.avif 1280w,
+                  /anasayfa/optimized/toplukonut-eskiz-1920w.avif 1920w,
+                  /anasayfa/optimized/toplukonut-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/toplukonut-eskiz-800w.webp 800w,
+                  /anasayfa/optimized/toplukonut-eskiz-1280w.webp 1280w,
+                  /anasayfa/optimized/toplukonut-eskiz-1920w.webp 1920w,
+                  /anasayfa/optimized/toplukonut-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Daylight Optimization in Mass Housing sketch"
+                  data-srcset="/anasayfa/optimized/toplukonut-eskiz-800w.jpg 800w,
+                  /anasayfa/optimized/toplukonut-eskiz-1280w.jpg 1280w,
+                  /anasayfa/optimized/toplukonut-eskiz-1920w.jpg 1920w,
+                  /anasayfa/optimized/toplukonut-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/toplukonut-eskiz-800w.jpg">
+              </picture>
+              <picture class="render dark-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-800w.avif 800w,
+                  /anasayfa/optimized/toplukonut-gece-1280w.avif 1280w,
+                  /anasayfa/optimized/toplukonut-gece-1920w.avif 1920w,
+                  /anasayfa/optimized/toplukonut-gece-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-800w.webp 800w,
+                  /anasayfa/optimized/toplukonut-gece-1280w.webp 1280w,
+                  /anasayfa/optimized/toplukonut-gece-1920w.webp 1920w,
+                  /anasayfa/optimized/toplukonut-gece-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Daylight Optimization in Mass Housing"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-800w.jpg 800w,
+                  /anasayfa/optimized/toplukonut-gece-1280w.jpg 1280w,
+                  /anasayfa/optimized/toplukonut-gece-1920w.jpg 1920w,
+                  /anasayfa/optimized/toplukonut-gece-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/toplukonut-gece-800w.jpg">
+              </picture>
+              <picture class="sketch dark-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-eskiz-800w.avif 800w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1280w.avif 1280w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1920w.avif 1920w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-eskiz-800w.webp 800w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1280w.webp 1280w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1920w.webp 1920w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Daylight Optimization in Mass Housing sketch"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-eskiz-800w.jpg 800w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1280w.jpg 1280w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1920w.jpg 1920w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/toplukonut-gece-eskiz-800w.jpg">
+              </picture>
+            </div>
+            <div class="related-info">
+              <p class="related-meta">Optimization</p>
+              <h4 class="related-title">Daylight Optimization in Mass Housing</h4>
+            </div>
+          </a>
+          <a href="muqarnas.html" class="related-card">
+            <div class="related-visual">
+              <picture class="render light-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/mukarnas-800w.avif 800w,
+                  /anasayfa/optimized/mukarnas-1280w.avif 1280w,
+                  /anasayfa/optimized/mukarnas-1920w.avif 1920w,
+                  /anasayfa/optimized/mukarnas-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/mukarnas-800w.webp 800w,
+                  /anasayfa/optimized/mukarnas-1280w.webp 1280w,
+                  /anasayfa/optimized/mukarnas-1920w.webp 1920w,
+                  /anasayfa/optimized/mukarnas-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="The Effect of Muqarnas on Daylight and Acoustic Performance"
+                  data-srcset="/anasayfa/optimized/mukarnas-800w.jpg 800w,
+                  /anasayfa/optimized/mukarnas-1280w.jpg 1280w,
+                  /anasayfa/optimized/mukarnas-1920w.jpg 1920w,
+                  /anasayfa/optimized/mukarnas-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/mukarnas-800w.jpg">
+              </picture>
+              <picture class="sketch light-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/mukarnas-eskiz-800w.avif 800w,
+                  /anasayfa/optimized/mukarnas-eskiz-1280w.avif 1280w,
+                  /anasayfa/optimized/mukarnas-eskiz-1920w.avif 1920w,
+                  /anasayfa/optimized/mukarnas-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/mukarnas-eskiz-800w.webp 800w,
+                  /anasayfa/optimized/mukarnas-eskiz-1280w.webp 1280w,
+                  /anasayfa/optimized/mukarnas-eskiz-1920w.webp 1920w,
+                  /anasayfa/optimized/mukarnas-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="The Effect of Muqarnas on Daylight and Acoustic Performance sketch"
+                  data-srcset="/anasayfa/optimized/mukarnas-eskiz-800w.jpg 800w,
+                  /anasayfa/optimized/mukarnas-eskiz-1280w.jpg 1280w,
+                  /anasayfa/optimized/mukarnas-eskiz-1920w.jpg 1920w,
+                  /anasayfa/optimized/mukarnas-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/mukarnas-eskiz-800w.jpg">
+              </picture>
+              <picture class="render dark-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/mukarnas-gece-800w.avif 800w,
+                  /anasayfa/optimized/mukarnas-gece-1280w.avif 1280w,
+                  /anasayfa/optimized/mukarnas-gece-1920w.avif 1920w,
+                  /anasayfa/optimized/mukarnas-gece-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/mukarnas-gece-800w.webp 800w,
+                  /anasayfa/optimized/mukarnas-gece-1280w.webp 1280w,
+                  /anasayfa/optimized/mukarnas-gece-1920w.webp 1920w,
+                  /anasayfa/optimized/mukarnas-gece-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="The Effect of Muqarnas on Daylight and Acoustic Performance"
+                  data-srcset="/anasayfa/optimized/mukarnas-gece-800w.jpg 800w,
+                  /anasayfa/optimized/mukarnas-gece-1280w.jpg 1280w,
+                  /anasayfa/optimized/mukarnas-gece-1920w.jpg 1920w,
+                  /anasayfa/optimized/mukarnas-gece-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/mukarnas-gece-800w.jpg">
+              </picture>
+              <picture class="sketch dark-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/mukarnas-gece-eskiz-800w.avif 800w,
+                  /anasayfa/optimized/mukarnas-gece-eskiz-1280w.avif 1280w,
+                  /anasayfa/optimized/mukarnas-gece-eskiz-1920w.avif 1920w,
+                  /anasayfa/optimized/mukarnas-gece-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/mukarnas-gece-eskiz-800w.webp 800w,
+                  /anasayfa/optimized/mukarnas-gece-eskiz-1280w.webp 1280w,
+                  /anasayfa/optimized/mukarnas-gece-eskiz-1920w.webp 1920w,
+                  /anasayfa/optimized/mukarnas-gece-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="The Effect of Muqarnas on Daylight and Acoustic Performance sketch"
+                  data-srcset="/anasayfa/optimized/mukarnas-gece-eskiz-800w.jpg 800w,
+                  /anasayfa/optimized/mukarnas-gece-eskiz-1280w.jpg 1280w,
+                  /anasayfa/optimized/mukarnas-gece-eskiz-1920w.jpg 1920w,
+                  /anasayfa/optimized/mukarnas-gece-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/mukarnas-gece-eskiz-800w.jpg">
+              </picture>
+            </div>
+            <div class="related-info">
+              <p class="related-meta">Optimization</p>
+              <h4 class="related-title">The Effect of Muqarnas on Daylight and Acoustic Performance</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner footer-with-directory">
+      <div class="footer-directory" aria-label="Portfolio categories">
+        <div class="footer-directory-group">
+          <a href="/en/index.html#design-all" class="footer-directory-anchor">Design</a>
+          <a href="/en/index.html#architecture" class="footer-directory-link">Architecture</a>
+          <a href="/en/index.html#web" class="footer-directory-link">Web</a>
+          <a href="/en/index.html#furniture" class="footer-directory-link">Furniture</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="/en/index.html#research-all" class="footer-directory-anchor">Research</a>
+          <a href="/en/index.html#ideas" class="footer-directory-link">Ideas</a>
+          <a href="/en/index.html#publications" class="footer-directory-link">Publications</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="/en/index.html#software-all" class="footer-directory-anchor">Software</a>
+          <a href="/en/index.html#ai" class="footer-directory-link">AI</a>
+          <a href="/en/index.html#fabrication" class="footer-directory-link">Fabrication</a>
+          <a href="/en/index.html#optimization" class="footer-directory-link">Optimization</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <span>&copy; 2025 Enes Yıldız</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/image-loader.js"></script>
+</body>
+</html>

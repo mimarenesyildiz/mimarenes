@@ -6,6 +6,7 @@
 
   const themeToggle = document.getElementById('themeToggle');
   const html = document.documentElement;
+  const isEn = window.location.pathname.indexOf('/en/') === 0;
 
   function getPreferredTheme() {
     const savedTheme = localStorage.getItem('theme');
@@ -16,7 +17,9 @@
   function updateThemeToggle(theme) {
     if (!themeToggle) return;
     const isDark = theme === 'dark';
-    const nextLabel = isDark ? 'Aydınlık moda geç' : 'Karanlık moda geç';
+    const nextLabel = isDark
+      ? (isEn ? 'Switch to light mode' : 'Aydınlık moda geç')
+      : (isEn ? 'Switch to dark mode' : 'Karanlık moda geç');
     themeToggle.setAttribute('aria-pressed', String(isDark));
     themeToggle.setAttribute('aria-label', nextLabel);
     themeToggle.setAttribute('title', nextLabel);

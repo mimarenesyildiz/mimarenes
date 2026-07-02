@@ -22,6 +22,28 @@
   var suppressHomeIntro = false;
   var cameFromSameOrigin = false;
 
+  // Language: /en/ altındaki sayfalar İngilizce'dir (bkz. js/lang.js)
+  var isEn = path === '/en' || path === '/en/' || path.indexOf('/en/') === 0;
+  var t = isEn ? {
+    homeAria: 'Home - Enes Yıldız',
+    about: 'About',
+    navAria: 'Main navigation',
+    toDark: 'Switch to dark mode',
+    toLight: 'Switch to light mode',
+    langLabel: 'TR',
+    langAria: 'Türkçe sürüm',
+    langTarget: 'tr'
+  } : {
+    homeAria: 'Ana Sayfa - Enes Yıldız',
+    about: 'Hakkımda',
+    navAria: 'Ana navigasyon',
+    toDark: 'Karanlık moda geç',
+    toLight: 'Aydınlık moda geç',
+    langLabel: 'EN',
+    langAria: 'English version',
+    langTarget: 'en'
+  };
+
   try {
     suppressHomeIntro = sessionStorage.getItem('skipHomeNavIntro') === '1';
     if (suppressHomeIntro) {
@@ -35,17 +57,28 @@
 
   // Build nav HTML
   var homeClass = isHome && !suppressHomeIntro && !cameFromSameOrigin ? ' nav--home' : '';
-  var homeHref = basePath + 'index.html';
+  var homeHref = isEn ? basePath + 'en/index.html' : basePath + 'index.html';
   var aboutHref = isHome ? '#about' : homeHref + '#about';
-  var logoTag = '<a href="' + homeHref + '" class="nav-logo" id="logoLink" aria-label="Ana Sayfa - Enes Yıldız">Enes Yıldız</a>';
-  var aboutTag = '<a href="' + aboutHref + '" class="nav-link" id="aboutLink">Hakkımda</a>';
+  var logoTag = '<a href="' + homeHref + '" class="nav-logo" id="logoLink" aria-label="' + t.homeAria + '">Enes Yıldız</a>';
+  var aboutTag = '<a href="' + aboutHref + '" class="nav-link" id="aboutLink">' + t.about + '</a>';
 
-  var navHTML = '<nav class="nav' + homeClass + '" id="mainNav" role="navigation" aria-label="Ana navigasyon">'
+  // Dil düğmesi: karşılık gelen sayfa lang.js eşlemesinden gelir,
+  // eşleme yoksa diğer dilin ana sayfasına düşer.
+  var langHref = isEn ? '/' : '/en/';
+  try {
+    if (window.__i18n && window.__i18n.counterpart()) {
+      langHref = window.__i18n.counterpart();
+    }
+  } catch (error) {}
+  var langTag = '<a href="' + langHref + '" class="nav-link lang-toggle" id="langToggle" lang="' + t.langTarget + '" aria-label="' + t.langAria + '">' + t.langLabel + '</a>';
+
+  var navHTML = '<nav class="nav' + homeClass + '" id="mainNav" role="navigation" aria-label="' + t.navAria + '">'
     + '<div class="nav-inner">'
     + logoTag
     + '<div class="nav-menu">'
     + aboutTag
-    + '<button class="theme-toggle" id="themeToggle" type="button" aria-label="Karanlık moda geç" title="Karanlık moda geç" aria-pressed="false">'
+    + langTag
+    + '<button class="theme-toggle" id="themeToggle" type="button" aria-label="' + t.toDark + '" title="' + t.toDark + '" aria-pressed="false">'
     +   '<svg class="theme-icon theme-icon-sun" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>'
     +   '<span class="theme-toggle-core" aria-hidden="true"></span>'
     +   '<svg class="theme-icon theme-icon-moon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>'
@@ -118,7 +151,7 @@
   function updateThemeToggle(theme) {
     if (!themeToggle) return;
     var isDark = theme === 'dark';
-    var nextLabel = isDark ? 'Aydınlık moda geç' : 'Karanlık moda geç';
+    var nextLabel = isDark ? t.toLight : t.toDark;
     themeToggle.setAttribute('aria-pressed', String(isDark));
     themeToggle.setAttribute('aria-label', nextLabel);
     themeToggle.setAttribute('title', nextLabel);
@@ -142,6 +175,21 @@
     themeToggle.addEventListener('click', function () {
       var currentTheme = html.getAttribute('data-theme');
       setTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+  }
+
+  // --- Language Toggle ---
+  // Seçim kaydedilir ki lang.js sonraki sayfalarda geri yönlendirmesin.
+  var langToggle = document.getElementById('langToggle');
+  if (langToggle) {
+    langToggle.addEventListener('click', function () {
+      try {
+        if (window.__i18n) {
+          window.__i18n.setPreference(t.langTarget);
+        } else {
+          localStorage.setItem('lang', t.langTarget);
+        }
+      } catch (error) {}
     });
   }
 

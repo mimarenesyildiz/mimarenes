@@ -6,6 +6,7 @@
   </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/js/lang.js"></script>
   <meta name="robots" content="noindex, nofollow">
   <title>Sayfa Bulunamadı | Enes Yıldız</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -133,9 +134,23 @@
   <div class="error-code">404</div>
   <h1 class="error-title">Sayfa bulunamadı</h1>
   <p class="error-desc">Aradığınız sayfa taşınmış, silinmiş ya da hiç var olmamış olabilir.</p>
-  <a href="/" class="back-link">
+  <a href="/" class="back-link" id="homeLink">
     <svg viewBox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-    Ana Sayfa
+    <span id="homeLinkText">Ana Sayfa</span>
   </a>
+  <script>
+    // /en/ altındaki kırık bağlantılarda 404 metnini İngilizce göster
+    (function () {
+      var path = window.location.pathname;
+      if (path !== '/en' && path.indexOf('/en/') !== 0) return;
+      document.documentElement.lang = 'en-US';
+      document.title = 'Page Not Found | Enes Yıldız';
+      document.querySelector('.error-title').textContent = 'Page not found';
+      document.querySelector('.error-desc').textContent = 'The page you are looking for may have been moved, deleted, or may never have existed.';
+      var homeLink = document.getElementById('homeLink');
+      homeLink.setAttribute('href', '/en/');
+      document.getElementById('homeLinkText').textContent = 'Home';
+    })();
+  </script>
 </body>
 </html>
