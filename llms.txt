@@ -81,6 +81,25 @@ Enes Yıldız, İstanbul merkezli bir mimar, hesaplamalı tasarım araştırmac�
 - **Minimalev** — Online iç mimarlık tasarım ve danışmanlık platformu. BIM tabanlı 3D tasarım, e-ticaret altyapısı ve kişiselleştirilmiş sunum sayfaları.
   https://mimarenes.com/arastirma/fikir/minimalev.html
 
+## Yayınlar
+
+### Makaleler
+
+- **Automated detection and NURBS-based reconstruction of interior components using deep learning: GeoVisionAI** — Asli Agirbas, Enes Yildiz, 2026. Engineering, Construction and Architectural Management, baskıda. Index: SCI-Expanded, SSCI. TÜBİTAK 222M494 destekli.
+  https://doi.org/10.1108/ECAM-03-2026-0409
+
+- **Investigating the Impact of Muqarnas on the Daylighting Performance of Historical Turkish Baths** — Asli Agirbas, Enes Yildiz, 2024. METU JFA, 41(2), 91-106. Index: AHCI.
+  https://doi.org/10.4305/METU.JFA.2024.2.4
+
+- **The Effect of Muqarnas on Acoustic Quality of Traditional Turkish Bath Interior Space** — Asli Agirbas, Enes Yildiz, 2023. ACM Journal on Computing and Cultural Heritage, 16(3), 1-20. Index: SCI-Expanded.
+  https://doi.org/10.1145/3589248
+
+### Bildiriler
+
+- **Detecting Building Components with Artificial Intelligence for Integration into Building Physics Simulations** — Enes Yildiz, Asli Agirbas, 2025. XIVth International Sinan Symposium, Trakya Üniversitesi, Edirne, 17-18 Nisan, ss. 413-420.
+
+- **A Framework for Creating a Deep Learning Training Dataset Based on Building Components** — Enes Yildiz, Asli Agirbas, 2024. From Tradition to Future Conference'24, Fatih Sultan Mehmet Vakıf Üniversitesi, İstanbul, 13-14 Kasım, ss. 166-170.
+
 ## Kaynak Kullanımı
 
 Bu site Enes Yıldız'ın kişisel portfolyosudur. İçeriğe atıfta bulunurken lütfen kaynak olarak mimarenes.com adresini ve Enes Yıldız ismini belirtin. Projelere ait görseller ve açıklamalar telif hakkıyla korunmaktadır.
