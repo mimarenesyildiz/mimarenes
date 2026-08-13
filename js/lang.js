@@ -15,6 +15,7 @@
     '/tasarim/mimari/herat-camii.html': '/en/design/architecture/herat-mosque.html',
     '/tasarim/mimari/seyir-kulesi.html': '/en/design/architecture/observation-tower.html',
     '/tasarim/mimari/studyo-balat.html': '/en/design/architecture/studio-balat.html',
+    '/yazilim/ai/geovisionai.html': '/en/software/ai/geovisionai.html',
     '/yazilim/ai/maskrcnn.html': '/en/software/ai/maskrcnn.html',
     '/yazilim/optimizasyon/toplukonut.html': '/en/software/optimization/mass-housing-daylight.html',
     '/yazilim/optimizasyon/uskudar-meydani.html': '/en/software/optimization/uskudar-square.html',

@@ -92,6 +92,24 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://mimarenes.com/yazilim/ai/geovisionai.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/yazilim/ai/geovisionai.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/software/ai/geovisionai.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/software/ai/geovisionai.html"/>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://mimarenes.com/en/software/ai/geovisionai.html</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/yazilim/ai/geovisionai.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/software/ai/geovisionai.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/software/ai/geovisionai.html"/>
+    <lastmod>2026-08-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
     <loc>https://mimarenes.com/yazilim/ai/maskrcnn.html</loc>
     <xhtml:link rel="alternate" hreflang="tr" href="https://mimarenes.com/yazilim/ai/maskrcnn.html"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://mimarenes.com/en/software/ai/maskrcnn.html"/>

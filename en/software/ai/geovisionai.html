@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="/js/lang.js"></script>
+  <meta name="robots" content="index, follow">
+  <meta name="description" content="Modelling building components by hand from an interior scan takes hours. GeoVisionAI automates it with deep learning. A TÜBİTAK 3501 research project at Özyeğin University.">
+  <meta name="author" content="Enes Yıldız">
+  <meta name="keywords" content="GeoVisionAI, Grasshopper, Mask R-CNN, deep learning, architecture, building component detection, NURBS, TÜBİTAK">
+  <meta name="theme-color" content="#f8f8f8" id="themeColorMeta">
+  <meta name="view-transition" content="same-origin">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://mimarenes.com/en/software/ai/geovisionai.html">
+  <meta property="og:title" content="GeoVisionAI | Enes Yıldız">
+  <meta property="og:description" content="Modelling building components by hand from an interior scan takes hours. GeoVisionAI automates it with deep learning. A TÜBİTAK 3501 research project at Özyeğin University.">
+  <meta property="og:image" content="https://mimarenes.com/anasayfa/optimized/geovisionai-800w.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:site_name" content="Enes Yıldız">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="tr_TR">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="GeoVisionAI | Enes Yıldız">
+  <meta name="twitter:description" content="Modelling building components by hand from an interior scan takes hours. GeoVisionAI automates it with deep learning. A TÜBİTAK 3501 research project at Özyeğin University.">
+  <meta name="twitter:image" content="https://mimarenes.com/anasayfa/optimized/geovisionai-800w.jpg">
+
+  <title>GeoVisionAI | Enes Yıldız</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="canonical" href="https://mimarenes.com/en/software/ai/geovisionai.html">
+  <link rel="alternate" hreflang="tr" href="https://mimarenes.com/yazilim/ai/geovisionai.html">
+  <link rel="alternate" hreflang="en" href="https://mimarenes.com/en/software/ai/geovisionai.html">
+  <link rel="alternate" hreflang="x-default" href="https://mimarenes.com/en/software/ai/geovisionai.html">
+  <link rel="manifest" href="/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#0f0f0f">
+  <meta name="msapplication-TileImage" content="/mstile-150x150.png">
+  <link rel="stylesheet" href="/fonts/inter.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap">
+  <link rel="stylesheet" href="/css/nav.css">
+  <link rel="stylesheet" href="/css/subpage.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CreativeWork",
+        "name": "GeoVisionAI",
+        "description": "A system that automatically detects building components from interior scans using deep learning. A TÜBİTAK 3501 research project at Özyeğin University.",
+        "url": "https://mimarenes.com/en/software/ai/geovisionai.html",
+        "image": "https://mimarenes.com/anasayfa/optimized/geovisionai-800w.jpg",
+        "author": {
+          "@type": "Person",
+          "@id": "https://mimarenes.com/#person",
+          "name": "Enes Yıldız",
+          "url": "https://mimarenes.com"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://mimarenes.com/en/" },
+          { "@type": "ListItem", "position": 2, "name": "Software", "item": "https://mimarenes.com/en/software/" },
+          { "@type": "ListItem", "position": 3, "name": "AI", "item": "https://mimarenes.com/en/software/ai/" },
+          { "@type": "ListItem", "position": 4, "name": "GeoVisionAI" }
+        ]
+      }
+    ]
+  }
+  </script>
+  <style>
+    /* ========== PAGE-SPECIFIC STYLES ========== */
+
+    /* Section Title (unique to this page) */
+    .section-title {
+      padding: 0 5vw; margin: 80px 0 8px; max-width: 780px;
+    }
+    .section-title h2 {
+      font-size: clamp(22px, 3vw, 30px); font-weight: 400; letter-spacing: -0.02em;
+      color: var(--gray-900); line-height: 1.2;
+    }
+    .section-title h3 {
+      font-size: clamp(16px, 2.5vw, 22px); font-weight: 400; letter-spacing: -0.015em;
+      color: var(--gray-900); line-height: 1.3; margin-top: 48px;
+    }
+
+    /* Component List (unique to this page) */
+    .component-list {
+      padding: 0 5vw; margin: 48px 0; max-width: 780px;
+    }
+    .component-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .component-item:first-child { border-top: 1px solid var(--gray-200); }
+    .component-name {
+      font-size: 13px; font-weight: 600; color: var(--gray-900);
+      letter-spacing: -0.01em; margin-bottom: 6px;
+      font-family: var(--mono);
+    }
+    .component-tr {
+      font-size: 12px; color: var(--gray-400); margin-bottom: 8px;
+    }
+    .component-desc {
+      font-size: 15px; color: var(--gray-500); line-height: 1.65;
+    }
+
+    /* Page-specific data table addition */
+    .data-table-wrap h2 {
+      font-size: 11px; font-weight: 500; text-transform: uppercase;
+      letter-spacing: 0.12em; color: var(--gray-400); margin-bottom: 20px;
+    }
+    .data-table .val-good { color: var(--accent); font-weight: 500; }
+
+    /* Page-specific layout variants */
+    .text-img-row.img-left.img-half { grid-template-columns: 50% 1fr; }
+    .text-img-row.installer-row { grid-template-columns: 27% 1fr; }
+
+    /* Page-specific data-value override */
+    .data-value a:hover { text-decoration: underline; }
+
+    /* Responsive (page-specific rules only) */
+    @media (max-width: 1024px) {
+      .text-img-row.installer-row { grid-template-columns: 29% 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .section-title { padding: 0 20px; margin: 60px 0 8px; }
+      .component-list { padding: 0 20px; }
+    }
+  </style>
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-YK3V82N7CD"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-YK3V82N7CD');
+  </script>
+</head>
+<body class="js-loading">
+  <div id="nav-placeholder"></div>
+  <script src="/js/nav.js"></script>
+
+  <div class="main-content">
+    <main class="page-content">
+
+      <!-- HEADER -->
+      <header class="project-header">
+        <div class="blog-meta">
+          <span class="blog-tag">Research</span>
+          <span class="blog-date">2023–2025</span>
+        </div>
+        <p class="project-eyebrow">TÜBİTAK 3501 — 222M494</p>
+        <h1 class="project-title">GeoVisionAI</h1>
+        <p class="project-location">Özyeğin University · AI-Based Grasshopper Plugin</p>
+      </header>
+
+
+      <!-- INTRO TEXT -->
+      <div class="text-block reveal">
+        <p>GeoVisionAI is a Grasshopper plugin that automatically detects building components from 3D interior scan data and generates a 3D NURBS model. It was developed under the supervision of Prof. Dr. Aslı Ağırbaş, within a research project carried out at Özyeğin University as part of TÜBİTAK 3501.</p>
+        <p>Running the Mask R-CNN deep learning algorithm in the background, the plugin automatically identifies building components — walls, doors, windows, parquet, ceramic tiling and carpet — from mesh models and converts them into 3D NURBS geometry at real-world dimensions.</p>
+      </div>
+
+
+      <!-- PROCESS DIAGRAM -->
+      <div class="process-timeline reveal">
+        <div class="timeline-inner">
+          <div class="timeline-line-wrap">
+            <div class="timeline-line"></div>
+            <div class="timeline-steps">
+              <div class="tl-step">
+                <div class="tl-dot">1</div>
+                <div class="tl-body">
+                  <h4>3D Scan</h4>
+                  <ul>
+                    <li>Point cloud data</li>
+                    <li>Mesh model</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step">
+                <div class="tl-dot">2</div>
+                <div class="tl-body">
+                  <h4>Dataset</h4>
+                  <ul>
+                    <li>Annotation</li>
+                    <li>Cleaning &amp; splitting</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step active">
+                <div class="tl-dot">3</div>
+                <div class="tl-body">
+                  <h4>Mask R-CNN Training</h4>
+                  <ul>
+                    <li>ResNet-101 + FPN</li>
+                    <li>COCO transfer</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step active">
+                <div class="tl-dot">4</div>
+                <div class="tl-body">
+                  <h4>Component Detection</h4>
+                  <ul>
+                    <li>Segmentation</li>
+                    <li>Class prediction</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="tl-step">
+                <div class="tl-dot">5</div>
+                <div class="tl-body">
+                  <h4>NURBS Model</h4>
+                  <ul>
+                    <li>3D geometry generation</li>
+                    <li>Analysis &amp; reporting</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- OVERVIEW DIAGRAM -->
+      <div class="img-full software-lead-visual reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="/img/geovisionai/optimized/geovisionai-1-800w.avif 800w,
+                  /img/geovisionai/optimized/geovisionai-1-1280w.avif 1280w,
+                  /img/geovisionai/optimized/geovisionai-1-1920w.avif 1920w,
+                  /img/geovisionai/optimized/geovisionai-1-2560w.avif 2560w,
+                  /img/geovisionai/optimized/geovisionai-1-3840w.avif 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/geovisionai/optimized/geovisionai-1-800w.webp 800w,
+                  /img/geovisionai/optimized/geovisionai-1-1280w.webp 1280w,
+                  /img/geovisionai/optimized/geovisionai-1-1920w.webp 1920w,
+                  /img/geovisionai/optimized/geovisionai-1-2560w.webp 2560w,
+                  /img/geovisionai/optimized/geovisionai-1-3840w.webp 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/geovisionai/optimized/geovisionai-1-800w.jpg"
+    data-srcset="/img/geovisionai/optimized/geovisionai-1-800w.jpg 800w,
+                  /img/geovisionai/optimized/geovisionai-1-1280w.jpg 1280w,
+                  /img/geovisionai/optimized/geovisionai-1-1920w.jpg 1920w,
+                  /img/geovisionai/optimized/geovisionai-1-2560w.jpg 2560w,
+                  /img/geovisionai/optimized/geovisionai-1-3840w.jpg 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Overview diagram of the integrated model" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">Overall workflow diagram of the GeoVisionAI plugin: the process from 3D scanning to building component detection and NURBS model generation.</p>
+
+
+      <!-- GEOVISIONAI PLUGIN HEADING -->
+      <div class="section-title reveal">
+        <h2>The GeoVisionAI Plugin</h2>
+      </div>
+
+      <div class="text-block reveal">
+        <p>The plugin consists of six main components and one installer component, all developed in C#.</p>
+      </div>
+
+
+      <!-- COMPONENT LIST -->
+      <div class="component-list reveal">
+        <div class="component-item">
+          <div class="component-name">MaskRCNN Installer</div>
+          <div class="component-tr">Installer Component</div>
+          <div class="component-desc">Installs every required dependency with a single button.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">Bounding Box Detector</div>
+          <div class="component-tr">Bounding Box Creator</div>
+          <div class="component-desc">Calculates the width, length and height of the mesh model.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">Viewport Size Analyzer</div>
+          <div class="component-tr">Viewport Checker</div>
+          <div class="component-desc">Verifies that the Rhino viewport proportions are suitable.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">Mesh Capture Tool</div>
+          <div class="component-tr">View Capturer</div>
+          <div class="component-desc">Captures views along six directions and saves them as images.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">AI Detection and Mask Processing Tool</div>
+          <div class="component-tr">Element Identifier</div>
+          <div class="component-desc">Detects building components with Mask R-CNN and produces mask files.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">Geo Mask Transformer</div>
+          <div class="component-tr">Element Placer</div>
+          <div class="component-desc">Converts masks to real-world dimensions and positions them in 3D.</div>
+        </div>
+        <div class="component-item">
+          <div class="component-name">Curve Grouping by Mask Type</div>
+          <div class="component-tr">Element Classifier</div>
+          <div class="component-desc">Groups the identified elements by type.</div>
+        </div>
+      </div>
+
+
+      <!-- ORTAM KURULUMU -->
+      <div class="section-title reveal">
+        <h3>Environment Setup</h3>
+      </div>
+
+      <div class="text-img-row img-left installer-row reveal">
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="/img/geovisionai/optimized/geovisionai-2-800w.avif 800w,
+                  /img/geovisionai/optimized/geovisionai-2-1280w.avif 1280w,
+                  /img/geovisionai/optimized/geovisionai-2-1920w.avif 1920w,
+                  /img/geovisionai/optimized/geovisionai-2-2560w.avif 2560w,
+                  /img/geovisionai/optimized/geovisionai-2-3840w.avif 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/geovisionai/optimized/geovisionai-2-800w.webp 800w,
+                  /img/geovisionai/optimized/geovisionai-2-1280w.webp 1280w,
+                  /img/geovisionai/optimized/geovisionai-2-1920w.webp 1920w,
+                  /img/geovisionai/optimized/geovisionai-2-2560w.webp 2560w,
+                  /img/geovisionai/optimized/geovisionai-2-3840w.webp 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/geovisionai/optimized/geovisionai-2-800w.jpg"
+    data-srcset="/img/geovisionai/optimized/geovisionai-2-800w.jpg 800w,
+                  /img/geovisionai/optimized/geovisionai-2-1280w.jpg 1280w,
+                  /img/geovisionai/optimized/geovisionai-2-1920w.jpg 1920w,
+                  /img/geovisionai/optimized/geovisionai-2-2560w.jpg 2560w,
+                  /img/geovisionai/optimized/geovisionai-2-3840w.jpg 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Grasshopper interface of the MaskRCNN Installer component" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">The Grasshopper interface of the MaskRCNN Installer component, showing installation, status checks and manual operation options.</p>
+        </div>
+        <div class="row-text">
+          <h2>ONE-TIME SETUP</h2>
+          <p>The MaskRCNN Installer component was developed so that users without technical expertise can set the system up easily. A single button automatically installs Git, Miniconda, the GitHub repository, the trained model and the Python environment.</p>
+          <p>Once installation finishes, a status panel checks whether every component is ready. The user is warned about anything missing; the main workflow can begin only after all checks pass.</p>
+        </div>
+      </div>
+
+
+      <!-- HOW THE PROCESS WORKS -->
+      <div class="section-title reveal">
+        <h3>How the Process Works</h3>
+      </div>
+
+      <div class="text-block reveal">
+        <p>After installation, the user imports the 3D interior scan into Rhino and runs the buttons in the Grasshopper definition in sequence. The process has four main stages: preparing the mesh model, generating the elevation views, detecting the building components and generating the NURBS model.</p>
+      </div>
+
+      <div class="img-medium center reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="/img/geovisionai/optimized/geovisionai-3-800w.avif 800w,
+                  /img/geovisionai/optimized/geovisionai-3-1280w.avif 1280w,
+                  /img/geovisionai/optimized/geovisionai-3-1920w.avif 1920w,
+                  /img/geovisionai/optimized/geovisionai-3-2560w.avif 2560w,
+                  /img/geovisionai/optimized/geovisionai-3-3840w.avif 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/geovisionai/optimized/geovisionai-3-800w.webp 800w,
+                  /img/geovisionai/optimized/geovisionai-3-1280w.webp 1280w,
+                  /img/geovisionai/optimized/geovisionai-3-1920w.webp 1920w,
+                  /img/geovisionai/optimized/geovisionai-3-2560w.webp 2560w,
+                  /img/geovisionai/optimized/geovisionai-3-3840w.webp 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/geovisionai/optimized/geovisionai-3-800w.jpg"
+    data-srcset="/img/geovisionai/optimized/geovisionai-3-800w.jpg 800w,
+                  /img/geovisionai/optimized/geovisionai-3-1280w.jpg 1280w,
+                  /img/geovisionai/optimized/geovisionai-3-1920w.jpg 1920w,
+                  /img/geovisionai/optimized/geovisionai-3-2560w.jpg 2560w,
+                  /img/geovisionai/optimized/geovisionai-3-3840w.jpg 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="GeoVisionAI workflow diagram" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">Operating workflow diagram of the GeoVisionAI plugin.</p>
+
+      <div class="text-img-row img-left img-half align-top reveal">
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="/img/geovisionai/optimized/geovisionai-4-800w.avif 800w,
+                  /img/geovisionai/optimized/geovisionai-4-1280w.avif 1280w,
+                  /img/geovisionai/optimized/geovisionai-4-1920w.avif 1920w,
+                  /img/geovisionai/optimized/geovisionai-4-2560w.avif 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/geovisionai/optimized/geovisionai-4-800w.webp 800w,
+                  /img/geovisionai/optimized/geovisionai-4-1280w.webp 1280w,
+                  /img/geovisionai/optimized/geovisionai-4-1920w.webp 1920w,
+                  /img/geovisionai/optimized/geovisionai-4-2560w.webp 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/geovisionai/optimized/geovisionai-4-800w.jpg"
+    data-srcset="/img/geovisionai/optimized/geovisionai-4-800w.jpg 800w,
+                  /img/geovisionai/optimized/geovisionai-4-1280w.jpg 1280w,
+                  /img/geovisionai/optimized/geovisionai-4-1920w.jpg 1920w,
+                  /img/geovisionai/optimized/geovisionai-4-2560w.jpg 2560w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="GeoVisionAI Grasshopper kodu" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">The Grasshopper definition of the GeoVisionAI plugin. The buttons guide the user while the custom components run in the background.</p>
+        </div>
+        <div class="row-text">
+          <h2>GRASSHOPPER DEFINITION</h2>
+          <p>The Grasshopper interface has five main buttons: Install Button handles setup, then Button 1–4 run the main process in order. Each button triggers the relevant components in the background and passes the results automatically to the next stage.</p>
+        </div>
+      </div>
+
+
+      <!-- PREPARING THE MESH MODEL -->
+      <div class="section-title reveal">
+        <h3>Preparing the Mesh Model</h3>
+      </div>
+
+      <div class="text-img-row img-right reveal">
+        <div class="row-text">
+          <p>The mesh model produced by the 3D interior scan is imported into Grasshopper. The Bounding Box Detector component builds a bounding box around the mesh and calculates its width, length and height. These values serve as the base reference for converting pixel coordinates into real-world dimensions in the later stages.</p>
+        </div>
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="/img/geovisionai/optimized/geovisionai-5-800w.avif 800w,
+                  /img/geovisionai/optimized/geovisionai-5-1280w.avif 1280w,
+                  /img/geovisionai/optimized/geovisionai-5-1920w.avif 1920w,
+                  /img/geovisionai/optimized/geovisionai-5-2560w.avif 2560w,
+                  /img/geovisionai/optimized/geovisionai-5-3840w.avif 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/geovisionai/optimized/geovisionai-5-800w.webp 800w,
+                  /img/geovisionai/optimized/geovisionai-5-1280w.webp 1280w,
+                  /img/geovisionai/optimized/geovisionai-5-1920w.webp 1920w,
+                  /img/geovisionai/optimized/geovisionai-5-2560w.webp 2560w,
+                  /img/geovisionai/optimized/geovisionai-5-3840w.webp 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/geovisionai/optimized/geovisionai-5-800w.jpg"
+    data-srcset="/img/geovisionai/optimized/geovisionai-5-800w.jpg 800w,
+                  /img/geovisionai/optimized/geovisionai-5-1280w.jpg 1280w,
+                  /img/geovisionai/optimized/geovisionai-5-1920w.jpg 1920w,
+                  /img/geovisionai/optimized/geovisionai-5-2560w.jpg 2560w,
+                  /img/geovisionai/optimized/geovisionai-5-3840w.jpg 3840w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="3B tarama mesh modeli" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">The mesh model produced by the 3D interior scan — the plugin’s initial input.</p>
+        </div>
+      </div>
+
+
+      <!-- GENERATING THE ELEVATION VIEWS -->
+      <div class="section-title reveal">
+        <h3>Generating the Elevation Views</h3>
+      </div>
+
+      <div class="text-img-row img-right align-top reveal">
+        <div class="row-text">
+          <p>Before view capture begins, the Viewport Size Analyzer component checks the Rhino viewport proportions. If the viewport is unsuitable, the user is warned and the process stops.</p>
+          <p>If the viewport is suitable, the Mesh Capture Tool takes over. Views along six directions (north, south, east, west, ceiling, floor) are captured with an orthographic camera from the centre of the mesh geometry. Each view is saved as JPEG and PNG, then converted into black-and-white masks using an alpha threshold.</p>
+        </div>
+      </div>
+
+
+      <!-- DETECTING THE BUILDING COMPONENTS -->
+      <div class="section-title reveal">
+        <h3>Detecting the Building Components</h3>
+      </div>
+
+      <div class="text-block reveal">
+        <p>Once the elevation views are ready, the AI Detection and Mask Processing Tool component takes over. It uses a Mask R-CNN model trained on a custom dataset of interior photographs. A Python script runs in the background, performing segmentation and object recognition on each view. Separate mask files are generated and saved for every detected building component.</p>
+      </div>
+
+      <div class="img-medium center reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="/img/geovisionai/optimized/geovisionai-6-800w.avif 800w,
+                  /img/geovisionai/optimized/geovisionai-6-1280w.avif 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/geovisionai/optimized/geovisionai-6-800w.webp 800w,
+                  /img/geovisionai/optimized/geovisionai-6-1280w.webp 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/geovisionai/optimized/geovisionai-6-800w.jpg"
+    data-srcset="/img/geovisionai/optimized/geovisionai-6-800w.jpg 800w,
+                  /img/geovisionai/optimized/geovisionai-6-1280w.jpg 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Mask R-CNN detection across four elevations" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">Building component detection by the Mask R-CNN algorithm across four elevation views. The red masks mark the detected windows and doors.</p>
+
+
+      <!-- GENERATING THE NURBS MODEL -->
+      <div class="section-title reveal">
+        <h3>Generating the NURBS Model</h3>
+      </div>
+
+      <div class="text-img-row img-right align-top reveal">
+        <div class="row-text">
+          <p>The detected masks are converted to real-world dimensions by the Geo Mask Transformer component. A bounding rectangle is drawn for each mask, pixel values are scaled to room dimensions proportionally to the bounding box, then moved and rotated onto the corresponding surface (north, south, east, west, ceiling, floor).</p>
+          <p>In the final stage, the Curve Grouping by Mask Type component classifies the elements. After the element and mask counts are checked for consistency, each element’s area is compared against a threshold. Elements above the threshold are assigned to door, window, flooring, ceramic and carpet lists according to their mask name.</p>
+        </div>
+        <div class="row-img">
+          <picture>
+  <source type="image/avif"
+    data-srcset="/img/geovisionai/optimized/geovisionai-7-800w.avif 800w,
+                  /img/geovisionai/optimized/geovisionai-7-1280w.avif 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/geovisionai/optimized/geovisionai-7-800w.webp 800w,
+                  /img/geovisionai/optimized/geovisionai-7-1280w.webp 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/geovisionai/optimized/geovisionai-7-800w.jpg"
+    data-srcset="/img/geovisionai/optimized/geovisionai-7-800w.jpg 800w,
+                  /img/geovisionai/optimized/geovisionai-7-1280w.jpg 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Elevation view and mask generation process" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+          <p class="img-cap">Top: the elevation view. Bottom: (a) original image, (b) black-and-white mask, (c) window mask.</p>
+        </div>
+      </div>
+
+      <div class="img-medium center reveal">
+        <picture>
+  <source type="image/avif"
+    data-srcset="/img/geovisionai/optimized/geovisionai-8-800w.avif 800w,
+                  /img/geovisionai/optimized/geovisionai-8-1280w.avif 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+<source type="image/webp"
+    data-srcset="/img/geovisionai/optimized/geovisionai-8-800w.webp 800w,
+                  /img/geovisionai/optimized/geovisionai-8-1280w.webp 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px">
+  <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/img/geovisionai/optimized/geovisionai-8-800w.jpg"
+    data-srcset="/img/geovisionai/optimized/geovisionai-8-800w.jpg 800w,
+                  /img/geovisionai/optimized/geovisionai-8-1280w.jpg 1280w"
+    sizes="(max-width: 800px) 100vw, (max-width: 1440px) 90vw, 980px"
+    alt="Conversion process from 3D scan to NURBS model" decoding="async" width="980" height="551" loading="lazy">
+</picture>
+      </div>
+      <p class="img-caption center">(a) Mesh model, (b) Mask R-CNN detection and masking, (c) NURBS curve definitions, (d) the 3D NURBS model.</p>
+
+
+      <!-- KATKILAR -->
+      <div class="highlight-block reveal">
+        <p>With <span class="hl-accent">6 custom Grasshopper components</span> written in C#, the end-to-end process from 3D scan to NURBS model runs in a single environment.</p>
+      </div>
+
+      <div class="text-block reveal">
+        <p>The study demonstrates that building components can be detected and classified from 3D scan mesh data, and reconstructed as 3D NURBS geometry within the Grasshopper environment.</p>
+      </div>
+
+
+      <!-- PROJECT DATA -->
+      <section class="project-data reveal">
+        <div class="data-grid">
+          <div class="data-item">
+            <span class="data-label">Type</span>
+            <span class="data-value">AI-Based Plugin</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Tools</span>
+            <span class="data-value">Rhino/Grasshopper, C#, Python</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Method</span>
+            <span class="data-value">Mask R-CNN based image analysis</span>
+          </div>
+          <div class="data-item">
+            <span class="data-label">Output</span>
+            <span class="data-value">Architectural element detection and 3D model generation</span>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- RELATED PROJECTS -->
+      <div class="project-footer-section">
+        <div class="related-header">
+          <h3>Related Projects</h3>
+        </div>
+        <div class="related-projects reveal">
+          <a href="/en/software/fabrication/victory-park.html" class="related-card">
+            <div class="related-visual">
+              <picture class="render light-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/victory-park-800w.avif 800w,
+                  /anasayfa/optimized/victory-park-1280w.avif 1280w,
+                  /anasayfa/optimized/victory-park-1920w.avif 1920w,
+                  /anasayfa/optimized/victory-park-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/victory-park-800w.webp 800w,
+                  /anasayfa/optimized/victory-park-1280w.webp 1280w,
+                  /anasayfa/optimized/victory-park-1920w.webp 1920w,
+                  /anasayfa/optimized/victory-park-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Victory Park"
+                  data-srcset="/anasayfa/optimized/victory-park-800w.jpg 800w,
+                  /anasayfa/optimized/victory-park-1280w.jpg 1280w,
+                  /anasayfa/optimized/victory-park-1920w.jpg 1920w,
+                  /anasayfa/optimized/victory-park-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/victory-park-800w.jpg">
+              </picture>
+              <picture class="sketch light-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/victory-park-eskiz-800w.avif 800w,
+                  /anasayfa/optimized/victory-park-eskiz-1280w.avif 1280w,
+                  /anasayfa/optimized/victory-park-eskiz-1920w.avif 1920w,
+                  /anasayfa/optimized/victory-park-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/victory-park-eskiz-800w.webp 800w,
+                  /anasayfa/optimized/victory-park-eskiz-1280w.webp 1280w,
+                  /anasayfa/optimized/victory-park-eskiz-1920w.webp 1920w,
+                  /anasayfa/optimized/victory-park-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Victory Park sketch"
+                  data-srcset="/anasayfa/optimized/victory-park-eskiz-800w.jpg 800w,
+                  /anasayfa/optimized/victory-park-eskiz-1280w.jpg 1280w,
+                  /anasayfa/optimized/victory-park-eskiz-1920w.jpg 1920w,
+                  /anasayfa/optimized/victory-park-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/victory-park-eskiz-800w.jpg">
+              </picture>
+              <picture class="render dark-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/victory-park-gece-800w.avif 800w,
+                  /anasayfa/optimized/victory-park-gece-1280w.avif 1280w,
+                  /anasayfa/optimized/victory-park-gece-1920w.avif 1920w,
+                  /anasayfa/optimized/victory-park-gece-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/victory-park-gece-800w.webp 800w,
+                  /anasayfa/optimized/victory-park-gece-1280w.webp 1280w,
+                  /anasayfa/optimized/victory-park-gece-1920w.webp 1920w,
+                  /anasayfa/optimized/victory-park-gece-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Victory Park"
+                  data-srcset="/anasayfa/optimized/victory-park-gece-800w.jpg 800w,
+                  /anasayfa/optimized/victory-park-gece-1280w.jpg 1280w,
+                  /anasayfa/optimized/victory-park-gece-1920w.jpg 1920w,
+                  /anasayfa/optimized/victory-park-gece-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/victory-park-gece-800w.jpg">
+              </picture>
+              <picture class="sketch dark-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/victory-park-gece-eskiz-800w.avif 800w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-1280w.avif 1280w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-1920w.avif 1920w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/victory-park-gece-eskiz-800w.webp 800w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-1280w.webp 1280w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-1920w.webp 1920w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Victory Park sketch"
+                  data-srcset="/anasayfa/optimized/victory-park-gece-eskiz-800w.jpg 800w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-1280w.jpg 1280w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-1920w.jpg 1920w,
+                  /anasayfa/optimized/victory-park-gece-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/victory-park-gece-eskiz-800w.jpg">
+              </picture>
+            </div>
+            <div class="related-info">
+              <p class="related-meta">Fabrication</p>
+              <h4 class="related-title">Victory Park Housing Complex</h4>
+            </div>
+          </a>
+          <a href="/en/software/optimization/mass-housing-daylight.html" class="related-card">
+            <div class="related-visual">
+              <picture class="render light-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/toplukonut-800w.avif 800w,
+                  /anasayfa/optimized/toplukonut-1280w.avif 1280w,
+                  /anasayfa/optimized/toplukonut-1920w.avif 1920w,
+                  /anasayfa/optimized/toplukonut-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/toplukonut-800w.webp 800w,
+                  /anasayfa/optimized/toplukonut-1280w.webp 1280w,
+                  /anasayfa/optimized/toplukonut-1920w.webp 1920w,
+                  /anasayfa/optimized/toplukonut-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Daylight Optimization in Mass Housing"
+                  data-srcset="/anasayfa/optimized/toplukonut-800w.jpg 800w,
+                  /anasayfa/optimized/toplukonut-1280w.jpg 1280w,
+                  /anasayfa/optimized/toplukonut-1920w.jpg 1920w,
+                  /anasayfa/optimized/toplukonut-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/toplukonut-800w.jpg">
+              </picture>
+              <picture class="sketch light-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/toplukonut-eskiz-800w.avif 800w,
+                  /anasayfa/optimized/toplukonut-eskiz-1280w.avif 1280w,
+                  /anasayfa/optimized/toplukonut-eskiz-1920w.avif 1920w,
+                  /anasayfa/optimized/toplukonut-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/toplukonut-eskiz-800w.webp 800w,
+                  /anasayfa/optimized/toplukonut-eskiz-1280w.webp 1280w,
+                  /anasayfa/optimized/toplukonut-eskiz-1920w.webp 1920w,
+                  /anasayfa/optimized/toplukonut-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Daylight Optimization in Mass Housing sketch"
+                  data-srcset="/anasayfa/optimized/toplukonut-eskiz-800w.jpg 800w,
+                  /anasayfa/optimized/toplukonut-eskiz-1280w.jpg 1280w,
+                  /anasayfa/optimized/toplukonut-eskiz-1920w.jpg 1920w,
+                  /anasayfa/optimized/toplukonut-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/toplukonut-eskiz-800w.jpg">
+              </picture>
+              <picture class="render dark-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-800w.avif 800w,
+                  /anasayfa/optimized/toplukonut-gece-1280w.avif 1280w,
+                  /anasayfa/optimized/toplukonut-gece-1920w.avif 1920w,
+                  /anasayfa/optimized/toplukonut-gece-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-800w.webp 800w,
+                  /anasayfa/optimized/toplukonut-gece-1280w.webp 1280w,
+                  /anasayfa/optimized/toplukonut-gece-1920w.webp 1920w,
+                  /anasayfa/optimized/toplukonut-gece-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="render" alt="Daylight Optimization in Mass Housing"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-800w.jpg 800w,
+                  /anasayfa/optimized/toplukonut-gece-1280w.jpg 1280w,
+                  /anasayfa/optimized/toplukonut-gece-1920w.jpg 1920w,
+                  /anasayfa/optimized/toplukonut-gece-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/toplukonut-gece-800w.jpg">
+              </picture>
+              <picture class="sketch dark-only">
+                <source type="image/avif"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-eskiz-800w.avif 800w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1280w.avif 1280w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1920w.avif 1920w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-2560w.avif 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+<source type="image/webp"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-eskiz-800w.webp 800w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1280w.webp 1280w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1920w.webp 1920w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-2560w.webp 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px">
+                <img class="sketch" alt="Daylight Optimization in Mass Housing sketch"
+                  data-srcset="/anasayfa/optimized/toplukonut-gece-eskiz-800w.jpg 800w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1280w.jpg 1280w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-1920w.jpg 1920w,
+                  /anasayfa/optimized/toplukonut-gece-eskiz-2560w.jpg 2560w"
+                  sizes="(max-width: 800px) 100vw, (max-width: 1024px) 50vw, 500px"
+                  src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 9'%3E%3C/svg%3E" data-src="/anasayfa/optimized/toplukonut-gece-eskiz-800w.jpg">
+              </picture>
+            </div>
+            <div class="related-info">
+              <p class="related-meta">Optimization</p>
+              <h4 class="related-title">Daylight Optimization in Mass Housing</h4>
+            </div>
+          </a>
+        </div>
+      </div>
+
+    </main>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner footer-with-directory">
+      <div class="footer-directory" aria-label="Portfolio categories">
+        <div class="footer-directory-group">
+          <a href="/en/index.html#design-all" class="footer-directory-anchor">Design</a>
+          <a href="/en/index.html#architecture" class="footer-directory-link">Architecture</a>
+          <a href="/en/index.html#web" class="footer-directory-link">Web</a>
+          <a href="/en/index.html#furniture" class="footer-directory-link">Furniture</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="/en/index.html#research-all" class="footer-directory-anchor">Research</a>
+          <a href="/en/index.html#ideas" class="footer-directory-link">Ideas</a>
+          <a href="/en/index.html#publications" class="footer-directory-link">Publications</a>
+        </div>
+        <div class="footer-directory-group">
+          <a href="/en/index.html#software-all" class="footer-directory-anchor">Software</a>
+          <a href="/en/index.html#ai" class="footer-directory-link">AI</a>
+          <a href="/en/index.html#fabrication" class="footer-directory-link">Fabrication</a>
+          <a href="/en/index.html#optimization" class="footer-directory-link">Optimization</a>
+        </div>
+      </div>
+      <div class="footer-links">
+        <a href="mailto:mimarenesyildiz@gmail.com" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+            <polyline points="22,6 12,13 2,6"/>
+          </svg>
+          Email
+        </a>
+        <a href="https://github.com/mimarenesyildiz" target="_blank" rel="noopener noreferrer" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/>
+          </svg>
+          GitHub
+        </a>
+        <a href="https://www.linkedin.com/in/mimarenes/" target="_blank" rel="noopener noreferrer" class="footer-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+            <rect x="2" y="9" width="4" height="12"/>
+            <circle cx="4" cy="4" r="2"/>
+          </svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/image-loader.js"></script>
+</body>
+</html>
