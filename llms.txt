@@ -54,6 +54,9 @@ Enes Yıldız, İstanbul merkezli bir mimar, hesaplamalı tasarım araştırmac�
 
 ### Yazılım — Yapay Zeka
 
+- **GeoVisionAI** — İç mekan taramasından yapı elemanlarını derin öğrenme ile otomatik tespit eden sistem. Özyeğin Üniversitesi, TÜBİTAK 3501 araştırma projesi.
+  https://mimarenes.com/yazilim/ai/geovisionai.html
+
 - **MaskRCNN in Grasshopper** — Rhino/Grasshopper ortamında derin öğrenme tabanlı nesne segmentasyonu eklentisi. Veri seti hazırlığından model eğitimine kadar tüm iş akışı.
   https://mimarenes.com/yazilim/ai/maskrcnn.html
 
@@ -113,6 +116,7 @@ The entire site is also available in English under https://mimarenes.com/en/ wit
 - https://mimarenes.com/en/design/architecture/herat-mosque.html
 - https://mimarenes.com/en/design/architecture/observation-tower.html
 - https://mimarenes.com/en/design/architecture/studio-balat.html
+- https://mimarenes.com/en/software/ai/geovisionai.html
 - https://mimarenes.com/en/software/ai/maskrcnn.html
 - https://mimarenes.com/en/software/optimization/mass-housing-daylight.html
 - https://mimarenes.com/en/software/optimization/uskudar-square.html
