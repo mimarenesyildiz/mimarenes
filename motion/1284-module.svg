@@ -1,0 +1,164 @@
+<svg class="m1284m" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 372" preserveAspectRatio="xMidYMin meet" aria-hidden="true" focusable="false">
+<style>.m1284m{--ink:var(--gray-900,#1a1a1a);--ink2:var(--gray-600,#444);--ink3:var(--gray-400,#6b6b6b);--paper:var(--bg,#f8f8f8);--hot:var(--accent,#C56F34)}
+.m1284m .ink{fill:none;stroke:var(--ink);stroke-width:1.7;stroke-linecap:round}
+.m1284m .ink.h{stroke-width:1.2;opacity:.5}
+.m1284m .solid{fill:var(--ink)}
+.m1284m .poche{fill:var(--ink);fill-opacity:.1}
+.m1284m .fur{fill:none;stroke:var(--ink2);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.m1284m .top{fill:var(--hot);fill-opacity:.17;stroke:none}
+.m1284m .cover{fill:var(--paper);stroke:none}
+.m1284m text{font-family:var(--mono,'SF Mono','Fira Code',monospace);letter-spacing:0;font-variant-numeric:tabular-nums;user-select:none}
+.m1284m .draw{stroke-dasharray:1 2;animation:m1284m-draw var(--t,.8s) cubic-bezier(.45,0,.2,1) var(--d,0s) backwards}
+.m1284m .pop{transform-box:fill-box;transform-origin:50% 50%;animation:m1284m-pop var(--t,.35s) cubic-bezier(.3,1.5,.5,1) var(--d,0s) backwards}
+.m1284m .fade{animation:m1284m-fade var(--t,.5s) ease var(--d,0s) backwards}
+@keyframes m1284m-draw{from{stroke-dashoffset:1.01}}
+@keyframes m1284m-pop{from{transform:scale(0)}}
+@keyframes m1284m-fade{from{opacity:0}}
+.m1284m{--T:13.0s;--d0:0.9s}
+.m1284m .row{transform:translateY(calc(46px + var(--i) * 54px))}
+.m1284m .nm{font-size:14px;letter-spacing:.1em;fill:var(--ink3)}
+.m1284m .vl{font-size:17px;font-weight:600;fill:var(--ink);text-anchor:end}
+.m1284m .ml{font-size:14px;fill:var(--ink2)}
+.m1284m .cmu{font-size:12px;fill:var(--ink3);text-anchor:end}
+.m1284m .cw{fill:var(--hot)}
+.m1284m .co{fill:var(--hot);fill-opacity:.3}
+.m1284m .cp{fill:var(--ink);fill-opacity:.15}
+.m1284m .tk{fill:none;stroke:var(--ink2);stroke-width:1.2;stroke-linecap:round}
+.m1284m .cv{fill:var(--paper);transform:scaleX(0);transform-box:fill-box;transform-origin:100% 50%}
+.m1284m .cells,.m1284m .dyn{animation:m1284m-dip var(--T) linear var(--d0) infinite backwards}
+.m1284m .cv0{animation:m1284m-cv0 var(--T) linear var(--d0) infinite backwards}.m1284m .ml0{animation:m1284m-ml0 var(--T) linear var(--d0) infinite backwards}.m1284m .cv1{animation:m1284m-cv1 var(--T) linear var(--d0) infinite backwards}.m1284m .ml1{animation:m1284m-ml1 var(--T) linear var(--d0) infinite backwards}.m1284m .cv2{animation:m1284m-cv2 var(--T) linear var(--d0) infinite backwards}.m1284m .ml2{animation:m1284m-ml2 var(--T) linear var(--d0) infinite backwards}.m1284m .cv3{animation:m1284m-cv3 var(--T) linear var(--d0) infinite backwards}.m1284m .ml3{animation:m1284m-ml3 var(--T) linear var(--d0) infinite backwards}.m1284m .cv4{animation:m1284m-cv4 var(--T) linear var(--d0) infinite backwards}.m1284m .ml4{animation:m1284m-ml4 var(--T) linear var(--d0) infinite backwards}.m1284m .cv5{animation:m1284m-cv5 var(--T) linear var(--d0) infinite backwards}.m1284m .ml5{animation:m1284m-ml5 var(--T) linear var(--d0) infinite backwards}
+@keyframes m1284m-cv0{0%,7.692%{transform:scaleX(1);animation-timing-function:steps(1,end)}8.231%,92.231%{transform:scaleX(0)}92.308%,100%{transform:scaleX(1)}}
+@keyframes m1284m-ml0{0%,8.231%{opacity:0}10.154%,92.231%{opacity:1}92.308%,100%{opacity:0}}
+@keyframes m1284m-cv1{0%,10.154%{transform:scaleX(1);animation-timing-function:steps(5,end)}12.846%,92.231%{transform:scaleX(0)}92.308%,100%{transform:scaleX(1)}}
+@keyframes m1284m-ml1{0%,12.846%{opacity:0}14.769%,92.231%{opacity:1}92.308%,100%{opacity:0}}
+@keyframes m1284m-cv2{0%,14.769%{transform:scaleX(1);animation-timing-function:steps(7,end)}18.538%,92.231%{transform:scaleX(0)}92.308%,100%{transform:scaleX(1)}}
+@keyframes m1284m-ml2{0%,18.538%{opacity:0}20.462%,92.231%{opacity:1}92.308%,100%{opacity:0}}
+@keyframes m1284m-cv3{0%,20.462%{transform:scaleX(1);animation-timing-function:steps(8,end)}24.769%,92.231%{transform:scaleX(0)}92.308%,100%{transform:scaleX(1)}}
+@keyframes m1284m-ml3{0%,24.769%{opacity:0}26.692%,92.231%{opacity:1}92.308%,100%{opacity:0}}
+@keyframes m1284m-cv4{0%,26.692%{transform:scaleX(1);animation-timing-function:steps(15,end)}34.769%,92.231%{transform:scaleX(0)}92.308%,100%{transform:scaleX(1)}}
+@keyframes m1284m-ml4{0%,34.769%{opacity:0}36.692%,92.231%{opacity:1}92.308%,100%{opacity:0}}
+@keyframes m1284m-cv5{0%,36.692%{transform:scaleX(1);animation-timing-function:steps(22,end)}48.538%,92.231%{transform:scaleX(0)}92.308%,100%{transform:scaleX(1)}}
+@keyframes m1284m-ml5{0%,48.538%{opacity:0}50.462%,92.231%{opacity:1}92.308%,100%{opacity:0}}
+@keyframes m1284m-dip{0%,87.692%{opacity:1}90.769%,93.846%{opacity:0}96.923%,100%{opacity:1}}
+@media (min-width:769px) and (max-width:1100px){.m1284m .nm{font-size:18px}.m1284m .ml{font-size:18px}.m1284m .vl{font-size:21px}.m1284m .cmu{font-size:15px}}
+@media (max-width:768px){.m1284m .row{transform:translateY(calc(30px + var(--i) * 122px))}.m1284m .nm{font-size:34px;transform:translateY(14px)}.m1284m .vl{font-size:38px;transform:translate(158px,14px)}.m1284m .bar{transform:translate(-170px,46px) scaleY(1.7)}.m1284m .rule{transform:translate(-170px,62.8px)}.m1284m .ml{font-size:34px;transform:translate(-170px,60.4px)}.m1284m .cmu{font-size:30px;transform:translate(158px,-2px)}.m1284m .ink{stroke-width:3.6}.m1284m .tk{stroke-width:3}}</style>
+<text class="cmu fade" x="172" y="30" style="--d:.2s">cm</text>
+<g class="row" style="--i:0">
+<text class="nm fade" x="20" y="17" data-en="WALL" style="--d:0.2s">DUVAR</text>
+<text class="vl fade" x="172" y="17" style="--d:0.25s">12</text>
+<g class="bar"><g class="cells">
+<path class="cw" d="M190 -0.2L224.4 0.3L224.9 23.8L190.2 24.5Z"/>
+</g>
+<rect class="cv cv0" x="187" y="-3" width="41" height="30"/>
+</g>
+<g class="rule fade" style="--d:0.5s"><path class="ink" d="M186.2 28.7Q208 28.9 230 28.6"/><path class="tk" d="M190 27v5M225 27v5"/></g>
+<g class="dyn"><text class="ml ml0" x="239" y="17">1 × 12</text></g>
+</g>
+<g class="row" style="--i:1">
+<text class="nm fade" x="20" y="17" data-en="MATERIAL" style="--d:0.27s">MALZEME</text>
+<text class="vl fade" x="172" y="17" style="--d:0.32s">60</text>
+<g class="bar"><g class="cells">
+<path class="cp" d="M190 0.6L225 0.2L224.7 24.1L190 23.8Z"/>
+<path class="cp" d="M229.5 -0.2L264.7 0.4L265 24.3L229.6 23.4Z"/>
+<path class="cp" d="M270.4 -0.4L305.2 0.4L304.9 23.6L270.6 23.9Z"/>
+<path class="cp" d="M309.8 0.4L344.4 0.4L344.9 24.5L310.3 24.1Z"/>
+<path class="cp" d="M350.2 -0.2L384.3 0.2L385.6 24.3L349.4 24.5Z"/>
+</g>
+<rect class="cv cv1" x="187" y="-3" width="201" height="30"/>
+</g>
+<g class="rule fade" style="--d:0.57s"><path class="ink" d="M186.4 28.7Q288 29.4 389.6 29.3"/><path class="tk" d="M190 27v5M227.5 27v5M267.5 27v5M307.5 27v5M347.5 27v5M385 27v5"/></g>
+<g class="dyn"><text class="ml ml1" x="399" y="17">5 × 12</text></g>
+</g>
+<g class="row" style="--i:2">
+<text class="nm fade" x="20" y="17" data-en="USABLE" style="--d:0.34s">KULLANIM</text>
+<text class="vl fade" x="172" y="17" style="--d:0.39s">84</text>
+<g class="bar"><g class="cells">
+<path class="co" d="M190.2 -0.4L224.9 -0.3L225.2 23.8L190.3 23.7Z"/>
+<path class="co" d="M229.6 -0.1L265.4 -0.5L264.7 23.9L230.7 24.4Z"/>
+<path class="co" d="M270.4 -0.4L305.3 0.7L305.3 24.5L269.4 24Z"/>
+<path class="co" d="M310.5 -0.6L345.3 0.7L345.7 24.3L309.8 24.7Z"/>
+<path class="co" d="M350.6 0.6L385.6 0.1L384.9 23.8L349.4 23.7Z"/>
+<path class="co" d="M390.4 -0.1L425.1 -0.3L425.2 24.3L390.5 24Z"/>
+<path class="co" d="M430.3 0.2L464.4 -0.2L465.6 24.2L429.7 24.7Z"/>
+</g>
+<rect class="cv cv2" x="187" y="-3" width="281" height="30"/>
+</g>
+<g class="rule fade" style="--d:0.64s"><path class="ink" d="M186.4 29.2Q328 29 469.7 29"/><path class="tk" d="M190 27v5M227.5 27v5M267.5 27v5M307.5 27v5M347.5 27v5M387.5 27v5M427.5 27v5M465 27v5"/></g>
+<g class="dyn"><text class="ml ml2" x="479" y="17">7 × 12</text></g>
+</g>
+<g class="row" style="--i:3">
+<text class="nm fade" x="20" y="17" data-en="AXIS" style="--d:0.41s">AKS</text>
+<text class="vl fade" x="172" y="17" style="--d:0.46s">96</text>
+<g class="bar"><g class="cells">
+<path class="cw" d="M189.5 0L225 0.1L225.5 24.1L189.6 23.9Z"/>
+<path class="co" d="M230.1 0.1L264.6 0.3L264.5 23.4L230.2 24.6Z"/>
+<path class="co" d="M269.7 -0.3L304.3 0.6L304.5 24.5L269.8 24.1Z"/>
+<path class="co" d="M310.7 -0.1L345.7 -0.7L345.2 23.5L309.4 24.1Z"/>
+<path class="co" d="M349.8 0.5L385 0L384.8 23.7L350.4 23.4Z"/>
+<path class="co" d="M390.4 -0.5L424.9 -0.5L424.6 23.9L389.8 24Z"/>
+<path class="co" d="M429.6 0.4L465.5 -0.6L465.3 24.6L429.8 24.7Z"/>
+<path class="co" d="M469.7 0.3L504.6 -0.5L504.9 23.8L470.1 24.4Z"/>
+</g>
+<rect class="cv cv3" x="187" y="-3" width="321" height="30"/>
+</g>
+<g class="rule fade" style="--d:0.71s"><path class="ink" d="M185.7 28.7Q348 29.4 510.1 29"/><path class="tk" d="M190 27v5M227.5 27v5M267.5 27v5M307.5 27v5M347.5 27v5M387.5 27v5M427.5 27v5M467.5 27v5M505 27v5"/></g>
+<g class="dyn"><text class="ml ml3" x="519" y="17">8 × 12</text></g>
+</g>
+<g class="row" style="--i:4">
+<text class="nm fade" x="20" y="17" data-en="CORRIDOR" style="--d:0.48s">KORİDOR</text>
+<text class="vl fade" x="172" y="17" style="--d:0.53s">180</text>
+<g class="bar"><g class="cells">
+<path class="co" d="M189.8 -0.6L224.6 -0.4L224.8 24.4L189.6 23.5Z"/>
+<path class="co" d="M230 0.7L264.9 0.4L265.7 24.2L229.5 24.4Z"/>
+<path class="co" d="M270.5 0.6L304.7 0.6L305 24.5L270.4 24Z"/>
+<path class="co" d="M309.5 0.4L344.8 -0.2L345.4 23.9L309.5 24.3Z"/>
+<path class="co" d="M349.5 0.5L384.5 -0.5L385.2 24.5L349.4 24.5Z"/>
+<path class="co" d="M389.5 0.5L425.7 0.4L425.2 24.4L390.6 24.6Z"/>
+<path class="co" d="M430.2 -0.6L464.3 -0.6L465.2 23.3L429.9 24.4Z"/>
+<path class="cw" d="M469.3 -0.5L505.5 0.1L505 24.4L470.1 24.5Z"/>
+<path class="co" d="M510.1 -0.2L545 -0.2L545.5 24.6L510.1 23.4Z"/>
+<path class="co" d="M550 -0.6L585.4 -0.2L584.5 24.1L550.2 24.3Z"/>
+<path class="co" d="M590.3 0.2L625 -0L625 23.8L590.4 24.3Z"/>
+<path class="co" d="M629.6 -0.3L664.5 0.6L665.3 24.3L629.9 23.9Z"/>
+<path class="co" d="M669.4 -0.3L704.9 0.7L704.7 23.4L669.6 24.3Z"/>
+<path class="co" d="M710 0.2L745.2 0.4L744.6 23.9L709.6 23.5Z"/>
+<path class="co" d="M749.9 -0.2L784.9 -0.2L785.7 24.3L750.3 24.1Z"/>
+</g>
+<rect class="cv cv4" x="187" y="-3" width="601" height="30"/>
+</g>
+<g class="rule fade" style="--d:0.78s"><path class="ink" d="M186 29Q488 29.3 790.4 28.8"/><path class="tk" d="M190 27v5M227.5 27v5M267.5 27v5M307.5 27v5M347.5 27v5M387.5 27v5M427.5 27v5M467.5 27v5M507.5 27v5M547.5 27v5M587.5 27v5M627.5 27v5M667.5 27v5M707.5 27v5M747.5 27v5M785 27v5"/></g>
+<g class="dyn"><text class="ml ml4" x="799" y="17">15 × 12</text></g>
+</g>
+<g class="row" style="--i:5">
+<text class="nm fade" x="20" y="17" data-en="CEILING" style="--d:0.55s">TAVAN</text>
+<text class="vl fade" x="172" y="17" style="--d:0.6s">264</text>
+<g class="bar"><g class="cells">
+<path class="cp" d="M189.8 0.3L224.6 0.6L224.7 23.8L189.5 24.4Z"/>
+<path class="cp" d="M229.4 0.5L265.3 0.4L264.3 23.8L230.3 23.8Z"/>
+<path class="cp" d="M269.8 -0L304.3 0.3L304.9 24.3L269.8 24.5Z"/>
+<path class="cp" d="M309.8 -0.4L345.6 -0.5L345.1 23.9L309.5 24Z"/>
+<path class="cp" d="M350.5 0.1L385.4 -0.4L385.6 24.7L350.3 23.5Z"/>
+<path class="cp" d="M389.5 0.5L425.7 -0.3L424.5 23.9L390.7 23.7Z"/>
+<path class="cp" d="M429.7 0.1L465.4 -0.5L464.6 23.6L430.4 23.5Z"/>
+<path class="cp" d="M470.1 0.1L505.1 -0.3L505.1 23.7L470.3 23.9Z"/>
+<path class="cp" d="M509.8 -0.2L544.9 0.3L544.9 23.6L510.2 23.4Z"/>
+<path class="cp" d="M549.9 -0.7L585.5 0.6L584.8 23.5L549.9 24.5Z"/>
+<path class="cp" d="M590.7 -0.4L625.4 -0.6L625 24L589.8 24.6Z"/>
+<path class="cp" d="M630.5 0.3L665.4 0.6L664.3 24.7L630.4 23.9Z"/>
+<path class="cp" d="M670.5 0.2L705.6 0.6L704.5 24.4L670 24.3Z"/>
+<path class="cp" d="M709.7 0.5L745 -0.5L744.8 24.7L709.9 24Z"/>
+<path class="cp" d="M750.3 0.7L784.7 -0.5L784.8 23.4L750 24.3Z"/>
+<path class="cp" d="M790 -0.5L824.7 -0.1L825.6 24.1L790.1 24.5Z"/>
+<path class="cp" d="M829.5 0.4L865.4 0.4L864.4 23.3L829.5 23.8Z"/>
+<path class="cp" d="M869.4 0.7L905.4 -0.1L905.3 24.4L869.5 23.9Z"/>
+<path class="cp" d="M910.4 -0.5L944.4 0.6L944.6 24.4L910.6 23.6Z"/>
+<path class="cp" d="M949.4 0.6L985.7 -0.3L984.3 23.9L949.5 24.3Z"/>
+<path class="cp" d="M990.1 -0.7L1025.7 -0.1L1024.5 24.2L989.9 23.7Z"/>
+<path class="cp" d="M1030.2 0.1L1065.2 -0.1L1064.4 23.7L1029.7 23.4Z"/>
+</g>
+<rect class="cv cv5" x="187" y="-3" width="881" height="30"/>
+</g>
+<g class="rule fade" style="--d:0.85s"><path class="ink" d="M186.2 29.3Q628 28.6 1070 29.3"/><path class="tk" d="M190 27v5M227.5 27v5M267.5 27v5M307.5 27v5M347.5 27v5M387.5 27v5M427.5 27v5M467.5 27v5M507.5 27v5M547.5 27v5M587.5 27v5M627.5 27v5M667.5 27v5M707.5 27v5M747.5 27v5M787.5 27v5M827.5 27v5M867.5 27v5M907.5 27v5M947.5 27v5M987.5 27v5M1027.5 27v5M1065 27v5"/></g>
+<g class="dyn"><text class="ml ml5" x="1079" y="17">22 × 12</text></g>
+</g>
+</svg>

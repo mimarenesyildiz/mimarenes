@@ -47,6 +47,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap">
   <link rel="stylesheet" href="../../css/nav.css">
   <link rel="stylesheet" href="../../css/subpage.css">
+  <link rel="stylesheet" href="../../css/motion.css">
   <style>
     :root {
       --accent: #C56F34;
@@ -135,6 +136,13 @@
         <h1 class="project-title">Belirsiz Gelecek İçin Dirençli Modül Tasarımı</h1>
         <p class="project-location">İHH Genel Merkez Binası — Arnavutköy, İstanbul</p>
       </header>
+
+      <!-- ==================== BAŞLIK ANİMASYONU ==================== -->
+      <figure class="motion motion--header" data-motion="/motion/1284-header.svg" role="img"
+        aria-label="Bir ofis katının planı: kolonlar ve cephe sabit kalırken iç duvarlar 2025'ten 2100'e her beş yılda yeni bir düzene kayıyor.">
+        <div class="motion-frame"></div>
+      </figure>
+      <script src="../../js/motion.js"></script>
 
       <!-- ==================== INTRO — Hikayeye Giriş ==================== -->
       <div class="text-block reveal">
@@ -453,6 +461,13 @@
         </div>
       </div>
 
+      <!-- ========== Animasyon: her ölçü 12 cm'lik modülün katı ========== -->
+      <figure class="motion motion--block" data-motion="/motion/1284-module.svg" role="img"
+        aria-label="Altı ölçü 12 santimetrelik kutulardan oluşan çubuklar olarak gösteriliyor: duvar 12, malzeme 60, kullanım modülü 84, aks 96, koridor 180 ve tavan 264 santimetre. Hepsi 12'nin tam katı. Aks bir duvar ile bir kullanım modülünün toplamı, koridor iki kullanım modülü ile bir duvarın toplamı.">
+        <div class="motion-frame" style="--ar: 1200 / 372; --ar-m: 1200 / 760;"></div>
+        <figcaption>Duvardan tavana her ölçü 12 cm'lik modülün tam katı. Aks, bir duvar ile bir kullanım modülünün toplamı: 12 + 84 = 96.</figcaption>
+      </figure>
+
       <!-- ========== Matematiksel İspat İnfografiği ========== -->
       <div class="img-large center reveal">
         <div class="theme-picture-group" style="--theme-ratio: 1.7917;">
@@ -770,6 +785,13 @@
         </div>
       </div>
 
+      <!-- ========== Animasyon: aynı duvar iki sistemde kaydırılıyor ========== -->
+      <figure class="motion motion--block" data-motion="/motion/1284-wall.svg" role="img"
+        aria-label="Aynı bölme duvar iki sistemde 96 cm kaydırılıyor. Geleneksel sistemde duvar camın ortasına denk geliyor, tavan baştan çiziliyor ve iş iki hafta sürüyor. 12/84 sisteminde duvar iki pencerenin arasına oturuyor, yalnızca iki tavan şeridi yer değiştiriyor ve iş iki gün sürüyor.">
+        <div class="motion-frame" style="--ar: 1200 / 430; --ar-m: 1200 / 1720;"></div>
+        <figcaption>Aynı duvar, aynı 96 cm. Geleneksel sistemde cama denk gelir ve tavan baştan çizilir; 12/84'te iki pencerenin arasına oturur, yalnızca iki tavan şeridi yer değiştirir.</figcaption>
+      </figure>
+
       <!-- ==================== 8b. MEKANSAL UYUM İNDEKSİ ==================== -->
       <div class="text-img-row img-right-xs reveal">
         <div class="row-text">
@@ -819,6 +841,13 @@
           <p class="img-cap">Geleneksel sistem / 12/84 Sistemi</p>
         </div>
       </div>
+
+      <!-- ========== Animasyon: 15 seçenekten 276 seçeneğe ========== -->
+      <figure class="motion motion--block" data-motion="/motion/1284-pairs.svg" role="img"
+        aria-label="Her iki duvar noktası arasında bir mekân kurulabilir. Geleneksel sistemde altı duvar noktası 15 seçenek verir; 12/84 sisteminde yirmi dört duvar noktası 276 seçenek verir.">
+        <div class="motion-frame" style="--ar: 1200 / 390; --ar-m: 1200 / 1560;"></div>
+        <figcaption>Her iki duvar noktası arasında bir mekân kurulabilir. Altı nokta 15 seçenek verir; 12/84'ün yirmi dört noktası 276.</figcaption>
+      </figure>
 
 
       <!-- ==================== COMPARISON KARTLARI ==================== -->

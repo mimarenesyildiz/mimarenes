@@ -48,6 +48,7 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&display=swap">
   <link rel="stylesheet" href="/css/nav.css">
   <link rel="stylesheet" href="/css/subpage.css">
+  <link rel="stylesheet" href="/css/motion.css">
   <style>
     :root {
       --accent: #C56F34;
@@ -136,6 +137,13 @@
         <h1 class="project-title">Resilient Module Design for an Uncertain Future</h1>
         <p class="project-location">İHH Headquarters Building — Arnavutköy, Istanbul</p>
       </header>
+
+      <!-- ==================== HEADER ANIMATION ==================== -->
+      <figure class="motion motion--header" data-motion="/motion/1284-header.svg" role="img"
+        aria-label="Plan of an office floor: the columns and facade stay fixed while the interior walls shift to a new layout every five years, from 2025 to 2100.">
+        <div class="motion-frame"></div>
+      </figure>
+      <script src="/js/motion.js"></script>
 
       <!-- ==================== INTRO ==================== -->
       <div class="text-block reveal">
@@ -454,6 +462,13 @@
         </div>
       </div>
 
+      <!-- ========== Animation: every dimension is a multiple of the 12 cm module ========== -->
+      <figure class="motion motion--block" data-motion="/motion/1284-module.svg" role="img"
+        aria-label="Six dimensions shown as bars made of 12-centimetre cells: wall 12, material 60, usable module 84, axis 96, corridor 180 and ceiling 264 centimetres. All are whole multiples of 12. One axis is a wall plus a usable module; the corridor is two usable modules plus a wall.">
+        <div class="motion-frame" style="--ar: 1200 / 372; --ar-m: 1200 / 760;"></div>
+        <figcaption>From wall to ceiling, every dimension is a whole multiple of the 12 cm module. One axis is a wall plus a usable module: 12 + 84 = 96.</figcaption>
+      </figure>
+
       <!-- ========== Mathematical Proof Infographic ========== -->
       <div class="img-large center reveal">
         <div class="theme-picture-group" style="--theme-ratio: 1.7917;">
@@ -771,6 +786,13 @@
         </div>
       </div>
 
+      <!-- ========== Animation: the same wall moved in both systems ========== -->
+      <figure class="motion motion--block" data-motion="/motion/1284-wall.svg" role="img"
+        aria-label="The same partition wall is moved 96 cm in both systems. In the conventional system the wall lands in the middle of a window, the ceiling is redrawn and the job takes two weeks. In the 12/84 system the wall lands between two windows, only two ceiling strips swap places and the job takes two days.">
+        <div class="motion-frame" style="--ar: 1200 / 430; --ar-m: 1200 / 1720;"></div>
+        <figcaption>Same wall, same 96 cm. In the conventional system it lands on glass and the ceiling is redrawn; in 12/84 it lands between two windows and only two ceiling strips swap places.</figcaption>
+      </figure>
+
       <!-- ==================== 8b. SPATIAL ADAPTABILITY INDEX ==================== -->
       <div class="text-img-row img-right-xs reveal">
         <div class="row-text">
@@ -820,6 +842,13 @@
           <p class="img-cap">Conventional system / 12/84 system</p>
         </div>
       </div>
+
+      <!-- ========== Animation: from 15 options to 276 ========== -->
+      <figure class="motion motion--block" data-motion="/motion/1284-pairs.svg" role="img"
+        aria-label="A space can be set up between any two wall points. In the conventional system six wall points give 15 options; in the 12/84 system twenty-four wall points give 276 options.">
+        <div class="motion-frame" style="--ar: 1200 / 390; --ar-m: 1200 / 1560;"></div>
+        <figcaption>A space can be set up between any two wall points. Six points give 15 options; the twenty-four points of 12/84 give 276.</figcaption>
+      </figure>
 
 
       <!-- ==================== COMPARISON CARDS ==================== -->
