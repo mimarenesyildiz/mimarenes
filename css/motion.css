@@ -1,0 +1,56 @@
+/* ============================================================
+   Motion figures — proje sayfalarındaki SVG animasyon yuvaları.
+   Çizimin kendisi motion/*.svg dosyalarında durur; js/motion.js
+   dosyayı sayfaya gömer ve ekranda değilken duraklatır.
+
+   Oran, yuvanın style özniteliğindeki --ar (geniş ekran) ve
+   --ar-m (dar ekran) değişkenleriyle verilir; verilmezse başlık
+   şeridinin oranı kullanılır.
+   ============================================================ */
+
+/* Sayaçların yürüttüğü sayı: kayıtlı olduğu için keyframe'ler arasında
+   yumuşak geçer; js/motion.js değeri metne yazar. */
+@property --motion-count {
+  syntax: '<number>';
+  inherits: false;
+  initial-value: 0;
+}
+
+.motion { margin: 0; padding: 0 5vw; }
+
+.motion-frame {
+  width: 100%;
+  max-width: 1100px;
+  aspect-ratio: var(--ar, 20 / 7);
+}
+
+.motion-frame svg { display: block; width: 100%; height: 100%; }
+
+/* Başlığın hemen altındaki şerit */
+.motion--header { margin: 0 0 8px; }
+
+/* Sayfa içi: geniş görsellerle aynı hizada, ortalı */
+.motion--block { width: 85%; margin: 64px auto; padding: 0; }
+.motion--block .motion-frame { margin: 0 auto; }
+
+.motion figcaption {
+  max-width: 640px;
+  margin: 18px auto 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--gray-400);
+  text-align: center;
+}
+
+@media (max-width: 768px) {
+  .motion-frame { aspect-ratio: var(--ar-m, 3 / 2); }
+  .motion--block { width: 100%; margin: 40px 0; padding: 0 20px; }
+}
+
+/* Ekranda değilken dur */
+.motion.is-paused svg * { animation-play-state: paused !important; }
+
+/* Hareket azaltma tercihi: çizimin tamamlanmış hâli sabit kalır */
+@media (prefers-reduced-motion: reduce) {
+  .motion svg * { animation: none !important; }
+}
