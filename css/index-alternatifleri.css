@@ -1,0 +1,475 @@
+/* The rest of the page inherits the original index styles. */
+.fl {
+  --p-bg: var(--bg);
+  --p-text: var(--gray-900);
+  --p-muted: var(--gray-600);
+  --p-ink: var(--accent);
+  --p-rule: var(--gray-200);
+  --p-hand: 'Architects Daughter', 'Bradley Hand', cursive;
+  --p-ui: 'Inter', system-ui, sans-serif;
+  --sq: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M3 8 C 32 3, 60 12, 96 7 S 160 3, 197 8' fill='none' stroke='black' stroke-width='2.5' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* ========== FİLTRE ========== */
+.fl {
+  position: sticky;
+  top: 56px;
+  z-index: 999;
+  background: var(--p-bg);
+  border-bottom: 1px solid var(--p-rule);
+}
+
+.fl-mob {
+  display: none;
+}
+
+/* Masaüstü: ikonlu lejant */
+.fl-desk {
+  display: grid;
+  grid-template-columns: auto repeat(3, max-content);
+  align-items: center;
+  justify-content: center;
+  gap: clamp(20px, 3vw, 44px);
+  padding: 12px 24px;
+  font-family: var(--p-hand);
+}
+
+.fl-g {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Yıldızın tamamı tek bir erişilebilir düğme; görünür etiket yok. */
+.fl-star {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--p-text);
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.fl-star.is-on .fl-ic {
+  stroke: var(--p-ink);
+}
+
+[data-theme="dark"] .fl-w path {
+  opacity: 0.22;
+}
+
+[data-theme="dark"] .fl-g.is-active .fl-w path {
+  opacity: 0.38;
+}
+
+[data-theme="dark"] .fc-wash {
+  opacity: 0.18;
+}
+
+[data-theme="dark"] .fc-on .fc-wash {
+  opacity: 0.38;
+}
+
+.fl-ico {
+  position: relative;
+  display: block;
+  flex: 0 0 56px;
+  width: 56px;
+  height: 52px;
+  transform-origin: 50% 60%;
+}
+
+.fl-w {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 56px;
+  height: 38px;
+  overflow: visible;
+  transition: transform 0.3s ease;
+}
+
+.fl-w path {
+  opacity: 0.55;
+  transition: opacity 0.3s ease;
+}
+
+.fl-g:hover .fl-w,
+.fl-g.is-active .fl-w {
+  transform: scale(1.12) rotate(-4deg);
+}
+
+.fl-g.is-active .fl-w path {
+  opacity: 0.85;
+}
+
+.fl-ic {
+  position: absolute;
+  left: 8px;
+  top: 6px;
+  width: 40px;
+  height: 40px;
+  overflow: visible;
+  fill: none;
+  stroke: var(--p-text);
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+/* Grubun gösterdiği ikon: seçili alt başlığınki, yoksa ana ikon */
+.fl-g[data-show="0"] .fl-i0,
+.fl-g[data-show="1"] .fl-i1,
+.fl-g[data-show="2"] .fl-i2,
+.fl-g[data-show="3"] .fl-i3 {
+  opacity: 1;
+}
+
+.fl-g[data-show="0"] .fl-i0 path,
+.fl-g[data-show="1"] .fl-i1 path,
+.fl-g[data-show="2"] .fl-i2 path,
+.fl-g[data-show="3"] .fl-i3 path {
+  animation: fl-draw 0.7s ease backwards;
+}
+
+/* Alt başlığın üstüne gelince o başlığın ikonu çizilir */
+.fl-g:has(.fl-s:hover) .fl-ic,
+.fl-g:has(.fl-s:focus-visible) .fl-ic {
+  opacity: 0;
+}
+
+.fl-g:has(.fl-s1:hover) .fl-i1,
+.fl-g:has(.fl-s1:focus-visible) .fl-i1,
+.fl-g:has(.fl-s2:hover) .fl-i2,
+.fl-g:has(.fl-s2:focus-visible) .fl-i2,
+.fl-g:has(.fl-s3:hover) .fl-i3,
+.fl-g:has(.fl-s3:focus-visible) .fl-i3 {
+  opacity: 1;
+}
+
+.fl-g:has(.fl-s1:hover) .fl-i1 path,
+.fl-g:has(.fl-s2:hover) .fl-i2 path,
+.fl-g:has(.fl-s3:hover) .fl-i3 path {
+  animation: fl-draw 0.7s ease backwards;
+}
+
+/* Ana başlığın üstüne gelince ikon sallanır */
+.fl-g:has(.fl-m:hover) .fl-ico {
+  animation: fl-wig 0.7s ease;
+}
+
+.fl-txt {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.fl-m,
+.fl-s {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--p-text);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.2s ease;
+}
+
+.fl-m {
+  font-size: 23px;
+  line-height: 1.2;
+  min-height: 32px;
+}
+
+.fl-subs {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 12px;
+  font-family: var(--p-ui);
+  font-size: 13px;
+}
+
+.fl-s {
+  min-height: 30px;
+  color: var(--p-muted);
+}
+
+.fl-m:hover,
+.fl-s:hover {
+  color: var(--p-text);
+}
+
+.fl-m.is-on,
+.fl-s.is-on {
+  color: var(--p-ink);
+}
+
+.fl-m.is-on::after,
+.fl-s.is-on::after {
+  content: "";
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  bottom: 2px;
+  height: 6px;
+  background: currentColor;
+  -webkit-mask: var(--sq) center / 100% 100% no-repeat;
+  mask: var(--sq) center / 100% 100% no-repeat;
+}
+
+.fl-m:focus-visible,
+.fl-s:focus-visible,
+.fl-star:focus-visible,
+.fc-b:focus-visible {
+  outline: 2px solid var(--p-ink);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@keyframes fl-draw {
+  from { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  to { stroke-dasharray: 1; stroke-dashoffset: 0; }
+}
+
+@keyframes fl-wig {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(-10deg); }
+  55% { transform: rotate(8deg); }
+  80% { transform: rotate(-3deg); }
+  100% { transform: rotate(0); }
+}
+
+/* Telefon: ikonlu şerit */
+.fc-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 6px;
+  max-width: 100%;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.fc-row::-webkit-scrollbar {
+  display: none;
+}
+
+.fc-b {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 0 0 auto;
+  min-width: 50px;
+  min-height: 60px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 2px 3px 4px;
+  border: 0;
+  background: none;
+  font: inherit;
+  color: var(--p-muted);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: color 0.2s ease;
+}
+
+.fc-star {
+  justify-content: center;
+}
+
+.fc-b:hover,
+.fc-on {
+  color: var(--p-text);
+}
+
+.fc-ico {
+  position: relative;
+  display: block;
+  width: 44px;
+  height: 38px;
+}
+
+.fc-wash {
+  position: absolute;
+  left: 2px;
+  top: 6px;
+  width: 40px;
+  height: 28px;
+  opacity: 0.3;
+  transform: scale(0.85);
+  transition: opacity 0.25s ease, transform 0.4s cubic-bezier(0.3, 1.5, 0.5, 1);
+}
+
+.fc-wash path {
+  fill: var(--wash);
+}
+
+.fc-on .fc-wash {
+  opacity: 0.9;
+  transform: scale(1.12) rotate(-4deg);
+}
+
+.fc-ic {
+  position: absolute;
+  left: 7px;
+  top: 4px;
+  width: 30px;
+  height: 30px;
+  overflow: visible;
+  fill: none;
+  stroke: var(--p-text);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: fc-draw 0.55s ease backwards;
+}
+
+.fc-on .fc-ic {
+  animation-name: fc-draw2;
+  animation-delay: 0s !important;
+}
+
+.fc-l {
+  font-size: 14px;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+@keyframes fc-draw {
+  from { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  to { stroke-dasharray: 1; stroke-dashoffset: 0; }
+}
+
+@keyframes fc-draw2 {
+  from { stroke-dasharray: 1; stroke-dashoffset: 1; }
+  to { stroke-dasharray: 1; stroke-dashoffset: 0; }
+}
+
+/* Dar masaüstünde dört grup aynı satırda kalır. */
+@media (min-width: 769px) and (max-width: 1050px) {
+  .fl-desk {
+    gap: 18px;
+    padding-inline: 16px;
+  }
+
+  .fl-g {
+    gap: 6px;
+  }
+
+  .fl-g:not([data-cat=""]) .fl-ico {
+    flex-basis: 40px;
+    width: 40px;
+  }
+
+  .fl-g:not([data-cat=""]) .fl-w {
+    width: 40px;
+  }
+
+  .fl-g:not([data-cat=""]) .fl-ic {
+    left: 3px;
+    top: 10px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .fl-m { font-size: 21px; }
+  .fl-subs { font-size: 12px; column-gap: 9px; }
+}
+
+.layout-picker {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  padding: 0 12px 8px;
+  color: var(--gray-600);
+  font: 12px/1.3 'Inter', system-ui, sans-serif;
+}
+.layout-picker span { margin-right: 6px; }
+.layout-picker button {
+  font: inherit;
+  color: inherit;
+  padding: 5px 10px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  cursor: pointer;
+}
+.layout-picker button:hover, .layout-picker button[aria-pressed="true"] {
+  color: var(--gray-900);
+  border-color: var(--gray-200);
+  background: var(--white);
+}
+.layout-picker button:focus-visible, #worksSection .work-item:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+#worksSection { --edge: 3%; }
+#worksSection .work-item, #worksSection .work-visual {
+  background: transparent !important;
+  box-shadow: none;
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+#worksSection .work-visual {
+  background: var(--bg) !important;
+}
+#worksSection .work-visual picture.sketch img {
+  mix-blend-mode: multiply;
+  mask-image: linear-gradient(90deg, transparent, black var(--edge), black calc(100% - var(--edge)), transparent),
+              linear-gradient(0deg, transparent, black var(--edge), black calc(100% - var(--edge)), transparent);
+  mask-composite: intersect;
+}
+[data-theme="dark"] #worksSection .work-visual picture.sketch img { mix-blend-mode: screen; }
+#worksSection .work-visual img { transition: opacity 650ms ease; }
+#worksSection .work-item:hover .work-visual img { transform: none; }
+#worksSection .work-item.type-plugin { align-items: center; gap: clamp(20px, 4vw, 56px); }
+#worksSection .work-item.type-plugin .work-info { padding: 0; }
+[data-layout="pafta"] #worksSection { --edge: 5%; }
+[data-layout="galeri"] #worksSection { --edge: 2%; }
+
+@media (min-width: 769px) {
+  [data-layout="pafta"] .works-grid { gap: clamp(48px, 6vw, 88px); }
+  [data-layout="pafta"] #worksSection .work-item:has(.work-visual:not(:empty)) {
+    display: grid;
+    grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+    gap: clamp(28px, 5vw, 80px);
+    align-items: center;
+  }
+  [data-layout="pafta"] #worksSection .work-info { text-align: left; padding: 0; }
+  [data-layout="pafta"] #worksSection .work-desc { margin-inline: 0; }
+  [data-layout="galeri"] .works-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 64px clamp(32px, 5vw, 72px);
+    align-items: start;
+  }
+  [data-layout="galeri"] #worksSection .work-item { display: block; }
+  [data-layout="galeri"] #worksSection .work-visual { margin-bottom: 18px; }
+  [data-layout="galeri"] #worksSection .work-info { text-align: left; padding: 0; }
+  [data-layout="galeri"] #worksSection .work-title { font-size: clamp(23px, 2.1vw, 32px); }
+}
+@media (max-width: 768px) {
+  .fl-desk { display: none; }
+  .fl-mob { display: flex; justify-content: center; padding: 7px 10px 2px; font-family: var(--p-hand); }
+  .fc-row { justify-content: safe center; }
+  #worksSection .work-item.type-plugin { gap: 12px; }
+  [data-layout="pafta"] #worksSection .work-info { text-align: left; }
+  [data-layout="pafta"] #worksSection .work-desc { text-align: left; }
+  [data-layout="galeri"] #worksSection .works-grid { gap: 32px; }
+  [data-layout="galeri"] #worksSection .work-visual { width: 85%; margin: 0 auto 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .fl *, #worksSection .work-visual img { animation: none !important; transition: none !important; }
+}
